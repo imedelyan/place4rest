@@ -11,4 +11,9 @@ import Foundation
 enum AppStoryboard: String {
     case welcome = "Welcome"
     case home = "Home"
+    case map = "Map"
+    case suggestions = "Suggestions"
+    case addPlace = "AddPlace"
+    case announcements = "Announcements"
+    case settings = "Settings"
 }

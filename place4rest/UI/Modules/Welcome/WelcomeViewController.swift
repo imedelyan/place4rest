@@ -11,10 +11,12 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     var navigator: Navigator!
+    var storageService: StorageService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        storageService.isAppAlreadyLoaded = true
         navigator.navigate(to: .home)
     }
 }

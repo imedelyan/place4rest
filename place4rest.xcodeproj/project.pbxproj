@@ -30,6 +30,16 @@
 		41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930172211A502008897AE /* ViewControllersAssembly.swift */; };
 		41A9301A2211A615008897AE /* PresentersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930192211A615008897AE /* PresentersAssembly.swift */; };
 		41A9301C2211A639008897AE /* UtilitiesServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9301B2211A639008897AE /* UtilitiesServicesAssembly.swift */; };
+		41A930232211B6D6008897AE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930222211B6D6008897AE /* Settings.storyboard */; };
+		41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930242211B6EB008897AE /* SettingsViewController.swift */; };
+		41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930262211B701008897AE /* AnnouncementsViewController.swift */; };
+		41A930292211B70A008897AE /* Announcements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930282211B70A008897AE /* Announcements.storyboard */; };
+		41A9302B2211B725008897AE /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9302A2211B725008897AE /* AddPlaceViewController.swift */; };
+		41A9302D2211B72D008897AE /* AddPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A9302C2211B72D008897AE /* AddPlace.storyboard */; };
+		41A9302F2211B743008897AE /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9302E2211B743008897AE /* SuggestionsViewController.swift */; };
+		41A930312211B74B008897AE /* Suggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930302211B74B008897AE /* Suggestions.storyboard */; };
+		41A930332211B75E008897AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930322211B75E008897AE /* MapViewController.swift */; };
+		41A930352211B767008897AE /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930342211B767008897AE /* Map.storyboard */; };
 		70AAF812902D1253F42FE7E9 /* Pods_place4rest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +82,16 @@
 		41A930172211A502008897AE /* ViewControllersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersAssembly.swift; sourceTree = "<group>"; };
 		41A930192211A615008897AE /* PresentersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentersAssembly.swift; sourceTree = "<group>"; };
 		41A9301B2211A639008897AE /* UtilitiesServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesServicesAssembly.swift; sourceTree = "<group>"; };
+		41A930222211B6D6008897AE /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		41A930242211B6EB008897AE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		41A930262211B701008897AE /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
+		41A930282211B70A008897AE /* Announcements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Announcements.storyboard; sourceTree = "<group>"; };
+		41A9302A2211B725008897AE /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
+		41A9302C2211B72D008897AE /* AddPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPlace.storyboard; sourceTree = "<group>"; };
+		41A9302E2211B743008897AE /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		41A930302211B74B008897AE /* Suggestions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Suggestions.storyboard; sourceTree = "<group>"; };
+		41A930322211B75E008897AE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		41A930342211B767008897AE /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_place4rest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832F33054CF8893EB784E1A6 /* Pods-place4restTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.release.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3EB0994185B81B9D99444CA /* Pods-place4restTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.debug.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +323,11 @@
 		41A930072211A29A008897AE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				41A9301D2211B64B008897AE /* Map */,
+				41A9301E2211B657008897AE /* Suggestions */,
+				41A930202211B699008897AE /* Add Place */,
+				41A9301F2211B672008897AE /* Announcements */,
+				41A930212211B6A7008897AE /* Settings */,
 				41A930102211A312008897AE /* HomeTabBarController.swift */,
 				41A9300E2211A2EC008897AE /* Home.storyboard */,
 			);
@@ -314,6 +339,51 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		41A9301D2211B64B008897AE /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				41A930322211B75E008897AE /* MapViewController.swift */,
+				41A930342211B767008897AE /* Map.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		41A9301E2211B657008897AE /* Suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				41A9302E2211B743008897AE /* SuggestionsViewController.swift */,
+				41A930302211B74B008897AE /* Suggestions.storyboard */,
+			);
+			path = Suggestions;
+			sourceTree = "<group>";
+		};
+		41A9301F2211B672008897AE /* Announcements */ = {
+			isa = PBXGroup;
+			children = (
+				41A930262211B701008897AE /* AnnouncementsViewController.swift */,
+				41A930282211B70A008897AE /* Announcements.storyboard */,
+			);
+			path = Announcements;
+			sourceTree = "<group>";
+		};
+		41A930202211B699008897AE /* Add Place */ = {
+			isa = PBXGroup;
+			children = (
+				41A9302A2211B725008897AE /* AddPlaceViewController.swift */,
+				41A9302C2211B72D008897AE /* AddPlace.storyboard */,
+			);
+			path = "Add Place";
+			sourceTree = "<group>";
+		};
+		41A930212211B6A7008897AE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				41A930242211B6EB008897AE /* SettingsViewController.swift */,
+				41A930222211B6D6008897AE /* Settings.storyboard */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		4B218EB7E9AB804F5EDB105B /* Frameworks */ = {
@@ -423,13 +493,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A92FEC221173F2008897AE /* .gitignore in Resources */,
+				41A930292211B70A008897AE /* Announcements.storyboard in Resources */,
+				41A930352211B767008897AE /* Map.storyboard in Resources */,
 				41A92FE9221173F2008897AE /* .swiftlint.yml in Resources */,
+				41A930232211B6D6008897AE /* Settings.storyboard in Resources */,
+				41A930312211B74B008897AE /* Suggestions.storyboard in Resources */,
 				41A92FEA221173F2008897AE /* Makefile in Resources */,
 				41A92FDB221172FC008897AE /* Localizable.strings in Resources */,
 				41A9300F2211A2EC008897AE /* Home.storyboard in Resources */,
 				41508D75221170EC00F981C3 /* LaunchScreen.storyboard in Resources */,
 				41A92FD9221172CD008897AE /* Colors.xcassets in Resources */,
 				41A930092211A2B9008897AE /* Welcome.storyboard in Resources */,
+				41A9302D2211B72D008897AE /* AddPlace.storyboard in Resources */,
 				41508D72221170EC00F981C3 /* Assets.xcassets in Resources */,
 				41A92FEB221173F2008897AE /* Gemfile in Resources */,
 			);
@@ -562,18 +637,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A9302B2211B725008897AE /* AddPlaceViewController.swift in Sources */,
 				41A9300322118CD7008897AE /* AppStoryboard.swift in Sources */,
 				41A9300522118D29008897AE /* UIViewController+load.swift in Sources */,
 				41A930112211A312008897AE /* HomeTabBarController.swift in Sources */,
+				41A9302F2211B743008897AE /* SuggestionsViewController.swift in Sources */,
 				41A930142211A3C4008897AE /* SwinjectStoryboard+Assembler.swift in Sources */,
 				41A930002211895C008897AE /* StorageService.swift in Sources */,
 				41A9301C2211A639008897AE /* UtilitiesServicesAssembly.swift in Sources */,
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
+				41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */,
 				41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */,
 				41A92FFD221185AC008897AE /* AppNavigator.swift in Sources */,
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
+				41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */,
 				41A9301A2211A615008897AE /* PresentersAssembly.swift in Sources */,
 				41A930162211A4AB008897AE /* NavigatorsAssembly.swift in Sources */,
+				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

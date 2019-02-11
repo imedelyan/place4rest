@@ -12,6 +12,15 @@ class HomeTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewControllers = [MapViewController.load(from: .map),
+                           SuggestionsViewController.load(from: .suggestions),
+                           AddPlaceViewController.load(from: .addPlace),
+                           AnnouncementsViewController.load(from: .announcements),
+                           SettingsViewController.load(from: .settings)]
+    }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
