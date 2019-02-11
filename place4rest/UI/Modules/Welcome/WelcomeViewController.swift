@@ -15,5 +15,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigator.navigate(to: .home)
     }
 }

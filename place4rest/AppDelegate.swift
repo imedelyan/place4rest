@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        guard let navigator = SwinjectStoryboard.defaultContainer.resolve(Navigator.self) else { return true }
+        guard let navigator = SwinjectStoryboard.defaultContainer.resolve(AppNavigator.self) else { return true }
         navigator.start()
 
         return true
