@@ -1,0 +1,14 @@
+ignores_function_declarations: true
+ignores_comments: true
+
+disabled_rules:
+  - variable_name
+  - force_cast
+
+excluded:
+  - Pods
+  - fastlane
+  - vendor
+
+file_length: 400
+type_body_length: 300

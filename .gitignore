@@ -1,0 +1,13 @@
+
+
+xcuserdata
+DerivedData
+build/
+Pods/
+
+# Fastlane 
+fastlane/*.xml
+
+# Bundler
+.bundle
+vendor/
