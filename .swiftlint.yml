@@ -10,5 +10,7 @@ excluded:
   - fastlane
   - vendor
 
+line_length: 210
+
 file_length: 400
 type_body_length: 300
