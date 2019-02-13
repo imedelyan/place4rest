@@ -1,21 +1,29 @@
 PODS:
+  - R.swift (5.0.2):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.0)
   - Swinject (2.5.0)
   - SwinjectStoryboard (2.1.0):
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
+  - R.swift (~> 5.0.2)
   - Swinject (~> 2.5)
   - SwinjectStoryboard (~> 2.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - R.swift
+    - R.swift.Library
     - Swinject
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
+  R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: 6ceb827a958988663efc4a84d4be07b725b53d36
+PODFILE CHECKSUM: ae81ac1082d0c11fdb40ce4c0ddc230ae869edeb
 
 COCOAPODS: 1.6.0

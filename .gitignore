@@ -1,9 +1,8 @@
-
-
 xcuserdata
 DerivedData
 build/
 Pods/
+*.generated.swift
 
 # Fastlane 
 fastlane/*.xml

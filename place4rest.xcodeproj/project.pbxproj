@@ -40,6 +40,7 @@
 		41A930312211B74B008897AE /* Suggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930302211B74B008897AE /* Suggestions.storyboard */; };
 		41A930332211B75E008897AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930322211B75E008897AE /* MapViewController.swift */; };
 		41A930352211B767008897AE /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930342211B767008897AE /* Map.storyboard */; };
+		41A930C022145607008897AE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930BF22145607008897AE /* R.generated.swift */; };
 		70AAF812902D1253F42FE7E9 /* Pods_place4rest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		41A930302211B74B008897AE /* Suggestions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Suggestions.storyboard; sourceTree = "<group>"; };
 		41A930322211B75E008897AE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		41A930342211B767008897AE /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		41A930BF22145607008897AE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_place4rest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832F33054CF8893EB784E1A6 /* Pods-place4restTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.release.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3EB0994185B81B9D99444CA /* Pods-place4restTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.debug.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		41A92FD722117280008897AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				41A930BF22145607008897AE /* R.generated.swift */,
 				41508D71221170EC00F981C3 /* Assets.xcassets */,
 				41A92FD8221172CD008897AE /* Colors.xcassets */,
 				41A92FDA221172FC008897AE /* Localizable.strings */,
@@ -415,6 +418,7 @@
 			buildPhases = (
 				54409E940886D49D360E4662 /* [CP] Check Pods Manifest.lock */,
 				41A92FFA22117A55008897AE /* Swiftlint */,
+				41A930BE22144F02008897AE /* R */,
 				41508D63221170EB00F981C3 /* Sources */,
 				41508D64221170EB00F981C3 /* Frameworks */,
 				41508D65221170EB00F981C3 /* Resources */,
@@ -529,6 +533,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-place4rest/Pods-place4rest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
@@ -536,6 +541,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
@@ -561,6 +567,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint autocorrect\nswiftlint\nelse\necho \"warning: SwiftLint not installed, brew install swiftlint\"\nfi\n";
+		};
+		41A930BE22144F02008897AE /* R */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/place4rest/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/place4rest/Resources/R.generated.swift\"\n";
 		};
 		54409E940886D49D360E4662 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -593,6 +619,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-place4restTests/Pods-place4restTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
@@ -600,6 +627,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
@@ -648,6 +676,7 @@
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
 				41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */,
 				41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */,
+				41A930C022145607008897AE /* R.generated.swift in Sources */,
 				41A92FFD221185AC008897AE /* AppNavigator.swift in Sources */,
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
 				41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */,

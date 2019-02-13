@@ -9,6 +9,7 @@ excluded:
   - Pods
   - fastlane
   - vendor
+  - place4rest/Resources/R.generated.swift
 
 line_length: 210
 
