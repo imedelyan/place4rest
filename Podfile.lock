@@ -1,4 +1,5 @@
 PODS:
+  - Mapbox-iOS-SDK (4.8.0)
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
@@ -7,23 +8,26 @@ PODS:
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
+  - Mapbox-iOS-SDK (~> 4.8)
   - R.swift (~> 5.0.2)
   - Swinject (~> 2.5)
   - SwinjectStoryboard (~> 2.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Mapbox-iOS-SDK
     - R.swift
     - R.swift.Library
     - Swinject
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
+  Mapbox-iOS-SDK: 864bc732a20c183d87f04923295e988b504453d9
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: ae81ac1082d0c11fdb40ce4c0ddc230ae869edeb
+PODFILE CHECKSUM: a2fa690f1dd1b6f0f2540a1cbbbcbdf04eec6242
 
 COCOAPODS: 1.6.0

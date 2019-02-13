@@ -9,6 +9,7 @@ def shared_pods
   pod 'SwinjectStoryboard', '~> 2.1'
 #  pod 'KeychainSwift', '~> 13.0'
   pod 'R.swift', '~> 5.0.2'
+  pod 'Mapbox-iOS-SDK', '~> 4.8'
 end
 
 def test_pods
