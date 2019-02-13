@@ -24,38 +24,55 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-c6-2hB">
                                 <rect key="frame" x="20" y="561" width="37" height="37"/>
-                                <color key="tintColor" name="dark_green"/>
+                                <color key="tintColor" name="dark_gray"/>
                                 <state key="normal" image="ic-layers"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMO-vA-lTt">
                                 <rect key="frame" x="318" y="561" width="37" height="37"/>
-                                <color key="tintColor" name="dark_green"/>
+                                <color key="tintColor" name="dark_gray"/>
                                 <state key="normal" image="ic-hunt"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
-                                <rect key="frame" x="318" y="40" width="37" height="37"/>
-                                <color key="tintColor" name="dark_green"/>
-                                <state key="normal" image="ic-menu"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-6j-4qj">
-                                <rect key="frame" x="261" y="40" width="37" height="37"/>
-                                <color key="tintColor" name="dark_green"/>
-                                <state key="normal" image="ic-search"/>
-                            </button>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewD-35-1fJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-6j-4qj">
+                                        <rect key="frame" x="261" y="33" width="37" height="37"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="ic-search"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_place4rest" translatesAutoresizingMaskIntoConstraints="NO" id="off-QS-SQo">
+                                        <rect key="frame" x="20" y="41" width="66" height="29"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
+                                        <rect key="frame" x="318" y="33" width="37" height="37"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="ic-menu"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="dark_gray"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ynw-VZ-2LB" secondAttribute="bottom" constant="10" id="0cm-ET-OwB"/>
+                                    <constraint firstAttribute="bottom" secondItem="9j4-6j-4qj" secondAttribute="bottom" constant="10" id="2qz-y0-IQR"/>
+                                    <constraint firstAttribute="trailing" secondItem="ynw-VZ-2LB" secondAttribute="trailing" constant="20" id="DoV-s0-waM"/>
+                                    <constraint firstItem="ynw-VZ-2LB" firstAttribute="leading" secondItem="9j4-6j-4qj" secondAttribute="trailing" constant="20" id="eGj-Kr-FFq"/>
+                                    <constraint firstAttribute="bottom" secondItem="off-QS-SQo" secondAttribute="bottom" constant="10" id="eQj-d0-Mzz"/>
+                                    <constraint firstAttribute="height" constant="80" id="i87-tq-YTU"/>
+                                    <constraint firstItem="off-QS-SQo" firstAttribute="leading" secondItem="ewD-35-1fJ" secondAttribute="leading" constant="20" id="kPR-cO-o8x"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ynw-VZ-2LB" firstAttribute="leading" secondItem="9j4-6j-4qj" secondAttribute="trailing" constant="20" id="0fV-La-FMJ"/>
-                            <constraint firstItem="9j4-6j-4qj" firstAttribute="top" secondItem="abP-w4-1qL" secondAttribute="top" constant="20" id="DOv-eN-ePj"/>
-                            <constraint firstItem="EqP-u1-Xn1" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="EVG-gd-t7g"/>
+                            <constraint firstItem="ewD-35-1fJ" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="7Aj-JF-fqb"/>
+                            <constraint firstItem="ewD-35-1fJ" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Cu1-RK-OLd"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="HMO-vA-lTt" secondAttribute="trailing" constant="20" id="HPA-s7-F3n"/>
                             <constraint firstItem="EqP-u1-Xn1" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="HfU-dL-vPF"/>
-                            <constraint firstItem="ynw-VZ-2LB" firstAttribute="top" secondItem="abP-w4-1qL" secondAttribute="top" constant="20" id="JAX-h1-cQg"/>
-                            <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="ynw-VZ-2LB" secondAttribute="trailing" constant="20" id="JCq-Dh-KvF"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="ZnV-c6-2hB" secondAttribute="bottom" constant="20" id="LtU-JB-I6A"/>
                             <constraint firstItem="ZnV-c6-2hB" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" constant="20" id="NME-Fs-DG2"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="EqP-u1-Xn1" secondAttribute="bottom" id="dfo-Kg-s29"/>
+                            <constraint firstItem="ewD-35-1fJ" firstAttribute="trailing" secondItem="abP-w4-1qL" secondAttribute="trailing" id="fM4-rd-wNI"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="HMO-vA-lTt" secondAttribute="bottom" constant="20" id="pUG-gA-7Xv"/>
+                            <constraint firstItem="EqP-u1-Xn1" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="sBg-9n-cK3"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="EqP-u1-Xn1" secondAttribute="trailing" id="tVI-UZ-E64"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="abP-w4-1qL"/>
@@ -73,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDn-io-gfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-193" y="140"/>
+            <point key="canvasLocation" x="-194.40000000000001" y="139.880059970015"/>
         </scene>
     </scenes>
     <resources>
@@ -82,6 +99,10 @@
         <image name="ic-map" width="37.5" height="37.5"/>
         <image name="ic-menu" width="37.5" height="37.5"/>
         <image name="ic-search" width="37.5" height="37.5"/>
+        <image name="logo_place4rest" width="66.5" height="29"/>
+        <namedColor name="dark_gray">
+            <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="dark_green">
             <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
