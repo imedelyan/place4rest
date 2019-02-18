@@ -13,6 +13,9 @@ class MapViewController: UIViewController {
 
     // MARK: - IBOutlet
     @IBOutlet private weak var mapView: MGLMapView!
+    @IBOutlet private weak var layersVEView: VisualEffectView!
+    @IBOutlet private weak var layersVEViewHeight: NSLayoutConstraint!
+    @IBOutlet private weak var layersVEViewWidth: NSLayoutConstraint!
 
     // MARK: - Dependencies
 //    var presenter:
@@ -27,17 +30,36 @@ class MapViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.setCenter(CLLocationCoordinate2D(latitude: 52.397519, longitude: 16.899333), zoomLevel: 5, animated: false)
-        addAnnotation()
+        mapView.styleURL = MGLStyle.satelliteStyleURL
+        mapView.compassView.isHidden = true
+        mapView.logoView.isHidden = true
+        mapView.attributionButton.isHidden = true
+
+        addAnnotation(coordinates: CLLocationCoordinate2D(latitude: 52.397519, longitude: 16.899333))
+
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressOnMap))
+        mapView.addGestureRecognizer(longPressRecognizer)
     }
 
     // MARK: - IBAction
     @IBAction private func layersButtonAction(_ sender: Any) {
-        mapView.styleURL = mapStyles[[0, 1, 2].randomElement()!]
+        layersVEView.layoutIfNeeded()
+        if self.layersVEViewHeight.constant == 178 {
+            self.layersVEViewHeight.constant = 46
+            self.layersVEViewWidth.constant = 46
+        } else {
+            self.layersVEViewHeight.constant = 178
+            self.layersVEViewWidth.constant = 178
+        }
+
+        let animator = UIViewPropertyAnimator(duration: 1.0, curve: .linear) {
+            self.layersVEView.layoutIfNeeded()
+        }
+        animator.startAnimation()
     }
 
     @IBAction private func locateButtonAction(_ sender: Any) {
-
+        mapView.setCenter((mapView.userLocation?.coordinate)!, zoomLevel: 7, animated: true)
     }
 
     @IBAction private func searchButtonAction(_ sender: Any) {
@@ -49,13 +71,20 @@ class MapViewController: UIViewController {
     }
 
     // MARK: - Anotations
-    func addAnnotation() {
+    func addAnnotation(coordinates: CLLocationCoordinate2D) {
         let annotation = MGLPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 52.397519, longitude: 16.899333)
+        annotation.coordinate = coordinates
         annotation.title = "place4rest"
         annotation.subtitle = "Hello!"
 
         mapView.addAnnotation(annotation)
+    }
+
+    @objc func longPressOnMap(_ recognizer: UILongPressGestureRecognizer) {
+        let longPressScreenCoordinates = recognizer.location(in: mapView)
+        let longPressMapCoordinates = mapView.convert(longPressScreenCoordinates, toCoordinateFrom: mapView)
+
+        addAnnotation(coordinates: longPressMapCoordinates)
     }
 }
 
@@ -68,5 +97,9 @@ extension MapViewController: MGLMapViewDelegate {
         let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, acrossDistance: 4500, pitch: 15, heading: 180)
         mapView.fly(to: camera, withDuration: 4,
                     peakAltitude: 3000, completionHandler: nil)
+    }
+
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        mapView.setCenter((mapView.userLocation?.coordinate)!, zoomLevel: 4, animated: true)
     }
 }
