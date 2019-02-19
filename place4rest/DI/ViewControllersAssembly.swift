@@ -19,5 +19,9 @@ class ViewControllersAssembly: Assembly {
         container.storyboardInitCompleted(HomeTabBarController.self) { (_, _) in
 
         }
+        container.storyboardInitCompleted(MapViewController.self) { (resolver, controller) in
+            controller.presenter = resolver.resolve(MapPresenter.self)
+            controller.presenter.view = controller
+        }
     }
 }

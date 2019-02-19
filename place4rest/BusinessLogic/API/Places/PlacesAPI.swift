@@ -14,7 +14,7 @@ enum PlacesAPI {
 }
 
 extension PlacesAPI: TargetType {
-    
+
     var path: String {
         switch self {
         case .getAllPlaces:
@@ -23,11 +23,11 @@ extension PlacesAPI: TargetType {
             return "place/\(id)"
         }
     }
-    
+
     var method: Moya.Method {
         return .get
     }
-    
+
     var task: Task {
         return .requestPlain
     }

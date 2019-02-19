@@ -16,8 +16,8 @@ final class Place: Object {
     public dynamic var status: String = ""
     public dynamic var type: String = ""
     public dynamic var title: String = ""
-    public dynamic var latitude: String = ""
-    public dynamic var longitude: String = ""
+    public dynamic var latitude: Double = 0.0
+    public dynamic var longitude: Double = 0.0
     public dynamic var comments: String = ""
     public var categories = List<Int>()
     public var categoriesFor = List<Int>()
@@ -45,21 +45,22 @@ final class Place: Object {
 
         // acf
         let acfContainer = try container.nestedContainer(keyedBy: ACFKeys.self, forKey: .acf)
-        latitude = try acfContainer.decode(String.self, forKey: .latitude)
-        longitude = try acfContainer.decode(String.self, forKey: .longitude)
+        latitude = Double(try acfContainer.decode(String.self, forKey: .latitude)) ?? 0.0
+        longitude = Double(try acfContainer.decode(String.self, forKey: .longitude)) ?? 0.0
         comments = try acfContainer.decode(String.self, forKey: .comments)
 
-        let categoriesArray = try acfContainer.decode([Int].self, forKey: .categories)
-        categories.append(objectsIn: categoriesArray)
-
-        let categoriesForArray = try acfContainer.decode([Int].self, forKey: .categoriesFor)
-        categoriesFor.append(objectsIn: categoriesForArray)
-
-        let servicesArray = try acfContainer.decode([Int].self, forKey: .services)
-        services.append(objectsIn: servicesArray)
-
-        let activitiesArray = try acfContainer.decode([Int].self, forKey: .activities)
-        activities.append(objectsIn: activitiesArray)
+        if let categoriesArray = try? acfContainer.decode([Int].self, forKey: .categories) {
+            categories.append(objectsIn: categoriesArray)
+        }
+        if let categoriesForArray = try? acfContainer.decode([Int].self, forKey: .categoriesFor) {
+            categoriesFor.append(objectsIn: categoriesForArray)
+        }
+        if let servicesArray = try? acfContainer.decode([Int].self, forKey: .services) {
+            services.append(objectsIn: servicesArray)
+        }
+        if let activitiesArray = try? acfContainer.decode([Int].self, forKey: .activities) {
+            activities.append(objectsIn: activitiesArray)
+        }
 
         featuredImage = try acfContainer.decode(Image.self, forKey: .featuredImage)
 

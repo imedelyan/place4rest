@@ -15,19 +15,19 @@ protocol PlacesService: class {
 }
 
 final class PlacesServiceProvider: PlacesService {
-    
+
     private let api: MoyaProvider<PlacesAPI>
-    
+
     init(api: MoyaProvider<PlacesAPI>) {
         self.api = api
     }
-    
+
     func getAllPlaces() -> Promise<[Place]> {
         return api
             .request(.getAllPlaces)
             .decode(to: [Place].self)
     }
-    
+
     func getPlace(id: Int) -> Promise<Place> {
         return api
             .request(.getPlace(id: id))

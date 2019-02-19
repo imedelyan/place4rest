@@ -11,6 +11,9 @@ import Swinject
 class PresentersAssembly: Assembly {
 
     func assemble(container: Container) {
-
+        container.register(MapPresenter.self) { resolver in
+            let placesService = resolver.resolve(PlacesService.self)
+            return MapPresenter(placesService: placesService!)
+        }
     }
 }

@@ -18,7 +18,7 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var layersVEViewWidth: NSLayoutConstraint!
 
     // MARK: - Dependencies
-//    var presenter:
+    var presenter: MapPresenter!
 
     // MARK: - Variables
     private let mapStyles: [URL?] = [
@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
         mapView.logoView.isHidden = true
         mapView.attributionButton.isHidden = true
 
-        addAnnotation(coordinates: CLLocationCoordinate2D(latitude: 52.397519, longitude: 16.899333))
+        presenter.viewWasLoaded()
 
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressOnMap))
         mapView.addGestureRecognizer(longPressRecognizer)
@@ -71,16 +71,23 @@ class MapViewController: UIViewController {
     }
 
     // MARK: - Anotations
-    func addAnnotation(coordinates: CLLocationCoordinate2D) {
+    private func addAnnotation(for place: Place) {
         let annotation = MGLPointAnnotation()
-        annotation.coordinate = coordinates
-        annotation.title = "place4rest"
-        annotation.subtitle = "Hello!"
-
+        annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+        annotation.title = place.title
+//        annotation.subtitle = place.title
         mapView.addAnnotation(annotation)
     }
 
-    @objc func longPressOnMap(_ recognizer: UILongPressGestureRecognizer) {
+    private func addAnnotation(coordinates: CLLocationCoordinate2D) {
+        let annotation = MGLPointAnnotation()
+        annotation.coordinate = coordinates
+        annotation.title = "New Place"
+//        annotation.subtitle = "Hello!"
+        mapView.addAnnotation(annotation)
+    }
+
+    @objc private func longPressOnMap(_ recognizer: UILongPressGestureRecognizer) {
         let longPressScreenCoordinates = recognizer.location(in: mapView)
         let longPressMapCoordinates = mapView.convert(longPressScreenCoordinates, toCoordinateFrom: mapView)
 
@@ -95,11 +102,33 @@ extension MapViewController: MGLMapViewDelegate {
 
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
         let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, acrossDistance: 4500, pitch: 15, heading: 180)
-        mapView.fly(to: camera, withDuration: 4,
-                    peakAltitude: 3000, completionHandler: nil)
+        mapView.fly(to: camera, withDuration: 4, peakAltitude: 3000, completionHandler: nil)
     }
 
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        mapView.setCenter((mapView.userLocation?.coordinate)!, zoomLevel: 4, animated: true)
+        mapView.setCenter((mapView.userLocation?.coordinate)!, zoomLevel: 3, animated: true)
+    }
+}
+
+// MARK: - MapView
+protocol MapView: class {
+    func show(places: [Place])
+    func display(errorMessage: String?)
+    func setLoading(hidden: Bool)
+}
+
+extension MapViewController: MapView {
+    func show(places: [Place]) {
+        places.forEach { addAnnotation(for: $0) }
+    }
+
+    func display(errorMessage: String?) {
+//        errorLabel.text = errorMessage
+    }
+
+    func setLoading(hidden: Bool) {
+//        hidden
+//            ? hideSpinner()
+//            : showSpinner()
     }
 }

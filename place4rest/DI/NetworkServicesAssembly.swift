@@ -9,7 +9,7 @@
 import Swinject
 
 class NetworkServicesAssembly: Assembly {
-    
+
     func assemble(container: Container) {
         container.register(PlacesService.self) { resolver in
             let provider = resolver.resolve(MoyaProvidersFactory.self)?.make(PlacesAPI.self)
