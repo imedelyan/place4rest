@@ -44,6 +44,13 @@
 		41A930C222156E81008897AE /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930C122156E81008897AE /* VisualEffectView.swift */; };
 		41A93271221B0165008897AE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9326F221B0164008897AE /* Place.swift */; };
 		41A93276221B0DCA008897AE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93275221B0DCA008897AE /* Image.swift */; };
+		41A93278221C14EA008897AE /* Moya+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93277221C14EA008897AE /* Moya+TargetType.swift */; };
+		41A9327A221C151C008897AE /* MoyaProvider+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93279221C151C008897AE /* MoyaProvider+Promise.swift */; };
+		41A9327C221C1563008897AE /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9327B221C1563008897AE /* Bundle+Extension.swift */; };
+		41A9327F221C1769008897AE /* NetworkServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9327E221C1769008897AE /* NetworkServicesAssembly.swift */; };
+		41A93281221C1781008897AE /* NetworkAPIsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93280221C1781008897AE /* NetworkAPIsAssembly.swift */; };
+		41A93283221C1818008897AE /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93282221C1818008897AE /* PlacesService.swift */; };
+		41A93285221C1831008897AE /* PlacesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93284221C1831008897AE /* PlacesAPI.swift */; };
 		70AAF812902D1253F42FE7E9 /* Pods_place4rest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +107,13 @@
 		41A930C122156E81008897AE /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		41A9326F221B0164008897AE /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		41A93275221B0DCA008897AE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		41A93277221C14EA008897AE /* Moya+TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+TargetType.swift"; sourceTree = "<group>"; };
+		41A93279221C151C008897AE /* MoyaProvider+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Promise.swift"; sourceTree = "<group>"; };
+		41A9327B221C1563008897AE /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		41A9327E221C1769008897AE /* NetworkServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicesAssembly.swift; sourceTree = "<group>"; };
+		41A93280221C1781008897AE /* NetworkAPIsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIsAssembly.swift; sourceTree = "<group>"; };
+		41A93282221C1818008897AE /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
+		41A93284221C1831008897AE /* PlacesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesAPI.swift; sourceTree = "<group>"; };
 		4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_place4rest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832F33054CF8893EB784E1A6 /* Pods-place4restTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.release.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3EB0994185B81B9D99444CA /* Pods-place4restTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.debug.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,6 +236,7 @@
 		41A92FF0221175C6008897AE /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				41A9327B221C1563008897AE /* Bundle+Extension.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -294,6 +309,8 @@
 				41A930152211A4AB008897AE /* NavigatorsAssembly.swift */,
 				41A930172211A502008897AE /* ViewControllersAssembly.swift */,
 				41A930192211A615008897AE /* PresentersAssembly.swift */,
+				41A9327E221C1769008897AE /* NetworkServicesAssembly.swift */,
+				41A93280221C1781008897AE /* NetworkAPIsAssembly.swift */,
 				41A9301B2211A639008897AE /* UtilitiesServicesAssembly.swift */,
 			);
 			path = DI;
@@ -303,6 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				41A930132211A3C4008897AE /* SwinjectStoryboard+Assembler.swift */,
+				41A93277221C14EA008897AE /* Moya+TargetType.swift */,
+				41A93279221C151C008897AE /* MoyaProvider+Promise.swift */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -349,6 +368,7 @@
 		41A930122211A37D008897AE /* API */ = {
 			isa = PBXGroup;
 			children = (
+				41A9327D221C16D8008897AE /* Places */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -396,6 +416,15 @@
 				41A930222211B6D6008897AE /* Settings.storyboard */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		41A9327D221C16D8008897AE /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				41A93282221C1818008897AE /* PlacesService.swift */,
+				41A93284221C1831008897AE /* PlacesAPI.swift */,
+			);
+			path = Places;
 			sourceTree = "<group>";
 		};
 		4B218EB7E9AB804F5EDB105B /* Frameworks */ = {
@@ -706,15 +735,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A93285221C1831008897AE /* PlacesAPI.swift in Sources */,
 				41A9302B2211B725008897AE /* AddPlaceViewController.swift in Sources */,
 				41A9300322118CD7008897AE /* AppStoryboard.swift in Sources */,
+				41A9327A221C151C008897AE /* MoyaProvider+Promise.swift in Sources */,
 				41A93276221B0DCA008897AE /* Image.swift in Sources */,
 				41A9300522118D29008897AE /* UIViewController+load.swift in Sources */,
 				41A930112211A312008897AE /* HomeTabBarController.swift in Sources */,
+				41A93283221C1818008897AE /* PlacesService.swift in Sources */,
 				41A9302F2211B743008897AE /* SuggestionsViewController.swift in Sources */,
 				41A930142211A3C4008897AE /* SwinjectStoryboard+Assembler.swift in Sources */,
 				41A930002211895C008897AE /* StorageService.swift in Sources */,
 				41A9301C2211A639008897AE /* UtilitiesServicesAssembly.swift in Sources */,
+				41A9327F221C1769008897AE /* NetworkServicesAssembly.swift in Sources */,
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
 				41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */,
 				41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */,
@@ -723,7 +756,10 @@
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
 				41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */,
 				41A9301A2211A615008897AE /* PresentersAssembly.swift in Sources */,
+				41A93281221C1781008897AE /* NetworkAPIsAssembly.swift in Sources */,
 				41A930162211A4AB008897AE /* NavigatorsAssembly.swift in Sources */,
+				41A9327C221C1563008897AE /* Bundle+Extension.swift in Sources */,
+				41A93278221C14EA008897AE /* Moya+TargetType.swift in Sources */,
 				41A930C222156E81008897AE /* VisualEffectView.swift in Sources */,
 				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
 				41A93271221B0165008897AE /* Place.swift in Sources */,
@@ -880,6 +916,7 @@
 			baseConfigurationReference = 2D052633B35BA2B5E918FC20 /* Pods-place4rest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BASE_URL = "http://place4rest.com/wp-json/wp/v2/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DJNZKXGF8V;
 				INFOPLIST_FILE = "$(SRCROOT)/place4rest/Resources/Info.plist";
@@ -900,6 +937,7 @@
 			baseConfigurationReference = DB024D1D20D05B05BF54E7E4 /* Pods-place4rest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BASE_URL = "http://place4rest.com/wp-json/wp/v2/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DJNZKXGF8V;
 				INFOPLIST_FILE = "$(SRCROOT)/place4rest/Resources/Info.plist";

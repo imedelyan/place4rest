@@ -15,6 +15,8 @@ extension SwinjectStoryboard {
             NavigatorsAssembly(),
             ViewControllersAssembly(),
             PresentersAssembly(),
+            NetworkServicesAssembly(),
+            NetworkAPIsAssembly(),
             UtilitiesServicesAssembly()
             ], container: defaultContainer)
     }
