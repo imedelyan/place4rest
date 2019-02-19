@@ -1,33 +1,69 @@
 PODS:
+  - Alamofire (4.8.1)
   - Mapbox-iOS-SDK (4.8.0)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.3):
+    - PromiseKit/CorePromise
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - Result (4.1.0)
   - Swinject (2.5.0)
   - SwinjectStoryboard (2.1.0):
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
   - Mapbox-iOS-SDK (~> 4.8)
+  - Moya (~> 12.0.1)
+  - PromiseKit (~> 6.8.3)
   - R.swift (~> 5.0.2)
+  - RealmSwift (~> 3.13.1)
   - Swinject (~> 2.5)
   - SwinjectStoryboard (~> 2.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Mapbox-iOS-SDK
+    - Moya
+    - PromiseKit
     - R.swift
     - R.swift.Library
+    - Realm
+    - RealmSwift
+    - Result
     - Swinject
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Mapbox-iOS-SDK: 864bc732a20c183d87f04923295e988b504453d9
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: a2fa690f1dd1b6f0f2540a1cbbbcbdf04eec6242
+PODFILE CHECKSUM: b39d8d5552e6f0341b0ff2d6297f5f5f1db0bb1c
 
 COCOAPODS: 1.6.0

@@ -42,6 +42,8 @@
 		41A930352211B767008897AE /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930342211B767008897AE /* Map.storyboard */; };
 		41A930C022145607008897AE /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930BF22145607008897AE /* R.generated.swift */; };
 		41A930C222156E81008897AE /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930C122156E81008897AE /* VisualEffectView.swift */; };
+		41A93271221B0165008897AE /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9326F221B0164008897AE /* Place.swift */; };
+		41A93276221B0DCA008897AE /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93275221B0DCA008897AE /* Image.swift */; };
 		70AAF812902D1253F42FE7E9 /* Pods_place4rest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		41A930342211B767008897AE /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		41A930BF22145607008897AE /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		41A930C122156E81008897AE /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		41A9326F221B0164008897AE /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		41A93275221B0DCA008897AE /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_place4rest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832F33054CF8893EB784E1A6 /* Pods-place4restTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.release.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3EB0994185B81B9D99444CA /* Pods-place4restTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.debug.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 		41A92FF722117720008897AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				41A9326F221B0164008897AE /* Place.swift */,
+				41A93275221B0DCA008897AE /* Image.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -536,9 +542,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-place4rest/Pods-place4rest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
@@ -546,9 +558,15 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
@@ -626,9 +644,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-place4restTests/Pods-place4restTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
@@ -636,9 +660,15 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
@@ -678,6 +708,7 @@
 			files = (
 				41A9302B2211B725008897AE /* AddPlaceViewController.swift in Sources */,
 				41A9300322118CD7008897AE /* AppStoryboard.swift in Sources */,
+				41A93276221B0DCA008897AE /* Image.swift in Sources */,
 				41A9300522118D29008897AE /* UIViewController+load.swift in Sources */,
 				41A930112211A312008897AE /* HomeTabBarController.swift in Sources */,
 				41A9302F2211B743008897AE /* SuggestionsViewController.swift in Sources */,
@@ -695,6 +726,7 @@
 				41A930162211A4AB008897AE /* NavigatorsAssembly.swift in Sources */,
 				41A930C222156E81008897AE /* VisualEffectView.swift in Sources */,
 				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
+				41A93271221B0165008897AE /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
