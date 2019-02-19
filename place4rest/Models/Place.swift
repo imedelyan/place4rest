@@ -23,6 +23,9 @@ final class Place: Object {
     public var categoriesFor = List<Int>()
     public var services = List<Int>()
     public var activities = List<Int>()
+    public dynamic var opened: String = ""
+    public dynamic var rent: String = ""
+    public dynamic var servicesRent: String = ""
     public dynamic var featuredImage: Image?
     public var images = List<Image>()
 
@@ -64,6 +67,12 @@ final class Place: Object {
 
         featuredImage = try acfContainer.decode(Image.self, forKey: .featuredImage)
 
+        // information
+        let informationContainer = try acfContainer.nestedContainer(keyedBy: InformationKeys.self, forKey: .information)
+        opened = try informationContainer.decode(String.self, forKey: .opened)
+        rent = try informationContainer.decode(String.self, forKey: .rent)
+        servicesRent = try informationContainer.decode(String.self, forKey: .servicesRent)
+
         // images
         var imagesContainer = try acfContainer.nestedUnkeyedContainer(forKey: .images)
         var imagesArray: [Image] = []
@@ -92,8 +101,15 @@ extension Place: Decodable {
         case categoriesFor = "free4rest_front_cat_place_for"
         case services = "free4rest_front_services"
         case activities = "free4rest_front_activity"
+        case information = "free4rest_front_information"
         case featuredImage = "free4rest_front_featured_img"
         case images = "free4rest_front_gallery"
+    }
+
+    enum InformationKeys: String, CodingKey {
+        case opened = "free4rest_front_information_open"
+        case rent = "free4rest_front_information_paids"
+        case servicesRent = "free4rest_front_information_services"
     }
 
     enum ImagesKeys: String, CodingKey {
