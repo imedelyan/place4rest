@@ -30,7 +30,8 @@ class MapViewController: UIViewController, MapView {
                                                layerType: .satellite,
                                                userLocation: .notSet,
                                                currentLocation: .notSet,
-                                               visibleCoordinateBounds: MGLCoordinateBounds())
+                                               visibleCoordinateBounds: MGLCoordinateBounds(),
+                                               searchtext: "")
     private let mapStyles: [URL?] = [
         MGLStyle.streetsStyleURL,
         URL(string: "mapbox://styles/imedelian/cjs3aet6z19qe1ft85b2xva57"),
@@ -128,27 +129,24 @@ extension MapViewController {
         let locateButtonAction: Command
         let searchButtonAction: CommandWith<String>
         let filterButtonAction: CommandWith<FilterType>
-        let filterType: FilterType
-        let layerType: LayerType
-        let userLocation: CameraLocation
-        let currentLocation: CameraLocation
-        let visibleCoordinateBounds: MGLCoordinateBounds
-
-        struct MapItem {
-            let place: Place
-            let select: Command
-        }
-
-        enum FilterType {
+        let filterType: FilterType; enum FilterType {
             case hostel
             case wildPlace
             case allPlaces
         }
-
-        enum LayerType: Int {
+        let layerType: LayerType; enum LayerType: Int {
             case street
             case terrain
             case satellite
+        }
+        let userLocation: CameraLocation
+        let currentLocation: CameraLocation
+        let visibleCoordinateBounds: MGLCoordinateBounds
+        let searchText: String
+
+        struct MapItem {
+            let place: Place
+            let select: Command
         }
 
         struct CameraLocation {

@@ -11,21 +11,20 @@ import PromiseKit
 
 final class MapPresenter: NSObject {
 
+    typealias Props = MapViewController.Props
+
     // MARK: - Dependencies
     private let placesService: PlacesService
     weak var view: MapView!
 
     // MARK: - Variables
-    lazy var props: MapViewController.Props = .init(mapItems: [],
-                                                    layersButtonAction: .nop,
-                                                    locateButtonAction: Command(action: showUserLocation),
-                                                    searchButtonAction: .nop,
-                                                    filterButtonAction: .nop,
-                                                    filterType: .allPlaces,
-                                                    layerType: .satellite,
-                                                    userLocation: .notSet,
-                                                    currentLocation: .notSet,
-                                                    visibleCoordinateBounds: MGLCoordinateBounds())
+    private var mapItems: [Props.MapItem] = []
+    private var filterType: Props.FilterType = .allPlaces
+    private var layerType: Props.LayerType = .satellite
+    private var userLocation: Props.CameraLocation = .notSet
+    private var currentLocation: Props.CameraLocation = .notSet
+    private var visibleCoordinateBounds = MGLCoordinateBounds()
+    private var searchText = ""
 
     // MARK: - Init
     init(placesService: PlacesService) {
@@ -41,38 +40,14 @@ final class MapPresenter: NSObject {
 //                self?.view.setLoading(hidden: true)
             }.done { [weak self] places in
                 guard let self = self else { return }
-                let mapItems = places.map {
-                    MapViewController.Props.MapItem(place: $0, select: Command(action: {}))
+                self.mapItems = places.map {
+                    Props.MapItem(place: $0, select: Command(action: {}))
                 }
-                self.props = .init(mapItems: mapItems,
-                              layersButtonAction: self.props.layersButtonAction,
-                              locateButtonAction: self.props.locateButtonAction,
-                              searchButtonAction: self.props.searchButtonAction,
-                              filterButtonAction: self.props.filterButtonAction,
-                              filterType: self.props.filterType,
-                              layerType: self.props.layerType,
-                              userLocation: self.props.userLocation,
-                              currentLocation: self.props.currentLocation,
-                              visibleCoordinateBounds: self.props.visibleCoordinateBounds)
-                self.view.render(props: self.props)
+                self.view.render(props: self.makeProps())
             }.catch { [weak self] in
                 print($0.localizedDescription)
 //                self?.view.display(errorMessage: $0.localizedDescription)
         }
-    }
-
-    private func showUserLocation() {
-        props = .init(mapItems: props.mapItems,
-                      layersButtonAction: props.layersButtonAction,
-                      locateButtonAction: props.locateButtonAction,
-                      searchButtonAction: props.searchButtonAction,
-                      filterButtonAction: props.filterButtonAction,
-                      filterType: props.filterType,
-                      layerType: props.layerType,
-                      userLocation: props.userLocation,
-                      currentLocation: props.userLocation,
-                      visibleCoordinateBounds: props.visibleCoordinateBounds)
-        view?.render(props: props)
     }
 }
 
@@ -88,25 +63,42 @@ extension MapPresenter: MGLMapViewDelegate {
     }
 
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        let userLocation = MapViewController.Props.CameraLocation(coordinate: mapView.userLocation!.coordinate,
-                                                                  zoomLevel: 5)
-        props = .init(mapItems: props.mapItems,
-                      layersButtonAction: props.layersButtonAction,
-                      locateButtonAction: props.locateButtonAction,
-                      searchButtonAction: props.searchButtonAction,
-                      filterButtonAction: props.filterButtonAction,
-                      filterType: props.filterType,
-                      layerType: props.layerType,
-                      userLocation: userLocation,
-                      currentLocation: props.userLocation,
-                      visibleCoordinateBounds: props.visibleCoordinateBounds)
-        view?.render(props: props)
+        guard let location = mapView.userLocation, location.coordinate.latitude > -180 else { return }
+        userLocation = Props.CameraLocation(coordinate: location.coordinate, zoomLevel: 5)
+        currentLocation = userLocation
+        view?.render(props: makeProps())
     }
 }
 
 // MARK: - Props Factory
 extension MapPresenter {
-    private func makeProps() {
-
+    private func makeProps() -> Props {
+        return Props(mapItems: mapItems,
+                     layersButtonAction: CommandWith(action: { [weak self] type in
+                        guard let self = self else { return }
+                        self.layerType = type
+                        self.view?.render(props: self.makeProps())
+                     }),
+                     locateButtonAction: Command(action: { [weak self] in
+                        guard let self = self else { return }
+                        self.currentLocation = self.userLocation
+                        self.view?.render(props: self.makeProps())
+                     }),
+                     searchButtonAction: CommandWith(action: { [weak self] text in
+                        guard let self = self else { return }
+                        self.searchText = text
+                        self.view?.render(props: self.makeProps())
+                     }),
+                     filterButtonAction: CommandWith(action: { [weak self] type in
+                        guard let self = self else { return }
+                        self.filterType = type
+                        self.view?.render(props: self.makeProps())
+                     }),
+                     filterType: filterType,
+                     layerType: layerType,
+                     userLocation: userLocation,
+                     currentLocation: currentLocation,
+                     visibleCoordinateBounds: visibleCoordinateBounds,
+                     searchText: searchText)
     }
 }
