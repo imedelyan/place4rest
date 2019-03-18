@@ -16,6 +16,8 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var layersVEView: VisualEffectView!
     @IBOutlet private weak var layersVEViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var layersVEViewWidth: NSLayoutConstraint!
+    @IBOutlet private weak var searchTextField: UITextField!
+    @IBOutlet private weak var searchBarWidth: NSLayoutConstraint!
 
     // MARK: - Dependencies
 //    var presenter:
@@ -63,7 +65,10 @@ class MapViewController: UIViewController {
     }
 
     @IBAction private func searchButtonAction(_ sender: Any) {
-
+        searchBarWidth.constant = searchBarWidth.constant == 0 ? 180 : 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
 
     @IBAction private func filterButtonAction(_ sender: Any) {
@@ -100,6 +105,6 @@ extension MapViewController: MGLMapViewDelegate {
     }
 
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        mapView.setCenter((mapView.userLocation?.coordinate)!, zoomLevel: 4, animated: true)
+//        mapView.setCenter((mapView.userLocation?.coordinate)!, zoomLevel: 4, animated: true)
     }
 }
