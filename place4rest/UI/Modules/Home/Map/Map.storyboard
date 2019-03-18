@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Delegate-->
+        <!--Map View Controller-->
         <scene sceneID="eCM-Ky-4Pp">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="Q9y-sk-mwH" customClass="MapViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,9 +27,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/imedelian/cjs3aet6z19qe1ft85b2xva57"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showsHeading" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="Q9y-sk-mwH" id="ZTQ-Jm-hsW"/>
-                                </connections>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYc-1f-nOL" customClass="VisualEffectView" customModule="place4rest" customModuleProvider="target">
                                 <rect key="frame" x="10" y="430" width="178" height="178"/>
