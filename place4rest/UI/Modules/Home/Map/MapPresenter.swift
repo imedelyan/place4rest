@@ -33,20 +33,16 @@ final class MapPresenter: NSObject {
 
     // MARK: - MapView
     func viewWasLoaded() {
-//        view.setLoading(hidden: false)
         placesService
             .getAllPlaces()
-            .ensure { [weak self] in
-//                self?.view.setLoading(hidden: true)
-            }.done { [weak self] places in
+            .done { [weak self] places in
                 guard let self = self else { return }
                 self.mapItems = places.map {
                     Props.MapItem(place: $0, select: Command(action: {}))
                 }
                 self.view.render(props: self.makeProps())
-            }.catch { [weak self] in
+            }.catch {
                 print($0.localizedDescription)
-//                self?.view.display(errorMessage: $0.localizedDescription)
         }
     }
 }

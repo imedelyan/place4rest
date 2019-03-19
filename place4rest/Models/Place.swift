@@ -48,8 +48,8 @@ final class Place: Object {
 
         // acf
         let acfContainer = try container.nestedContainer(keyedBy: ACFKeys.self, forKey: .acf)
-        latitude = Double(try acfContainer.decode(String.self, forKey: .latitude)) ?? 0.0
-        longitude = Double(try acfContainer.decode(String.self, forKey: .longitude)) ?? 0.0
+        latitude = Double((try acfContainer.decode(String.self, forKey: .latitude)).trim()) ?? 0.0
+        longitude = Double((try acfContainer.decode(String.self, forKey: .longitude)).trim()) ?? 0.0
         comments = try acfContainer.decode(String.self, forKey: .comments)
 
         if let categoriesArray = try? acfContainer.decode([Int].self, forKey: .categories) {

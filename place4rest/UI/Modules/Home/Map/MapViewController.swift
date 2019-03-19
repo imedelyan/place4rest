@@ -9,7 +9,7 @@
 import Mapbox
 import UIKit
 
-class MapViewController: UIViewController, MapView {
+class MapViewController: UIViewController {
 
     // MARK: - IBOutlet
     @IBOutlet private weak var mapView: MGLMapView!
@@ -21,17 +21,19 @@ class MapViewController: UIViewController, MapView {
     var presenter: MapPresenter!
 
     // MARK: - Variables
-    var props: MapViewController.Props = .init(mapItems: [],
-                                               layersButtonAction: .nop,
-                                               locateButtonAction: .nop,
-                                               searchButtonAction: .nop,
-                                               filterButtonAction: .nop,
-                                               filterType: .allPlaces,
-                                               layerType: .satellite,
-                                               userLocation: .notSet,
-                                               currentLocation: .notSet,
-                                               visibleCoordinateBounds: MGLCoordinateBounds(),
-                                               searchtext: "")
+    private var props = Props(
+        mapItems: [],
+        layersButtonAction: .nop,
+        locateButtonAction: .nop,
+        searchButtonAction: .nop,
+        filterButtonAction: .nop,
+        filterType: .allPlaces,
+        layerType: .satellite,
+        userLocation: .notSet,
+        currentLocation: .notSet,
+        visibleCoordinateBounds: MGLCoordinateBounds(),
+        searchText: ""
+    )
     private let mapStyles: [URL?] = [
         MGLStyle.streetsStyleURL,
         URL(string: "mapbox://styles/imedelian/cjs3aet6z19qe1ft85b2xva57"),
@@ -56,11 +58,6 @@ class MapViewController: UIViewController, MapView {
             mapView.styleURL = mapStyles[props.layerType.rawValue]
         }
         mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
-    }
-
-    func render(props: Props) {
-        self.props = props
-        self.view.setNeedsLayout()
     }
 
     // MARK: - IBAction
@@ -103,7 +100,6 @@ class MapViewController: UIViewController, MapView {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
         annotation.title = place.title
-//        annotation.subtitle = place.title
         mapView.addAnnotation(annotation)
     }
 
@@ -111,7 +107,6 @@ class MapViewController: UIViewController, MapView {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = coordinates
         annotation.title = "New Place"
-//        annotation.subtitle = "Hello!"
         mapView.addAnnotation(annotation)
     }
 }
@@ -119,6 +114,13 @@ class MapViewController: UIViewController, MapView {
 // MARK: - MapView
 protocol MapView: class {
     func render(props: MapViewController.Props)
+}
+
+extension MapViewController: MapView {
+    func render(props: Props) {
+        self.props = props
+        self.view.setNeedsLayout()
+    }
 }
 
 // MARK: - Props
