@@ -115,7 +115,7 @@ protocol MapView: class {
 extension MapViewController: MapView {
     func render(props: Props) {
         self.props = props
-        
+
         layersVEView.layoutIfNeeded()
 
         // show places
@@ -131,7 +131,8 @@ extension MapViewController: MapView {
         self.layersVEViewWidth.constant = props.isLayerViewExpanded ? 130 : 46
 
         // set map position
-        mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
+        mapView.setVisibleCoordinateBounds(props.visibleCoordinateBounds, animated: true)
+//        mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
 
         // set search bar expanded size
         searchBarWidth.constant = props.isSearchBarExpanded ? view.frame.width - 195 : 0

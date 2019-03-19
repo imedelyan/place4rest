@@ -66,6 +66,10 @@ extension MapPresenter: MGLMapViewDelegate {
         currentLocation = userLocation
         view?.render(props: makeProps())
     }
+
+    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+        visibleCoordinateBounds = mapView.visibleCoordinateBounds
+    }
 }
 
 // MARK: - Props Factory
