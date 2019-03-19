@@ -62,11 +62,11 @@ final class CommandWith<T> {
 }
 
 extension CommandWith: Hashable {
-    static func ==(lhs: CommandWith<T>, rhs: CommandWith<T>) -> Bool {
+    static func ==(lhs: CommandWith<T>, rhs: CommandWith<T>) -> Bool { // swiftlint:disable:this operator_whitespace
         return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
 
-    var hashValue: Int {
+    var hashValue: Int { // swiftlint:disable:this legacy_hashing
         return ObjectIdentifier(self).hashValue
     }
 }

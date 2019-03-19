@@ -25,12 +25,16 @@ class MapViewController: UIViewController {
     // MARK: - Variables
     private var props = Props(
         mapItems: [],
-        layersButtonAction: .nop,
-        locateButtonAction: .nop,
-        searchButtonAction: .nop,
-        filterButtonAction: .nop,
-        filterType: .allPlaces,
+        didTapExpandLayersButton: .nop,
+        didTapLayersButton: .nop,
+        isLayerViewExpanded: false,
         layerType: .satellite,
+        didTapLocateButton: .nop,
+        didTapSearchButton: .nop,
+        isSearchBarExpanded: false,
+        didReceiveTextForSearch: .nop,
+        didTapFilterButton: .nop,
+        filterType: .allPlaces,
         userLocation: .notSet,
         currentLocation: .notSet,
         visibleCoordinateBounds: MGLCoordinateBounds(),
@@ -53,46 +57,34 @@ class MapViewController: UIViewController {
         presenter.viewWasLoaded()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        show(places: props.mapItems)
-        if mapView.styleURL != mapStyles[props.layerType.rawValue] {
-            mapView.styleURL = mapStyles[props.layerType.rawValue]
-        }
-        mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
-    }
-
     // MARK: - IBAction
     @IBAction private func layersButtonAction(_ sender: Any) {
-        layersVEView.layoutIfNeeded()
-        if self.layersVEViewHeight.constant == 178 {
-            self.layersVEViewHeight.constant = 46
-            self.layersVEViewWidth.constant = 46
-        } else {
-            self.layersVEViewHeight.constant = 178
-            self.layersVEViewWidth.constant = 178
-        }
+        props.didTapExpandLayersButton.perform()
+    }
 
-        let animator = UIViewPropertyAnimator(duration: 1.0, curve: .linear) {
-            self.layersVEView.layoutIfNeeded()
-        }
-        animator.startAnimation()
+    @IBAction func didTapTerrainStyleButton(_ sender: Any) {
+        props.didTapLayersButton.perform(with: .terrain)
+    }
+
+    @IBAction func didTapStreetStyleButton(_ sender: Any) {
+        props.didTapLayersButton.perform(with: .street)
+    }
+
+    @IBAction func didTapSatelliteStyleButton(_ sender: Any) {
+        props.didTapLayersButton.perform(with: .satellite)
     }
 
     @IBAction private func locateButtonAction(_ sender: Any) {
-        props.locateButtonAction.perform()
+        props.didTapLocateButton.perform()
     }
 
     @IBAction private func searchButtonAction(_ sender: Any) {
-        searchBarWidth.constant = searchBarWidth.constant == 0 ? 180 : 0
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
+        props.didTapSearchButton.perform()
     }
 
     @IBAction private func filterButtonAction(_ sender: Any) {
 
-        props.filterButtonAction.perform(with: .allPlaces)
+        props.didTapFilterButton.perform(with: .allPlaces)
     }
 
     // MARK: - Anotations
@@ -123,7 +115,31 @@ protocol MapView: class {
 extension MapViewController: MapView {
     func render(props: Props) {
         self.props = props
-        self.view.setNeedsLayout()
+        
+        layersVEView.layoutIfNeeded()
+
+        // show places
+        show(places: props.mapItems)
+
+        // set layer style
+        if mapView.styleURL != mapStyles[props.layerType.rawValue] {
+            mapView.styleURL = mapStyles[props.layerType.rawValue]
+        }
+
+        // set layers view expanded size
+        self.layersVEViewHeight.constant = props.isLayerViewExpanded ? 170 : 46
+        self.layersVEViewWidth.constant = props.isLayerViewExpanded ? 130 : 46
+
+        // set map position
+        mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
+
+        // set search bar expanded size
+        searchBarWidth.constant = props.isSearchBarExpanded ? view.frame.width - 195 : 0
+
+        // animation
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 
@@ -131,19 +147,23 @@ extension MapViewController: MapView {
 extension MapViewController {
     struct Props {
         let mapItems: [MapItem]
-        let layersButtonAction: CommandWith<LayerType>
-        let locateButtonAction: Command
-        let searchButtonAction: CommandWith<String>
-        let filterButtonAction: CommandWith<FilterType>
-        let filterType: FilterType; enum FilterType {
-            case hostel
-            case wildPlace
-            case allPlaces
-        }
+        let didTapExpandLayersButton: Command
+        let didTapLayersButton: CommandWith<LayerType>
+        let isLayerViewExpanded: Bool
         let layerType: LayerType; enum LayerType: Int {
             case street
             case terrain
             case satellite
+        }
+        let didTapLocateButton: Command
+        let didTapSearchButton: Command
+        let isSearchBarExpanded: Bool
+        let didReceiveTextForSearch: CommandWith<String>
+        let didTapFilterButton: CommandWith<FilterType>
+        let filterType: FilterType; enum FilterType {
+            case hostel
+            case wildPlace
+            case allPlaces
         }
         let userLocation: CameraLocation
         let currentLocation: CameraLocation

@@ -21,6 +21,8 @@ final class MapPresenter: NSObject {
     private var mapItems: [Props.MapItem] = []
     private var filterType: Props.FilterType = .allPlaces
     private var layerType: Props.LayerType = .satellite
+    private var isLayerViewExpanded: Bool = false
+    private var isSearchBarExpanded: Bool = false
     private var userLocation: Props.CameraLocation = .notSet
     private var currentLocation: Props.CameraLocation = .notSet
     private var visibleCoordinateBounds = MGLCoordinateBounds()
@@ -70,28 +72,42 @@ extension MapPresenter: MGLMapViewDelegate {
 extension MapPresenter {
     private func makeProps() -> Props {
         return Props(mapItems: mapItems,
-                     layersButtonAction: CommandWith(action: { [weak self] type in
+                     didTapExpandLayersButton: Command(action: { [weak self] in
                         guard let self = self else { return }
-                        self.layerType = type
+                        self.isLayerViewExpanded.toggle()
                         self.view?.render(props: self.makeProps())
                      }),
-                     locateButtonAction: Command(action: { [weak self] in
+                     didTapLayersButton: CommandWith(action: { [weak self] type in
+                        guard let self = self else { return }
+                        self.layerType = type
+                        self.isLayerViewExpanded.toggle()
+                        self.view?.render(props: self.makeProps())
+                     }),
+                     isLayerViewExpanded: isLayerViewExpanded,
+                     layerType: layerType,
+                     didTapLocateButton: Command(action: { [weak self] in
                         guard let self = self else { return }
                         self.currentLocation = self.userLocation
                         self.view?.render(props: self.makeProps())
                      }),
-                     searchButtonAction: CommandWith(action: { [weak self] text in
+                     didTapSearchButton: Command(action: { [weak self] in
                         guard let self = self else { return }
-                        self.searchText = text
+                        self.isSearchBarExpanded.toggle()
                         self.view?.render(props: self.makeProps())
                      }),
-                     filterButtonAction: CommandWith(action: { [weak self] type in
+                     isSearchBarExpanded: isSearchBarExpanded,
+                     didReceiveTextForSearch: CommandWith(action: { [weak self] text in
+                        guard let self = self else { return }
+                        self.searchText = text
+                        self.isSearchBarExpanded.toggle()
+                        self.view?.render(props: self.makeProps())
+                     }),
+                     didTapFilterButton: CommandWith(action: { [weak self] type in
                         guard let self = self else { return }
                         self.filterType = type
                         self.view?.render(props: self.makeProps())
                      }),
                      filterType: filterType,
-                     layerType: layerType,
                      userLocation: userLocation,
                      currentLocation: currentLocation,
                      visibleCoordinateBounds: visibleCoordinateBounds,

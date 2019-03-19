@@ -29,13 +29,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYc-1f-nOL" customClass="VisualEffectView" customModule="place4rest" customModuleProvider="target">
-                                <rect key="frame" x="10" y="430" width="178" height="178"/>
+                                <rect key="frame" x="10" y="562" width="46" height="46"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gtS-3I-4Bk">
-                                    <rect key="frame" x="0.0" y="0.0" width="178" height="178"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-c6-2hB">
-                                            <rect key="frame" x="10" y="143" width="25" height="25"/>
+                                            <rect key="frame" x="10" y="-1" width="37" height="37"/>
                                             <color key="tintColor" name="dark_gray"/>
                                             <state key="normal" image="ic-layers"/>
                                             <connections>
@@ -43,48 +43,63 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-Ay-fBw">
-                                            <rect key="frame" x="10" y="59" width="158" height="32"/>
+                                            <rect key="frame" x="10" y="-85" width="110" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="icd-a1-yJK"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Terrain style">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <connections>
+                                                <action selector="didTapTerrainStyleButton:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="yUQ-kO-hiW"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXh-mg-Fbi">
-                                            <rect key="frame" x="10" y="96" width="158" height="32"/>
+                                            <rect key="frame" x="10" y="-48" width="110" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="rCL-Bp-THa"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Satellite">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <connections>
+                                                <action selector="didTapSatelliteStyleButton:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="eMg-Yb-Cvw"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p2-Wl-Q90">
-                                            <rect key="frame" x="10" y="22" width="158" height="32"/>
+                                            <rect key="frame" x="10" y="-122" width="110" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="5wN-PC-sI7"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Street style">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <connections>
+                                                <action selector="didTapStreetStyleButton:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="Bzg-3h-0pR"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ZnV-c6-2hB" secondAttribute="bottom" constant="10" id="0Hn-aM-f4c"/>
-                                        <constraint firstItem="4p2-Wl-Q90" firstAttribute="leading" secondItem="gtS-3I-4Bk" secondAttribute="leading" constant="10" id="6BY-6J-olE"/>
                                         <constraint firstItem="ZnV-c6-2hB" firstAttribute="leading" secondItem="gtS-3I-4Bk" secondAttribute="leading" constant="10" id="B8n-9V-dmr"/>
+                                        <constraint firstItem="ZnV-c6-2hB" firstAttribute="leading" secondItem="tqB-Ay-fBw" secondAttribute="leading" id="BZ1-9d-AWj"/>
+                                        <constraint firstItem="oXh-mg-Fbi" firstAttribute="leading" secondItem="tqB-Ay-fBw" secondAttribute="leading" id="KcM-3J-RVc"/>
                                         <constraint firstItem="ZnV-c6-2hB" firstAttribute="top" secondItem="oXh-mg-Fbi" secondAttribute="bottom" constant="15" id="N3y-wH-wrD"/>
-                                        <constraint firstItem="tqB-Ay-fBw" firstAttribute="leading" secondItem="gtS-3I-4Bk" secondAttribute="leading" constant="10" id="Nty-sh-Hjf"/>
-                                        <constraint firstAttribute="trailing" secondItem="4p2-Wl-Q90" secondAttribute="trailing" constant="10" id="RFe-zr-BN7"/>
                                         <constraint firstItem="tqB-Ay-fBw" firstAttribute="top" secondItem="4p2-Wl-Q90" secondAttribute="bottom" constant="5" id="Rbq-jg-Hnt"/>
-                                        <constraint firstAttribute="trailing" secondItem="tqB-Ay-fBw" secondAttribute="trailing" constant="10" id="SIn-Qc-zy0"/>
-                                        <constraint firstAttribute="trailing" secondItem="oXh-mg-Fbi" secondAttribute="trailing" constant="10" id="fHS-bh-nPq"/>
+                                        <constraint firstItem="4p2-Wl-Q90" firstAttribute="leading" secondItem="tqB-Ay-fBw" secondAttribute="leading" id="kIw-DE-xkY"/>
                                         <constraint firstItem="oXh-mg-Fbi" firstAttribute="top" secondItem="tqB-Ay-fBw" secondAttribute="bottom" constant="5" id="oKd-ow-cAF"/>
-                                        <constraint firstItem="oXh-mg-Fbi" firstAttribute="leading" secondItem="gtS-3I-4Bk" secondAttribute="leading" constant="10" id="qK1-kG-wnl"/>
                                     </constraints>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="178" id="76H-Gt-qOi"/>
-                                    <constraint firstAttribute="width" constant="178" id="Ce8-sy-EOt"/>
+                                    <constraint firstAttribute="height" constant="46" id="76H-Gt-qOi"/>
+                                    <constraint firstAttribute="width" constant="46" id="Ce8-sy-EOt"/>
                                 </constraints>
                                 <blurEffect style="regular"/>
                                 <userDefinedRuntimeAttributes>
@@ -94,7 +109,7 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMO-vA-lTt">
-                                <rect key="frame" x="330" y="573" width="25" height="25"/>
+                                <rect key="frame" x="318" y="561" width="37" height="37"/>
                                 <color key="tintColor" name="dark_gray"/>
                                 <state key="normal" image="ic-hunt"/>
                                 <connections>
@@ -105,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-6j-4qj">
-                                        <rect key="frame" x="285" y="45" width="25" height="25"/>
+                                        <rect key="frame" x="261" y="33" width="37" height="37"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="ic-search"/>
                                         <connections>
@@ -116,7 +131,7 @@
                                         <rect key="frame" x="20" y="41" width="66" height="29"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
-                                        <rect key="frame" x="330" y="45" width="25" height="25"/>
+                                        <rect key="frame" x="318" y="33" width="37" height="37"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="ic-menu"/>
                                         <connections>
@@ -124,8 +139,9 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB2-EY-ccd">
-                                        <rect key="frame" x="280" y="45" width="0.0" height="25"/>
+                                        <rect key="frame" x="256" y="39" width="0.0" height="25"/>
                                         <color key="backgroundColor" name="light_gray"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" id="OOv-Mi-Fv0"/>
                                             <constraint firstAttribute="height" constant="25" id="U4k-2Q-gnr"/>
@@ -190,12 +206,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic-hunt" width="25" height="25"/>
-        <image name="ic-layers" width="25" height="25"/>
-        <image name="ic-map" width="25" height="25"/>
-        <image name="ic-menu" width="25" height="25"/>
-        <image name="ic-search" width="25" height="25"/>
-        <image name="logo_place4rest" width="66" height="29"/>
+        <image name="ic-hunt" width="37.5" height="37.5"/>
+        <image name="ic-layers" width="37.5" height="37.5"/>
+        <image name="ic-map" width="37.5" height="37.5"/>
+        <image name="ic-menu" width="37.5" height="37.5"/>
+        <image name="ic-search" width="37.5" height="37.5"/>
+        <image name="logo_place4rest" width="66.5" height="29"/>
         <namedColor name="dark_gray">
             <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
