@@ -38,13 +38,13 @@ final class MapPresenter: NSObject {
         placesService
             .getAllPlaces()
             .done { [weak self] places in
-                guard let self = self else { return }
-                self.mapItems = places.map {
+                self?.mapItems = places.map {
                     Props.MapItem(place: $0, select: Command(action: {}))
                 }
+            }.catch { _ in
+            }.finally { [weak self] in
+                guard let self = self else { return }
                 self.view.render(props: self.makeProps())
-            }.catch {
-                print($0.localizedDescription)
         }
     }
 }
