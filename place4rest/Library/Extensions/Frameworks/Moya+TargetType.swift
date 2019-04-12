@@ -9,15 +9,15 @@
 import Moya
 
 public extension TargetType {
-    public var baseURL: URL {
+    var baseURL: URL {
         return Bundle.main.url(for: "BASE_URL")
     }
 
-    public var sampleData: Data {
+    var sampleData: Data {
         return Data()
     }
 
-    public var headers: [String: String]? {
+    var headers: [String: String]? {
         return nil
     }
 

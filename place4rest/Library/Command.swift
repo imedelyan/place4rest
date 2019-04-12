@@ -66,7 +66,7 @@ extension CommandWith: Hashable {
         return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
 
-    var hashValue: Int { // swiftlint:disable:this legacy_hashing
-        return ObjectIdentifier(self).hashValue
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
     }
 }
