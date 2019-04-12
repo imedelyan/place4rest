@@ -67,17 +67,20 @@ final class Place: Object {
         longitude = Double(((try container.decode([String].self, forKey: .longitude)).first ?? "").trim()) ?? 0.0
 
         // acf
-        let acfContainer = try container.nestedContainer(keyedBy: ACFKeys.self, forKey: .acf)
-        featuredImage = try acfContainer.decode(Image.self, forKey: .featuredImage)
+        let falseValue = try? container.decodeIfPresent(Bool.self, forKey: .acf)
+        if falseValue == nil {
+            let acfContainer = try container.nestedContainer(keyedBy: ACFKeys.self, forKey: .acf)
+            featuredImage = try acfContainer.decode(Image.self, forKey: .featuredImage)
 
-        // images
-        var imagesContainer = try acfContainer.nestedUnkeyedContainer(forKey: .images)
-        var imagesArray: [Image] = []
-        while !imagesContainer.isAtEnd {
-            let imageContainer = try imagesContainer.nestedContainer(keyedBy: ImagesKeys.self)
-            imagesArray.append(try imageContainer.decode(Image.self, forKey: .image))
+            // images
+            var imagesContainer = try acfContainer.nestedUnkeyedContainer(forKey: .images)
+            var imagesArray: [Image] = []
+            while !imagesContainer.isAtEnd {
+                let imageContainer = try imagesContainer.nestedContainer(keyedBy: ImagesKeys.self)
+                imagesArray.append(try imageContainer.decode(Image.self, forKey: .image))
+            }
+            images.append(objectsIn: imagesArray)
         }
-        images.append(objectsIn: imagesArray)
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		39C589FF898CC20513A9FE48 /* Pods_place4restTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056F2FE480BAF0C88E02E115 /* Pods_place4restTests.framework */; };
+		412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412A03842260DE0600830E59 /* PlaceAnnotation.swift */; };
 		41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41508D6A221170EB00F981C3 /* AppDelegate.swift */; };
 		41508D72221170EC00F981C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41508D71221170EC00F981C3 /* Assets.xcassets */; };
 		41508D75221170EC00F981C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41508D73221170EC00F981C3 /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		056F2FE480BAF0C88E02E115 /* Pods_place4restTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_place4restTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D052633B35BA2B5E918FC20 /* Pods-place4rest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4rest.debug.xcconfig"; path = "Target Support Files/Pods-place4rest/Pods-place4rest.debug.xcconfig"; sourceTree = "<group>"; };
+		412A03842260DE0600830E59 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		41508D67221170EB00F981C3 /* place4rest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = place4rest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41508D6A221170EB00F981C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41508D71221170EC00F981C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				41A930C122156E81008897AE /* VisualEffectView.swift */,
+				412A03842260DE0600830E59 /* PlaceAnnotation.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				41A93287221C3AE9008897AE /* MapPresenter.swift in Sources */,
 				41A9327F221C1769008897AE /* NetworkServicesAssembly.swift in Sources */,
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
+				412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */,
 				41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */,
 				41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */,
 				41A930C022145607008897AE /* R.generated.swift in Sources */,

@@ -89,13 +89,23 @@ class MapViewController: UIViewController {
 
     // MARK: - Anotations
     private func show(places: [Props.MapItem]) {
-        places.forEach { addAnnotation(for: $0.place) }
+        places.forEach { addPlaceAnnotation(for: $0.place) }
     }
 
     private func addAnnotation(for place: Place) {
         let annotation = MGLPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
         annotation.title = place.title
+        mapView.addAnnotation(annotation)
+    }
+
+    private func addPlaceAnnotation(for place: Place) {
+        let annotation = PlaceAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+        annotation.title = place.title
+        annotation.subtitle = place.content
+        annotation.willUseImage = true
+        annotation.place = place
         mapView.addAnnotation(annotation)
     }
 
