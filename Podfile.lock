@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - Kingfisher (5.3.1)
   - Mapbox-iOS-SDK (4.9.0)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
@@ -29,6 +30,7 @@ PODS:
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
+  - Kingfisher (~> 5.3)
   - Mapbox-iOS-SDK (~> 4.8)
   - Moya (~> 12.0.1)
   - PromiseKit (~> 6.8.3)
@@ -40,6 +42,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Kingfisher
     - Mapbox-iOS-SDK
     - Moya
     - PromiseKit
@@ -62,6 +65,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   Mapbox-iOS-SDK: 225036950837cbe408e6b333e51cd6001c122499
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
@@ -73,6 +77,6 @@ SPEC CHECKSUMS:
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: 6e3a317b5f8113808a78af6ed2c03f44db0518c8
+PODFILE CHECKSUM: dfe1c32de3b08ea2a098c217d7ca869ee200435f
 
 COCOAPODS: 1.6.0

@@ -57,22 +57,31 @@ extension MapPresenter: MGLMapViewDelegate {
     }
 
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-        let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, acrossDistance: 4500, pitch: 15, heading: 180)
-        mapView.fly(to: camera, withDuration: 4, peakAltitude: 3000, completionHandler: nil)
+
+        let coordinate = CLLocationCoordinate2D(
+            latitude: annotation.coordinate.latitude + 0.011, // TODO: change by screen/view size
+            longitude: annotation.coordinate.longitude
+        )
+
+        let camera = MGLMapCamera(lookingAtCenter: coordinate, acrossDistance: 10000, pitch: 15, heading: 0)
+        mapView.fly(to: camera, withDuration: 3, peakAltitude: 10000) { [weak self] in
+            self?.currentLocation = Props.CameraLocation(coordinate: coordinate, zoomLevel: mapView.zoomLevel)
+        }
     }
 
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         guard let location = mapView.userLocation, location.coordinate.latitude > -180 else { return }
-        userLocation = Props.CameraLocation(coordinate: location.coordinate, zoomLevel: 5)
+        userLocation = Props.CameraLocation(coordinate: location.coordinate, zoomLevel: 4)
         currentLocation = userLocation
         view?.render(props: makeProps())
     }
 
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
-        visibleCoordinateBounds = mapView.visibleCoordinateBounds
+        currentLocation = Props.CameraLocation(coordinate: mapView.centerCoordinate, zoomLevel: mapView.zoomLevel)
     }
 
-    // This delegate method is where you tell the map to load a view for a specific annotation based on the willUseImage property of the custom subclass.
+    // This delegate method is where you tell the map to load a view for a specific
+    // annotation based on the willUseImage property of the custom subclass.
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
 
         guard let castAnnotation = annotation as? PlaceAnnotation, !castAnnotation.willUseImage else { return nil }
@@ -96,75 +105,55 @@ extension MapPresenter: MGLMapViewDelegate {
         return annotationView
     }
 
-    // This delegate method is where you tell the map to load an image for a specific annotation based on the willUseImage property of the custom subclass.
+    // This delegate method is where you tell the map to load an image for a specific
+    // annotation based on the willUseImage property of the custom subclass.
     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
 
         guard let placeAnnotation = annotation as? PlaceAnnotation, placeAnnotation.willUseImage else { return nil }
 
         guard let category = placeAnnotation.place.categories.first else { return nil }
+        var identifier = "car"
+        var image = R.image.car()!
         switch category {
         case 4: // wildnights
-            // For better performance, always try to reuse existing annotations.
-            var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "tree")
-            // If there is no reusable annotation image available, initialize a new one.
-            if annotationImage == nil {
-                annotationImage = MGLAnnotationImage(image: R.image.tree()!, reuseIdentifier: "tree")
-            }
-            return annotationImage
+            identifier = "tree"
+            image = R.image.tree()!
         case 6: // castles
-            // For better performance, always try to reuse existing annotations.
-            var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "castle")
-            // If there is no reusable annotation image available, initialize a new one.
-            if annotationImage == nil {
-                annotationImage = MGLAnnotationImage(image: R.image.castle()!, reuseIdentifier: "castle")
-            }
-            return annotationImage
+            identifier = "castle"
+            image = R.image.castle()!
         case 5: // springs
-            // For better performance, always try to reuse existing annotations.
-            var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "fontain")
-            // If there is no reusable annotation image available, initialize a new one.
-            if annotationImage == nil {
-                annotationImage = MGLAnnotationImage(image: R.image.fontain()!, reuseIdentifier: "fontain")
-            }
-            return annotationImage
+            identifier = "fontain"
+            image = R.image.fontain()!
         case 76: // nightparking
-            // For better performance, always try to reuse existing annotations.
-            var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "car")
-            // If there is no reusable annotation image available, initialize a new one.
-            if annotationImage == nil {
-                annotationImage = MGLAnnotationImage(image: R.image.car()!, reuseIdentifier: "car")
-            }
-            return annotationImage
+            identifier = "car"
+            image = R.image.car()!
         case 72: // camping
-            // For better performance, always try to reuse existing annotations.
-            var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "car")
-            // If there is no reusable annotation image available, initialize a new one.
-            if annotationImage == nil {
-                annotationImage = MGLAnnotationImage(image: R.image.car()!, reuseIdentifier: "car")
-            }
-            return annotationImage
-        default:
-            return nil
+            identifier = "car"
+            image = R.image.car()!
+        default: break
         }
+        // For better performance, always try to reuse existing annotations.
+        var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: identifier)
+        // If there is no reusable annotation image available, initialize a new one.
+        if annotationImage == nil {
+            annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: identifier)
+        }
+        return annotationImage
     }
 
-    //    func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-    //        // Only show callouts for `Hello world!` annotation.
-    //        return annotation.responds(to: #selector(getter: MGLAnnotation.title)) && annotation.title! == "Hello world!"
-    //    }
-    //
-    //    func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
-    //        // Instantiate and return our custom callout view.
-    //        return CustomCalloutView(representedObject: annotation)
-    //    }
-    //
-    //    func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
-    //        // Optionally handle taps on the callout.
-    //        print("Tapped the callout for: \(annotation)")
-    //
-    //        // Hide the callout.
-    //        mapView.deselectAnnotation(annotation, animated: true)
-    //    }
+    func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
+        guard let placeAnnotation = annotation as? PlaceAnnotation, placeAnnotation.willUseImage else { return nil }
+
+        let calloutView = PlaceCalloutView(annotation: placeAnnotation)
+        calloutView.onDetailsTap = { [weak self] in
+
+        }
+        return calloutView
+    }
+
+    func mapView(_ mapView: MGLMapView, tapOnCalloutFor annotation: MGLAnnotation) {
+        mapView.deselectAnnotation(annotation, animated: true)
+    }
 }
 
 // MARK: - Props Factory

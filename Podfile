@@ -11,6 +11,7 @@ def shared_pods
 #  pod 'KeychainSwift', '~> 13.0'
   pod 'R.swift', '~> 5.0.2'
   pod 'Mapbox-iOS-SDK', '~> 4.8'
+  pod 'Kingfisher', '~> 5.3'
 end
 
 def test_pods

@@ -141,8 +141,7 @@ extension MapViewController: MapView {
         self.layersVEViewWidth.constant = props.isLayerViewExpanded ? 130 : 46
 
         // set map position
-        mapView.setVisibleCoordinateBounds(props.visibleCoordinateBounds, animated: true)
-//        mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
+        mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
 
         // set search bar expanded size
         searchBarWidth.constant = props.isSearchBarExpanded ? view.frame.width - 195 : 0
