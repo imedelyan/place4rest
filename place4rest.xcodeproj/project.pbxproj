@@ -64,6 +64,7 @@
 		45F08BFF22626D7200D72464 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F08BFE22626D7200D72464 /* PlaceViewController.swift */; };
 		45F08C0122626D8800D72464 /* PlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F08C0022626D8800D72464 /* PlacePresenter.swift */; };
 		45F08C032262718500D72464 /* MapNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F08C022262718500D72464 /* MapNavigator.swift */; };
+		45F08C0522627DF200D72464 /* UINavigationBar+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F08C0422627DF200D72464 /* UINavigationBar+Appearance.swift */; };
 		70AAF812902D1253F42FE7E9 /* Pods_place4rest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,7 @@
 		45F08BFE22626D7200D72464 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		45F08C0022626D8800D72464 /* PlacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePresenter.swift; sourceTree = "<group>"; };
 		45F08C022262718500D72464 /* MapNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigator.swift; sourceTree = "<group>"; };
+		45F08C0422627DF200D72464 /* UINavigationBar+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Appearance.swift"; path = "place4rest/UI/Appearance/UINavigationBar+Appearance.swift"; sourceTree = SOURCE_ROOT; };
 		4CB4A7EEDC07B8E2C0847F3D /* Pods_place4rest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_place4rest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832F33054CF8893EB784E1A6 /* Pods-place4restTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.release.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.release.xcconfig"; sourceTree = "<group>"; };
 		B3EB0994185B81B9D99444CA /* Pods-place4restTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-place4restTests.debug.xcconfig"; path = "Target Support Files/Pods-place4restTests/Pods-place4restTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,7 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				41A92FF8221179BA008897AE /* Navigation */,
-				41A92FF42211762A008897AE /* Appearance */,
+				45F08C0622627E3000D72464 /* Appearance */,
 				41A92FF522117648008897AE /* Elements */,
 				41A92FF32211761A008897AE /* Modules */,
 			);
@@ -288,13 +290,6 @@
 				45F08BFB22626D3900D72464 /* Place */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		41A92FF42211762A008897AE /* Appearance */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Appearance;
 			sourceTree = "<group>";
 		};
 		41A92FF522117648008897AE /* Elements */ = {
@@ -488,6 +483,14 @@
 				45F08BFC22626D5500D72464 /* Place.storyboard */,
 			);
 			path = Place;
+			sourceTree = "<group>";
+		};
+		45F08C0622627E3000D72464 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				45F08C0422627DF200D72464 /* UINavigationBar+Appearance.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		4B218EB7E9AB804F5EDB105B /* Frameworks */ = {
@@ -822,6 +825,7 @@
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
 				412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */,
 				45F08BFF22626D7200D72464 /* PlaceViewController.swift in Sources */,
+				45F08C0522627DF200D72464 /* UINavigationBar+Appearance.swift in Sources */,
 				41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */,
 				41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */,
 				45F08C0122626D8800D72464 /* PlacePresenter.swift in Sources */,

@@ -25,9 +25,10 @@ final class MapNavigator {
             let vc = MapViewController.load(from: .map)
             vc.navigator = self
             navigationController.pushViewController(vc, animated: true)
-        case .place:
+        case .place(let place):
             let vc = PlaceViewController.load(from: .place)
             vc.navigator = self
+            vc.presenter.place = place
             navigationController.pushViewController(vc, animated: true)
         }
     }
@@ -40,6 +41,6 @@ final class MapNavigator {
 extension MapNavigator {
     enum Step {
         case map
-        case place
+        case place(_ place: Place)
     }
 }

@@ -36,6 +36,7 @@ class AppNavigator: Navigator {
     init(storageService: StorageService) {
         self.storageService = storageService
         self.window?.rootViewController = navigationController
+        UINavigationBar.appearance().setupDefaultTheme()
     }
 
     // MARK: - Navigation methods

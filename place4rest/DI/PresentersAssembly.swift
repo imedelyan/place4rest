@@ -15,5 +15,8 @@ class PresentersAssembly: Assembly {
             let placesService = resolver.resolve(PlacesService.self)
             return MapPresenter(placesService: placesService!)
         }
+        container.register(PlacePresenter.self) { _ in
+            return PlacePresenter()
+        }
     }
 }

@@ -86,6 +86,8 @@ extension MapPresenter: MGLMapViewDelegate {
 
         guard let castAnnotation = annotation as? PlaceAnnotation, !castAnnotation.willUseImage else { return nil }
 
+        // TODO: verify if MGLAnnotationView is needed at all
+
         // Assign a reuse identifier to be used by both of the annotation views, taking advantage of their similarities.
         let reuseIdentifier = "placeView"
 
@@ -147,7 +149,7 @@ extension MapPresenter: MGLMapViewDelegate {
         let calloutView = PlaceCalloutView(annotation: placeAnnotation)
         calloutView.onDetailsTap = { [weak self] in
             mapView.deselectAnnotation(annotation, animated: true)
-
+            self?.view.show(place: placeAnnotation.place)
         }
         return calloutView
     }

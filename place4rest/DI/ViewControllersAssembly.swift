@@ -23,5 +23,9 @@ class ViewControllersAssembly: Assembly {
             controller.presenter = resolver.resolve(MapPresenter.self)
             controller.presenter.view = controller
         }
+        container.storyboardInitCompleted(PlaceViewController.self) { (resolver, controller) in
+            controller.presenter = resolver.resolve(PlacePresenter.self)
+            controller.presenter.view = controller
+        }
     }
 }

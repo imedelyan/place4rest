@@ -50,6 +50,8 @@ class MapViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = ""
+
         mapView.compassView.isHidden = true
         mapView.logoView.isHidden = true
         mapView.attributionButton.isHidden = true
@@ -131,6 +133,7 @@ class MapViewController: UIViewController {
 // MARK: - MapView
 protocol MapView: class {
     func render(props: MapViewController.Props)
+    func show(place: Place)
 }
 
 extension MapViewController: MapView {
@@ -161,6 +164,10 @@ extension MapViewController: MapView {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+    }
+
+    func show(place: Place) {
+        navigator.navigate(to: .place(place))
     }
 }
 
