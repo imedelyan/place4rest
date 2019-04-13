@@ -146,6 +146,7 @@ extension MapPresenter: MGLMapViewDelegate {
 
         let calloutView = PlaceCalloutView(annotation: placeAnnotation)
         calloutView.onDetailsTap = { [weak self] in
+            mapView.deselectAnnotation(annotation, animated: true)
 
         }
         return calloutView

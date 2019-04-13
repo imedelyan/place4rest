@@ -10,9 +10,11 @@ import UIKit
 
 class HomeTabBarController: UITabBarController {
 
+    var mapNavigator: MapNavigator!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [MapViewController.load(from: .map),
+        viewControllers = [mapNavigator.navigationController,
                            SuggestionsViewController.load(from: .suggestions),
                            AddPlaceViewController.load(from: .addPlace),
                            AnnouncementsViewController.load(from: .announcements),

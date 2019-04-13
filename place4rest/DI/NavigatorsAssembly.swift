@@ -15,5 +15,8 @@ class NavigatorsAssembly: Assembly {
             let storageService = resolver.resolve(StorageService.self)
             return AppNavigator(storageService: storageService!)
         }).inObjectScope(.container)
+        container.register(MapNavigator.self, factory: { _ in
+            return MapNavigator()
+        })
     }
 }
