@@ -32,6 +32,14 @@ final class PlacePresenter {
 // MARK: - Props Factory
 extension PlacePresenter {
     private func makeProps() -> Props {
-        return Props()
+        return Props(
+            title: place.title,
+            images: Array(place.images),
+            categories: [],
+            categoriesFor: [],
+            services: [],
+            activities: [],
+            text: place.content
+        )
     }
 }
