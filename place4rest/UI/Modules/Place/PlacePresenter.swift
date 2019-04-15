@@ -32,13 +32,16 @@ final class PlacePresenter {
 // MARK: - Props Factory
 extension PlacePresenter {
     private func makeProps() -> Props {
+        var categories: [ImagePresentable] = []
+        categories.append(contentsOf: Array(place.categories).map { Category(rawValue: $0) ?? .unknown })
+        categories.append(contentsOf: Array(place.categoriesFor).map { CategoryFor(rawValue: $0) ?? .unknown })
+        categories.append(contentsOf: Array(place.services).map { Service(rawValue: $0) ?? .unknown })
+        categories.append(contentsOf: Array(place.activities).map { Activity(rawValue: $0) ?? .unknown })
+
         return Props(
             title: place.title,
             images: Array(place.images),
-            categories: [],
-            categoriesFor: [],
-            services: [],
-            activities: [],
+            categories: categories,
             text: place.content
         )
     }

@@ -26,9 +26,6 @@ class PlaceViewController: UIViewController {
         title: "",
         images: [],
         categories: [],
-        categoriesFor: [],
-        services: [],
-        activities: [],
         text: ""
     )
 
@@ -63,8 +60,7 @@ extension PlaceViewController: UICollectionViewDataSource {
         if collectionView == photoCollectionView {
             return props.images.count
         } else {
-            return props.categories.count + props.categoriesFor.count +
-                props.services.count + props.activities.count
+            return props.categories.count
         }
     }
 
@@ -75,7 +71,7 @@ extension PlaceViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
-            cell.image = nil // TODO: set image for category
+            cell.image = props.categories[indexPath.row].image
             return cell
         }
     }
@@ -111,10 +107,11 @@ extension PlaceViewController {
     struct Props {
         let title: String
         let images: [Image]
-        let categories: [Category]
-        let categoriesFor: [CategoryFor]
-        let services: [Service]
-        let activities: [Activity]
+        let categories: [ImagePresentable]
         let text: String
     }
+}
+
+protocol ImagePresentable {
+    var image: UIImage { get }
 }
