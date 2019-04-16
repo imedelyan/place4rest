@@ -16,6 +16,7 @@ class PlaceViewController: UIViewController {
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var categoriesCollectionView: UICollectionView!
     @IBOutlet private weak var textLabel: UILabel!
+    @IBOutlet private weak var categoriesCollectionViewHeight: NSLayoutConstraint!
 
     // MARK: - Dependencies
     var navigator: MapNavigator!
@@ -49,7 +50,7 @@ extension PlaceViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == photoCollectionView {
            return collectionView.frame.size
         } else {
-            return CGSize(width: 40.0, height: 40.0)
+            return CGSize(width: 30.0, height: 30.0)
         }
     }
 }
@@ -94,9 +95,14 @@ extension PlaceViewController: PlaceView {
     func render(props: Props) {
         self.props = props
 
-        titleLabel.text = props.title
+        titleLabel.text = props.title.withoutHtml
         pageControl.numberOfPages = props.images.count
         photoCollectionView.reloadData()
+
+        let cellsInLine = Int(floor(view.frame.width / 40))
+        let lines = CGFloat(props.categories.count / cellsInLine).rounded(.up)
+        categoriesCollectionViewHeight.constant = lines * 40.0
+
         categoriesCollectionView.reloadData()
         textLabel.text = props.text
     }

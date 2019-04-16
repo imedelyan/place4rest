@@ -19,10 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="oKg-0B-UKn">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="oKg-0B-UKn">
                                 <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVJ-OY-wbc">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eVJ-OY-wbc">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СТОЯНКИ НА БЕРЕГУ ГОЛУБЫЕ ОЗЕРА, ОЛЕШНЯ, ЧЕРНИГОВСКАЯ ОБЛАСТЬ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCg-8P-NJV">
@@ -73,12 +73,12 @@
                                                     <outlet property="delegate" destination="hp4-cS-e0n" id="2SJ-37-tGD"/>
                                                 </connections>
                                             </collectionView>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-cd-4yH">
+                                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-cd-4yH">
                                                 <rect key="frame" x="168" y="308.5" width="39" height="37"/>
                                                 <color key="pageIndicatorTintColor" name="light_gray"/>
                                                 <color key="currentPageIndicatorTintColor" name="dark_gray"/>
                                             </pageControl>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CR4-jf-ByG">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CR4-jf-ByG">
                                                 <rect key="frame" x="15" y="345.5" width="345" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -119,7 +119,7 @@
                                                     <outlet property="delegate" destination="hp4-cS-e0n" id="EL3-pX-JCr"/>
                                                 </connections>
                                             </collectionView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka5-LK-GTb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ka5-LK-GTb">
                                                 <rect key="frame" x="15" y="395.5" width="345" height="340.5"/>
                                                 <string key="text">Много стоянок на берегу большого озера. Всего три озера – Большое, Зеленое и Черное . Часть территории платная (2018) машина 25грн, палатка 25грн. Бесплатный заезд с другой стороны. На платной территории есть туалеты (не убираются) и мусорные баки.
 Место само по себе очень красивое, с одной стороны есть база отдыха(1000грн домик и 350грн без условий) а другая дикая, можно приехать на авто прямо к берегу, вода чистая, хвойный лес.
@@ -141,6 +141,7 @@
                                             <constraint firstAttribute="trailing" secondItem="U3w-Ga-3wP" secondAttribute="trailing" id="QyI-OD-WkM"/>
                                             <constraint firstItem="CR4-jf-ByG" firstAttribute="leading" secondItem="eVJ-OY-wbc" secondAttribute="leading" constant="15" id="Sxc-Gk-qSN"/>
                                             <constraint firstItem="CR4-jf-ByG" firstAttribute="top" secondItem="VPd-cd-4yH" secondAttribute="bottom" id="T5o-g0-mWu"/>
+                                            <constraint firstAttribute="bottom" secondItem="ka5-LK-GTb" secondAttribute="bottom" constant="30" id="UBE-LA-tPs"/>
                                             <constraint firstItem="U3w-Ga-3wP" firstAttribute="leading" secondItem="eVJ-OY-wbc" secondAttribute="leading" id="cBI-wi-nxm"/>
                                             <constraint firstItem="VPd-cd-4yH" firstAttribute="centerX" secondItem="eVJ-OY-wbc" secondAttribute="centerX" id="goU-f1-Uyf"/>
                                             <constraint firstAttribute="trailing" secondItem="iCg-8P-NJV" secondAttribute="trailing" constant="15" id="jjp-s9-6IS"/>
@@ -162,7 +163,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oKg-0B-UKn" firstAttribute="leading" secondItem="KOn-uc-jS2" secondAttribute="leading" id="2dQ-uE-GuX"/>
-                            <constraint firstItem="eVJ-OY-wbc" firstAttribute="height" secondItem="S0z-19-1R1" secondAttribute="height" id="I3N-B9-1he"/>
+                            <constraint firstItem="eVJ-OY-wbc" firstAttribute="height" secondItem="S0z-19-1R1" secondAttribute="height" priority="250" id="I3N-B9-1he"/>
                             <constraint firstItem="KOn-uc-jS2" firstAttribute="bottom" secondItem="oKg-0B-UKn" secondAttribute="bottom" id="Nn3-ef-Dvr"/>
                             <constraint firstItem="KOn-uc-jS2" firstAttribute="trailing" secondItem="oKg-0B-UKn" secondAttribute="trailing" id="eQL-ai-Pjf"/>
                             <constraint firstItem="oKg-0B-UKn" firstAttribute="top" secondItem="KOn-uc-jS2" secondAttribute="top" id="fCb-ju-UrF"/>
@@ -173,6 +174,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="CR4-jf-ByG" id="Vzg-sc-5sp"/>
+                        <outlet property="categoriesCollectionViewHeight" destination="3hf-E2-noe" id="Bmt-yM-oH7"/>
                         <outlet property="pageControl" destination="VPd-cd-4yH" id="zTK-bS-g9a"/>
                         <outlet property="photoCollectionView" destination="U3w-Ga-3wP" id="XOQ-9O-XpO"/>
                         <outlet property="textLabel" destination="ka5-LK-GTb" id="6DT-46-h1e"/>

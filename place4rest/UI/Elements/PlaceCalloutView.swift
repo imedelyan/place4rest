@@ -30,7 +30,7 @@ class PlaceCalloutView: UIView, MGLCalloutView {
 
         commonInit()
 
-        titleLable.text = annotation.title
+        titleLable.text = annotation.title?.withoutHtml
         if let urlString = annotation.place.featuredImage?.url, let url = URL(string: urlString) {
             imageView.kf.setImage(with: url)
         }
