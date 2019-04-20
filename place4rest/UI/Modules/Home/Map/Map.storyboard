@@ -35,7 +35,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnV-c6-2hB">
-                                            <rect key="frame" x="10" y="-1" width="37" height="37"/>
+                                            <rect key="frame" x="10" y="11" width="25" height="25"/>
                                             <color key="tintColor" name="dark_gray"/>
                                             <state key="normal" image="ic-layers"/>
                                             <connections>
@@ -43,7 +43,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-Ay-fBw">
-                                            <rect key="frame" x="10" y="-85" width="110" height="32"/>
+                                            <rect key="frame" x="10" y="-73" width="110" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="110" id="icd-a1-yJK"/>
                                             </constraints>
@@ -57,7 +57,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXh-mg-Fbi">
-                                            <rect key="frame" x="10" y="-48" width="110" height="32"/>
+                                            <rect key="frame" x="10" y="-36" width="110" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="110" id="rCL-Bp-THa"/>
                                             </constraints>
@@ -71,7 +71,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p2-Wl-Q90">
-                                            <rect key="frame" x="10" y="-122" width="110" height="32"/>
+                                            <rect key="frame" x="10" y="-110" width="110" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="110" id="5wN-PC-sI7"/>
                                             </constraints>
@@ -109,18 +109,18 @@
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMO-vA-lTt">
-                                <rect key="frame" x="318" y="561" width="37" height="37"/>
+                                <rect key="frame" x="330" y="573" width="25" height="25"/>
                                 <color key="tintColor" name="dark_gray"/>
                                 <state key="normal" image="ic-hunt"/>
                                 <connections>
                                     <action selector="locateButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="23q-0I-3Ed"/>
                                 </connections>
                             </button>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewD-35-1fJ">
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewD-35-1fJ" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-6j-4qj">
-                                        <rect key="frame" x="261" y="33" width="37" height="37"/>
+                                        <rect key="frame" x="285" y="45" width="25" height="25"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="ic-search"/>
                                         <connections>
@@ -131,7 +131,7 @@
                                         <rect key="frame" x="20" y="41" width="66" height="29"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
-                                        <rect key="frame" x="318" y="33" width="37" height="37"/>
+                                        <rect key="frame" x="330" y="45" width="25" height="25"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="ic-menu"/>
                                         <connections>
@@ -139,7 +139,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB2-EY-ccd">
-                                        <rect key="frame" x="256" y="39" width="0.0" height="25"/>
+                                        <rect key="frame" x="280" y="45" width="0.0" height="25"/>
                                         <color key="backgroundColor" name="light_gray"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -164,15 +164,92 @@
                                     <constraint firstItem="off-QS-SQo" firstAttribute="leading" secondItem="ewD-35-1fJ" secondAttribute="leading" constant="20" id="kPR-cO-o8x"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAn-2p-PxJ" userLabel="Filter Menu View">
+                                <rect key="frame" x="385" y="80" width="70" height="538"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tW9-D6-dJr">
+                                        <rect key="frame" x="5" y="10" width="60" height="320"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIw-BI-bVs">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="UIw-BI-bVs" secondAttribute="height" multiplier="1:1" id="eFe-lL-Mue"/>
+                                                </constraints>
+                                                <color key="tintColor" name="light_gray"/>
+                                                <state key="normal" image="forest"/>
+                                                <connections>
+                                                    <action selector="wildPlaceFilterButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="QW6-Kq-6SX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUb-Gs-YDc">
+                                                <rect key="frame" x="0.0" y="65" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="KUb-Gs-YDc" secondAttribute="height" multiplier="1:1" id="GDg-6c-yfS"/>
+                                                </constraints>
+                                                <color key="tintColor" name="light_gray"/>
+                                                <state key="normal" image="parking"/>
+                                                <connections>
+                                                    <action selector="parkingFilterButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="j28-kf-bfJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC7-ZG-3S7">
+                                                <rect key="frame" x="0.0" y="130" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="VC7-ZG-3S7" secondAttribute="height" multiplier="1:1" id="T85-J0-SKV"/>
+                                                </constraints>
+                                                <color key="tintColor" name="light_gray"/>
+                                                <state key="normal" image="camping-tent"/>
+                                                <connections>
+                                                    <action selector="campingFilterButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="7gd-aT-bos"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opx-Ba-sUB">
+                                                <rect key="frame" x="0.0" y="195" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Opx-Ba-sUB" secondAttribute="height" multiplier="1:1" id="o8J-tC-wEr"/>
+                                                </constraints>
+                                                <color key="tintColor" name="light_gray"/>
+                                                <state key="normal" image="sedan"/>
+                                                <connections>
+                                                    <action selector="sedanFilterButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="10d-y0-Wqu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMm-TF-Zey">
+                                                <rect key="frame" x="0.0" y="260" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="dMm-TF-Zey" secondAttribute="height" multiplier="1:1" id="wwK-Qh-PTm"/>
+                                                </constraints>
+                                                <color key="tintColor" name="light_gray"/>
+                                                <state key="normal" image="trailer"/>
+                                                <connections>
+                                                    <action selector="trailerFilterButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="Bpb-l9-QhV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="LCZ-sC-u8L"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="dark_gray"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="SF2-Ku-49E"/>
+                                    <constraint firstItem="tW9-D6-dJr" firstAttribute="centerX" secondItem="xAn-2p-PxJ" secondAttribute="centerX" id="hMy-oW-OKI"/>
+                                    <constraint firstItem="tW9-D6-dJr" firstAttribute="top" secondItem="xAn-2p-PxJ" secondAttribute="top" constant="10" id="lVU-Qi-dgV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="zYc-1f-nOL" secondAttribute="bottom" constant="10" id="1ax-wF-rZV"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="bottom" secondItem="abP-w4-1qL" secondAttribute="bottom" id="1il-hV-5S3"/>
+                            <constraint firstItem="xAn-2p-PxJ" firstAttribute="bottom" secondItem="abP-w4-1qL" secondAttribute="bottom" id="2U5-ro-HJN"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="7Aj-JF-fqb"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Cu1-RK-OLd"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="HMO-vA-lTt" secondAttribute="trailing" constant="20" id="HPA-s7-F3n"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Hql-LR-xNB"/>
+                            <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="xAn-2p-PxJ" secondAttribute="trailing" constant="-80" id="VQi-qz-ZcY"/>
+                            <constraint firstItem="xAn-2p-PxJ" firstAttribute="top" secondItem="ewD-35-1fJ" secondAttribute="bottom" id="ZYU-jD-mBV"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="cYi-kk-paa"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="trailing" secondItem="abP-w4-1qL" secondAttribute="trailing" id="es5-Al-swm"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="trailing" secondItem="abP-w4-1qL" secondAttribute="trailing" id="fM4-rd-wNI"/>
@@ -192,6 +269,7 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="filterMenuTrailing" destination="VQi-qz-ZcY" id="K9d-09-0ed"/>
                         <outlet property="layersVEView" destination="zYc-1f-nOL" id="QN9-5Q-eHD"/>
                         <outlet property="layersVEViewHeight" destination="76H-Gt-qOi" id="XTI-Pc-aX4"/>
                         <outlet property="layersVEViewWidth" destination="Ce8-sy-EOt" id="3kQ-ao-Ux3"/>
@@ -206,12 +284,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic-hunt" width="37.5" height="37.5"/>
-        <image name="ic-layers" width="37.5" height="37.5"/>
-        <image name="ic-map" width="37.5" height="37.5"/>
-        <image name="ic-menu" width="37.5" height="37.5"/>
-        <image name="ic-search" width="37.5" height="37.5"/>
-        <image name="logo_place4rest" width="66.5" height="29"/>
+        <image name="camping-tent" width="40" height="40"/>
+        <image name="forest" width="40" height="40"/>
+        <image name="ic-hunt" width="25" height="25"/>
+        <image name="ic-layers" width="25" height="25"/>
+        <image name="ic-map" width="25" height="25"/>
+        <image name="ic-menu" width="25" height="25"/>
+        <image name="ic-search" width="25" height="25"/>
+        <image name="logo_place4rest" width="66" height="29"/>
+        <image name="parking" width="40" height="40"/>
+        <image name="sedan" width="40" height="40"/>
+        <image name="trailer" width="40" height="40"/>
         <namedColor name="dark_gray">
             <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

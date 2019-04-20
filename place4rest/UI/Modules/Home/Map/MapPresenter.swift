@@ -23,6 +23,7 @@ final class MapPresenter: NSObject {
     private var layerType: Props.LayerType = .satellite
     private var isLayerViewExpanded: Bool = false
     private var isSearchBarExpanded: Bool = false
+    private var isFilterMenuExpanded: Bool = false
     private var userLocation: Props.CameraLocation = .notSet
     private var currentLocation: Props.CameraLocation = .notSet
     private var visibleCoordinateBounds = MGLCoordinateBounds()
@@ -193,12 +194,18 @@ extension MapPresenter {
                         self.isSearchBarExpanded.toggle()
                         self.view?.render(props: self.makeProps())
                      }),
-                     didTapFilterButton: CommandWith(action: { [weak self] type in
+                     didTapFilterButton: Command(action: { [weak self] in
+                        guard let self = self else { return }
+                        self.isFilterMenuExpanded.toggle()
+                        self.view?.render(props: self.makeProps())
+                     }),
+                     didChooseFilter: CommandWith(action: { [weak self] type in
                         guard let self = self else { return }
                         self.filterType = type
                         self.view?.render(props: self.makeProps())
                      }),
                      filterType: filterType,
+                     isFilterMenuExpanded: isFilterMenuExpanded,
                      userLocation: userLocation,
                      currentLocation: currentLocation,
                      visibleCoordinateBounds: visibleCoordinateBounds,

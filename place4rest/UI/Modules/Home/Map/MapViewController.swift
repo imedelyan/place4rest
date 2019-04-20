@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var layersVEViewWidth: NSLayoutConstraint!
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var searchBarWidth: NSLayoutConstraint!
+    @IBOutlet private weak var filterMenuTrailing: NSLayoutConstraint!
 
     // MARK: - Dependencies
     var navigator: MapNavigator!
@@ -35,7 +36,9 @@ class MapViewController: UIViewController {
         isSearchBarExpanded: false,
         didReceiveTextForSearch: .nop,
         didTapFilterButton: .nop,
+        didChooseFilter: .nop,
         filterType: .allPlaces,
+        isFilterMenuExpanded: false,
         userLocation: .notSet,
         currentLocation: .notSet,
         visibleCoordinateBounds: MGLCoordinateBounds(),
@@ -96,8 +99,27 @@ class MapViewController: UIViewController {
     }
 
     @IBAction private func filterButtonAction(_ sender: Any) {
+        props.didTapFilterButton.perform()
+    }
 
-        props.didTapFilterButton.perform(with: .allPlaces)
+    @IBAction private func wildPlaceFilterButtonAction(_ sender: Any) {
+        props.didChooseFilter.perform(with: .wildPlace)
+    }
+
+    @IBAction private func parkingFilterButtonAction(_ sender: Any) {
+        props.didChooseFilter.perform(with: .parking)
+    }
+
+    @IBAction private func campingFilterButtonAction(_ sender: Any) {
+        props.didChooseFilter.perform(with: .camping)
+    }
+
+    @IBAction private func sedanFilterButtonAction(_ sender: Any) {
+        props.didChooseFilter.perform(with: .sedan)
+    }
+
+    @IBAction private func trailerFilterButtonAction(_ sender: Any) {
+        props.didChooseFilter.perform(with: .trailer)
     }
 
     // MARK: - Anotations
@@ -160,6 +182,9 @@ extension MapViewController: MapView {
         // set search bar expanded size
         searchBarWidth.constant = props.isSearchBarExpanded ? view.frame.width - 195 : 0
 
+        // show/hide filter menu
+        self.filterMenuTrailing.constant = props.isFilterMenuExpanded ? 0 : -80
+
         // animation
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
@@ -187,12 +212,17 @@ extension MapViewController {
         let didTapSearchButton: Command
         let isSearchBarExpanded: Bool
         let didReceiveTextForSearch: CommandWith<String>
-        let didTapFilterButton: CommandWith<FilterType>
+        let didTapFilterButton: Command
+        let didChooseFilter: CommandWith<FilterType>
         let filterType: FilterType; enum FilterType {
-            case hostel
             case wildPlace
+            case parking
+            case camping
+            case sedan
+            case trailer
             case allPlaces
         }
+        let isFilterMenuExpanded: Bool
         let userLocation: CameraLocation
         let currentLocation: CameraLocation
         let visibleCoordinateBounds: MGLCoordinateBounds
