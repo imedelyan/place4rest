@@ -19,6 +19,11 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var searchBarWidth: NSLayoutConstraint!
     @IBOutlet private weak var filterMenuTrailing: NSLayoutConstraint!
+    @IBOutlet private weak var wildPlaceFilterButton: UIButton!
+    @IBOutlet private weak var parkingFilterButton: UIButton!
+    @IBOutlet private weak var campingFilterButton: UIButton!
+    @IBOutlet private weak var sedanFilterButton: UIButton!
+    @IBOutlet private weak var trailerFilterButton: UIButton!
 
     // MARK: - Dependencies
     var navigator: MapNavigator!
@@ -37,7 +42,7 @@ class MapViewController: UIViewController {
         didReceiveTextForSearch: .nop,
         didTapFilterButton: .nop,
         didChooseFilter: .nop,
-        filterType: .allPlaces,
+        filters: [],
         isFilterMenuExpanded: false,
         userLocation: .notSet,
         currentLocation: .notSet,
@@ -102,6 +107,7 @@ class MapViewController: UIViewController {
         props.didTapFilterButton.perform()
     }
 
+    // TODO: make set and act on tags
     @IBAction private func wildPlaceFilterButtonAction(_ sender: Any) {
         props.didChooseFilter.perform(with: .wildPlace)
     }
@@ -185,6 +191,14 @@ extension MapViewController: MapView {
         // show/hide filter menu
         self.filterMenuTrailing.constant = props.isFilterMenuExpanded ? 0 : -80
 
+        // tinting filter menu buttons
+        // TODO: move it to UIButton subclass
+        wildPlaceFilterButton.tintColor = props.filters.contains(.wildPlace) ? R.color.blue() : R.color.light_gray()
+        parkingFilterButton.tintColor = props.filters.contains(.parking) ? R.color.blue() : R.color.light_gray()
+        campingFilterButton.tintColor = props.filters.contains(.camping) ? R.color.blue() : R.color.light_gray()
+        sedanFilterButton.tintColor = props.filters.contains(.sedan) ? R.color.orange() : R.color.light_gray()
+        trailerFilterButton.tintColor = props.filters.contains(.trailer) ? R.color.orange() : R.color.light_gray()
+
         // animation
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
@@ -214,13 +228,12 @@ extension MapViewController {
         let didReceiveTextForSearch: CommandWith<String>
         let didTapFilterButton: Command
         let didChooseFilter: CommandWith<FilterType>
-        let filterType: FilterType; enum FilterType {
+        let filters: Set<FilterType>; enum FilterType {
             case wildPlace
             case parking
             case camping
             case sedan
             case trailer
-            case allPlaces
         }
         let isFilterMenuExpanded: Bool
         let userLocation: CameraLocation

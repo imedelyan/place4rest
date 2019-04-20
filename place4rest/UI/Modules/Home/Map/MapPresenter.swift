@@ -19,7 +19,7 @@ final class MapPresenter: NSObject {
 
     // MARK: - Variables
     private var mapItems: [Props.MapItem] = []
-    private var filterType: Props.FilterType = .allPlaces
+    private var filters: Set<Props.FilterType> = []
     private var layerType: Props.LayerType = .satellite
     private var isLayerViewExpanded: Bool = false
     private var isSearchBarExpanded: Bool = false
@@ -201,10 +201,10 @@ extension MapPresenter {
                      }),
                      didChooseFilter: CommandWith(action: { [weak self] type in
                         guard let self = self else { return }
-                        self.filterType = type
+                        self.filters = self.filters.symmetricDifference([type])
                         self.view?.render(props: self.makeProps())
                      }),
-                     filterType: filterType,
+                     filters: filters,
                      isFilterMenuExpanded: isFilterMenuExpanded,
                      userLocation: userLocation,
                      currentLocation: currentLocation,

@@ -269,13 +269,18 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="campingFilterButton" destination="VC7-ZG-3S7" id="njY-Vw-qpt"/>
                         <outlet property="filterMenuTrailing" destination="VQi-qz-ZcY" id="K9d-09-0ed"/>
                         <outlet property="layersVEView" destination="zYc-1f-nOL" id="QN9-5Q-eHD"/>
                         <outlet property="layersVEViewHeight" destination="76H-Gt-qOi" id="XTI-Pc-aX4"/>
                         <outlet property="layersVEViewWidth" destination="Ce8-sy-EOt" id="3kQ-ao-Ux3"/>
                         <outlet property="mapView" destination="vlM-rW-J0i" id="NDi-vK-rmd"/>
+                        <outlet property="parkingFilterButton" destination="KUb-Gs-YDc" id="WXA-tM-Asc"/>
                         <outlet property="searchBarWidth" destination="OOv-Mi-Fv0" id="7hO-Uf-PjW"/>
                         <outlet property="searchTextField" destination="dB2-EY-ccd" id="N32-6f-JXe"/>
+                        <outlet property="sedanFilterButton" destination="Opx-Ba-sUB" id="HLY-sb-mxE"/>
+                        <outlet property="trailerFilterButton" destination="dMm-TF-Zey" id="tUG-Kq-1lL"/>
+                        <outlet property="wildPlaceFilterButton" destination="UIw-BI-bVs" id="v1v-Hh-3hx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDn-io-gfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
