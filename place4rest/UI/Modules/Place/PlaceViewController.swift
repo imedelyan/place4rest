@@ -73,6 +73,7 @@ extension PlaceViewController: UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
             cell.image = props.categories[indexPath.row].image
+            cell.color = props.categories[indexPath.row].color
             return cell
         }
     }
@@ -99,8 +100,8 @@ extension PlaceViewController: PlaceView {
         pageControl.numberOfPages = props.images.count
         photoCollectionView.reloadData()
 
-        let cellsInLine = Int(floor(view.frame.width / 40))
-        let lines = CGFloat(props.categories.count / cellsInLine).rounded(.up)
+        let cellsInLine = floor(view.frame.width / 40)
+        let lines = (CGFloat(props.categories.count) / cellsInLine).rounded(.up)
         categoriesCollectionViewHeight.constant = lines * 40.0
 
         categoriesCollectionView.reloadData()
@@ -120,4 +121,5 @@ extension PlaceViewController {
 
 protocol ImagePresentable {
     var image: UIImage { get }
+    var color: UIColor? { get }
 }

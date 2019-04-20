@@ -19,17 +19,21 @@ enum Category: Int, ImagePresentable {
     var image: UIImage {
         switch self {
         case .wildnights:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "forest")
         case .springs:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "fountain")
         case .castles:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "palace")
         case .camping:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "camping-tent")
         case .nightparking:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .unknown:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         }
+    }
+
+    var color: UIColor? {
+        return R.color.blue()
     }
 }

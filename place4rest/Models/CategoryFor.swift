@@ -17,13 +17,17 @@ enum CategoryFor: Int, ImagePresentable {
     var image: UIImage {
         switch self {
         case .motorhome:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "trailer")
         case .cars:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "sedan")
         case .hiking:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .unknown:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         }
+    }
+
+    var color: UIColor? {
+        return R.color.orange()
     }
 }

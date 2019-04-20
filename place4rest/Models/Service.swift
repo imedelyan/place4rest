@@ -24,27 +24,31 @@ enum Service: Int, ImagePresentable {
     var image: UIImage {
         switch self {
         case .pool:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .lpg:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .internet3G:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .wifi:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .showers:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .washingMotorhomes:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .trashCan:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .toilets:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .water:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .bakery:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         case .unknown:
-            return #imageLiteral(resourceName: "fontain")
+            return #imageLiteral(resourceName: "parking")
         }
+    }
+
+    var color: UIColor? {
+        return R.color.dark_blue()
     }
 }

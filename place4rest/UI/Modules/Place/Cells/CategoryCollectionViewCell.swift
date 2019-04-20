@@ -12,13 +12,15 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
 
-    override func prepareForReuse() {
-        imageView.image = nil
-    }
-
     var image: UIImage? {
         didSet {
             imageView.image = image
+        }
+    }
+
+    var color: UIColor? {
+        didSet {
+            imageView.tintColor = color
         }
     }
 }
