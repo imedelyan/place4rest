@@ -31,7 +31,7 @@ class MapViewController: UIViewController {
 
     // MARK: - Variables
     private var props = Props(
-        mapItems: [],
+        places: [],
         didTapExpandLayersButton: .nop,
         didTapLayersButton: .nop,
         isLayerViewExpanded: false,
@@ -41,8 +41,10 @@ class MapViewController: UIViewController {
         isSearchBarExpanded: false,
         didReceiveTextForSearch: .nop,
         didTapFilterButton: .nop,
-        didChooseFilter: .nop,
-        filters: [],
+        didChooseCategoryFilter: .nop,
+        categoryFilters: [],
+        didChooseCategoryForFilter: .nop,
+        categoryForFilters: [],
         isFilterMenuExpanded: false,
         userLocation: .notSet,
         currentLocation: .notSet,
@@ -54,6 +56,7 @@ class MapViewController: UIViewController {
         URL(string: "mapbox://styles/imedelian/cjs3aet6z19qe1ft85b2xva57"),
         MGLStyle.satelliteStyleURL
     ]
+    private var placeAnnotations: [PlaceAnnotation] = []
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -107,30 +110,30 @@ class MapViewController: UIViewController {
         props.didTapFilterButton.perform()
     }
 
-    // TODO: make set and act on tags
+    // MARK: - Filter Menu IBActions
     @IBAction private func wildPlaceFilterButtonAction(_ sender: Any) {
-        props.didChooseFilter.perform(with: .wildPlace)
+        props.didChooseCategoryFilter.perform(with: .wildnights)
     }
 
     @IBAction private func parkingFilterButtonAction(_ sender: Any) {
-        props.didChooseFilter.perform(with: .parking)
+        props.didChooseCategoryFilter.perform(with: .nightparking)
     }
 
     @IBAction private func campingFilterButtonAction(_ sender: Any) {
-        props.didChooseFilter.perform(with: .camping)
+        props.didChooseCategoryFilter.perform(with: .camping)
     }
 
     @IBAction private func sedanFilterButtonAction(_ sender: Any) {
-        props.didChooseFilter.perform(with: .sedan)
+        props.didChooseCategoryForFilter.perform(with: .cars)
     }
 
     @IBAction private func trailerFilterButtonAction(_ sender: Any) {
-        props.didChooseFilter.perform(with: .trailer)
+        props.didChooseCategoryForFilter.perform(with: .motorhome)
     }
 
     // MARK: - Anotations
-    private func show(places: [Props.MapItem]) {
-        places.forEach { addPlaceAnnotation(for: $0.place) }
+    private func show(places: [Place]) {
+        places.forEach { addPlaceAnnotation(for: $0) }
     }
 
     private func addAnnotation(for place: Place) {
@@ -148,6 +151,7 @@ class MapViewController: UIViewController {
         annotation.willUseImage = true
         annotation.place = place
         mapView.addAnnotation(annotation)
+        placeAnnotations.append(annotation)
     }
 
     private func addAnnotation(coordinates: CLLocationCoordinate2D) {
@@ -166,12 +170,16 @@ protocol MapView: class {
 
 extension MapViewController: MapView {
     func render(props: Props) {
+        // show places
+        if self.props.places != props.places {
+            mapView.removeAnnotations(placeAnnotations)
+            placeAnnotations = []
+            show(places: props.places)
+        }
+
         self.props = props
 
         layersVEView.layoutIfNeeded()
-
-        // show places
-        show(places: props.mapItems)
 
         // set layer style
         if mapView.styleURL != mapStyles[props.layerType.rawValue] {
@@ -193,11 +201,11 @@ extension MapViewController: MapView {
 
         // tinting filter menu buttons
         // TODO: move it to UIButton subclass
-        wildPlaceFilterButton.tintColor = props.filters.contains(.wildPlace) ? R.color.blue() : R.color.light_gray()
-        parkingFilterButton.tintColor = props.filters.contains(.parking) ? R.color.blue() : R.color.light_gray()
-        campingFilterButton.tintColor = props.filters.contains(.camping) ? R.color.blue() : R.color.light_gray()
-        sedanFilterButton.tintColor = props.filters.contains(.sedan) ? R.color.orange() : R.color.light_gray()
-        trailerFilterButton.tintColor = props.filters.contains(.trailer) ? R.color.orange() : R.color.light_gray()
+        wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnights) ? R.color.blue() : R.color.light_gray()
+        parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparking) ? R.color.blue() : R.color.light_gray()
+        campingFilterButton.tintColor = props.categoryFilters.contains(.camping) ? R.color.blue() : R.color.light_gray()
+        sedanFilterButton.tintColor = props.categoryForFilters.contains(.cars) ? R.color.orange() : R.color.light_gray()
+        trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhome) ? R.color.orange() : R.color.light_gray()
 
         // animation
         UIView.animate(withDuration: 0.5) {
@@ -213,7 +221,7 @@ extension MapViewController: MapView {
 // MARK: - Props
 extension MapViewController {
     struct Props {
-        let mapItems: [MapItem]
+        let places: [Place]
         let didTapExpandLayersButton: Command
         let didTapLayersButton: CommandWith<LayerType>
         let isLayerViewExpanded: Bool
@@ -227,24 +235,15 @@ extension MapViewController {
         let isSearchBarExpanded: Bool
         let didReceiveTextForSearch: CommandWith<String>
         let didTapFilterButton: Command
-        let didChooseFilter: CommandWith<FilterType>
-        let filters: Set<FilterType>; enum FilterType {
-            case wildPlace
-            case parking
-            case camping
-            case sedan
-            case trailer
-        }
+        let didChooseCategoryFilter: CommandWith<Category>
+        let categoryFilters: Set<Category>
+        let didChooseCategoryForFilter: CommandWith<CategoryFor>
+        let categoryForFilters: Set<CategoryFor>
         let isFilterMenuExpanded: Bool
         let userLocation: CameraLocation
         let currentLocation: CameraLocation
         let visibleCoordinateBounds: MGLCoordinateBounds
         let searchText: String
-
-        struct MapItem {
-            let place: Place
-            let select: Command
-        }
 
         struct CameraLocation {
             let coordinate: CLLocationCoordinate2D

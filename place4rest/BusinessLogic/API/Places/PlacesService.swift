@@ -11,6 +11,7 @@ import PromiseKit
 
 protocol PlacesService: class {
     func getAllPlaces() -> Promise<[Place]>
+    func getPlaces(categories: [Category], for: [CategoryFor]) -> Promise<[Place]>
     func getPlace(id: Int) -> Promise<Place>
 }
 
@@ -25,6 +26,12 @@ final class PlacesServiceProvider: PlacesService {
     func getAllPlaces() -> Promise<[Place]> {
         return api
             .request(.getAllPlaces)
+            .decode(to: [Place].self)
+    }
+
+    func getPlaces(categories: [Category], for categoriesFor: [CategoryFor]) -> Promise<[Place]> {
+        return api
+            .request(.getPlaces(categories: categories, for: categoriesFor))
             .decode(to: [Place].self)
     }
 

@@ -18,8 +18,9 @@ final class MapPresenter: NSObject {
     weak var view: MapView!
 
     // MARK: - Variables
-    private var mapItems: [Props.MapItem] = []
-    private var filters: Set<Props.FilterType> = []
+    private var places: [Place] = []
+    private var categoryFilters: Set<Category> = []
+    private var categoryForFilters: Set<CategoryFor> = []
     private var layerType: Props.LayerType = .satellite
     private var isLayerViewExpanded: Bool = false
     private var isSearchBarExpanded: Bool = false
@@ -36,12 +37,25 @@ final class MapPresenter: NSObject {
 
     // MARK: - MapView
     func viewWasLoaded() {
+        // TODO: show activity indicator
         placesService
             .getAllPlaces()
-            .done { [weak self] places in
-                self?.mapItems = places.map {
-                    Props.MapItem(place: $0, select: Command(action: {}))
-                }
+            .done { [weak self] in
+                self?.places = $0
+            }.catch { error in
+                debugPrint(error.localizedDescription)
+            }.finally { [weak self] in
+                guard let self = self else { return }
+                self.view.render(props: self.makeProps())
+        }
+    }
+
+    private func filterPlaces() {
+        // TODO: show activity indicator
+        placesService
+            .getPlaces(categories: Array(categoryFilters), for: Array(categoryForFilters))
+            .done { [weak self] in
+                self?.places = $0
             }.catch { error in
                 debugPrint(error.localizedDescription)
             }.finally { [weak self] in
@@ -163,7 +177,7 @@ extension MapPresenter: MGLMapViewDelegate {
 // MARK: - Props Factory
 extension MapPresenter {
     private func makeProps() -> Props {
-        return Props(mapItems: mapItems,
+        return Props(places: places,
                      didTapExpandLayersButton: Command(action: { [weak self] in
                         guard let self = self else { return }
                         self.isLayerViewExpanded.toggle()
@@ -199,12 +213,18 @@ extension MapPresenter {
                         self.isFilterMenuExpanded.toggle()
                         self.view?.render(props: self.makeProps())
                      }),
-                     didChooseFilter: CommandWith(action: { [weak self] type in
+                     didChooseCategoryFilter: CommandWith(action: { [weak self] type in
                         guard let self = self else { return }
-                        self.filters = self.filters.symmetricDifference([type])
-                        self.view?.render(props: self.makeProps())
+                        self.categoryFilters = self.categoryFilters.symmetricDifference([type])
+                        self.filterPlaces()
                      }),
-                     filters: filters,
+                     categoryFilters: categoryFilters,
+                     didChooseCategoryForFilter: CommandWith(action: { [weak self] type in
+                        guard let self = self else { return }
+                        self.categoryForFilters = self.categoryForFilters.symmetricDifference([type])
+                        self.filterPlaces()
+                     }),
+                     categoryForFilters: categoryForFilters,
                      isFilterMenuExpanded: isFilterMenuExpanded,
                      userLocation: userLocation,
                      currentLocation: currentLocation,
