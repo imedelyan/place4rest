@@ -24,25 +24,25 @@ enum Activity: Int, ImagePresentable {
     var image: UIImage {
         switch self {
         case .windsurf:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "windsurfing")
         case .bike:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "cycling")
         case .viewpoint:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "telescope")
         case .kayak:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "canoe")
         case .playground:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "playground")
         case .fishing:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "fishing-pole")
         case .moto:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "motorcycle")
         case .monuments:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "monument")
         case .trekking:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "trekking")
         case .paragliding:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "paragliding")
         case .unknown:
             return #imageLiteral(resourceName: "parking")
         }

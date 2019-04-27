@@ -32,7 +32,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U3w-Ga-3wP">
-                                                <rect key="frame" x="0.0" y="58.5" width="375" height="250"/>
+                                                <rect key="frame" x="12" y="58.5" width="351" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="1x2-UN-0ct"/>
@@ -139,11 +139,11 @@
                                             <constraint firstItem="ka5-LK-GTb" firstAttribute="top" secondItem="CR4-jf-ByG" secondAttribute="bottom" constant="10" id="8LK-Dq-aAJ"/>
                                             <constraint firstItem="iCg-8P-NJV" firstAttribute="leading" secondItem="eVJ-OY-wbc" secondAttribute="leading" constant="15" id="C4u-nE-9ZO"/>
                                             <constraint firstItem="U3w-Ga-3wP" firstAttribute="top" secondItem="iCg-8P-NJV" secondAttribute="bottom" constant="10" id="Gga-xZ-RaW"/>
-                                            <constraint firstAttribute="trailing" secondItem="U3w-Ga-3wP" secondAttribute="trailing" id="QyI-OD-WkM"/>
+                                            <constraint firstAttribute="trailing" secondItem="U3w-Ga-3wP" secondAttribute="trailing" constant="12" id="QyI-OD-WkM"/>
                                             <constraint firstItem="CR4-jf-ByG" firstAttribute="leading" secondItem="eVJ-OY-wbc" secondAttribute="leading" constant="15" id="Sxc-Gk-qSN"/>
                                             <constraint firstItem="CR4-jf-ByG" firstAttribute="top" secondItem="VPd-cd-4yH" secondAttribute="bottom" id="T5o-g0-mWu"/>
                                             <constraint firstAttribute="bottom" secondItem="ka5-LK-GTb" secondAttribute="bottom" constant="30" id="UBE-LA-tPs"/>
-                                            <constraint firstItem="U3w-Ga-3wP" firstAttribute="leading" secondItem="eVJ-OY-wbc" secondAttribute="leading" id="cBI-wi-nxm"/>
+                                            <constraint firstItem="U3w-Ga-3wP" firstAttribute="leading" secondItem="eVJ-OY-wbc" secondAttribute="leading" constant="12" id="cBI-wi-nxm"/>
                                             <constraint firstItem="VPd-cd-4yH" firstAttribute="centerX" secondItem="eVJ-OY-wbc" secondAttribute="centerX" id="goU-f1-Uyf"/>
                                             <constraint firstAttribute="trailing" secondItem="iCg-8P-NJV" secondAttribute="trailing" constant="15" id="jjp-s9-6IS"/>
                                             <constraint firstItem="iCg-8P-NJV" firstAttribute="top" secondItem="eVJ-OY-wbc" secondAttribute="top" constant="10" id="kHT-Vy-PyM"/>

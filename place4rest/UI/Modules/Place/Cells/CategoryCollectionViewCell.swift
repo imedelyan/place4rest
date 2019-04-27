@@ -12,15 +12,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
 
-    var image: UIImage? {
-        didSet {
-            imageView.image = image
-        }
-    }
+    var image: UIImage?
+    var color: UIColor?
 
-    var color: UIColor? {
-        didSet {
-            imageView.tintColor = color
-        }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.tintColor = color
+        imageView.image = image
     }
 }

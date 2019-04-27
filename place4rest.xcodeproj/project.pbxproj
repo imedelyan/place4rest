@@ -1034,7 +1034,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BASE_URL = "http://place4rest.com/wp-json/wp/v2/";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DJNZKXGF8V;
+				DEVELOPMENT_TEAM = GXYG7Z27MT;
 				INFOPLIST_FILE = "$(SRCROOT)/place4rest/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1055,7 +1055,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BASE_URL = "http://place4rest.com/wp-json/wp/v2/";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DJNZKXGF8V;
+				DEVELOPMENT_TEAM = GXYG7Z27MT;
 				INFOPLIST_FILE = "$(SRCROOT)/place4rest/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

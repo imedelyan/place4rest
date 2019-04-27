@@ -21,7 +21,7 @@ enum CategoryFor: Int, ImagePresentable {
         case .cars:
             return #imageLiteral(resourceName: "sedan")
         case .hiking:
-            return #imageLiteral(resourceName: "parking")
+            return #imageLiteral(resourceName: "trekking")
         case .unknown:
             return #imageLiteral(resourceName: "parking")
         }
