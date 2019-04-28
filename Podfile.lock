@@ -1,33 +1,82 @@
 PODS:
-  - Mapbox-iOS-SDK (4.8.0)
-  - R.swift (5.0.2):
+  - Alamofire (4.8.2)
+  - Kingfisher (5.3.1)
+  - Mapbox-iOS-SDK (4.9.0)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.4):
+    - PromiseKit/CorePromise
+  - R.swift (5.0.3):
     - R.swift.Library (~> 5.0.0)
-  - R.swift.Library (5.0.0)
-  - Swinject (2.5.0)
+  - R.swift.Library (5.0.1)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - Result (4.1.0)
+  - Swinject (2.6.0)
   - SwinjectStoryboard (2.1.0):
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
+  - Kingfisher (~> 5.3)
   - Mapbox-iOS-SDK (~> 4.8)
+  - Moya (~> 12.0.1)
+  - PromiseKit (~> 6.8.3)
   - R.swift (~> 5.0.2)
+  - RealmSwift (~> 3.13.1)
   - Swinject (~> 2.5)
-  - SwinjectStoryboard (~> 2.1)
+  - SwinjectStoryboard (from `https://github.com/mdyson/SwinjectStoryboard.git`, branch `master`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kingfisher
     - Mapbox-iOS-SDK
+    - Moya
+    - PromiseKit
     - R.swift
     - R.swift.Library
+    - Realm
+    - RealmSwift
+    - Result
     - Swinject
-    - SwinjectStoryboard
+
+EXTERNAL SOURCES:
+  SwinjectStoryboard:
+    :branch: master
+    :git: https://github.com/mdyson/SwinjectStoryboard.git
+
+CHECKOUT OPTIONS:
+  SwinjectStoryboard:
+    :commit: 6063c620b35ec189840318e0be03727372e934d9
+    :git: https://github.com/mdyson/SwinjectStoryboard.git
 
 SPEC CHECKSUMS:
-  Mapbox-iOS-SDK: 864bc732a20c183d87f04923295e988b504453d9
-  R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
-  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
-  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  Mapbox-iOS-SDK: 225036950837cbe408e6b333e51cd6001c122499
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: a2fa690f1dd1b6f0f2540a1cbbbcbdf04eec6242
+PODFILE CHECKSUM: dfe1c32de3b08ea2a098c217d7ca869ee200435f
 
 COCOAPODS: 1.6.0
