@@ -69,7 +69,7 @@ extension UINavigationBar {
     func setupDefaultTheme() {
         barTintColor = R.color.dark_gray()
         tintColor = .white
-        
+
         titleTextAttributes = [
             .foregroundColor: UIColor.white,
             .font: UIFont.boldSystemFont(ofSize: 17)

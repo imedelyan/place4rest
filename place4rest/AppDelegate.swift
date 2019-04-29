@@ -10,6 +10,20 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
+extension SwinjectStoryboard {
+    @objc class func setup() {
+        _ = Assembler([
+            NavigatorsAssembly(),
+            ViewControllersAssembly(),
+            PresentersAssembly(),
+            NetworkServicesAssembly(),
+            NetworkAPIsAssembly(),
+            StorageServicesAssembly(),
+            UtilitiesServicesAssembly()
+            ], container: defaultContainer)
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

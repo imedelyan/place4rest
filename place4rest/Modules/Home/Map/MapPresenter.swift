@@ -15,6 +15,7 @@ final class MapPresenter: NSObject {
 
     // MARK: - Dependencies
     private let placesService: PlacesService
+    private let placesRepository: PlacesRepository
     weak var view: MapView!
 
     // MARK: - Variables
@@ -31,8 +32,9 @@ final class MapPresenter: NSObject {
     private var searchText = ""
 
     // MARK: - Init
-    init(placesService: PlacesService) {
+    init(placesService: PlacesService, placesRepository: PlacesRepository) {
         self.placesService = placesService
+        self.placesRepository = placesRepository
     }
 
     // MARK: - MapView
@@ -41,27 +43,19 @@ final class MapPresenter: NSObject {
         placesService
             .getAllPlaces()
             .done { [weak self] in
-                self?.places = $0
+                self?.placesRepository.save(places: $0)
             }.catch { error in
                 debugPrint(error.localizedDescription)
             }.finally { [weak self] in
                 guard let self = self else { return }
+                self.places = self.placesRepository.fetchAllPlaces()
                 self.view.render(props: self.makeProps())
         }
     }
 
     private func filterPlaces() {
-        // TODO: show activity indicator
-        placesService
-            .getPlaces(categories: Array(categoryFilters), for: Array(categoryForFilters))
-            .done { [weak self] in
-                self?.places = $0
-            }.catch { error in
-                debugPrint(error.localizedDescription)
-            }.finally { [weak self] in
-                guard let self = self else { return }
-                self.view.render(props: self.makeProps())
-        }
+        self.places = placesRepository.filterPlaces(categories: categoryFilters, for: categoryForFilters)
+        view.render(props: self.makeProps())
     }
 }
 
