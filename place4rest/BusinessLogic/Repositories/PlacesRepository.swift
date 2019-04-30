@@ -25,8 +25,7 @@ final class PlacesRepository {
     }
 
     func fetchAllPlaces() -> [Place] {
-        // TODO: filter draft places
-        return Array(realm.objects(Place.self))
+        return Array(realm.objects(Place.self).filter { Place.Status(rawValue: $0.status) == .publish })
     }
 
     func filterPlaces(categories: Set<Category>, for categoriesFor: Set<CategoryFor>) -> [Place] {
