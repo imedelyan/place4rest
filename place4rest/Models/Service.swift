@@ -14,13 +14,16 @@ enum Service: Int, ImagePresentable {
     case internet3G = 12
     case wifi = 13
     case showers = 14
-//    case = 15
+    case dog = 15 // Прогулки с домашними животными
     case washingMotorhomes = 16
     case trashCan = 17
     case toilets = 18
     case water = 19
-//    case = 21
+    case laundromat = 20 // Прачечная-автомат
+    case blackWater = 21 // Слив туалета
+    case usedWater = 22 // Слив сточных вод
     case bakery = 23
+    case electricity = 24
     case unknown = 0
 
     var image: UIImage {
@@ -45,6 +48,16 @@ enum Service: Int, ImagePresentable {
             return #imageLiteral(resourceName: "plumbing")
         case .bakery:
             return #imageLiteral(resourceName: "bread")
+        case .dog:
+            return #imageLiteral(resourceName: "parking")
+        case .laundromat:
+            return #imageLiteral(resourceName: "parking")
+        case .blackWater:
+            return #imageLiteral(resourceName: "parking")
+        case .usedWater:
+            return #imageLiteral(resourceName: "parking")
+        case .electricity:
+            return #imageLiteral(resourceName: "parking")
         case .unknown:
             return #imageLiteral(resourceName: "parking")
         }
