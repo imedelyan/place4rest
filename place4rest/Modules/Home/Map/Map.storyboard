@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -128,7 +128,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_place4rest" translatesAutoresizingMaskIntoConstraints="NO" id="off-QS-SQo">
-                                        <rect key="frame" x="20" y="41" width="66" height="29"/>
+                                        <rect key="frame" x="20" y="41" width="66.5" height="29"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
                                         <rect key="frame" x="330" y="45" width="25" height="25"/>
@@ -149,6 +149,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q9y-sk-mwH" id="6cR-bw-E2S"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" name="dark_gray"/>
@@ -164,6 +167,37 @@
                                     <constraint firstItem="off-QS-SQo" firstAttribute="leading" secondItem="ewD-35-1fJ" secondAttribute="leading" constant="20" id="kPR-cO-o8x"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gfZ-kn-Sge">
+                                <rect key="frame" x="0.0" y="80" width="375" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="nrX-10-4fY"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceTitleCell" textLabel="MvF-ai-bhW" style="IBUITableViewCellStyleDefault" id="4iA-Gi-5YU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4iA-Gi-5YU" id="9rL-gN-AZX">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MvF-ai-bhW">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="light_gray"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Q9y-sk-mwH" id="5Ju-44-948"/>
+                                    <outlet property="delegate" destination="Q9y-sk-mwH" id="axW-Hc-Hqq"/>
+                                </connections>
+                            </tableView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAn-2p-PxJ" userLabel="Filter Menu View">
                                 <rect key="frame" x="385" y="80" width="70" height="538"/>
                                 <subviews>
@@ -245,12 +279,15 @@
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="bottom" secondItem="abP-w4-1qL" secondAttribute="bottom" id="1il-hV-5S3"/>
                             <constraint firstItem="xAn-2p-PxJ" firstAttribute="bottom" secondItem="abP-w4-1qL" secondAttribute="bottom" id="2U5-ro-HJN"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="7Aj-JF-fqb"/>
+                            <constraint firstItem="gfZ-kn-Sge" firstAttribute="top" secondItem="ewD-35-1fJ" secondAttribute="bottom" id="9pf-4a-z5q"/>
+                            <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="gfZ-kn-Sge" secondAttribute="trailing" id="CQZ-OQ-Ig8"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Cu1-RK-OLd"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="HMO-vA-lTt" secondAttribute="trailing" constant="20" id="HPA-s7-F3n"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Hql-LR-xNB"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="xAn-2p-PxJ" secondAttribute="trailing" constant="-80" id="VQi-qz-ZcY"/>
                             <constraint firstItem="xAn-2p-PxJ" firstAttribute="top" secondItem="ewD-35-1fJ" secondAttribute="bottom" id="ZYU-jD-mBV"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="cYi-kk-paa"/>
+                            <constraint firstItem="gfZ-kn-Sge" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="coZ-6S-CKW"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="trailing" secondItem="abP-w4-1qL" secondAttribute="trailing" id="es5-Al-swm"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="trailing" secondItem="abP-w4-1qL" secondAttribute="trailing" id="fM4-rd-wNI"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="HMO-vA-lTt" secondAttribute="bottom" constant="20" id="pUG-gA-7Xv"/>
@@ -277,6 +314,7 @@
                         <outlet property="mapView" destination="vlM-rW-J0i" id="NDi-vK-rmd"/>
                         <outlet property="parkingFilterButton" destination="KUb-Gs-YDc" id="WXA-tM-Asc"/>
                         <outlet property="searchBarWidth" destination="OOv-Mi-Fv0" id="7hO-Uf-PjW"/>
+                        <outlet property="searchTableView" destination="gfZ-kn-Sge" id="TlZ-QK-MD9"/>
                         <outlet property="searchTextField" destination="dB2-EY-ccd" id="N32-6f-JXe"/>
                         <outlet property="sedanFilterButton" destination="Opx-Ba-sUB" id="HLY-sb-mxE"/>
                         <outlet property="trailerFilterButton" destination="dMm-TF-Zey" id="tUG-Kq-1lL"/>
@@ -296,7 +334,7 @@
         <image name="ic-map" width="25" height="25"/>
         <image name="ic-menu" width="25" height="25"/>
         <image name="ic-search" width="25" height="25"/>
-        <image name="logo_place4rest" width="66" height="29"/>
+        <image name="logo_place4rest" width="66.5" height="29"/>
         <image name="parking" width="40" height="40"/>
         <image name="sedan" width="40" height="40"/>
         <image name="trailer" width="40" height="40"/>

@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var campingFilterButton: UIButton!
     @IBOutlet private weak var sedanFilterButton: UIButton!
     @IBOutlet private weak var trailerFilterButton: UIButton!
+    @IBOutlet private weak var searchTableView: UITableView!
 
     // MARK: - Dependencies
     var navigator: MapNavigator!
@@ -49,7 +50,8 @@ class MapViewController: UIViewController {
         userLocation: .notSet,
         currentLocation: .notSet,
         visibleCoordinateBounds: MGLCoordinateBounds(),
-        searchText: ""
+        searchText: "",
+        foundPlaces: []
     )
     private let mapStyles: [URL?] = [
         MGLStyle.streetsStyleURL,
@@ -162,6 +164,34 @@ class MapViewController: UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+extension MapViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        props.didReceiveTextForSearch.perform(with: textField.text!)
+        return true
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension MapViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return props.foundPlaces.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceTitleCell", for: indexPath)
+        cell.textLabel?.text = props.foundPlaces[indexPath.row].title
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension MapViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        show(place: props.foundPlaces[indexPath.row])
+    }
+}
+
 // MARK: - MapView
 protocol MapView: class {
     func render(props: MapViewController.Props)
@@ -193,8 +223,9 @@ extension MapViewController: MapView {
         // set map position
         mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
 
-        // set search bar expanded size
+        // set search bar expanded size and table view
         searchBarWidth.constant = props.isSearchBarExpanded ? view.frame.width - 195 : 0
+        searchTableView.reloadData()
 
         // show/hide filter menu
         self.filterMenuTrailing.constant = props.isFilterMenuExpanded ? 0 : -80
@@ -244,6 +275,7 @@ extension MapViewController {
         let currentLocation: CameraLocation
         let visibleCoordinateBounds: MGLCoordinateBounds
         let searchText: String
+        let foundPlaces: [Place]
 
         struct CameraLocation {
             let coordinate: CLLocationCoordinate2D

@@ -30,6 +30,7 @@ final class MapPresenter: NSObject {
     private var currentLocation: Props.CameraLocation = .notSet
     private var visibleCoordinateBounds = MGLCoordinateBounds()
     private var searchText = ""
+    private var foundPlaces: [Place] = []
 
     // MARK: - Init
     init(placesService: PlacesService, placesRepository: PlacesRepository) {
@@ -198,8 +199,9 @@ extension MapPresenter {
                      isSearchBarExpanded: isSearchBarExpanded,
                      didReceiveTextForSearch: CommandWith(action: { [weak self] text in
                         guard let self = self else { return }
-                        self.searchText = text
-                        self.isSearchBarExpanded.toggle()
+                        self.searchText = text // TODO: is it needed?
+                        self.foundPlaces = self.placesRepository.searchPlaces(by: text)
+//                        self.isSearchBarExpanded.toggle()
                         self.view?.render(props: self.makeProps())
                      }),
                      didTapFilterButton: Command(action: { [weak self] in
@@ -223,6 +225,7 @@ extension MapPresenter {
                      userLocation: userLocation,
                      currentLocation: currentLocation,
                      visibleCoordinateBounds: visibleCoordinateBounds,
-                     searchText: searchText)
+                     searchText: searchText,
+                     foundPlaces: foundPlaces)
     }
 }
