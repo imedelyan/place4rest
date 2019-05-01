@@ -54,6 +54,8 @@
 		41A93287221C3AE9008897AE /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93286221C3AE9008897AE /* MapPresenter.swift */; };
 		41A93289221D4A45008897AE /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A93288221D4A45008897AE /* Command.swift */; };
 		41E7B5C72241289E00C03387 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7B5C62241289E00C03387 /* String+Extension.swift */; };
+		45189BEC2279A95E00DDDCCB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45189BEB2279A95E00DDDCCB /* UIViewController+Extension.swift */; };
+		45189BEF2279C5F500DDDCCB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45189BEE2279C5F500DDDCCB /* SearchViewController.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -137,6 +139,8 @@
 		41A93286221C3AE9008897AE /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		41A93288221D4A45008897AE /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		41E7B5C62241289E00C03387 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		45189BEB2279A95E00DDDCCB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		45189BEE2279C5F500DDDCCB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 				41A930062211A293008897AE /* Welcome */,
 				41A930072211A29A008897AE /* Home */,
 				45F08BFB22626D3900D72464 /* Place */,
+				45189BED2279C5C900DDDCCB /* Search */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				41A9300422118D29008897AE /* UIViewController+load.swift */,
+				45189BEB2279A95E00DDDCCB /* UIViewController+Extension.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -473,6 +479,14 @@
 				41A92FED22117590008897AE /* Extensions */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		45189BED2279C5C900DDDCCB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				45189BEE2279C5F500DDDCCB /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		458C3E25227638AD00C0BE2E /* Repositories */ = {
@@ -855,6 +869,7 @@
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
 				41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */,
 				45F08BF62262504E00D72464 /* RoundedView.swift in Sources */,
+				45189BEC2279A95E00DDDCCB /* UIViewController+Extension.swift in Sources */,
 				45F08BF422611FB900D72464 /* PlaceCalloutView.swift in Sources */,
 				41A9301A2211A615008897AE /* PresentersAssembly.swift in Sources */,
 				41A93281221C1781008897AE /* NetworkAPIsAssembly.swift in Sources */,
@@ -866,6 +881,7 @@
 				45F08C092263683900D72464 /* PhotoCollectionViewCell.swift in Sources */,
 				41A93278221C14EA008897AE /* Moya+TargetType.swift in Sources */,
 				41A930C222156E81008897AE /* VisualEffectView.swift in Sources */,
+				45189BEF2279C5F500DDDCCB /* SearchViewController.swift in Sources */,
 				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
 				41A93271221B0165008897AE /* Place.swift in Sources */,
 				45F08C0B2263685400D72464 /* CategoryCollectionViewCell.swift in Sources */,
