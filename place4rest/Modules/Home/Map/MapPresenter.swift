@@ -64,15 +64,11 @@ extension MapPresenter: MGLMapViewDelegate {
     }
 
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-
-        let coordinate = CLLocationCoordinate2D(
-            latitude: annotation.coordinate.latitude + 0.011, // TODO: change by screen/view size
-            longitude: annotation.coordinate.longitude
-        )
-
-        let camera = MGLMapCamera(lookingAtCenter: coordinate, acrossDistance: 10000, pitch: 15, heading: 0)
-        mapView.fly(to: camera, withDuration: 3, peakAltitude: 10000) { [weak self] in
-            self?.currentLocation = Props.CameraLocation(coordinate: coordinate, zoomLevel: mapView.zoomLevel)
+        let annotationPoint: CGPoint = mapView.convert(annotation.coordinate, toPointTo: nil)
+        let newAnnotationPoint = CGPoint(x: annotationPoint.x, y: annotationPoint.y - 138)
+        let newPositionCoordinate: CLLocationCoordinate2D = mapView.convert(newAnnotationPoint, toCoordinateFrom: nil)
+        mapView.setCenter(newPositionCoordinate, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: true) {
+            mapView.selectAnnotation(annotation, animated: false)
         }
     }
 
