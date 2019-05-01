@@ -19,5 +19,9 @@ class PresentersAssembly: Assembly {
         container.register(PlacePresenter.self) { _ in
             return PlacePresenter()
         }
+        container.register(SearchPresenter.self) { resolver in
+            let placesRepository = resolver.resolve(PlacesRepository.self)
+            return SearchPresenter(placesRepository: placesRepository!)
+        }
     }
 }

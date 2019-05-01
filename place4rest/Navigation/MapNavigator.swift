@@ -30,6 +30,10 @@ final class MapNavigator {
             vc.navigator = self
             vc.presenter.place = place
             navigationController.pushViewController(vc, animated: true)
+        case .search:
+            let vc = SearchViewController.load(from: .search)
+            vc.navigator = self
+            navigationController.pushViewController(vc, animated: true)
         }
     }
 
@@ -42,5 +46,6 @@ extension MapNavigator {
     enum Step {
         case map
         case place(_ place: Place)
+        case search
     }
 }

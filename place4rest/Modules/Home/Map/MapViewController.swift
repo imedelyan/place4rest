@@ -16,15 +16,12 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var layersVEView: VisualEffectView!
     @IBOutlet private weak var layersVEViewHeight: NSLayoutConstraint!
     @IBOutlet private weak var layersVEViewWidth: NSLayoutConstraint!
-    @IBOutlet private weak var searchTextField: UITextField!
-    @IBOutlet private weak var searchBarWidth: NSLayoutConstraint!
     @IBOutlet private weak var filterMenuTrailing: NSLayoutConstraint!
     @IBOutlet private weak var wildPlaceFilterButton: UIButton!
     @IBOutlet private weak var parkingFilterButton: UIButton!
     @IBOutlet private weak var campingFilterButton: UIButton!
     @IBOutlet private weak var sedanFilterButton: UIButton!
     @IBOutlet private weak var trailerFilterButton: UIButton!
-    @IBOutlet private weak var searchTableView: UITableView!
 
     // MARK: - Dependencies
     var navigator: MapNavigator!
@@ -39,8 +36,6 @@ class MapViewController: UIViewController {
         layerType: .satellite,
         didTapLocateButton: .nop,
         didTapSearchButton: .nop,
-        isSearchBarExpanded: false,
-        didReceiveTextForSearch: .nop,
         didTapFilterButton: .nop,
         didChooseCategoryFilter: .nop,
         categoryFilters: [],
@@ -49,9 +44,7 @@ class MapViewController: UIViewController {
         isFilterMenuExpanded: false,
         userLocation: .notSet,
         currentLocation: .notSet,
-        visibleCoordinateBounds: MGLCoordinateBounds(),
-        searchText: "",
-        foundPlaces: []
+        visibleCoordinateBounds: MGLCoordinateBounds()
     )
     private let mapStyles: [URL?] = [
         MGLStyle.streetsStyleURL,
@@ -164,38 +157,11 @@ class MapViewController: UIViewController {
     }
 }
 
-// MARK: - UITextFieldDelegate
-extension MapViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        props.didReceiveTextForSearch.perform(with: textField.text!)
-        return true
-    }
-}
-
-// MARK: - UITableViewDataSource
-extension MapViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return props.foundPlaces.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceTitleCell", for: indexPath)
-        cell.textLabel?.text = props.foundPlaces[indexPath.row].title
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-extension MapViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        show(place: props.foundPlaces[indexPath.row])
-    }
-}
-
 // MARK: - MapView
 protocol MapView: class {
     func render(props: MapViewController.Props)
     func show(place: Place)
+    func showSearch()
 }
 
 extension MapViewController: MapView {
@@ -223,10 +189,6 @@ extension MapViewController: MapView {
         // set map position
         mapView.setCenter(props.currentLocation.coordinate, zoomLevel: props.currentLocation.zoomLevel, animated: true)
 
-        // set search bar expanded size and table view
-        searchBarWidth.constant = props.isSearchBarExpanded ? view.frame.width - 195 : 0
-        searchTableView.reloadData()
-
         // show/hide filter menu
         self.filterMenuTrailing.constant = props.isFilterMenuExpanded ? 0 : -80
 
@@ -247,6 +209,10 @@ extension MapViewController: MapView {
     func show(place: Place) {
         navigator.navigate(to: .place(place))
     }
+
+    func showSearch() {
+        navigator.navigate(to: .search)
+    }
 }
 
 // MARK: - Props
@@ -263,8 +229,6 @@ extension MapViewController {
         }
         let didTapLocateButton: Command
         let didTapSearchButton: Command
-        let isSearchBarExpanded: Bool
-        let didReceiveTextForSearch: CommandWith<String>
         let didTapFilterButton: Command
         let didChooseCategoryFilter: CommandWith<Category>
         let categoryFilters: Set<Category>
@@ -274,8 +238,6 @@ extension MapViewController {
         let userLocation: CameraLocation
         let currentLocation: CameraLocation
         let visibleCoordinateBounds: MGLCoordinateBounds
-        let searchText: String
-        let foundPlaces: [Place]
 
         struct CameraLocation {
             let coordinate: CLLocationCoordinate2D

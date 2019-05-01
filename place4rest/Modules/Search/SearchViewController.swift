@@ -10,37 +10,30 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchTableView: UITableView!
-    
+
+    // MARK: - Dependencies
+    var navigator: MapNavigator!
+    var presenter: SearchPresenter!
+
+    // MARK: - Variables
+    private var props = Props(
+        didReceiveTextForSearch: .nop,
+        foundPlaces: []
+    )
+
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        hideKeyboardWhenTappedAround()
+        presenter.viewWasLoaded()
     }
-
 }
 
 // MARK: - UITextFieldDelegate
 extension SearchViewController: UISearchBarDelegate {
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        guard searchBarWidth.constant == 48 else { return true }
-        searchBarWidth.constant = view.frame.width - 141
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
-        return true
-    }
-    
-    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
-        searchBar.text = ""
-        searchBarWidth.constant = 48
-        UIView.animate(withDuration: 0.3) {
-            self.view.layoutIfNeeded()
-        }
-        return true
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         props.didReceiveTextForSearch.perform(with: searchBar.text!)
         view.endEditing(true)
@@ -52,10 +45,10 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return props.foundPlaces.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceTitleCell", for: indexPath)
-        cell.textLabel?.text = props.foundPlaces[indexPath.row].title
+        cell.textLabel?.text = props.foundPlaces[indexPath.row].title.withoutHtml
         return cell
     }
 }
@@ -63,6 +56,27 @@ extension SearchViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        show(place: props.foundPlaces[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: false)
+        navigator.navigate(to: .place(props.foundPlaces[indexPath.row]))
+    }
+}
+
+// MARK: - MapView
+protocol SearchView: class {
+    func render(props: SearchViewController.Props)
+}
+
+extension SearchViewController: SearchView {
+    func render(props: Props) {
+        self.props = props
+        searchTableView.reloadData()
+    }
+}
+
+// MARK: - Props
+extension SearchViewController {
+    struct Props {
+        let didReceiveTextForSearch: CommandWith<String>
+        let foundPlaces: [Place]
     }
 }

@@ -24,13 +24,10 @@ final class MapPresenter: NSObject {
     private var categoryForFilters: Set<CategoryFor> = []
     private var layerType: Props.LayerType = .satellite
     private var isLayerViewExpanded: Bool = false
-    private var isSearchBarExpanded: Bool = false
     private var isFilterMenuExpanded: Bool = false
     private var userLocation: Props.CameraLocation = .notSet
     private var currentLocation: Props.CameraLocation = .notSet
     private var visibleCoordinateBounds = MGLCoordinateBounds()
-    private var searchText = ""
-    private var foundPlaces: [Place] = []
 
     // MARK: - Init
     init(placesService: PlacesService, placesRepository: PlacesRepository) {
@@ -192,17 +189,7 @@ extension MapPresenter {
                         self.view?.render(props: self.makeProps())
                      }),
                      didTapSearchButton: Command(action: { [weak self] in
-                        guard let self = self else { return }
-                        self.isSearchBarExpanded.toggle()
-                        self.view?.render(props: self.makeProps())
-                     }),
-                     isSearchBarExpanded: isSearchBarExpanded,
-                     didReceiveTextForSearch: CommandWith(action: { [weak self] text in
-                        guard let self = self else { return }
-                        self.searchText = text // TODO: is it needed?
-                        self.foundPlaces = self.placesRepository.searchPlaces(by: text)
-//                        self.isSearchBarExpanded.toggle()
-                        self.view?.render(props: self.makeProps())
+                        self?.view?.showSearch()
                      }),
                      didTapFilterButton: Command(action: { [weak self] in
                         guard let self = self else { return }
@@ -224,8 +211,6 @@ extension MapPresenter {
                      isFilterMenuExpanded: isFilterMenuExpanded,
                      userLocation: userLocation,
                      currentLocation: currentLocation,
-                     visibleCoordinateBounds: visibleCoordinateBounds,
-                     searchText: searchText,
-                     foundPlaces: foundPlaces)
+                     visibleCoordinateBounds: visibleCoordinateBounds)
     }
 }

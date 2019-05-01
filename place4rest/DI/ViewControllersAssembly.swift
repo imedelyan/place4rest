@@ -27,5 +27,9 @@ class ViewControllersAssembly: Assembly {
             controller.presenter = resolver.resolve(PlacePresenter.self)
             controller.presenter.view = controller
         }
+        container.storyboardInitCompleted(SearchViewController.self) { (resolver, controller) in
+            controller.presenter = resolver.resolve(SearchPresenter.self)
+            controller.presenter.view = controller
+        }
     }
 }

@@ -17,4 +17,5 @@ enum AppStoryboard: String {
     case announcements = "Announcements"
     case settings = "Settings"
     case place = "Place"
+    case search = "Search"
 }
