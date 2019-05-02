@@ -120,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9j4-6j-4qj">
-                                        <rect key="frame" x="285" y="45" width="25" height="25"/>
+                                        <rect key="frame" x="291" y="45.5" width="25" height="25"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="ic-search"/>
                                         <connections>
@@ -131,9 +131,9 @@
                                         <rect key="frame" x="20" y="41" width="66" height="29"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
-                                        <rect key="frame" x="330" y="45" width="25" height="25"/>
+                                        <rect key="frame" x="331" y="46" width="24" height="24"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="ic-menu"/>
+                                        <state key="normal" image="ic-filter3"/>
                                         <connections>
                                             <action selector="filterButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="1po-On-ehD"/>
                                         </connections>
@@ -142,9 +142,9 @@
                                 <color key="backgroundColor" name="dark_gray"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ynw-VZ-2LB" secondAttribute="bottom" constant="10" id="0cm-ET-OwB"/>
-                                    <constraint firstAttribute="bottom" secondItem="9j4-6j-4qj" secondAttribute="bottom" constant="10" id="2qz-y0-IQR"/>
+                                    <constraint firstItem="9j4-6j-4qj" firstAttribute="centerY" secondItem="ynw-VZ-2LB" secondAttribute="centerY" id="7VR-XH-e9J"/>
                                     <constraint firstAttribute="trailing" secondItem="ynw-VZ-2LB" secondAttribute="trailing" constant="20" id="DoV-s0-waM"/>
-                                    <constraint firstItem="ynw-VZ-2LB" firstAttribute="leading" secondItem="9j4-6j-4qj" secondAttribute="trailing" constant="20" id="eGj-Kr-FFq"/>
+                                    <constraint firstItem="ynw-VZ-2LB" firstAttribute="leading" secondItem="9j4-6j-4qj" secondAttribute="trailing" constant="15" id="eGj-Kr-FFq"/>
                                     <constraint firstAttribute="bottom" secondItem="off-QS-SQo" secondAttribute="bottom" constant="10" id="eQj-d0-Mzz"/>
                                     <constraint firstAttribute="height" constant="80" id="i87-tq-YTU"/>
                                     <constraint firstItem="off-QS-SQo" firstAttribute="leading" secondItem="ewD-35-1fJ" secondAttribute="leading" constant="20" id="kPR-cO-o8x"/>
@@ -275,10 +275,10 @@
     <resources>
         <image name="camping-tent" width="40" height="40"/>
         <image name="forest" width="40" height="40"/>
+        <image name="ic-filter3" width="24" height="24"/>
         <image name="ic-hunt" width="25" height="25"/>
         <image name="ic-layers" width="25" height="25"/>
         <image name="ic-map" width="25" height="25"/>
-        <image name="ic-menu" width="25" height="25"/>
         <image name="ic-search" width="25" height="25"/>
         <image name="logo_place4rest" width="66" height="29"/>
         <image name="parking" width="40" height="40"/>
