@@ -120,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_place4rest" translatesAutoresizingMaskIntoConstraints="NO" id="off-QS-SQo">
-                                        <rect key="frame" x="20" y="41" width="66" height="29"/>
+                                        <rect key="frame" x="30" y="41" width="66" height="29"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
                                         <rect key="frame" x="331" y="46" width="24" height="24"/>
@@ -137,7 +137,7 @@
                                     <constraint firstAttribute="trailing" secondItem="ynw-VZ-2LB" secondAttribute="trailing" constant="20" id="DoV-s0-waM"/>
                                     <constraint firstAttribute="bottom" secondItem="off-QS-SQo" secondAttribute="bottom" constant="10" id="eQj-d0-Mzz"/>
                                     <constraint firstAttribute="height" constant="80" id="i87-tq-YTU"/>
-                                    <constraint firstItem="off-QS-SQo" firstAttribute="leading" secondItem="ewD-35-1fJ" secondAttribute="leading" constant="20" id="kPR-cO-o8x"/>
+                                    <constraint firstItem="off-QS-SQo" firstAttribute="leading" secondItem="ewD-35-1fJ" secondAttribute="leading" constant="30" id="kPR-cO-o8x"/>
                                 </constraints>
                             </view>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAn-2p-PxJ" userLabel="Filter Menu View">
