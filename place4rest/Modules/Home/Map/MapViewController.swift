@@ -35,7 +35,6 @@ class MapViewController: UIViewController {
         isLayerViewExpanded: false,
         layerType: .satellite,
         didTapLocateButton: .nop,
-        didTapSearchButton: .nop,
         didTapFilterButton: .nop,
         didChooseCategoryFilter: .nop,
         categoryFilters: [],
@@ -95,10 +94,6 @@ class MapViewController: UIViewController {
 
     @IBAction private func locateButtonAction(_ sender: Any) {
         props.didTapLocateButton.perform()
-    }
-
-    @IBAction private func searchButtonAction(_ sender: Any) {
-        props.didTapSearchButton.perform()
     }
 
     @IBAction private func filterButtonAction(_ sender: Any) {
@@ -161,7 +156,6 @@ class MapViewController: UIViewController {
 protocol MapView: class {
     func render(props: MapViewController.Props)
     func show(place: Place)
-    func showSearch()
 }
 
 extension MapViewController: MapView {
@@ -209,10 +203,6 @@ extension MapViewController: MapView {
     func show(place: Place) {
         navigator.navigate(to: .place(place))
     }
-
-    func showSearch() {
-        navigator.navigate(to: .search)
-    }
 }
 
 // MARK: - Props
@@ -228,7 +218,6 @@ extension MapViewController {
             case satellite
         }
         let didTapLocateButton: Command
-        let didTapSearchButton: Command
         let didTapFilterButton: Command
         let didChooseCategoryFilter: CommandWith<Category>
         let categoryFilters: Set<Category>

@@ -1,34 +1,35 @@
 //
-//  MapNavigator.swift
+//  SearchNavigator.swift
 //  place4rest
 //
-//  Created by Igor Medelyan on 4/13/19.
+//  Created by Igor Medelyan on 5/3/19.
 //  Copyright © 2019 imedelian. All rights reserved.
 //
 
 import UIKit
 
-final class MapNavigator {
+final class SearchNavigator {
 
     let navigationController: UINavigationController
 
     // MARK: - Init
     init(navigationController: UINavigationController = .init()) {
         self.navigationController = navigationController
-        navigate(to: .map)
+        navigate(to: .search)
     }
 
     // MARK: - Navigations
     func navigate(to destination: Step) {
         switch destination {
-        case .map:
-            let vc = MapViewController.load(from: .map)
+        case .search:
+            let vc = SearchViewController.load(from: .search)
             vc.navigator = self
             navigationController.pushViewController(vc, animated: true)
         case .place(let place):
             let vc = PlaceViewController.load(from: .place)
             vc.presenter.place = place
             navigationController.pushViewController(vc, animated: true)
+
         }
     }
 
@@ -37,9 +38,9 @@ final class MapNavigator {
     }
 }
 
-extension MapNavigator {
+extension SearchNavigator {
     enum Step {
-        case map
+        case search
         case place(_ place: Place)
     }
 }

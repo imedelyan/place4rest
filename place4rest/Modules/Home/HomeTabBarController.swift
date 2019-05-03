@@ -11,11 +11,12 @@ import UIKit
 class HomeTabBarController: UITabBarController {
 
     var mapNavigator: MapNavigator!
+    var searchNavigator: SearchNavigator!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewControllers = [mapNavigator.navigationController,
-                           SuggestionsViewController.load(from: .suggestions),
+                           searchNavigator.navigationController,
                            AddPlaceViewController.load(from: .addPlace),
                            AnnouncementsViewController.load(from: .announcements),
                            SettingsViewController.load(from: .settings)]

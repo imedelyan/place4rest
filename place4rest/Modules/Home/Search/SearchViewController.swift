@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     @IBOutlet private weak var searchTableView: UITableView!
 
     // MARK: - Dependencies
-    var navigator: MapNavigator!
+    var navigator: SearchNavigator!
     var presenter: SearchPresenter!
 
     // MARK: - Variables

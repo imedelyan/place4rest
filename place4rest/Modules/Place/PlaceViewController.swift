@@ -19,7 +19,6 @@ class PlaceViewController: UIViewController {
     @IBOutlet private weak var categoriesCollectionViewHeight: NSLayoutConstraint!
 
     // MARK: - Dependencies
-    var navigator: MapNavigator!
     var presenter: PlacePresenter!
 
     // MARK: - Variables

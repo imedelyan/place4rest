@@ -184,9 +184,6 @@ extension MapPresenter {
                         self.currentLocation = self.userLocation
                         self.view?.render(props: self.makeProps())
                      }),
-                     didTapSearchButton: Command(action: { [weak self] in
-                        self?.view?.showSearch()
-                     }),
                      didTapFilterButton: Command(action: { [weak self] in
                         guard let self = self else { return }
                         self.isFilterMenuExpanded.toggle()
