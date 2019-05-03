@@ -13,10 +13,15 @@ class PresentersAssembly: Assembly {
     func assemble(container: Container) {
         container.register(MapPresenter.self) { resolver in
             let placesService = resolver.resolve(PlacesService.self)
-            return MapPresenter(placesService: placesService!)
+            let placesRepository = resolver.resolve(PlacesRepository.self)
+            return MapPresenter(placesService: placesService!, placesRepository: placesRepository!)
         }
         container.register(PlacePresenter.self) { _ in
             return PlacePresenter()
+        }
+        container.register(SearchPresenter.self) { resolver in
+            let placesRepository = resolver.resolve(PlacesRepository.self)
+            return SearchPresenter(placesRepository: placesRepository!)
         }
     }
 }

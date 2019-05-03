@@ -110,3 +110,10 @@ extension Place: Decodable {
         case image = "free4rest_front_gallery_img"
     }
 }
+
+extension Place {
+    enum Status: String {
+        case publish
+        case draft
+    }
+}

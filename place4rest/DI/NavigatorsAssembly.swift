@@ -18,5 +18,8 @@ class NavigatorsAssembly: Assembly {
         container.register(MapNavigator.self, factory: { _ in
             return MapNavigator()
         })
+        container.register(SearchNavigator.self, factory: { _ in
+            return SearchNavigator()
+        })
     }
 }
