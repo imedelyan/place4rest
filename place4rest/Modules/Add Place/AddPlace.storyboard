@@ -34,6 +34,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapAddPlaceButton:" destination="nhx-UM-Uvk" eventType="touchUpInside" id="c6i-2I-Dx2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add stuff and help us grow!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-NG-VjB">
                                 <rect key="frame" x="30" y="99.5" width="315" height="60"/>
