@@ -1,5 +1,5 @@
 //
-//  AnnouncementsViewController.swift
+//  AddPlaceViewController.swift
 //  place4rest
 //
 //  Created by Igor Medelian on 2/11/19.
@@ -8,7 +8,10 @@
 
 import UIKit
 
-class AnnouncementsViewController: UIViewController {
+class AddPlaceViewController: UIViewController {
+
+    // MARK: - Dependencies
+    var navigator: AddPlaceNavigator!
 
     override func viewDidLoad() {
         super.viewDidLoad()

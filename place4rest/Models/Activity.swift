@@ -18,6 +18,7 @@ enum Activity: Int, ImagePresentable {
     case moto = 31
     case monuments = 32
     case trekking = 33
+//    case smth = 34
     case paragliding = 74
     case unknown = 0
 
@@ -43,6 +44,8 @@ enum Activity: Int, ImagePresentable {
             return #imageLiteral(resourceName: "trekking")
         case .paragliding:
             return #imageLiteral(resourceName: "paragliding")
+        //case .smth:
+
         case .unknown:
             return #imageLiteral(resourceName: "parking")
         }

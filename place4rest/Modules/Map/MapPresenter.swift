@@ -65,7 +65,7 @@ extension MapPresenter: MGLMapViewDelegate {
 
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
         let annotationPoint: CGPoint = mapView.convert(annotation.coordinate, toPointTo: nil)
-        let newAnnotationPoint = CGPoint(x: annotationPoint.x, y: annotationPoint.y - 138)
+        let newAnnotationPoint = CGPoint(x: annotationPoint.x, y: annotationPoint.y - 135)
         let newPositionCoordinate: CLLocationCoordinate2D = mapView.convert(newAnnotationPoint, toCoordinateFrom: nil)
         mapView.setCenter(newPositionCoordinate, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: true) {
             mapView.selectAnnotation(annotation, animated: false)

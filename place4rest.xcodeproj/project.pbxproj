@@ -32,8 +32,8 @@
 		41A9301C2211A639008897AE /* UtilitiesServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9301B2211A639008897AE /* UtilitiesServicesAssembly.swift */; };
 		41A930232211B6D6008897AE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930222211B6D6008897AE /* Settings.storyboard */; };
 		41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930242211B6EB008897AE /* SettingsViewController.swift */; };
-		41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930262211B701008897AE /* AnnouncementsViewController.swift */; };
-		41A930292211B70A008897AE /* Announcements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930282211B70A008897AE /* Announcements.storyboard */; };
+		41A930272211B701008897AE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930262211B701008897AE /* AboutViewController.swift */; };
+		41A930292211B70A008897AE /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930282211B70A008897AE /* About.storyboard */; };
 		41A9302B2211B725008897AE /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9302A2211B725008897AE /* AddPlaceViewController.swift */; };
 		41A9302D2211B72D008897AE /* AddPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A9302C2211B72D008897AE /* AddPlace.storyboard */; };
 		41A930332211B75E008897AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A930322211B75E008897AE /* MapViewController.swift */; };
@@ -57,6 +57,7 @@
 		45189BF12279C86800DDDCCB /* SearchPresener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45189BF02279C86800DDDCCB /* SearchPresener.swift */; };
 		453E08172279D1A60088C55C /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453E08162279D1A60088C55C /* Search.storyboard */; };
 		453E0819227CC53C0088C55C /* SearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0818227CC53C0088C55C /* SearchNavigator.swift */; };
+		453E081B227D7E860088C55C /* AddPlaceNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E081A227D7E860088C55C /* AddPlaceNavigator.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -118,8 +119,8 @@
 		41A9301B2211A639008897AE /* UtilitiesServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiesServicesAssembly.swift; sourceTree = "<group>"; };
 		41A930222211B6D6008897AE /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		41A930242211B6EB008897AE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		41A930262211B701008897AE /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
-		41A930282211B70A008897AE /* Announcements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Announcements.storyboard; sourceTree = "<group>"; };
+		41A930262211B701008897AE /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		41A930282211B70A008897AE /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		41A9302A2211B725008897AE /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		41A9302C2211B72D008897AE /* AddPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPlace.storyboard; sourceTree = "<group>"; };
 		41A930322211B75E008897AE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 		45189BF02279C86800DDDCCB /* SearchPresener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresener.swift; sourceTree = "<group>"; };
 		453E08162279D1A60088C55C /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		453E0818227CC53C0088C55C /* SearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigator.swift; sourceTree = "<group>"; };
+		453E081A227D7E860088C55C /* AddPlaceNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceNavigator.swift; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -296,6 +298,11 @@
 			children = (
 				41A930062211A293008897AE /* Welcome */,
 				41A930072211A29A008897AE /* Home */,
+				41A9301D2211B64B008897AE /* Map */,
+				45189BED2279C5C900DDDCCB /* Search */,
+				41A930202211B699008897AE /* Add Place */,
+				41A9301F2211B672008897AE /* About */,
+				41A930212211B6A7008897AE /* Settings */,
 				45F08BFB22626D3900D72464 /* Place */,
 			);
 			path = Modules;
@@ -343,6 +350,7 @@
 				41A92FFC221185AC008897AE /* AppNavigator.swift */,
 				45F08C022262718500D72464 /* MapNavigator.swift */,
 				453E0818227CC53C0088C55C /* SearchNavigator.swift */,
+				453E081A227D7E860088C55C /* AddPlaceNavigator.swift */,
 				41A9300222118CD7008897AE /* AppStoryboard.swift */,
 			);
 			path = Navigation;
@@ -400,11 +408,6 @@
 		41A930072211A29A008897AE /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				41A9301D2211B64B008897AE /* Map */,
-				45189BED2279C5C900DDDCCB /* Search */,
-				41A930202211B699008897AE /* Add Place */,
-				41A9301F2211B672008897AE /* Announcements */,
-				41A930212211B6A7008897AE /* Settings */,
 				41A930102211A312008897AE /* HomeTabBarController.swift */,
 				41A9300E2211A2EC008897AE /* Home.storyboard */,
 			);
@@ -429,19 +432,22 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		41A9301F2211B672008897AE /* Announcements */ = {
+		41A9301F2211B672008897AE /* About */ = {
 			isa = PBXGroup;
 			children = (
-				41A930262211B701008897AE /* AnnouncementsViewController.swift */,
-				41A930282211B70A008897AE /* Announcements.storyboard */,
+				41A930262211B701008897AE /* AboutViewController.swift */,
+				41A930282211B70A008897AE /* About.storyboard */,
 			);
-			path = Announcements;
+			path = About;
 			sourceTree = "<group>";
 		};
 		41A930202211B699008897AE /* Add Place */ = {
 			isa = PBXGroup;
 			children = (
-				41A9302A2211B725008897AE /* AddPlaceViewController.swift */,
+				453E081C227D834E0088C55C /* Add Place */,
+				453E081D227D84290088C55C /* Choose Categories */,
+				453E081E227D84340088C55C /* Choose Location */,
+				453E081F227D84410088C55C /* Add Info */,
 				41A9302C2211B72D008897AE /* AddPlace.storyboard */,
 			);
 			path = "Add Place";
@@ -482,6 +488,35 @@
 				453E08162279D1A60088C55C /* Search.storyboard */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		453E081C227D834E0088C55C /* Add Place */ = {
+			isa = PBXGroup;
+			children = (
+				41A9302A2211B725008897AE /* AddPlaceViewController.swift */,
+			);
+			path = "Add Place";
+			sourceTree = "<group>";
+		};
+		453E081D227D84290088C55C /* Choose Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Choose Categories";
+			sourceTree = "<group>";
+		};
+		453E081E227D84340088C55C /* Choose Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Choose Location";
+			sourceTree = "<group>";
+		};
+		453E081F227D84410088C55C /* Add Info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Add Info";
 			sourceTree = "<group>";
 		};
 		458C3E25227638AD00C0BE2E /* Repositories */ = {
@@ -628,7 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A92FEC221173F2008897AE /* .gitignore in Resources */,
-				41A930292211B70A008897AE /* Announcements.storyboard in Resources */,
+				41A930292211B70A008897AE /* About.storyboard in Resources */,
 				45F08BFD22626D5500D72464 /* Place.storyboard in Resources */,
 				41A930352211B767008897AE /* Map.storyboard in Resources */,
 				453E08172279D1A60088C55C /* Search.storyboard in Resources */,
@@ -853,7 +888,7 @@
 				412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */,
 				45F08C0F226371A400D72464 /* CategoryFor.swift in Sources */,
 				45F08BFF22626D7200D72464 /* PlaceViewController.swift in Sources */,
-				41A930272211B701008897AE /* AnnouncementsViewController.swift in Sources */,
+				41A930272211B701008897AE /* AboutViewController.swift in Sources */,
 				45189BF12279C86800DDDCCB /* SearchPresener.swift in Sources */,
 				41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */,
 				45F08C132263720F00D72464 /* Activity.swift in Sources */,
@@ -871,6 +906,7 @@
 				453E0819227CC53C0088C55C /* SearchNavigator.swift in Sources */,
 				45F08C11226371D200D72464 /* Service.swift in Sources */,
 				41A93289221D4A45008897AE /* Command.swift in Sources */,
+				453E081B227D7E860088C55C /* AddPlaceNavigator.swift in Sources */,
 				41A930162211A4AB008897AE /* NavigatorsAssembly.swift in Sources */,
 				41A9327C221C1563008897AE /* Bundle+Extension.swift in Sources */,
 				45F08BF222611CB300D72464 /* RoundedButton.swift in Sources */,

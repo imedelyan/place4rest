@@ -38,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic-plus" width="37.5" height="37.5"/>
+        <image name="ic-plus" width="37" height="37"/>
         <namedColor name="dark_green">
             <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
