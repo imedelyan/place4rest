@@ -58,6 +58,10 @@
 		453E08172279D1A60088C55C /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453E08162279D1A60088C55C /* Search.storyboard */; };
 		453E0819227CC53C0088C55C /* SearchNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0818227CC53C0088C55C /* SearchNavigator.swift */; };
 		453E081B227D7E860088C55C /* AddPlaceNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E081A227D7E860088C55C /* AddPlaceNavigator.swift */; };
+		453E0822227DDF310088C55C /* ChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0821227DDF310088C55C /* ChooseCategoryViewController.swift */; };
+		453E0824227DDF460088C55C /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0823227DDF460088C55C /* ChooseLocationViewController.swift */; };
+		453E0826227DDF5A0088C55C /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0825227DDF5A0088C55C /* AddInfoViewController.swift */; };
+		453E0829227DE0AA0088C55C /* ChooseServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0828227DE0AA0088C55C /* ChooseServicesViewController.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -145,6 +149,10 @@
 		453E08162279D1A60088C55C /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		453E0818227CC53C0088C55C /* SearchNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigator.swift; sourceTree = "<group>"; };
 		453E081A227D7E860088C55C /* AddPlaceNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceNavigator.swift; sourceTree = "<group>"; };
+		453E0821227DDF310088C55C /* ChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryViewController.swift; sourceTree = "<group>"; };
+		453E0823227DDF460088C55C /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationViewController.swift; sourceTree = "<group>"; };
+		453E0825227DDF5A0088C55C /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
+		453E0828227DE0AA0088C55C /* ChooseServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseServicesViewController.swift; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -297,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				41A930062211A293008897AE /* Welcome */,
+				453E0820227DDEE90088C55C /* Login */,
 				41A930072211A29A008897AE /* Home */,
 				41A9301D2211B64B008897AE /* Map */,
 				45189BED2279C5C900DDDCCB /* Search */,
@@ -445,7 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				453E081C227D834E0088C55C /* Add Place */,
-				453E081D227D84290088C55C /* Choose Categories */,
+				453E081D227D84290088C55C /* Choose Category */,
+				453E0827227DE0860088C55C /* Choose Services */,
 				453E081E227D84340088C55C /* Choose Location */,
 				453E081F227D84410088C55C /* Add Info */,
 				41A9302C2211B72D008897AE /* AddPlace.storyboard */,
@@ -498,16 +508,18 @@
 			path = "Add Place";
 			sourceTree = "<group>";
 		};
-		453E081D227D84290088C55C /* Choose Categories */ = {
+		453E081D227D84290088C55C /* Choose Category */ = {
 			isa = PBXGroup;
 			children = (
+				453E0821227DDF310088C55C /* ChooseCategoryViewController.swift */,
 			);
-			path = "Choose Categories";
+			path = "Choose Category";
 			sourceTree = "<group>";
 		};
 		453E081E227D84340088C55C /* Choose Location */ = {
 			isa = PBXGroup;
 			children = (
+				453E0823227DDF460088C55C /* ChooseLocationViewController.swift */,
 			);
 			path = "Choose Location";
 			sourceTree = "<group>";
@@ -515,8 +527,24 @@
 		453E081F227D84410088C55C /* Add Info */ = {
 			isa = PBXGroup;
 			children = (
+				453E0825227DDF5A0088C55C /* AddInfoViewController.swift */,
 			);
 			path = "Add Info";
+			sourceTree = "<group>";
+		};
+		453E0820227DDEE90088C55C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		453E0827227DE0860088C55C /* Choose Services */ = {
+			isa = PBXGroup;
+			children = (
+				453E0828227DE0AA0088C55C /* ChooseServicesViewController.swift */,
+			);
+			path = "Choose Services";
 			sourceTree = "<group>";
 		};
 		458C3E25227638AD00C0BE2E /* Repositories */ = {
@@ -887,6 +915,7 @@
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
 				412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */,
 				45F08C0F226371A400D72464 /* CategoryFor.swift in Sources */,
+				453E0824227DDF460088C55C /* ChooseLocationViewController.swift in Sources */,
 				45F08BFF22626D7200D72464 /* PlaceViewController.swift in Sources */,
 				41A930272211B701008897AE /* AboutViewController.swift in Sources */,
 				45189BF12279C86800DDDCCB /* SearchPresener.swift in Sources */,
@@ -897,6 +926,7 @@
 				41A92FFD221185AC008897AE /* AppNavigator.swift in Sources */,
 				45F08C032262718500D72464 /* MapNavigator.swift in Sources */,
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
+				453E0822227DDF310088C55C /* ChooseCategoryViewController.swift in Sources */,
 				41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */,
 				45F08BF62262504E00D72464 /* RoundedView.swift in Sources */,
 				45189BEC2279A95E00DDDCCB /* UIViewController+Extension.swift in Sources */,
@@ -910,6 +940,7 @@
 				41A930162211A4AB008897AE /* NavigatorsAssembly.swift in Sources */,
 				41A9327C221C1563008897AE /* Bundle+Extension.swift in Sources */,
 				45F08BF222611CB300D72464 /* RoundedButton.swift in Sources */,
+				453E0829227DE0AA0088C55C /* ChooseServicesViewController.swift in Sources */,
 				45F08C092263683900D72464 /* PhotoCollectionViewCell.swift in Sources */,
 				41A93278221C14EA008897AE /* Moya+TargetType.swift in Sources */,
 				41A930C222156E81008897AE /* VisualEffectView.swift in Sources */,
@@ -918,6 +949,7 @@
 				41A93271221B0165008897AE /* Place.swift in Sources */,
 				45F08C0B2263685400D72464 /* CategoryCollectionViewCell.swift in Sources */,
 				45F08BF9226263B900D72464 /* CLLocationCoordinate2D+Extension.swift in Sources */,
+				453E0826227DDF5A0088C55C /* AddInfoViewController.swift in Sources */,
 				45F08C0D2263717F00D72464 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

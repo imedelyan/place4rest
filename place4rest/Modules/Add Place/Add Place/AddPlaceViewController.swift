@@ -26,6 +26,6 @@ class AddPlaceViewController: UIViewController {
 
     // MARK: - IBAction
     @IBAction func didTapAddPlaceButton(_ sender: Any) {
-        navigator.navigate(to: .chooseCategories)
+        navigator.navigate(to: .chooseCategory)
     }
 }

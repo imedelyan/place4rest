@@ -25,7 +25,9 @@ final class AddPlaceNavigator {
             let vc = AddPlaceViewController.load(from: .addPlace)
             vc.navigator = self
             navigationController.pushViewController(vc, animated: true)
-        case .chooseCategories:
+        case .chooseCategory:
+            break
+        case .chooseServices:
             break
         case .chooseLocation:
             break
@@ -42,7 +44,8 @@ final class AddPlaceNavigator {
 extension AddPlaceNavigator {
     enum Step {
         case addPlace
-        case chooseCategories
+        case chooseCategory
+        case chooseServices
         case chooseLocation
         case addInfo
     }
