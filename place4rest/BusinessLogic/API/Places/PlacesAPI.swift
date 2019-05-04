@@ -12,13 +12,14 @@ enum PlacesAPI {
     case getAllPlaces
     case getPlaces(categories: [Category], for: [CategoryFor])
     case getPlace(id: Int)
+    case add(place: Place, token: String)
 }
 
 extension PlacesAPI: TargetType {
 
     var path: String {
         switch self {
-        case .getAllPlaces, .getPlaces:
+        case .getAllPlaces, .getPlaces, .add:
             return "place"
         case .getPlace(let id):
             return "place/\(id)"
@@ -26,7 +27,12 @@ extension PlacesAPI: TargetType {
     }
 
     var method: Moya.Method {
-        return .get
+        switch self {
+        case .getAllPlaces, .getPlaces, .getPlace:
+            return .get
+        case .add:
+            return .post
+        }
     }
 
     var task: Task {
@@ -43,6 +49,18 @@ extension PlacesAPI: TargetType {
             }
             return .requestParameters(parameters: parameters,
                                       encoding: URLEncoding.default)
+        case let .add(place, _):
+            return .requestCompositeData(bodyData: (try? JSONEncoder().encode(place)) ?? Data(),
+                                         urlParameters: [:])
+        }
+    }
+    
+    var headers: [String: String]? {
+        switch self {
+        case .getAllPlaces, .getPlaces, .getPlace:
+            return nil
+        case let .add(_, token):
+            return ["Authorization": "Bearer \(token)"]
         }
     }
 }
