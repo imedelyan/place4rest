@@ -10,21 +10,22 @@ import UIKit
 
 class ChooseLocationViewController: UIViewController {
 
+    // MARK: - IBOutlet
+
+    // MARK: - Dependencies
+    var navigator: AddPlaceNavigator!
+    var place = Place()
+
+    // MARK: - Variables
+
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - IBAction
+    @IBAction func didTapContinueButton(_ sender: Any) {
+        navigator.navigate(to: .addInfo(place: place))
     }
-    */
-
 }

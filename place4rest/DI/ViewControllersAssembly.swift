@@ -33,5 +33,6 @@ class ViewControllersAssembly: Assembly {
             controller.presenter = resolver.resolve(SearchPresenter.self)
             controller.presenter.view = controller
         }
+
     }
 }

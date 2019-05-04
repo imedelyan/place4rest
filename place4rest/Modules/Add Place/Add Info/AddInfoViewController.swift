@@ -10,21 +10,23 @@ import UIKit
 
 class AddInfoViewController: UIViewController {
 
+    // MARK: - IBOutlet
+    @IBOutlet private weak var submitButton: UIButton!
+
+    // MARK: - Dependencies
+    var navigator: AddPlaceNavigator!
+    var place = Place()
+
+    // MARK: - Variables
+
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - IBAction
+    @IBAction func didTapSubmitButton(_ sender: Any) {
+        navigator.backToRoot()
     }
-    */
-
 }

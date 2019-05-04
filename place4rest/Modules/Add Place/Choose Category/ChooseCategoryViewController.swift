@@ -10,21 +10,102 @@ import UIKit
 
 class ChooseCategoryViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - IBOutlet
+    @IBOutlet private weak var continueButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.register(CategoryTableViewCell.nib, forCellReuseIdentifier: CategoryTableViewCell.identifier)
+        }
+    }
 
-        // Do any additional setup after loading the view.
+    // MARK: - Dependencies
+    var navigator: AddPlaceNavigator!
+
+    // MARK: - Variables
+    private let sectionTitles = [
+        "Select one primary category",
+        "Select what this category is for"
+    ]
+    private var categories: [Category] {
+        var categories = Category.allCases
+        categories.removeLast()
+        return categories
+    }
+    private var selectedCategory: Category = .unknown {
+        didSet {
+            continueButton.backgroundColor = R.color.green()
+            continueButton.isEnabled = true
+            place.categories.removeAll()
+            place.categories.append(selectedCategory.rawValue)
+        }
+    }
+    private var categoriesFor: [CategoryFor] {
+        var categoriesFor = CategoryFor.allCases
+        categoriesFor.removeLast()
+        return categoriesFor
+    }
+    private var place = Place()
+
+    // MARK: - IBAction
+    @IBAction func didTapContinueButton(_ sender: Any) {
+        navigator.navigate(to: .chooseServices(place: place))
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension ChooseCategoryViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitles.count
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return categories.count
+        case 1:
+            return categoriesFor.count
+        default:
+            return 0
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier,
+                                                 for: indexPath) as! CategoryTableViewCell
+        switch indexPath.section {
+        case 0:
+            cell.fill(with: categories[indexPath.row])
+        case 1:
+            cell.fill(with: categoriesFor[indexPath.row])
+        default: break
+        }
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ChooseCategoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            selectedCategory = categories[indexPath.row]
+        case 1:
+            place.categoriesFor.append(categoriesFor[indexPath.row].rawValue)
+        default: break
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            selectedCategory = categories[indexPath.row]
+        case 1:
+            selectedCategoryFor = categoriesFor[indexPath.row]
+        default: break
+        }
     }
-    */
-
 }

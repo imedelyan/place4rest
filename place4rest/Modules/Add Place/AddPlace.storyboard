@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Place View Controller-->
+        <!--Add a New Place-->
         <scene sceneID="sE8-iR-8C3">
             <objects>
                 <viewController storyboardIdentifier="AddPlaceViewController" id="nhx-UM-Uvk" customClass="AddPlaceViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,67 +95,200 @@ You make the app better.</string>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" title="Add a New Place" id="Wrx-jM-3Ja">
+                        <barButtonItem key="backBarButtonItem" title=" " id="IKJ-CQ-PFN"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSj-i6-If0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="127"/>
+            <point key="canvasLocation" x="-22" y="125"/>
         </scene>
-        <!--Choose Category View Controller-->
+        <!--Add a New Place-->
         <scene sceneID="wkX-Qx-FqY">
             <objects>
-                <viewController storyboardIdentifier="ChooseCategoryViewController" id="hIc-2W-Air" customClass="ChooseCategoryViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCategoryViewController" hidesBottomBarWhenPushed="YES" id="hIc-2W-Air" customClass="ChooseCategoryViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iFy-rs-tTb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ED-Aa-YOd">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" name="light_gray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Rqe-Lo-i0E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="CONTINUE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapContinueButton:" destination="hIc-2W-Air" eventType="touchUpInside" id="aeW-Pb-QwS"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="noE-LA-PBV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hIc-2W-Air" id="FXX-3X-UbQ"/>
+                                    <outlet property="delegate" destination="hIc-2W-Air" id="2HC-ye-u01"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="noE-LA-PBV" firstAttribute="leading" secondItem="nd7-fk-B7U" secondAttribute="leading" id="2k7-xZ-nEm"/>
+                            <constraint firstItem="0ED-Aa-YOd" firstAttribute="leading" secondItem="nd7-fk-B7U" secondAttribute="leading" id="CJG-od-uhd"/>
+                            <constraint firstItem="nd7-fk-B7U" firstAttribute="trailing" secondItem="0ED-Aa-YOd" secondAttribute="trailing" id="Jwf-Ru-gZO"/>
+                            <constraint firstItem="nd7-fk-B7U" firstAttribute="trailing" secondItem="noE-LA-PBV" secondAttribute="trailing" id="KRh-hZ-yzb"/>
+                            <constraint firstItem="nd7-fk-B7U" firstAttribute="bottom" secondItem="0ED-Aa-YOd" secondAttribute="bottom" id="U1n-Xq-YwZ"/>
+                            <constraint firstItem="0ED-Aa-YOd" firstAttribute="top" secondItem="noE-LA-PBV" secondAttribute="bottom" id="a6s-vi-v2I"/>
+                            <constraint firstItem="noE-LA-PBV" firstAttribute="top" secondItem="iFy-rs-tTb" secondAttribute="top" id="mlZ-hm-CqR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nd7-fk-B7U"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add a New Place" id="Eoy-w4-5hA">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Fo3-rf-69S"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="continueButton" destination="0ED-Aa-YOd" id="L1K-Nj-LAY"/>
+                        <outlet property="tableView" destination="noE-LA-PBV" id="K71-p2-IFv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2N-U0-1rK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="684" y="126"/>
         </scene>
-        <!--Choose Location View Controller-->
+        <!--Add a New Place-->
         <scene sceneID="yhv-i4-Opj">
             <objects>
-                <viewController storyboardIdentifier="ChooseLocationViewController" id="Q8y-Y0-0lV" customClass="ChooseLocationViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseLocationViewController" hidesBottomBarWhenPushed="YES" id="Q8y-Y0-0lV" customClass="ChooseLocationViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZG-MP-ogE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKD-B9-xXK">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" name="green"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="HIv-Lx-ojU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="CONTINUE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapContinueButton:" destination="Q8y-Y0-0lV" eventType="touchUpInside" id="eIN-TF-nLL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pgl-VJ-QpA" firstAttribute="trailing" secondItem="IKD-B9-xXK" secondAttribute="trailing" id="5T0-To-zqy"/>
+                            <constraint firstItem="IKD-B9-xXK" firstAttribute="leading" secondItem="hZG-MP-ogE" secondAttribute="leading" id="Jy8-AN-Pcd"/>
+                            <constraint firstItem="Pgl-VJ-QpA" firstAttribute="bottom" secondItem="IKD-B9-xXK" secondAttribute="bottom" id="dBi-lA-gGo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pgl-VJ-QpA"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add a New Place" id="CYH-X4-Ct5">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Zoo-4y-I2Q"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wg8-AU-8xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2071" y="126"/>
         </scene>
-        <!--Add Info View Controller-->
+        <!--Add a New Place-->
         <scene sceneID="CE3-2J-RMV">
             <objects>
-                <viewController storyboardIdentifier="AddInfoViewController" id="Zgn-fD-XK8" customClass="AddInfoViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddInfoViewController" hidesBottomBarWhenPushed="YES" id="Zgn-fD-XK8" customClass="AddInfoViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOE-bt-CPH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufv-JW-OyL">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" name="light_gray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4gS-YK-P9X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSubmitButton:" destination="Zgn-fD-XK8" eventType="touchUpInside" id="ViD-2I-D3g"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K58-3C-c5I" firstAttribute="trailing" secondItem="ufv-JW-OyL" secondAttribute="trailing" id="8ym-Nd-S2h"/>
+                            <constraint firstItem="ufv-JW-OyL" firstAttribute="leading" secondItem="MOE-bt-CPH" secondAttribute="leading" id="U71-sJ-3of"/>
+                            <constraint firstItem="K58-3C-c5I" firstAttribute="bottom" secondItem="ufv-JW-OyL" secondAttribute="bottom" id="y0M-ZB-N0T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K58-3C-c5I"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add a New Place" id="Scb-hV-bBb">
+                        <barButtonItem key="backBarButtonItem" title=" " id="m7c-3c-cUk"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="submitButton" destination="ufv-JW-OyL" id="s3d-bN-Z4Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4Z-w1-TyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="126"/>
+            <point key="canvasLocation" x="2772" y="125"/>
         </scene>
-        <!--Choose Services View Controller-->
+        <!--Add a New Place-->
         <scene sceneID="ink-32-yLR">
             <objects>
-                <viewController storyboardIdentifier="ChooseServicesViewController" id="AgN-Vj-SEK" customClass="ChooseServicesViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseServicesViewController" hidesBottomBarWhenPushed="YES" id="AgN-Vj-SEK" customClass="ChooseServicesViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f8f-J9-fKo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfO-Wm-i8U">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" name="green"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="x4e-Z5-0WA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="CONTINUE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapContinueButton:" destination="AgN-Vj-SEK" eventType="touchUpInside" id="agp-fw-4hU"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6b-Ub-dCF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="AgN-Vj-SEK" id="XWK-kA-n3c"/>
+                                    <outlet property="delegate" destination="AgN-Vj-SEK" id="JTs-aB-AWq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hfO-Wm-i8U" firstAttribute="leading" secondItem="yPS-dZ-Nco" secondAttribute="leading" id="Gbn-II-gcQ"/>
+                            <constraint firstItem="hfO-Wm-i8U" firstAttribute="top" secondItem="K6b-Ub-dCF" secondAttribute="bottom" id="JjO-Wk-qB8"/>
+                            <constraint firstAttribute="trailing" secondItem="hfO-Wm-i8U" secondAttribute="trailing" id="jLV-2Q-wqC"/>
+                            <constraint firstAttribute="trailing" secondItem="K6b-Ub-dCF" secondAttribute="trailing" id="oaa-en-TFq"/>
+                            <constraint firstItem="K6b-Ub-dCF" firstAttribute="top" secondItem="f8f-J9-fKo" secondAttribute="top" id="r7Q-wt-bnU"/>
+                            <constraint firstItem="yPS-dZ-Nco" firstAttribute="bottom" secondItem="hfO-Wm-i8U" secondAttribute="bottom" id="rw2-St-XmZ"/>
+                            <constraint firstItem="K6b-Ub-dCF" firstAttribute="leading" secondItem="yPS-dZ-Nco" secondAttribute="leading" id="zj5-TK-Fne"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yPS-dZ-Nco"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add a New Place" id="1qs-Si-jjt">
+                        <barButtonItem key="backBarButtonItem" title=" " id="3bk-Gu-Jn9"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="K6b-Ub-dCF" id="lXI-pu-JMn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VjT-CF-cMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,6 +302,9 @@ You make the app better.</string>
         </namedColor>
         <namedColor name="dark_green">
             <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green">
+            <color red="0.58823529411764708" green="0.80000000000000004" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light_gray">
             <color red="0.5725490196078431" green="0.5725490196078431" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

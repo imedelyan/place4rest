@@ -121,4 +121,5 @@ extension PlaceViewController {
 protocol ImagePresentable {
     var image: UIImage { get }
     var color: UIColor? { get }
+    var name: String { get }
 }

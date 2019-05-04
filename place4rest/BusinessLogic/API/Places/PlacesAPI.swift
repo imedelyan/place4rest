@@ -54,7 +54,7 @@ extension PlacesAPI: TargetType {
                                          urlParameters: [:])
         }
     }
-    
+
     var headers: [String: String]? {
         switch self {
         case .getAllPlaces, .getPlaces, .getPlace:

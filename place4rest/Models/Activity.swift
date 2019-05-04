@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Activity: Int, ImagePresentable {
+enum Activity: Int, ImagePresentable, CaseIterable {
     case windsurf = 25
     case bike = 26
     case viewpoint = 27
@@ -53,5 +53,32 @@ enum Activity: Int, ImagePresentable {
 
     var color: UIColor? {
         return R.color.green()
+    }
+
+    var name: String {
+        switch self {
+        case .windsurf:
+            return "Windsurfing"
+        case .bike:
+            return "Cycling"
+        case .viewpoint:
+            return "Viewpoint"
+        case .kayak:
+            return "Kayak"
+        case .playground:
+            return "Playground"
+        case .fishing:
+            return "Fishing"
+        case .moto:
+            return "Motorcycling"
+        case .monuments:
+            return "Monuments"
+        case .trekking:
+            return "Trekking"
+        case .paragliding:
+            return "Paragliding"
+        case .unknown:
+            return ""
+        }
     }
 }

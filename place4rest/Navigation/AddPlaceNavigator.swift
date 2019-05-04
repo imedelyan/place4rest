@@ -26,13 +26,24 @@ final class AddPlaceNavigator {
             vc.navigator = self
             navigationController.pushViewController(vc, animated: true)
         case .chooseCategory:
-            break
-        case .chooseServices:
-            break
-        case .chooseLocation:
-            break
-        case .addInfo:
-            break
+            let vc = ChooseCategoryViewController.load(from: .addPlace)
+            vc.navigator = self
+            navigationController.pushViewController(vc, animated: true)
+        case let .chooseServices(place):
+            let vc = ChooseServicesViewController.load(from: .addPlace)
+            vc.navigator = self
+            vc.place = place
+            navigationController.pushViewController(vc, animated: true)
+        case let .chooseLocation(place):
+            let vc = ChooseLocationViewController.load(from: .addPlace)
+            vc.navigator = self
+            vc.place = place
+            navigationController.pushViewController(vc, animated: true)
+        case let .addInfo(place):
+            let vc = AddInfoViewController.load(from: .addPlace)
+            vc.navigator = self
+            vc.place = place
+            navigationController.pushViewController(vc, animated: true)
         }
     }
 
@@ -45,8 +56,8 @@ extension AddPlaceNavigator {
     enum Step {
         case addPlace
         case chooseCategory
-        case chooseServices
-        case chooseLocation
-        case addInfo
+        case chooseServices(place: Place)
+        case chooseLocation(place: Place)
+        case addInfo(place: Place)
     }
 }

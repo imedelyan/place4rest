@@ -62,6 +62,9 @@
 		453E0824227DDF460088C55C /* ChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0823227DDF460088C55C /* ChooseLocationViewController.swift */; };
 		453E0826227DDF5A0088C55C /* AddInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0825227DDF5A0088C55C /* AddInfoViewController.swift */; };
 		453E0829227DE0AA0088C55C /* ChooseServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0828227DE0AA0088C55C /* ChooseServicesViewController.swift */; };
+		453E082D227E00690088C55C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E082B227E00690088C55C /* CategoryTableViewCell.swift */; };
+		453E082E227E00690088C55C /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453E082C227E00690088C55C /* CategoryTableViewCell.xib */; };
+		453E0830227E01850088C55C /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E082F227E01850088C55C /* UITableViewCell+Extension.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -153,6 +156,9 @@
 		453E0823227DDF460088C55C /* ChooseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationViewController.swift; sourceTree = "<group>"; };
 		453E0825227DDF5A0088C55C /* AddInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoViewController.swift; sourceTree = "<group>"; };
 		453E0828227DE0AA0088C55C /* ChooseServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseServicesViewController.swift; sourceTree = "<group>"; };
+		453E082B227E00690088C55C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		453E082C227E00690088C55C /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		453E082F227E01850088C55C /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -289,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				41A9300122118CA2008897AE /* UIViewController */,
+				453E082F227E01850088C55C /* UITableViewCell+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -453,6 +460,7 @@
 		41A930202211B699008897AE /* Add Place */ = {
 			isa = PBXGroup;
 			children = (
+				453E082A227E002E0088C55C /* Cells */,
 				453E081C227D834E0088C55C /* Add Place */,
 				453E081D227D84290088C55C /* Choose Category */,
 				453E0827227DE0860088C55C /* Choose Services */,
@@ -545,6 +553,15 @@
 				453E0828227DE0AA0088C55C /* ChooseServicesViewController.swift */,
 			);
 			path = "Choose Services";
+			sourceTree = "<group>";
+		};
+		453E082A227E002E0088C55C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				453E082B227E00690088C55C /* CategoryTableViewCell.swift */,
+				453E082C227E00690088C55C /* CategoryTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		458C3E25227638AD00C0BE2E /* Repositories */ = {
@@ -693,6 +710,7 @@
 				41A92FEC221173F2008897AE /* .gitignore in Resources */,
 				41A930292211B70A008897AE /* About.storyboard in Resources */,
 				45F08BFD22626D5500D72464 /* Place.storyboard in Resources */,
+				453E082E227E00690088C55C /* CategoryTableViewCell.xib in Resources */,
 				41A930352211B767008897AE /* Map.storyboard in Resources */,
 				453E08172279D1A60088C55C /* Search.storyboard in Resources */,
 				41A92FE9221173F2008897AE /* .swiftlint.yml in Resources */,
@@ -932,6 +950,7 @@
 				45189BEC2279A95E00DDDCCB /* UIViewController+Extension.swift in Sources */,
 				45F08BF422611FB900D72464 /* PlaceCalloutView.swift in Sources */,
 				41A9301A2211A615008897AE /* PresentersAssembly.swift in Sources */,
+				453E0830227E01850088C55C /* UITableViewCell+Extension.swift in Sources */,
 				41A93281221C1781008897AE /* NetworkAPIsAssembly.swift in Sources */,
 				453E0819227CC53C0088C55C /* SearchNavigator.swift in Sources */,
 				45F08C11226371D200D72464 /* Service.swift in Sources */,
@@ -947,6 +966,7 @@
 				45189BEF2279C5F500DDDCCB /* SearchViewController.swift in Sources */,
 				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
 				41A93271221B0165008897AE /* Place.swift in Sources */,
+				453E082D227E00690088C55C /* CategoryTableViewCell.swift in Sources */,
 				45F08C0B2263685400D72464 /* CategoryCollectionViewCell.swift in Sources */,
 				45F08BF9226263B900D72464 /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				453E0826227DDF5A0088C55C /* AddInfoViewController.swift in Sources */,
