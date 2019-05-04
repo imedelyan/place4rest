@@ -20,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="yn5-4A-K2s">
-                                <rect key="frame" x="5" y="20" width="365" height="56"/>
-                                <color key="tintColor" name="dark_gray"/>
+                                <rect key="frame" x="5" y="40" width="365" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" name="dark_gray"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
-                                        <color key="value" name="dark_gray"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -34,8 +34,8 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ncf-lj-oDJ">
-                                <rect key="frame" x="0.0" y="76" width="375" height="542"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="522"/>
+                                <color key="backgroundColor" name="dark_gray"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceTitleCell" textLabel="bar-xw-w1E" style="IBUITableViewCellStyleDefault" id="QWS-CS-Wme">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -48,7 +48,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="345" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" name="dark_gray"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-4Q-Fap">
@@ -58,7 +58,7 @@
                                                 </view>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" name="dark_gray"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -67,7 +67,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="dark_gray"/>
                         <constraints>
                             <constraint firstItem="yn5-4A-K2s" firstAttribute="leading" secondItem="o28-ww-BfC" secondAttribute="leading" constant="5" id="1m0-cO-LrG"/>
                             <constraint firstItem="o28-ww-BfC" firstAttribute="bottom" secondItem="ncf-lj-oDJ" secondAttribute="bottom" id="3z5-6J-KJx"/>
@@ -75,7 +75,7 @@
                             <constraint firstItem="yn5-4A-K2s" firstAttribute="trailing" secondItem="o28-ww-BfC" secondAttribute="trailing" constant="-5" id="WgG-aT-gpD"/>
                             <constraint firstItem="ncf-lj-oDJ" firstAttribute="leading" secondItem="o28-ww-BfC" secondAttribute="leading" id="c1I-nF-qha"/>
                             <constraint firstItem="ncf-lj-oDJ" firstAttribute="trailing" secondItem="o28-ww-BfC" secondAttribute="trailing" id="qaW-Ia-1ec"/>
-                            <constraint firstItem="yn5-4A-K2s" firstAttribute="top" secondItem="o28-ww-BfC" secondAttribute="top" id="xWC-dI-fKP"/>
+                            <constraint firstItem="yn5-4A-K2s" firstAttribute="top" secondItem="o28-ww-BfC" secondAttribute="top" constant="20" id="xWC-dI-fKP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o28-ww-BfC"/>
                     </view>

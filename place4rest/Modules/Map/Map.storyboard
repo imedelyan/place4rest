@@ -108,14 +108,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMO-vA-lTt">
-                                <rect key="frame" x="330" y="573" width="25" height="25"/>
-                                <color key="tintColor" name="dark_gray"/>
-                                <state key="normal" image="ic-hunt"/>
-                                <connections>
-                                    <action selector="locateButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="23q-0I-3Ed"/>
-                                </connections>
-                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmA-XR-Dsj" customClass="VisualEffectView" customModule="place4rest" customModuleProvider="target">
+                                <rect key="frame" x="319" y="562" width="46" height="46"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CPH-qa-Ryl">
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMO-vA-lTt">
+                                            <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                            <color key="tintColor" name="dark_gray"/>
+                                            <state key="normal" image="ic-hunt"/>
+                                            <connections>
+                                                <action selector="locateButtonAction:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="23q-0I-3Ed"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="HMO-vA-lTt" firstAttribute="centerX" secondItem="CPH-qa-Ryl" secondAttribute="centerX" id="Zok-98-tuk"/>
+                                        <constraint firstItem="HMO-vA-lTt" firstAttribute="centerY" secondItem="CPH-qa-Ryl" secondAttribute="centerY" id="pSJ-dU-j5V"/>
+                                    </constraints>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="0z9-9E-UGd"/>
+                                    <constraint firstAttribute="height" constant="46" id="CpT-ni-VRB"/>
+                                </constraints>
+                                <blurEffect style="regular"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewD-35-1fJ" userLabel="Header View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
@@ -222,14 +246,14 @@
                             <constraint firstItem="xAn-2p-PxJ" firstAttribute="bottom" secondItem="abP-w4-1qL" secondAttribute="bottom" id="2U5-ro-HJN"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="7Aj-JF-fqb"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Cu1-RK-OLd"/>
-                            <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="HMO-vA-lTt" secondAttribute="trailing" constant="20" id="HPA-s7-F3n"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Hql-LR-xNB"/>
+                            <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="AmA-XR-Dsj" secondAttribute="bottom" constant="10" id="VPL-Yl-8L1"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="xAn-2p-PxJ" secondAttribute="trailing" constant="-80" id="VQi-qz-ZcY"/>
                             <constraint firstItem="xAn-2p-PxJ" firstAttribute="top" secondItem="ewD-35-1fJ" secondAttribute="bottom" id="ZYU-jD-mBV"/>
+                            <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="AmA-XR-Dsj" secondAttribute="trailing" constant="10" id="bUW-hl-jci"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="cYi-kk-paa"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="trailing" secondItem="abP-w4-1qL" secondAttribute="trailing" id="es5-Al-swm"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="trailing" secondItem="abP-w4-1qL" secondAttribute="trailing" id="fM4-rd-wNI"/>
-                            <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="HMO-vA-lTt" secondAttribute="bottom" constant="20" id="pUG-gA-7Xv"/>
                             <constraint firstItem="zYc-1f-nOL" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" constant="10" id="rIc-5f-O2p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="abP-w4-1qL"/>

@@ -18,7 +18,69 @@
                     <view key="view" contentMode="scaleToFill" id="n2N-Nx-sU9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWJ-Hk-ki6" customClass="RoundedButton" customModule="place4rest" customModuleProvider="target">
+                                <rect key="frame" x="47" y="556" width="281" height="30"/>
+                                <color key="backgroundColor" name="light_gray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rbx-ly-F3R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="ADD PLACE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add stuff and help us grow!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-NG-VjB">
+                                <rect key="frame" x="30" y="99.5" width="315" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="place4rest is a community" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfi-cD-8B1">
+                                <rect key="frame" x="30" y="179.5" width="315" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBK-la-aQ4">
+                                <rect key="frame" x="30" y="223.5" width="315" height="95.5"/>
+                                <string key="text">This app wouldn't be here without all of you, without new places you explore, photos and reviews you add.
+
+You make the app better.</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The special place where you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-Mi-aAD">
+                                <rect key="frame" x="30" y="60" width="315" height="19.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="dark_gray"/>
+                        <constraints>
+                            <constraint firstItem="BOl-X2-ptq" firstAttribute="trailing" secondItem="HBK-la-aQ4" secondAttribute="trailing" constant="30" id="2qE-Gm-YrW"/>
+                            <constraint firstItem="hWJ-Hk-ki6" firstAttribute="leading" secondItem="BOl-X2-ptq" secondAttribute="leading" constant="47" id="BwD-tf-lAy"/>
+                            <constraint firstItem="BOl-X2-ptq" firstAttribute="bottom" secondItem="hWJ-Hk-ki6" secondAttribute="bottom" constant="32" id="EVG-D1-OpE"/>
+                            <constraint firstItem="FPv-Mi-aAD" firstAttribute="leading" secondItem="BOl-X2-ptq" secondAttribute="leading" constant="30" id="KtJ-Xn-cBE"/>
+                            <constraint firstItem="BOl-X2-ptq" firstAttribute="trailing" secondItem="V0g-NG-VjB" secondAttribute="trailing" constant="30" id="M1T-bq-pr1"/>
+                            <constraint firstItem="BOl-X2-ptq" firstAttribute="trailing" secondItem="hWJ-Hk-ki6" secondAttribute="trailing" constant="47" id="Qfv-TD-4sG"/>
+                            <constraint firstItem="BOl-X2-ptq" firstAttribute="trailing" secondItem="FPv-Mi-aAD" secondAttribute="trailing" constant="30" id="S9f-Lr-GKh"/>
+                            <constraint firstItem="HBK-la-aQ4" firstAttribute="leading" secondItem="BOl-X2-ptq" secondAttribute="leading" constant="30" id="Zdn-ie-Bih"/>
+                            <constraint firstItem="Dfi-cD-8B1" firstAttribute="top" secondItem="V0g-NG-VjB" secondAttribute="bottom" constant="20" id="fH8-hi-pKD"/>
+                            <constraint firstItem="V0g-NG-VjB" firstAttribute="top" secondItem="FPv-Mi-aAD" secondAttribute="bottom" constant="20" id="fsS-3G-N8s"/>
+                            <constraint firstItem="BOl-X2-ptq" firstAttribute="trailing" secondItem="Dfi-cD-8B1" secondAttribute="trailing" constant="30" id="n5f-Gi-sEQ"/>
+                            <constraint firstItem="Dfi-cD-8B1" firstAttribute="leading" secondItem="BOl-X2-ptq" secondAttribute="leading" constant="30" id="pTK-fB-Oyj"/>
+                            <constraint firstItem="V0g-NG-VjB" firstAttribute="leading" secondItem="BOl-X2-ptq" secondAttribute="leading" constant="30" id="uAH-Tx-YrA"/>
+                            <constraint firstItem="FPv-Mi-aAD" firstAttribute="top" secondItem="BOl-X2-ptq" secondAttribute="top" constant="40" id="xXV-3T-600"/>
+                            <constraint firstItem="HBK-la-aQ4" firstAttribute="top" secondItem="Dfi-cD-8B1" secondAttribute="bottom" constant="20" id="zC3-b1-YZz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BOl-X2-ptq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic-plus" selectedImage="ic-plus" id="GwO-YQ-UNq">
@@ -39,8 +101,14 @@
     </scenes>
     <resources>
         <image name="ic-plus" width="37" height="37"/>
+        <namedColor name="dark_gray">
+            <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="dark_green">
             <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_gray">
+            <color red="0.5725490196078431" green="0.5725490196078431" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
