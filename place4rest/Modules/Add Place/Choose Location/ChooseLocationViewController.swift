@@ -77,7 +77,7 @@ class ChooseLocationViewController: UIViewController {
 
     @IBAction private func locateButtonAction(_ sender: Any) {
         guard let location = mapView.userLocation, location.coordinate.latitude > -180 else { return }
-        mapView.setCenter(location.coordinate, zoomLevel: 10, animated: true)
+        mapView.setCenter(location.coordinate, zoomLevel: 12, animated: true)
     }
 }
 
