@@ -33,21 +33,25 @@ class ChooseCategoryViewController: UIViewController {
     }
     private var selectedCategory: Category = .unknown {
         didSet {
-            continueButton.backgroundColor = R.color.green()
-            continueButton.isEnabled = true
-            place.categories.removeAll()
-            place.categories.append(selectedCategory.rawValue)
+            continueButton.backgroundColor = selectedCategory == .unknown
+                ? R.color.light_gray()
+                : R.color.green()
+            continueButton.isEnabled = selectedCategory != .unknown
         }
     }
+    private var selectedCategoryIndexPath = IndexPath()
     private var categoriesFor: [CategoryFor] {
         var categoriesFor = CategoryFor.allCases
         categoriesFor.removeLast()
         return categoriesFor
     }
+    private var selectedCategoriesFor: [CategoryFor] = []
     private var place = Place()
 
     // MARK: - IBAction
     @IBAction func didTapContinueButton(_ sender: Any) {
+        place.categories.append(selectedCategory.rawValue)
+        place.categoriesFor.append(objectsIn: selectedCategoriesFor.map { $0.rawValue })
         navigator.navigate(to: .chooseServices(place: place))
     }
 }
@@ -92,19 +96,24 @@ extension ChooseCategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
+            if selectedCategoryIndexPath != indexPath {
+                tableView.deselectRow(at: selectedCategoryIndexPath, animated: false)
+            }
+            selectedCategoryIndexPath = indexPath
             selectedCategory = categories[indexPath.row]
         case 1:
-            place.categoriesFor.append(categoriesFor[indexPath.row].rawValue)
+            selectedCategoriesFor.append(categoriesFor[indexPath.row])
         default: break
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            selectedCategory = categories[indexPath.row]
+            selectedCategory = .unknown
         case 1:
-            selectedCategoryFor = categoriesFor[indexPath.row]
+            guard let index = selectedCategoriesFor.index(of: categoriesFor[indexPath.row]) else { return }
+            selectedCategoriesFor.remove(at: index)
         default: break
         }
     }

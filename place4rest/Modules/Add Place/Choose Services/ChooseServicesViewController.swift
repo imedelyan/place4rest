@@ -28,29 +28,36 @@ class ChooseServicesViewController: UIViewController {
         "Select one or more activities"
     ]
     private var categories: [Category] {
-        var categories = Category.allCases
+        var categories: [Category] = Category.allCases
         categories.removeLast()
+        guard
+            let mainCategoryValue = place.categories.first,
+            let mainCategory = Category(rawValue: mainCategoryValue),
+            let index = categories.index(of: mainCategory) else {
+            return categories
+        }
+        categories.remove(at: index)
         return categories
     }
+    private var selectedCategories: [Category] = []
     private var services: [Service] {
         var services = Service.allCases
         services.removeLast()
         return services
     }
+    private var selectedServices: [Service] = []
     private var activities: [Activity] {
         var activities = Activity.allCases
         activities.removeLast()
         return activities
     }
-
-    // MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+    private var selectedActivities: [Activity] = []
 
     // MARK: - IBAction
     @IBAction func didTapContinueButton(_ sender: Any) {
+        place.categories.append(objectsIn: selectedCategories.map { $0.rawValue })
+        place.services.append(objectsIn: selectedServices.map { $0.rawValue })
+        place.activities.append(objectsIn: selectedActivities.map { $0.rawValue })
         navigator.navigate(to: .chooseLocation(place: place))
     }
 }
@@ -99,23 +106,26 @@ extension ChooseServicesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            place.categories.append(categories[indexPath.row].rawValue)
+            selectedCategories.append(categories[indexPath.row])
         case 1:
-            place.services.append(services[indexPath.row].rawValue)
+            selectedServices.append(services[indexPath.row])
         case 2:
-            place.activities.append(activities[indexPath.row].rawValue)
+            selectedActivities.append(activities[indexPath.row])
         default: break
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            place.categories.removeFirst(where: { $0 == categories[indexPath.row].rawValue })
+            guard let index = selectedCategories.index(of: categories[indexPath.row]) else { return }
+            selectedCategories.remove(at: index)
         case 1:
-            choosedService = services[indexPath.row]
+            guard let index = selectedServices.index(of: services[indexPath.row]) else { return }
+            selectedServices.remove(at: index)
         case 2:
-            choosedActivity = activities[indexPath.row]
+            guard let index = selectedActivities.index(of: activities[indexPath.row]) else { return }
+            selectedActivities.remove(at: index)
         default: break
         }
     }

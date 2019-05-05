@@ -65,6 +65,7 @@
 		453E082D227E00690088C55C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E082B227E00690088C55C /* CategoryTableViewCell.swift */; };
 		453E082E227E00690088C55C /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453E082C227E00690088C55C /* CategoryTableViewCell.xib */; };
 		453E0830227E01850088C55C /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E082F227E01850088C55C /* UITableViewCell+Extension.swift */; };
+		453E0832227EFAD10088C55C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0831227EFAD00088C55C /* Array+Extension.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -159,6 +160,7 @@
 		453E082B227E00690088C55C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		453E082C227E00690088C55C /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		453E082F227E01850088C55C /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		453E0831227EFAD00088C55C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				41E7B5C62241289E00C03387 /* String+Extension.swift */,
+				453E0831227EFAD00088C55C /* Array+Extension.swift */,
 			);
 			path = Standart;
 			sourceTree = "<group>";
@@ -945,6 +948,7 @@
 				45F08C032262718500D72464 /* MapNavigator.swift in Sources */,
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
 				453E0822227DDF310088C55C /* ChooseCategoryViewController.swift in Sources */,
+				453E0832227EFAD10088C55C /* Array+Extension.swift in Sources */,
 				41A930252211B6EB008897AE /* SettingsViewController.swift in Sources */,
 				45F08BF62262504E00D72464 /* RoundedView.swift in Sources */,
 				45189BEC2279A95E00DDDCCB /* UIViewController+Extension.swift in Sources */,
