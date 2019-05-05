@@ -13,6 +13,7 @@ protocol PlacesService: class {
     func getAllPlaces() -> Promise<[Place]>
     func getPlaces(categories: [Category], for: [CategoryFor]) -> Promise<[Place]>
     func getPlace(id: Int) -> Promise<Place>
+    func add(place: Place) -> Promise<Void>
 }
 
 final class PlacesServiceProvider: PlacesService {
@@ -39,5 +40,11 @@ final class PlacesServiceProvider: PlacesService {
         return api
             .request(.getPlace(id: id))
             .decode(to: Place.self)
+    }
+
+    func add(place: Place) -> Promise<Void> {
+        return api
+            .request(.add(place: place, token: "token"))
+            .asVoid()
     }
 }

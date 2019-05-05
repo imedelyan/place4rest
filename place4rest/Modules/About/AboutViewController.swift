@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnnouncementsViewController: UIViewController {
+class AboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

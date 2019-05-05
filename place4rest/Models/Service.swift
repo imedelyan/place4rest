@@ -8,9 +8,9 @@
 
 import UIKit
 
-enum Service: Int, ImagePresentable {
+enum Service: Int, ImagePresentable, CaseIterable {
     case pool = 10
-    case gpl = 11
+    case lpg = 11
     case internet3G = 12
     case wifi = 13
     case showers = 14
@@ -30,7 +30,7 @@ enum Service: Int, ImagePresentable {
         switch self {
         case .pool:
             return #imageLiteral(resourceName: "swimming-pool")
-        case .gpl:
+        case .lpg:
             return #imageLiteral(resourceName: "gas-station")
         case .internet3G:
             return #imageLiteral(resourceName: "iphone")
@@ -65,5 +65,42 @@ enum Service: Int, ImagePresentable {
 
     var color: UIColor? {
         return R.color.dark_blue()
+    }
+
+    var name: String {
+        switch self {
+        case .pool:
+            return "Pool"
+        case .lpg:
+            return "Liquefied petroleum gas"
+        case .internet3G:
+            return "Internet 3G"
+        case .wifi:
+            return "WiFi"
+        case .showers:
+            return "Showers"
+        case .dog:
+            return "Pet walking"
+        case .washingMotorhomes:
+            return "Camper, car washing"
+        case .trashCan:
+            return "Trashcan"
+        case .toilets:
+            return "Toilets"
+        case .water:
+            return "Water"
+        case .laundromat:
+            return "Laundry"
+        case .blackWater:
+            return "Blackwater disposal"
+        case .usedWater:
+            return "Wastewater disposal"
+        case .bakery:
+            return "Bakery"
+        case .electricity:
+            return "Power supply"
+        case .unknown:
+            return ""
+        }
     }
 }

@@ -117,3 +117,22 @@ extension Place {
         case draft
     }
 }
+
+extension Place: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: RootKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(status, forKey: .status)
+        let cats = categories.map({ String($0) }).joined(separator: ",")
+        try container.encode(cats, forKey: .categories)
+        let catsFor = categoriesFor.map({ String($0) }).joined(separator: ",")
+        try container.encode(catsFor, forKey: .categoriesFor)
+        let servs = services.map({ String($0) }).joined(separator: ",")
+        try container.encode(servs, forKey: .services)
+        let acts = activities.map({ String($0) }).joined(separator: ",")
+        try container.encode(acts, forKey: .activities)
+        try container.encode(content, forKey: .content)
+        try container.encode(latitude, forKey: .latitude)
+        try container.encode(longitude, forKey: .longitude)
+    }
+}

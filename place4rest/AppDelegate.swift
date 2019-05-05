@@ -6,6 +6,7 @@
 //  Copyright © 2019 imedelian. All rights reserved.
 //
 
+import IQKeyboardManagerSwift
 import UIKit
 import Swinject
 import SwinjectStoryboard
@@ -30,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        IQKeyboardManager.shared.enable = true
 
         guard let navigator = SwinjectStoryboard.defaultContainer.resolve(AppNavigator.self) else { return true }
         navigator.start()

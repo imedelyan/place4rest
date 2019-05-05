@@ -69,6 +69,7 @@ extension UINavigationBar {
     func setupDefaultTheme() {
         barTintColor = R.color.dark_gray()
         tintColor = .white
+//        isTranslucent = false
 
         titleTextAttributes = [
             .foregroundColor: UIColor.white,

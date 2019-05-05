@@ -11,17 +11,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Announcements View Controller-->
+        <!--About View Controller-->
         <scene sceneID="Tf1-7N-G1B">
             <objects>
-                <viewController storyboardIdentifier="AnnouncementsViewController" id="AdH-8y-tja" customClass="AnnouncementsViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" id="AdH-8y-tja" customClass="AboutViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cD5-PQ-Ccz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6O8-of-dOU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="ic-national-park" selectedImage="ic-national-park" id="cI3-sy-Rlm">
+                    <tabBarItem key="tabBarItem" title="" image="ic-about" selectedImage="ic-about" id="cI3-sy-Rlm">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <color key="badgeColor" name="dark_green"/>
                         <userDefinedRuntimeAttributes>
@@ -34,11 +34,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRl-Mx-Zxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6" y="143"/>
+            <point key="canvasLocation" x="-7.2000000000000002" y="142.57871064467767"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ic-national-park" width="37.5" height="37.5"/>
+        <image name="ic-about" width="25" height="25"/>
         <namedColor name="dark_green">
             <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

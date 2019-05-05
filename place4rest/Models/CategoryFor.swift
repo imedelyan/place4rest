@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum CategoryFor: Int, ImagePresentable {
+enum CategoryFor: Int, ImagePresentable, CaseIterable {
     case motorhome = 7
     case cars = 8
     case hiking = 9
@@ -29,5 +29,18 @@ enum CategoryFor: Int, ImagePresentable {
 
     var color: UIColor? {
         return R.color.orange()
+    }
+
+    var name: String {
+        switch self {
+        case .motorhome:
+            return "Camper"
+        case .cars:
+            return "Car"
+        case .hiking:
+            return "Hiker"
+        case .unknown:
+            return ""
+        }
     }
 }

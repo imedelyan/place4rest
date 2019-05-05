@@ -19,6 +19,7 @@ class ViewControllersAssembly: Assembly {
         container.storyboardInitCompleted(HomeTabBarController.self) { (resolver, controller) in
             controller.mapNavigator = resolver.resolve(MapNavigator.self)!
             controller.searchNavigator = resolver.resolve(SearchNavigator.self)!
+            controller.addPlaceNavigator = resolver.resolve(AddPlaceNavigator.self)!
         }
         container.storyboardInitCompleted(MapViewController.self) { (resolver, controller) in
             controller.presenter = resolver.resolve(MapPresenter.self)
@@ -31,6 +32,9 @@ class ViewControllersAssembly: Assembly {
         container.storyboardInitCompleted(SearchViewController.self) { (resolver, controller) in
             controller.presenter = resolver.resolve(SearchPresenter.self)
             controller.presenter.view = controller
+        }
+        container.storyboardInitCompleted(AddInfoViewController.self) { (resolver, controller) in
+            controller.placesService = resolver.resolve(PlacesService.self)
         }
     }
 }
