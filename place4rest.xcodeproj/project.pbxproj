@@ -66,6 +66,8 @@
 		453E082E227E00690088C55C /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453E082C227E00690088C55C /* CategoryTableViewCell.xib */; };
 		453E0830227E01850088C55C /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E082F227E01850088C55C /* UITableViewCell+Extension.swift */; };
 		453E0832227EFAD10088C55C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0831227EFAD00088C55C /* Array+Extension.swift */; };
+		453E0834227F493D0088C55C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0833227F493D0088C55C /* TextField.swift */; };
+		453E0836227F4A4B0088C55C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0835227F4A4B0088C55C /* TextView.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -161,6 +163,8 @@
 		453E082C227E00690088C55C /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		453E082F227E01850088C55C /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		453E0831227EFAD00088C55C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		453E0833227F493D0088C55C /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		453E0835227F4A4B0088C55C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				41A930C122156E81008897AE /* VisualEffectView.swift */,
+				453E0833227F493D0088C55C /* TextField.swift */,
+				453E0835227F4A4B0088C55C /* TextView.swift */,
 				45F08BF122611CB300D72464 /* RoundedButton.swift */,
 				45F08BF52262504E00D72464 /* RoundedView.swift */,
 				412A03842260DE0600830E59 /* PlaceAnnotation.swift */,
@@ -923,6 +929,7 @@
 				41A9302B2211B725008897AE /* AddPlaceViewController.swift in Sources */,
 				41A9300322118CD7008897AE /* AppStoryboard.swift in Sources */,
 				41A9327A221C151C008897AE /* MoyaProvider+Promise.swift in Sources */,
+				453E0836227F4A4B0088C55C /* TextView.swift in Sources */,
 				41A93276221B0DCA008897AE /* Image.swift in Sources */,
 				41A9300522118D29008897AE /* UIViewController+load.swift in Sources */,
 				41A930112211A312008897AE /* HomeTabBarController.swift in Sources */,
@@ -969,6 +976,7 @@
 				41A930C222156E81008897AE /* VisualEffectView.swift in Sources */,
 				45189BEF2279C5F500DDDCCB /* SearchViewController.swift in Sources */,
 				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
+				453E0834227F493D0088C55C /* TextField.swift in Sources */,
 				41A93271221B0165008897AE /* Place.swift in Sources */,
 				453E082D227E00690088C55C /* CategoryTableViewCell.swift in Sources */,
 				45F08C0B2263685400D72464 /* CategoryCollectionViewCell.swift in Sources */,

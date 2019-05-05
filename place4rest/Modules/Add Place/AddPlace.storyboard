@@ -39,19 +39,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add stuff and help us grow!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-NG-VjB">
-                                <rect key="frame" x="30" y="99.5" width="315" height="60"/>
+                                <rect key="frame" x="30" y="119.5" width="315" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="place4rest is a community" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfi-cD-8B1">
-                                <rect key="frame" x="30" y="179.5" width="315" height="24"/>
+                                <rect key="frame" x="30" y="199.5" width="315" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBK-la-aQ4">
-                                <rect key="frame" x="30" y="223.5" width="315" height="95.5"/>
+                                <rect key="frame" x="30" y="243.5" width="315" height="95.5"/>
                                 <string key="text">This app wouldn't be here without all of you, without new places you explore, photos and reviews you add.
 
 You make the app better.</string>
@@ -60,7 +60,7 @@ You make the app better.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The special place where you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-Mi-aAD">
-                                <rect key="frame" x="30" y="60" width="315" height="19.5"/>
+                                <rect key="frame" x="30" y="80" width="315" height="19.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@ You make the app better.</string>
                             <constraint firstItem="BOl-X2-ptq" firstAttribute="trailing" secondItem="Dfi-cD-8B1" secondAttribute="trailing" constant="30" id="n5f-Gi-sEQ"/>
                             <constraint firstItem="Dfi-cD-8B1" firstAttribute="leading" secondItem="BOl-X2-ptq" secondAttribute="leading" constant="30" id="pTK-fB-Oyj"/>
                             <constraint firstItem="V0g-NG-VjB" firstAttribute="leading" secondItem="BOl-X2-ptq" secondAttribute="leading" constant="30" id="uAH-Tx-YrA"/>
-                            <constraint firstItem="FPv-Mi-aAD" firstAttribute="top" secondItem="BOl-X2-ptq" secondAttribute="top" constant="40" id="xXV-3T-600"/>
+                            <constraint firstItem="FPv-Mi-aAD" firstAttribute="top" secondItem="BOl-X2-ptq" secondAttribute="top" constant="60" id="xXV-3T-600"/>
                             <constraint firstItem="HBK-la-aQ4" firstAttribute="top" secondItem="Dfi-cD-8B1" secondAttribute="bottom" constant="20" id="zC3-b1-YZz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BOl-X2-ptq"/>
@@ -104,7 +104,7 @@ You make the app better.</string>
             </objects>
             <point key="canvasLocation" x="-22" y="125"/>
         </scene>
-        <!--Add a New Place-->
+        <!--Primary category-->
         <scene sceneID="wkX-Qx-FqY">
             <objects>
                 <viewController storyboardIdentifier="ChooseCategoryViewController" hidesBottomBarWhenPushed="YES" id="hIc-2W-Air" customClass="ChooseCategoryViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,7 +147,7 @@ You make the app better.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nd7-fk-B7U"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a New Place" id="Eoy-w4-5hA">
+                    <navigationItem key="navigationItem" title="Primary category" id="Eoy-w4-5hA">
                         <barButtonItem key="backBarButtonItem" title=" " id="Fo3-rf-69S"/>
                     </navigationItem>
                     <connections>
@@ -159,7 +159,7 @@ You make the app better.</string>
             </objects>
             <point key="canvasLocation" x="684" y="126"/>
         </scene>
-        <!--Add a New Place-->
+        <!--Location-->
         <scene sceneID="yhv-i4-Opj">
             <objects>
                 <viewController storyboardIdentifier="ChooseLocationViewController" hidesBottomBarWhenPushed="YES" id="Q8y-Y0-0lV" customClass="ChooseLocationViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
@@ -329,7 +329,7 @@ You make the app better.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pgl-VJ-QpA"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a New Place" id="CYH-X4-Ct5">
+                    <navigationItem key="navigationItem" title="Location" id="CYH-X4-Ct5">
                         <barButtonItem key="backBarButtonItem" title=" " id="Zoo-4y-I2Q"/>
                     </navigationItem>
                     <connections>
@@ -343,7 +343,7 @@ You make the app better.</string>
             </objects>
             <point key="canvasLocation" x="2069.5999999999999" y="125.4872563718141"/>
         </scene>
-        <!--Add a New Place-->
+        <!--Name and Details-->
         <scene sceneID="CE3-2J-RMV">
             <objects>
                 <viewController storyboardIdentifier="AddInfoViewController" hidesBottomBarWhenPushed="YES" id="Zgn-fD-XK8" customClass="AddInfoViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
@@ -351,7 +351,7 @@ You make the app better.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufv-JW-OyL">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufv-JW-OyL">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <color key="backgroundColor" name="light_gray"/>
                                 <constraints>
@@ -365,19 +365,82 @@ You make the app better.</string>
                                     <action selector="didTapSubmitButton:" destination="Zgn-fD-XK8" eventType="touchUpInside" id="ViD-2I-D3g"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Add place details" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ie3-Qy-2Uj" customClass="TextView" customModule="place4rest" customModuleProvider="target">
+                                <rect key="frame" x="20" y="134" width="335" height="353"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="light_gray"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Zgn-fD-XK8" id="x4N-KM-OKj"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQh-77-1Ju">
+                                <rect key="frame" x="20" y="40" width="74.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqC-wI-cDV">
+                                <rect key="frame" x="20" y="112" width="44.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add place name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4n-6U-8sN" customClass="TextField" customModule="place4rest" customModuleProvider="target">
+                                <rect key="frame" x="20" y="62" width="335" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Hqk-RB-Wby"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="light_gray"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Zgn-fD-XK8" id="aym-OC-Ti9"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="EQh-77-1Ju" firstAttribute="leading" secondItem="K58-3C-c5I" secondAttribute="leading" constant="20" id="0wB-eH-ipV"/>
+                            <constraint firstItem="zqC-wI-cDV" firstAttribute="leading" secondItem="K58-3C-c5I" secondAttribute="leading" constant="20" id="37p-ux-mFK"/>
                             <constraint firstItem="K58-3C-c5I" firstAttribute="trailing" secondItem="ufv-JW-OyL" secondAttribute="trailing" id="8ym-Nd-S2h"/>
+                            <constraint firstItem="y4n-6U-8sN" firstAttribute="leading" secondItem="K58-3C-c5I" secondAttribute="leading" constant="20" id="Ktu-Au-86b"/>
+                            <constraint firstItem="y4n-6U-8sN" firstAttribute="top" secondItem="EQh-77-1Ju" secondAttribute="bottom" constant="5" id="Tsa-C1-0Ig"/>
                             <constraint firstItem="ufv-JW-OyL" firstAttribute="leading" secondItem="MOE-bt-CPH" secondAttribute="leading" id="U71-sJ-3of"/>
+                            <constraint firstItem="K58-3C-c5I" firstAttribute="trailing" secondItem="y4n-6U-8sN" secondAttribute="trailing" constant="20" id="WWY-om-BDO"/>
+                            <constraint firstItem="EQh-77-1Ju" firstAttribute="top" secondItem="K58-3C-c5I" secondAttribute="top" constant="20" id="Wm0-i4-LKQ"/>
+                            <constraint firstItem="ie3-Qy-2Uj" firstAttribute="leading" secondItem="K58-3C-c5I" secondAttribute="leading" constant="20" id="Ydv-0b-mmG"/>
+                            <constraint firstItem="ufv-JW-OyL" firstAttribute="top" secondItem="ie3-Qy-2Uj" secondAttribute="bottom" constant="120" id="nJ9-ZW-LBg"/>
+                            <constraint firstItem="zqC-wI-cDV" firstAttribute="top" secondItem="y4n-6U-8sN" secondAttribute="bottom" constant="20" id="pyA-dB-9mx"/>
+                            <constraint firstItem="ie3-Qy-2Uj" firstAttribute="top" secondItem="zqC-wI-cDV" secondAttribute="bottom" constant="5" id="soG-iS-yof"/>
+                            <constraint firstItem="K58-3C-c5I" firstAttribute="trailing" secondItem="ie3-Qy-2Uj" secondAttribute="trailing" constant="20" id="wGN-sN-RhN"/>
                             <constraint firstItem="K58-3C-c5I" firstAttribute="bottom" secondItem="ufv-JW-OyL" secondAttribute="bottom" id="y0M-ZB-N0T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K58-3C-c5I"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a New Place" id="Scb-hV-bBb">
+                    <navigationItem key="navigationItem" title="Name and Details" id="Scb-hV-bBb">
                         <barButtonItem key="backBarButtonItem" title=" " id="m7c-3c-cUk"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailsTextView" destination="ie3-Qy-2Uj" id="zaM-bZ-8tN"/>
+                        <outlet property="nameTextField" destination="y4n-6U-8sN" id="JR6-g9-jLX"/>
                         <outlet property="submitButton" destination="ufv-JW-OyL" id="s3d-bN-Z4Y"/>
                     </connections>
                 </viewController>
@@ -385,7 +448,7 @@ You make the app better.</string>
             </objects>
             <point key="canvasLocation" x="2772" y="125"/>
         </scene>
-        <!--Add a New Place-->
+        <!--Facilities-->
         <scene sceneID="ink-32-yLR">
             <objects>
                 <viewController storyboardIdentifier="ChooseServicesViewController" hidesBottomBarWhenPushed="YES" id="AgN-Vj-SEK" customClass="ChooseServicesViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
@@ -428,7 +491,7 @@ You make the app better.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yPS-dZ-Nco"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a New Place" id="1qs-Si-jjt">
+                    <navigationItem key="navigationItem" title="Facilities" id="1qs-Si-jjt">
                         <barButtonItem key="backBarButtonItem" title=" " id="3bk-Gu-Jn9"/>
                     </navigationItem>
                     <connections>

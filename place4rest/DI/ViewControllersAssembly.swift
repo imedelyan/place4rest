@@ -33,6 +33,8 @@ class ViewControllersAssembly: Assembly {
             controller.presenter = resolver.resolve(SearchPresenter.self)
             controller.presenter.view = controller
         }
-
+        container.storyboardInitCompleted(AddInfoViewController.self) { (resolver, controller) in
+            controller.placesService = resolver.resolve(PlacesService.self)
+        }
     }
 }
