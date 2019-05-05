@@ -8,10 +8,11 @@ def shared_pods
   pod 'RealmSwift', '~> 3.13.1'
   pod 'Swinject', '~> 2.5'
   pod 'SwinjectStoryboard', :git => 'https://github.com/mdyson/SwinjectStoryboard.git', :branch => 'master'
-#  pod 'KeychainSwift', '~> 13.0'
   pod 'R.swift', '~> 5.0.2'
   pod 'Mapbox-iOS-SDK', '~> 4.8'
   pod 'Kingfisher', '~> 5.3'
+  pod 'KeychainSwift', '~> 15.0'
+  pod 'IQKeyboardManagerSwift', '~> 6.2'
 end
 
 def test_pods

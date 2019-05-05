@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
+  - IQKeyboardManagerSwift (6.3.0)
+  - KeychainSwift (15.0.0)
   - Kingfisher (5.3.1)
   - Mapbox-iOS-SDK (4.9.0)
   - Moya (12.0.1):
@@ -30,6 +32,8 @@ PODS:
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift (~> 6.2)
+  - KeychainSwift (~> 15.0)
   - Kingfisher (~> 5.3)
   - Mapbox-iOS-SDK (~> 4.8)
   - Moya (~> 12.0.1)
@@ -42,6 +46,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - IQKeyboardManagerSwift
+    - KeychainSwift
     - Kingfisher
     - Mapbox-iOS-SDK
     - Moya
@@ -65,6 +71,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  KeychainSwift: c6fc018d287804faf1ce3f258a1e51a7178c8382
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   Mapbox-iOS-SDK: 225036950837cbe408e6b333e51cd6001c122499
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
@@ -77,6 +85,6 @@ SPEC CHECKSUMS:
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: dfe1c32de3b08ea2a098c217d7ca869ee200435f
+PODFILE CHECKSUM: 5d2306f48e27bcb8d98a02da6630327a8145efbf
 
 COCOAPODS: 1.6.0
