@@ -18,7 +18,23 @@
                     <view key="view" contentMode="scaleToFill" id="QMg-RW-P38">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dAx-9E-eoa">
+                                <rect key="frame" x="0.0" y="40" width="375" height="578"/>
+                                <color key="backgroundColor" name="dark_gray"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="YYy-Jw-294" id="CxN-Ff-w6X"/>
+                                    <outlet property="delegate" destination="YYy-Jw-294" id="jOF-ks-klK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="dark_gray"/>
+                        <constraints>
+                            <constraint firstItem="dAx-9E-eoa" firstAttribute="top" secondItem="lyw-XH-VVN" secondAttribute="top" constant="20" id="5R5-Vg-bRt"/>
+                            <constraint firstItem="dAx-9E-eoa" firstAttribute="leading" secondItem="lyw-XH-VVN" secondAttribute="leading" id="HWJ-aN-6aV"/>
+                            <constraint firstItem="lyw-XH-VVN" firstAttribute="trailing" secondItem="dAx-9E-eoa" secondAttribute="trailing" id="LiD-wp-nAm"/>
+                            <constraint firstItem="lyw-XH-VVN" firstAttribute="bottom" secondItem="dAx-9E-eoa" secondAttribute="bottom" id="arT-cA-9gN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lyw-XH-VVN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic-settings" selectedImage="ic-settings" id="bb9-8E-5dC">
@@ -31,14 +47,20 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="dAx-9E-eoa" id="Evz-V5-ETm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wp4-rc-EcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="118"/>
+            <point key="canvasLocation" x="68" y="117.39130434782609"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ic-settings" width="37.5" height="37.5"/>
+        <image name="ic-settings" width="25" height="25"/>
+        <namedColor name="dark_gray">
+            <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="dark_green">
             <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

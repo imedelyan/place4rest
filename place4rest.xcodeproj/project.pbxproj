@@ -68,6 +68,10 @@
 		453E0832227EFAD10088C55C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0831227EFAD00088C55C /* Array+Extension.swift */; };
 		453E0834227F493D0088C55C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0833227F493D0088C55C /* TextField.swift */; };
 		453E0836227F4A4B0088C55C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0835227F4A4B0088C55C /* TextView.swift */; };
+		458B251D2280C43500710260 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B251B2280C43500710260 /* SettingsTableViewCell.swift */; };
+		458B251E2280C43500710260 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458B251C2280C43500710260 /* SettingsTableViewCell.xib */; };
+		458B25202280C5C300710260 /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B251F2280C5C300710260 /* SettingsNavigator.swift */; };
+		458B25222280D06800710260 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B25212280D06800710260 /* UIAlertController+Extension.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -165,6 +169,10 @@
 		453E0831227EFAD00088C55C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		453E0833227F493D0088C55C /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		453E0835227F4A4B0088C55C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		458B251B2280C43500710260 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		458B251C2280C43500710260 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		458B251F2280C5C300710260 /* SettingsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigator.swift; sourceTree = "<group>"; };
+		458B25212280D06800710260 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -303,6 +311,7 @@
 			children = (
 				41A9300122118CA2008897AE /* UIViewController */,
 				453E082F227E01850088C55C /* UITableViewCell+Extension.swift */,
+				458B25212280D06800710260 /* UIAlertController+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 				45F08C022262718500D72464 /* MapNavigator.swift */,
 				453E0818227CC53C0088C55C /* SearchNavigator.swift */,
 				453E081A227D7E860088C55C /* AddPlaceNavigator.swift */,
+				458B251F2280C5C300710260 /* SettingsNavigator.swift */,
 				41A9300222118CD7008897AE /* AppStoryboard.swift */,
 			);
 			path = Navigation;
@@ -483,6 +493,7 @@
 		41A930212211B6A7008897AE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				458B251A2280C3CE00710260 /* Cells */,
 				41A930242211B6EB008897AE /* SettingsViewController.swift */,
 				41A930222211B6D6008897AE /* Settings.storyboard */,
 			);
@@ -569,6 +580,15 @@
 			children = (
 				453E082B227E00690088C55C /* CategoryTableViewCell.swift */,
 				453E082C227E00690088C55C /* CategoryTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		458B251A2280C3CE00710260 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				458B251B2280C43500710260 /* SettingsTableViewCell.swift */,
+				458B251C2280C43500710260 /* SettingsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -721,6 +741,7 @@
 				45F08BFD22626D5500D72464 /* Place.storyboard in Resources */,
 				453E082E227E00690088C55C /* CategoryTableViewCell.xib in Resources */,
 				41A930352211B767008897AE /* Map.storyboard in Resources */,
+				458B251E2280C43500710260 /* SettingsTableViewCell.xib in Resources */,
 				453E08172279D1A60088C55C /* Search.storyboard in Resources */,
 				41A92FE9221173F2008897AE /* .swiftlint.yml in Resources */,
 				41A930232211B6D6008897AE /* Settings.storyboard in Resources */,
@@ -827,7 +848,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/place4rest/Resources/R.generated.swift",
+				$SRCROOT/place4rest/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -938,6 +959,7 @@
 				41A9300322118CD7008897AE /* AppStoryboard.swift in Sources */,
 				41A9327A221C151C008897AE /* MoyaProvider+Promise.swift in Sources */,
 				453E0836227F4A4B0088C55C /* TextView.swift in Sources */,
+				458B25202280C5C300710260 /* SettingsNavigator.swift in Sources */,
 				41A93276221B0DCA008897AE /* Image.swift in Sources */,
 				41A9300522118D29008897AE /* UIViewController+load.swift in Sources */,
 				41A930112211A312008897AE /* HomeTabBarController.swift in Sources */,
@@ -969,7 +991,9 @@
 				45189BEC2279A95E00DDDCCB /* UIViewController+Extension.swift in Sources */,
 				45F08BF422611FB900D72464 /* PlaceCalloutView.swift in Sources */,
 				41A9301A2211A615008897AE /* PresentersAssembly.swift in Sources */,
+				458B25222280D06800710260 /* UIAlertController+Extension.swift in Sources */,
 				453E0830227E01850088C55C /* UITableViewCell+Extension.swift in Sources */,
+				458B251D2280C43500710260 /* SettingsTableViewCell.swift in Sources */,
 				41A93281221C1781008897AE /* NetworkAPIsAssembly.swift in Sources */,
 				453E0819227CC53C0088C55C /* SearchNavigator.swift in Sources */,
 				45F08C11226371D200D72464 /* Service.swift in Sources */,

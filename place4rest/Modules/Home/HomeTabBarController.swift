@@ -13,6 +13,7 @@ class HomeTabBarController: UITabBarController {
     var mapNavigator: MapNavigator!
     var searchNavigator: SearchNavigator!
     var addPlaceNavigator: AddPlaceNavigator!
+    var settingsNavigator: SettingsNavigator!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class HomeTabBarController: UITabBarController {
                            searchNavigator.navigationController,
                            addPlaceNavigator.navigationController,
                            AboutViewController.load(from: .about),
-                           SettingsViewController.load(from: .settings)]
+                           settingsNavigator.navigationController]
     }
 
     public override func viewWillAppear(_ animated: Bool) {
