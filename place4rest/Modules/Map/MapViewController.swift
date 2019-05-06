@@ -55,6 +55,8 @@ class MapViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = ""
+
         mapView.compassView.isHidden = true
         mapView.logoView.isHidden = true
         mapView.attributionButton.isHidden = true
@@ -186,9 +188,9 @@ extension MapViewController: MapView {
 
         // tinting filter menu buttons
         // TODO: move it to UIButton subclass
-        wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnights) ? R.color.blue() : R.color.light_gray()
-        parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparking) ? R.color.blue() : R.color.light_gray()
-        campingFilterButton.tintColor = props.categoryFilters.contains(.camping) ? R.color.blue() : R.color.light_gray()
+        wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnights) ? R.color.light_blue() : R.color.light_gray()
+        parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparking) ? R.color.light_blue() : R.color.light_gray()
+        campingFilterButton.tintColor = props.categoryFilters.contains(.camping) ? R.color.light_blue() : R.color.light_gray()
         sedanFilterButton.tintColor = props.categoryForFilters.contains(.cars) ? R.color.orange() : R.color.light_gray()
         trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhome) ? R.color.orange() : R.color.light_gray()
 
