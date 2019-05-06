@@ -18,7 +18,8 @@ enum Activity: Int, ImagePresentable, CaseIterable {
     case moto = 31
     case monuments = 32
     case trekking = 33
-//    case smth = 34
+    case beach = 34
+    case climbing = 35
     case paragliding = 74
     case unknown = 0
 
@@ -44,15 +45,17 @@ enum Activity: Int, ImagePresentable, CaseIterable {
             return #imageLiteral(resourceName: "trekking")
         case .paragliding:
             return #imageLiteral(resourceName: "paragliding")
-        //case .smth:
-
+        case .beach:
+            return #imageLiteral(resourceName: "beach-umbrella.png")
+        case .climbing:
+            return #imageLiteral(resourceName: "climbing.png")
         case .unknown:
             return #imageLiteral(resourceName: "parking")
         }
     }
 
     var color: UIColor? {
-        return R.color.green()
+        return R.color.dark_green()
     }
 
     var name: String {
@@ -77,6 +80,10 @@ enum Activity: Int, ImagePresentable, CaseIterable {
             return "Trekking"
         case .paragliding:
             return "Paragliding"
+        case .beach:
+            return "Beach"
+        case .climbing:
+            return "Climbing"
         case .unknown:
             return ""
         }
