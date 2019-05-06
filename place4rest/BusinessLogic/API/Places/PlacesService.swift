@@ -14,6 +14,7 @@ protocol PlacesService: class {
     func getPlaces(categories: [Category], for: [CategoryFor]) -> Promise<[Place]>
     func getPlace(id: Int) -> Promise<Place>
     func add(place: Place) -> Promise<Void>
+    // http://place4rest.com/wp-json/wp/v2/comments?post=131
 }
 
 final class PlacesServiceProvider: PlacesService {

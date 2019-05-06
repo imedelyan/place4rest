@@ -77,6 +77,11 @@
 		458B251E2280C43500710260 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458B251C2280C43500710260 /* SettingsTableViewCell.xib */; };
 		458B25202280C5C300710260 /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B251F2280C5C300710260 /* SettingsNavigator.swift */; };
 		458B25222280D06800710260 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B25212280D06800710260 /* UIAlertController+Extension.swift */; };
+		453E0839227F78B40088C55C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0838227F78B40088C55C /* UserService.swift */; };
+		453E083B227F78DE0088C55C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E083A227F78DE0088C55C /* UserAPI.swift */; };
+		453E083D227F7F090088C55C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453E083C227F7F090088C55C /* Login.storyboard */; };
+		453E083F227F7F430088C55C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E083E227F7F430088C55C /* LoginViewController.swift */; };
+		453E084122801ADE0088C55C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E084022801ADE0088C55C /* LoginPresenter.swift */; };
 		458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E26227638E500C0BE2E /* PlacesRepository.swift */; };
 		458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */; };
 		45F08BF0226118C500D72464 /* PlaceCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F08BEF226118C500D72464 /* PlaceCalloutView.xib */; };
@@ -185,6 +190,11 @@
 		458B251C2280C43500710260 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		458B251F2280C5C300710260 /* SettingsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigator.swift; sourceTree = "<group>"; };
 		458B25212280D06800710260 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		453E0838227F78B40088C55C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		453E083A227F78DE0088C55C /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		453E083C227F7F090088C55C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		453E083E227F7F430088C55C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		453E084022801ADE0088C55C /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		458C3E26227638E500C0BE2E /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
 		458C3E282277735A00C0BE2E /* StorageServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServicesAssembly.swift; sourceTree = "<group>"; };
 		45F08BEF226118C500D72464 /* PlaceCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCalloutView.xib; sourceTree = "<group>"; };
@@ -467,6 +477,7 @@
 		41A930122211A37D008897AE /* API */ = {
 			isa = PBXGroup;
 			children = (
+				453E0837227F77620088C55C /* User */,
 				41A9327D221C16D8008897AE /* Places */,
 			);
 			path = API;
@@ -588,6 +599,9 @@
 		453E0820227DDEE90088C55C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				453E083E227F7F430088C55C /* LoginViewController.swift */,
+				453E084022801ADE0088C55C /* LoginPresenter.swift */,
+				453E083C227F7F090088C55C /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -616,6 +630,15 @@
 				458B251C2280C43500710260 /* SettingsTableViewCell.xib */,
 			);
 			path = Cells;
+            sourceTree = "<group>";
+        };
+		453E0837227F77620088C55C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				453E0838227F78B40088C55C /* UserService.swift */,
+				453E083A227F78DE0088C55C /* UserAPI.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		458C3E25227638AD00C0BE2E /* Repositories */ = {
@@ -764,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A92FEC221173F2008897AE /* .gitignore in Resources */,
+				453E083D227F7F090088C55C /* Login.storyboard in Resources */,
 				41A930292211B70A008897AE /* About.storyboard in Resources */,
 				45F08BFD22626D5500D72464 /* Place.storyboard in Resources */,
 				453E082E227E00690088C55C /* CategoryTableViewCell.xib in Resources */,
@@ -1002,6 +1026,7 @@
 				4159438B228325DF00F39164 /* SpinnerView.swift in Sources */,
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
 				412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */,
+				453E083B227F78DE0088C55C /* UserAPI.swift in Sources */,
 				45F08C0F226371A400D72464 /* CategoryFor.swift in Sources */,
 				453E0824227DDF460088C55C /* ChooseLocationViewController.swift in Sources */,
 				45F08BFF22626D7200D72464 /* PlaceViewController.swift in Sources */,
@@ -1013,6 +1038,7 @@
 				41A930C022145607008897AE /* R.generated.swift in Sources */,
 				41A92FFD221185AC008897AE /* AppNavigator.swift in Sources */,
 				45F08C032262718500D72464 /* MapNavigator.swift in Sources */,
+				453E084122801ADE0088C55C /* LoginPresenter.swift in Sources */,
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
 				453E0822227DDF310088C55C /* ChooseCategoryViewController.swift in Sources */,
 				453E0832227EFAD10088C55C /* Array+Extension.swift in Sources */,
@@ -1029,6 +1055,7 @@
 				45F08C11226371D200D72464 /* Service.swift in Sources */,
 				41A93289221D4A45008897AE /* Command.swift in Sources */,
 				453E081B227D7E860088C55C /* AddPlaceNavigator.swift in Sources */,
+				453E083F227F7F430088C55C /* LoginViewController.swift in Sources */,
 				41A930162211A4AB008897AE /* NavigatorsAssembly.swift in Sources */,
 				41A9327C221C1563008897AE /* Bundle+Extension.swift in Sources */,
 				45F08BF222611CB300D72464 /* RoundedButton.swift in Sources */,
@@ -1037,6 +1064,7 @@
 				41A93278221C14EA008897AE /* Moya+TargetType.swift in Sources */,
 				41A930C222156E81008897AE /* VisualEffectView.swift in Sources */,
 				45189BEF2279C5F500DDDCCB /* SearchViewController.swift in Sources */,
+				453E0839227F78B40088C55C /* UserService.swift in Sources */,
 				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
 				453E0834227F493D0088C55C /* TextField.swift in Sources */,
 				41A93271221B0165008897AE /* Place.swift in Sources */,
