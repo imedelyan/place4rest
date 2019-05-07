@@ -32,9 +32,9 @@ class SettingsViewController: UIViewController {
 //                    self?.hideSpinner()
 //            }
         })
-        let logoutConfirmation = Confirmation(title: "Settings.Logout.Title",
+        let logoutConfirmation = Confirmation(title: "Settings.Logout",
                                               message: "Settings.Logout.Message",
-                                              buttonTitle: "Logout")
+                                              buttonTitle: "Settings.Logout")
 
         return [
             Item(title: "Settings.EditUser", action: Command(action: { [weak self] in
@@ -76,9 +76,9 @@ extension SettingsViewController: UITableViewDelegate {
             return
         }
         UIAlertController
-            .makeConfirmation(title: confirmation.title, //.localized(),
-                              message: "\n" + confirmation.message, //.localized(),
-                              confirmTitle: confirmation.buttonTitle, //.localized(),
+            .makeConfirmation(title: confirmation.title.localized(),
+                              message: "\n" + confirmation.message.localized(),
+                              confirmTitle: confirmation.buttonTitle.localized(),
                               confirmed: item.action)
             .present(from: self)
     }
@@ -99,7 +99,7 @@ extension SettingsViewController {
         init(title: String,
              confirmation: Confirmation? = nil,
              action: Command) {
-            self.title = title//.localized()
+            self.title = title.localized()
             self.confirmation = confirmation
             self.action = action
         }

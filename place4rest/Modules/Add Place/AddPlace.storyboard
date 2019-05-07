@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWJ-Hk-ki6" customClass="RoundedButton" customModule="place4rest" customModuleProvider="target">
-                                <rect key="frame" x="47" y="556" width="281" height="30"/>
-                                <color key="backgroundColor" name="light_gray"/>
+                                <rect key="frame" x="47" y="546" width="281" height="40"/>
+                                <color key="backgroundColor" name="green"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="rbx-ly-F3R"/>
+                                    <constraint firstAttribute="height" constant="40" id="rbx-ly-F3R"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <state key="normal" title="ADD PLACE">
@@ -33,6 +33,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.AddPlace"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapAddPlaceButton:" destination="nhx-UM-Uvk" eventType="touchUpInside" id="c6i-2I-Dx2"/>
@@ -43,12 +44,18 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.AddStuff"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="place4rest is a community" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfi-cD-8B1">
                                 <rect key="frame" x="30" y="199.5" width="315" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.Community"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBK-la-aQ4">
                                 <rect key="frame" x="30" y="243.5" width="315" height="95.5"/>
@@ -58,12 +65,18 @@ You make the app better.</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.YouMakeTheAppBetter"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The special place where you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPv-Mi-aAD">
                                 <rect key="frame" x="30" y="80" width="315" height="19.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.SpecialPlace"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="dark_gray"/>
@@ -97,6 +110,9 @@ You make the app better.</string>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Add a New Place" id="Wrx-jM-3Ja">
                         <barButtonItem key="backBarButtonItem" title=" " id="IKJ-CQ-PFN"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Title.AddaNewPlace"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -122,6 +138,9 @@ You make the app better.</string>
                                 <state key="normal" title="CONTINUE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.Continue"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapContinueButton:" destination="hIc-2W-Air" eventType="touchUpInside" id="aeW-Pb-QwS"/>
                                 </connections>
@@ -149,6 +168,9 @@ You make the app better.</string>
                     </view>
                     <navigationItem key="navigationItem" title="Primary category" id="Eoy-w4-5hA">
                         <barButtonItem key="backBarButtonItem" title=" " id="Fo3-rf-69S"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Title.PrimaryCategory"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="continueButton" destination="0ED-Aa-YOd" id="L1K-Nj-LAY"/>
@@ -177,6 +199,9 @@ You make the app better.</string>
                                 <state key="normal" title="CONTINUE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.Continue"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapContinueButton:" destination="Q8y-Y0-0lV" eventType="touchUpInside" id="eIN-TF-nLL"/>
                                 </connections>
@@ -224,6 +249,9 @@ You make the app better.</string>
                                             <state key="normal" title="Terrain style">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Terrain style"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="didTapTerrainStyleButton:" destination="Q8y-Y0-0lV" eventType="touchUpInside" id="BZl-SB-bfT"/>
                                             </connections>
@@ -238,6 +266,9 @@ You make the app better.</string>
                                             <state key="normal" title="Satellite">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Satellite"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="didTapSatelliteStyleButton:" destination="Q8y-Y0-0lV" eventType="touchUpInside" id="gve-Nb-D1q"/>
                                             </connections>
@@ -252,6 +283,9 @@ You make the app better.</string>
                                             <state key="normal" title="Street style">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Street style"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="didTapStreetStyleButton:" destination="Q8y-Y0-0lV" eventType="touchUpInside" id="i3g-S8-6hr"/>
                                             </connections>
@@ -331,6 +365,9 @@ You make the app better.</string>
                     </view>
                     <navigationItem key="navigationItem" title="Location" id="CYH-X4-Ct5">
                         <barButtonItem key="backBarButtonItem" title=" " id="Zoo-4y-I2Q"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Title.Location"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="layersVEView" destination="AOn-WQ-x7M" id="r5S-W0-4v0"/>
@@ -356,6 +393,9 @@ You make the app better.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="FieldTitle.Name"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add place name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4n-6U-8sN" customClass="TextField" customModule="place4rest" customModuleProvider="target">
                                 <rect key="frame" x="20" y="62" width="335" height="30"/>
@@ -372,6 +412,7 @@ You make the app better.</string>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" name="light_gray"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Placeholder.Name"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Zgn-fD-XK8" id="aym-OC-Ti9"/>
@@ -382,6 +423,9 @@ You make the app better.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="FieldTitle.Details"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Add place details" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ie3-Qy-2Uj" customClass="TextView" customModule="place4rest" customModuleProvider="target">
                                 <rect key="frame" x="20" y="134" width="335" height="353"/>
@@ -396,6 +440,7 @@ You make the app better.</string>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Placeholder.Details"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="Zgn-fD-XK8" id="x4N-KM-OKj"/>
@@ -411,6 +456,9 @@ You make the app better.</string>
                                 <state key="normal" title="SUBMIT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.Submit"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapSubmitButton:" destination="Zgn-fD-XK8" eventType="touchUpInside" id="ViD-2I-D3g"/>
                                 </connections>
@@ -437,6 +485,9 @@ You make the app better.</string>
                     </view>
                     <navigationItem key="navigationItem" title="Name and Details" id="Scb-hV-bBb">
                         <barButtonItem key="backBarButtonItem" title=" " id="m7c-3c-cUk"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Title.NameAndDetails"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="detailsTextView" destination="ie3-Qy-2Uj" id="zaM-bZ-8tN"/>
@@ -466,6 +517,9 @@ You make the app better.</string>
                                 <state key="normal" title="CONTINUE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.Continue"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapContinueButton:" destination="AgN-Vj-SEK" eventType="touchUpInside" id="agp-fw-4hU"/>
                                 </connections>
@@ -493,6 +547,9 @@ You make the app better.</string>
                     </view>
                     <navigationItem key="navigationItem" title="Facilities" id="1qs-Si-jjt">
                         <barButtonItem key="backBarButtonItem" title=" " id="3bk-Gu-Jn9"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Title.Facilities"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="K6b-Ub-dCF" id="lXI-pu-JMn"/>
@@ -507,7 +564,7 @@ You make the app better.</string>
         <image name="ic-hunt" width="25" height="25"/>
         <image name="ic-hunt2" width="50" height="50"/>
         <image name="ic-layers" width="25" height="25"/>
-        <image name="ic-plus" width="37" height="37"/>
+        <image name="ic-plus" width="37.5" height="37.5"/>
         <namedColor name="dark_gray">
             <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

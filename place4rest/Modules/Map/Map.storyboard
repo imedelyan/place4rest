@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,6 +52,9 @@
                                             <state key="normal" title="Terrain style">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Terrain style"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="didTapTerrainStyleButton:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="yUQ-kO-hiW"/>
                                             </connections>
@@ -66,6 +69,9 @@
                                             <state key="normal" title="Satellite">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Satellite"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="didTapSatelliteStyleButton:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="eMg-Yb-Cvw"/>
                                             </connections>
@@ -80,6 +86,9 @@
                                             <state key="normal" title="Street style">
                                                 <color key="titleColor" name="dark_gray"/>
                                             </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Street style"/>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="didTapStreetStyleButton:" destination="Q9y-sk-mwH" eventType="touchUpInside" id="Bzg-3h-0pR"/>
                                             </connections>
@@ -115,7 +124,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMO-vA-lTt">
-                                            <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                            <rect key="frame" x="10.5" y="10.5" width="25" height="25"/>
                                             <color key="tintColor" name="dark_gray"/>
                                             <state key="normal" image="ic-hunt"/>
                                             <connections>
@@ -144,7 +153,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_place4rest" translatesAutoresizingMaskIntoConstraints="NO" id="off-QS-SQo">
-                                        <rect key="frame" x="30" y="41" width="66" height="29"/>
+                                        <rect key="frame" x="30" y="41" width="66.5" height="29"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynw-VZ-2LB">
                                         <rect key="frame" x="331" y="46" width="24" height="24"/>
@@ -293,7 +302,7 @@
         <image name="ic-hunt" width="25" height="25"/>
         <image name="ic-layers" width="25" height="25"/>
         <image name="ic-map" width="25" height="25"/>
-        <image name="logo_place4rest" width="66" height="29"/>
+        <image name="logo_place4rest" width="66.5" height="29"/>
         <image name="parking" width="40" height="40"/>
         <image name="sedan" width="40" height="40"/>
         <image name="trailer" width="40" height="40"/>

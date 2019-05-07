@@ -143,13 +143,6 @@ class MapViewController: UIViewController {
         mapView.addAnnotation(annotation)
         placeAnnotations.append(annotation)
     }
-
-    private func addAnnotation(coordinates: CLLocationCoordinate2D) {
-        let annotation = MGLPointAnnotation()
-        annotation.coordinate = coordinates
-        annotation.title = "New Place"
-        mapView.addAnnotation(annotation)
-    }
 }
 
 // MARK: - MapView
