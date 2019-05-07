@@ -69,7 +69,7 @@ extension SettingsViewController: UITableViewDataSource {
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        
+
         let item = items[indexPath.row]
         guard let confirmation = item.confirmation else {
             item.action.perform()

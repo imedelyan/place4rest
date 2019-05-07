@@ -30,10 +30,10 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asY-7S-E01">
                                                 <rect key="frame" x="15" y="127" width="345" height="215"/>
-                                                <mutableString key="text">place4rest – сервис по поиску мест отдыха.
+                                                <string key="text">place4rest – сервис по поиску мест отдыха.
 
 На карте вы найдете места для кемпинга и места отдыха с палатками. Вы можете их отфильтровать по категориям таким как Дикие стоянки – места для отдыха с палатками, оборудованные кемпинги или парковку удобную для ночевки.
-Иконки елочки обозначают – дикую стоянку, фонтан – место возле источника или родника, иконка замок – стоянка рядом с замком, крепостью или усадьбой.</mutableString>
+Иконки елочки обозначают – дикую стоянку, фонтан – место возле источника или родника, иконка замок – стоянка рядом с замком, крепостью или усадьбой.</string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQE-l6-qJi">
                                                 <rect key="frame" x="15" y="412" width="345" height="143.5"/>
-                                                <mutableString key="text">Каждое место имеет тег Досуг (зеленые иконки в описании места): Вело прогулки, Видовая площадка, Водные прогулки каяк/байдарка, Детская площадка, места для Кайт серфинга, Место для рыбалки, Мото прогулки, Памятники для посещения, Пешеходные прогулки, Пляжные места, места для Скалолазания.</mutableString>
+                                                <string key="text">Каждое место имеет тег Досуг (зеленые иконки в описании места): Вело прогулки, Видовая площадка, Водные прогулки каяк/байдарка, Детская площадка, места для Кайт серфинга, Место для рыбалки, Мото прогулки, Памятники для посещения, Пешеходные прогулки, Пляжные места, места для Скалолазания.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NK-Rg-nYL">
                                                 <rect key="frame" x="15" y="675.5" width="345" height="179.5"/>
-                                                <mutableString key="text">Каждое место имеет тег Сервис (синии иконки в описании места) – какие удобства вы можете найти на этом месте. Места с Доступом в Интернет 3G/4G WIFI, с доступом к душу, удобные для прогулки с домашними Животными, наличие Мусорных баков, Общественного туалета, крана Питьевой воды, Прачечная-автомат, Слив туалета, Слив Сточных вод, наличие магазина, доступ к подключению Электричества и тд.</mutableString>
+                                                <string key="text">Каждое место имеет тег Сервис (синии иконки в описании места) – какие удобства вы можете найти на этом месте. Места с Доступом в Интернет 3G/4G WIFI, с доступом к душу, удобные для прогулки с домашними Животными, наличие Мусорных баков, Общественного туалета, крана Питьевой воды, Прачечная-автомат, Слив туалета, Слив Сточных вод, наличие магазина, доступ к подключению Электричества и тд.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -219,10 +219,10 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHB-bg-PxU">
                                                 <rect key="frame" x="15" y="1185" width="345" height="161.5"/>
-                                                <mutableString key="text">Куда ехать не ехать? Каждое место имеет свой рейтинг и комментарии.
+                                                <string key="text">Куда ехать не ехать? Каждое место имеет свой рейтинг и комментарии.
 Вы можете добавить свой отзыв и выставить свою оценку, дополнить описание или добавить новую фотографию места в комментариях.
 
-Вступайте в сообщество place4rest – Добавляйте свои места, добавляйте отзывы!</mutableString>
+Вступайте в сообщество place4rest – Добавляйте свои места, добавляйте отзывы!</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -298,13 +298,13 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="dark_gray"/>
                         <constraints>
                             <constraint firstItem="DGJ-yr-Iwd" firstAttribute="bottom" secondItem="d0v-xm-fNA" secondAttribute="bottom" id="Zza-HR-dKI"/>
                             <constraint firstItem="DGJ-yr-Iwd" firstAttribute="trailing" secondItem="d0v-xm-fNA" secondAttribute="trailing" id="bb2-bP-TbC"/>
                             <constraint firstItem="2tR-D4-OWi" firstAttribute="height" secondItem="YrR-b4-roP" secondAttribute="height" priority="250" id="gn8-qI-gUu"/>
                             <constraint firstItem="2tR-D4-OWi" firstAttribute="width" secondItem="YrR-b4-roP" secondAttribute="width" id="l2Q-c1-w3h"/>
-                            <constraint firstItem="d0v-xm-fNA" firstAttribute="top" secondItem="DGJ-yr-Iwd" secondAttribute="top" id="ldD-DW-evK"/>
+                            <constraint firstItem="d0v-xm-fNA" firstAttribute="top" secondItem="YrR-b4-roP" secondAttribute="top" constant="20" id="ldD-DW-evK"/>
                             <constraint firstItem="d0v-xm-fNA" firstAttribute="leading" secondItem="DGJ-yr-Iwd" secondAttribute="leading" id="uhU-ZB-Lhz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DGJ-yr-Iwd"/>
