@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="pu9-UH-JEC">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="YYy-Jw-294" customClass="SettingsViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dAx-9E-eoa">
-                                <rect key="frame" x="0.0" y="40" width="375" height="578"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" name="dark_gray"/>
                                 <connections>
                                     <outlet property="dataSource" destination="YYy-Jw-294" id="CxN-Ff-w6X"/>
@@ -30,7 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" name="dark_gray"/>
                         <constraints>
-                            <constraint firstItem="dAx-9E-eoa" firstAttribute="top" secondItem="lyw-XH-VVN" secondAttribute="top" constant="20" id="5R5-Vg-bRt"/>
+                            <constraint firstItem="dAx-9E-eoa" firstAttribute="top" secondItem="lyw-XH-VVN" secondAttribute="top" id="5R5-Vg-bRt"/>
                             <constraint firstItem="dAx-9E-eoa" firstAttribute="leading" secondItem="lyw-XH-VVN" secondAttribute="leading" id="HWJ-aN-6aV"/>
                             <constraint firstItem="lyw-XH-VVN" firstAttribute="trailing" secondItem="dAx-9E-eoa" secondAttribute="trailing" id="LiD-wp-nAm"/>
                             <constraint firstItem="lyw-XH-VVN" firstAttribute="bottom" secondItem="dAx-9E-eoa" secondAttribute="bottom" id="arT-cA-9gN"/>
@@ -46,6 +46,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" title="Settings" id="1IV-VO-Igy"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="dAx-9E-eoa" id="Evz-V5-ETm"/>

@@ -49,17 +49,6 @@ class SettingsViewController: UIViewController {
             Item(title: "Settings.Logout", confirmation: logoutConfirmation, action: logoutAction)
         ]
     }()
-
-    // MARK: - Life cycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
 }
 
 // MARK: - UITableViewDataSource
@@ -79,6 +68,8 @@ extension SettingsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
         let item = items[indexPath.row]
         guard let confirmation = item.confirmation else {
             item.action.perform()
