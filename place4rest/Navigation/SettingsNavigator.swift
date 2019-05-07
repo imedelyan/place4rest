@@ -26,7 +26,14 @@ final class SettingsNavigator {
             vc.navigator = self
             navigationController.pushViewController(vc, animated: true)
         case .language:
-            break
+            let vc = LanguagesViewController.load(from: .languages)
+            vc.onSetAction = { [weak self] language in
+                AppLanguage.language = language
+                self?.showAlertForLanguageChange()
+            }
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            navigationController.topViewController?.present(vc, animated: true, completion: nil)
         case .editUser:
             break
         case .web:
@@ -36,6 +43,15 @@ final class SettingsNavigator {
 
     func backToRoot() {
         navigationController.popToRootViewController(animated: true)
+    }
+
+    private func showAlertForLanguageChange() {
+        guard AppLanguage.language != AppLanguage.startLanguage else { return }
+        let restartAppAlert = UIAlertController(title: R.string.localizable.restartApplication(),
+                                                message: nil,
+                                                preferredStyle: .alert)
+        restartAppAlert.addAction(UIAlertAction(title: R.string.localizable.ok(), style: .cancel, handler: nil))
+        UIApplication.shared.keyWindow?.rootViewController?.present(restartAppAlert, animated: true, completion: nil)
     }
 }
 

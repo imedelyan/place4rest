@@ -8,6 +8,10 @@
 
 // MARK: - Miscellanious
 "Cancel" = "Cancel";
+"Language" = "Language";
+"CLOSE" = "CLOSE";
+"RestartApplication" = "You need to restart the application for the changes to take effect";
+"Ok" = "Ok";
 
 // MARK: - Map
 "Terrain style" = "Terrain style";

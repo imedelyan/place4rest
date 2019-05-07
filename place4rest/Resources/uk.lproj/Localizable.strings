@@ -8,6 +8,10 @@
 
 // MARK: - Miscellanious
 "Cancel" = "Cancel";
+"Language" = "Мова";
+"CLOSE" = "ЗАКРИТИ";
+"RestartApplication" = "Необхідно перезапустити додаток, щоб зміни вступили в силу";
+"Ok" = "Добре";
 
 // MARK: - Map
 "Terrain style" = "Terrain style";
