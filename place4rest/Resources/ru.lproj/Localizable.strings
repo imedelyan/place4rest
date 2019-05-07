@@ -14,32 +14,32 @@
 "Ok" = "Ok";
 
 // MARK: - Map
-"Terrain style" = "Terrain style";
-"Satellite" = "Satellite";
-"Street style" = "Street style";
+"Terrain style" = "Местность";
+"Satellite" = "Спутник";
+"Street style" = "Улицы";
 
 // MARK: - Search
-"Search" = "Search";
+"Search" = "Поиск";
 
 // MARK: - Add Place
-"Title.AddaNewPlace" = "Add a New Place";
-"Title.PrimaryCategory" = "Primary category";
-"Title.Facilities" = "Facilities";
-"Title.Location" = "Location";
-"Title.NameAndDetails" = "Name and Details";
-"Buttion.AddPlace" = "ADD PLACE";
-"Text.SpecialPlace" = "The special place where you";
-"Text.AddStuff" = "Add stuff and help us grow!";
-"Text.Community" = "place4rest is a community";
-"Text.YouMakeTheAppBetter" = "This app wouldn't be here without all of you, without new places you explore, photos and reviews you add.
+"Title.AddaNewPlace" = "Добавить новое место";
+"Title.PrimaryCategory" = "Главная категория";
+"Title.Facilities" = "Удобства";
+"Title.Location" = "Локация";
+"Title.NameAndDetails" = "Название и Описание";
+"Buttion.AddPlace" = "ДОБАВИТЬ МЕСТО";
+"Text.SpecialPlace" = "Тут ты можешь";
+"Text.AddStuff" = "Добавлять новые места и делиться впечатлениями от своих путешествий!";
+"Text.Community" = "place4rest это сообщество";
+"Text.YouMakeTheAppBetter" = "Это приложение было бы невозможным без всех вас, без мест, которые вы добавляете, без отзывов, которые вы оставляете.
 
-You make the app better.";
-"Buttion.Continue" = "CONTINUE";
-"Buttion.Submit" = "SUBMIT";
-"FieldTitle.Name" = "Place name";
-"Placeholder.Name" = "Add place name";
-"FieldTitle.Details" = "Details";
-"Placeholder.Details" = "Add place details";
+Вы делаете это приложение лучше!";
+"Buttion.Continue" = "ПРОДОЛЖИТЬ";
+"Buttion.Submit" = "ДОБАВИТЬ";
+"FieldTitle.Name" = "Название места";
+"Placeholder.Name" = "Добавьте название";
+"FieldTitle.Details" = "Описание";
+"Placeholder.Details" = "Добавьте описание";
 
 // MARK: - About
 "Text.Categories" = "place4rest – сервис по поиску мест отдыха.
@@ -55,12 +55,12 @@ You make the app better.";
 Вступайте в сообщество place4rest – Добавляйте свои места, добавляйте отзывы!";
 
 // MARK: - Settings
-"Title.Settings" = "Settings";
-"Settings.Logout.Message" = "Are you sure you want to log out?";
-"Settings.EditUser" = "Edit account";
-"Settings.Language" = "Language";
+"Title.Settings" = "Налаштування";
+"Settings.Logout.Message" = "Ви впевнені, що хочете вийти?";
+"Settings.EditUser" = "Редагувати профіль";
+"Settings.Language" = "Мова";
 "Settings.Web" = "place4rest web";
-"Settings.Logout" = "Log out";
+"Settings.Logout" = "Вийти";
 
 // MARK: - Categories
 "Wild places" = "Wild places";
