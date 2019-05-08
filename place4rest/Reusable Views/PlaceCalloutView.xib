@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceCalloutView" customModule="place4rest" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="RsW-fh-LiD"/>
+                <outlet property="imageView" destination="xaj-aU-rn3" id="gvi-z0-qtw"/>
+                <outlet property="titleLable" destination="9Wh-04-sYZ" id="TYn-aj-DOE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2w-Wo-LHE" customClass="RoundedView" customModule="place4rest" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="257"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camping on the banks of the Blue Lakes, Oleshna, Chernihiv region" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wh-04-sYZ">
+                    <rect key="frame" x="15" y="10" width="270" height="38.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xaj-aU-rn3">
+                    <rect key="frame" x="10" y="53.5" width="280" height="153.5"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOc-Nj-xaQ" customClass="RoundedButton" customModule="place4rest" customModuleProvider="target">
+                    <rect key="frame" x="10" y="217" width="280" height="30"/>
+                    <color key="backgroundColor" name="light_gray"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="eeC-Bz-0Xn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <state key="normal" title="DETAILS">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="didTapDetailsButton:" destination="-1" eventType="touchUpInside" id="hsx-cb-Kos"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_callout_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ReP-fn-k3Q">
+                    <rect key="frame" x="132" y="256" width="36" height="14"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xaj-aU-rn3" secondAttribute="trailing" constant="10" id="2DV-mM-d8z"/>
+                <constraint firstItem="ReP-fn-k3Q" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7PX-hX-vKU"/>
+                <constraint firstItem="9Wh-04-sYZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="GC7-HJ-L4r"/>
+                <constraint firstItem="k2w-Wo-LHE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LhP-bQ-J52"/>
+                <constraint firstItem="QOc-Nj-xaQ" firstAttribute="top" secondItem="xaj-aU-rn3" secondAttribute="bottom" constant="10" id="LrC-Sy-89h"/>
+                <constraint firstItem="k2w-Wo-LHE" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Obv-Ca-v5x"/>
+                <constraint firstItem="k2w-Wo-LHE" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="PoV-Wn-P6D"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QOc-Nj-xaQ" secondAttribute="bottom" constant="23" id="Yai-d9-smK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QOc-Nj-xaQ" secondAttribute="trailing" constant="10" id="eVx-5j-cOI"/>
+                <constraint firstItem="9Wh-04-sYZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="f0R-lZ-qo8"/>
+                <constraint firstItem="ReP-fn-k3Q" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="fCA-1h-Jst"/>
+                <constraint firstItem="xaj-aU-rn3" firstAttribute="top" secondItem="9Wh-04-sYZ" secondAttribute="bottom" constant="5" id="jcb-k1-sTy"/>
+                <constraint firstItem="QOc-Nj-xaQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="pdw-nh-fh2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Wh-04-sYZ" secondAttribute="trailing" constant="15" id="sFR-xC-uJe"/>
+                <constraint firstItem="k2w-Wo-LHE" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-13" id="tSH-7o-k70"/>
+                <constraint firstItem="xaj-aU-rn3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="uv7-Lc-d1q"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.19999999999999" y="2.2488755622188905"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_callout_arrow" width="36" height="14"/>
+        <namedColor name="light_gray">
+            <color red="0.5725490196078431" green="0.5725490196078431" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

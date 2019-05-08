@@ -38,33 +38,17 @@ App uses maps in offlline mode. So users are going to have a possibility:
 
 
 ## Design Pattern
-Project uses VIPER architecture pattern.
+Project uses MVP architecture pattern.
 
 
 ## Setup
 
-### Bundler
-To get going you need to install the tool, including using a more modern ruby:
+To get going you have to install ruby:
 ```
 brew install ruby
 ```
-Then install bundler: 
-```
-gem install bundler
-```
 
-### Project setup
-After updating `ruby` and installing `bundler`, you must install tools for project setup:
+After installing `ruby`, you have to install tools with Makefile - just run:
 ```
-bundle install --path vendor/bundle 
-```
-
-### Cocoapods
-After tools installation, should you install dependecies for project:
-```
-bundle exec pod install
-```
-Later should you need to update dependances:
-```
-bundle exec pod update
+make
 ```

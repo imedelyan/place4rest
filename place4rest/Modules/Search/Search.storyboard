@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="Akv-zj-4rl">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" title="Search" id="Xr0-Sz-WJ0" customClass="SearchViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v0z-RT-T5X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="yn5-4A-K2s">
+                                <rect key="frame" x="5" y="40" width="365" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" name="dark_gray"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="searchField.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Search"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Xr0-Sz-WJ0" id="8Oj-mf-q8Q"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ncf-lj-oDJ">
+                                <rect key="frame" x="0.0" y="96" width="375" height="522"/>
+                                <color key="backgroundColor" name="dark_gray"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceTitleCell" textLabel="bar-xw-w1E" style="IBUITableViewCellStyleDefault" id="QWS-CS-Wme">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QWS-CS-Wme" id="L2h-4i-mG9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bar-xw-w1E">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-4Q-Fap">
+                                                    <rect key="frame" x="15" y="43" width="345" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" name="light_gray"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="dark_gray"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xr0-Sz-WJ0" id="hbN-tK-dse"/>
+                                    <outlet property="delegate" destination="Xr0-Sz-WJ0" id="U8e-LO-OdT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="dark_gray"/>
+                        <constraints>
+                            <constraint firstItem="yn5-4A-K2s" firstAttribute="leading" secondItem="o28-ww-BfC" secondAttribute="leading" constant="5" id="1m0-cO-LrG"/>
+                            <constraint firstItem="o28-ww-BfC" firstAttribute="bottom" secondItem="ncf-lj-oDJ" secondAttribute="bottom" id="3z5-6J-KJx"/>
+                            <constraint firstItem="ncf-lj-oDJ" firstAttribute="top" secondItem="yn5-4A-K2s" secondAttribute="bottom" id="EMs-lW-sgD"/>
+                            <constraint firstItem="yn5-4A-K2s" firstAttribute="trailing" secondItem="o28-ww-BfC" secondAttribute="trailing" constant="-5" id="WgG-aT-gpD"/>
+                            <constraint firstItem="ncf-lj-oDJ" firstAttribute="leading" secondItem="o28-ww-BfC" secondAttribute="leading" id="c1I-nF-qha"/>
+                            <constraint firstItem="ncf-lj-oDJ" firstAttribute="trailing" secondItem="o28-ww-BfC" secondAttribute="trailing" id="qaW-Ia-1ec"/>
+                            <constraint firstItem="yn5-4A-K2s" firstAttribute="top" secondItem="o28-ww-BfC" secondAttribute="top" constant="20" id="xWC-dI-fKP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o28-ww-BfC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="ic-search" selectedImage="ic-search" id="g5F-0h-XFq">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <color key="badgeColor" name="dark_green"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" name="dark_green"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Search" id="0G8-Wg-baS">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Search"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="yn5-4A-K2s" id="pYv-C7-7ZK"/>
+                        <outlet property="searchTableView" destination="ncf-lj-oDJ" id="4eY-m7-HZU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qB6-qG-U6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Search" id="5x2-Rj-WuS"/>
+            </objects>
+            <point key="canvasLocation" x="-111.2" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic-search" width="25" height="25"/>
+        <namedColor name="dark_gray">
+            <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dark_green">
+            <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_gray">
+            <color red="0.5725490196078431" green="0.5725490196078431" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

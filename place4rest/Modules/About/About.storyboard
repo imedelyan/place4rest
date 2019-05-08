@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Place-->
+        <scene sceneID="aX2-UQ-0px">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" title="Place" hidesBottomBarWhenPushed="YES" id="bE1-lL-LpM" customClass="AboutViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YrR-b4-roP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="d0v-xm-fNA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="1431"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-D4-OWi">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1376.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_big" translatesAutoresizingMaskIntoConstraints="NO" id="quZ-kA-95b">
+                                                <rect key="frame" x="88" y="20" width="199" height="87"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asY-7S-E01">
+                                                <rect key="frame" x="15" y="127" width="345" height="215"/>
+                                                <string key="text">place4rest – сервис по поиску мест отдыха.
+
+На карте вы найдете места для кемпинга и места отдыха с палатками. Вы можете их отфильтровать по категориям таким как Дикие стоянки – места для отдыха с палатками, оборудованные кемпинги или парковку удобную для ночевки.
+Иконки елочки обозначают – дикую стоянку, фонтан – место возле источника или родника, иконка замок – стоянка рядом с замком, крепостью или усадьбой.</string>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.Categories"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cZP-c0-lWr">
+                                                <rect key="frame" x="15" y="352" width="240" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forest" translatesAutoresizingMaskIntoConstraints="NO" id="HAk-LD-yyP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="light_blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fountain" translatesAutoresizingMaskIntoConstraints="NO" id="MqK-aU-bnj">
+                                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="light_blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="palace" translatesAutoresizingMaskIntoConstraints="NO" id="LDK-gU-f2F">
+                                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="light_blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camping-tent" translatesAutoresizingMaskIntoConstraints="NO" id="HRc-Cf-2qS">
+                                                        <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="light_blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parking" translatesAutoresizingMaskIntoConstraints="NO" id="xa9-GC-tqI">
+                                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="light_blue"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQE-l6-qJi">
+                                                <rect key="frame" x="15" y="412" width="345" height="143.5"/>
+                                                <string key="text">Каждое место имеет тег Досуг (зеленые иконки в описании места): Вело прогулки, Видовая площадка, Водные прогулки каяк/байдарка, Детская площадка, места для Кайт серфинга, Место для рыбалки, Мото прогулки, Памятники для посещения, Пешеходные прогулки, Пляжные места, места для Скалолазания.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.Activities"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P58-v9-ZMM">
+                                                <rect key="frame" x="15" y="565.5" width="290" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windsurfing" translatesAutoresizingMaskIntoConstraints="NO" id="4PB-qM-AwK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cycling" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-YB-EdE">
+                                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="telescope" translatesAutoresizingMaskIntoConstraints="NO" id="5V8-R2-qui">
+                                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="canoe" translatesAutoresizingMaskIntoConstraints="NO" id="aVG-CZ-kqp">
+                                                        <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playground" translatesAutoresizingMaskIntoConstraints="NO" id="a3j-Vu-t8R">
+                                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fishing-pole" translatesAutoresizingMaskIntoConstraints="NO" id="msg-dR-Zsc">
+                                                        <rect key="frame" x="250" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sGZ-3X-LWR">
+                                                <rect key="frame" x="15" y="615.5" width="290" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="motorcycle" translatesAutoresizingMaskIntoConstraints="NO" id="hVe-qU-I24">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monument" translatesAutoresizingMaskIntoConstraints="NO" id="bQ8-5L-Zgw">
+                                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trekking" translatesAutoresizingMaskIntoConstraints="NO" id="p3l-KU-hZD">
+                                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beach-umbrella" translatesAutoresizingMaskIntoConstraints="NO" id="gqY-7v-8Nf">
+                                                        <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="climbing" translatesAutoresizingMaskIntoConstraints="NO" id="Dcs-zH-qLo">
+                                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paragliding" translatesAutoresizingMaskIntoConstraints="NO" id="SZU-2M-vQi">
+                                                        <rect key="frame" x="250" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="dark_green"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NK-Rg-nYL">
+                                                <rect key="frame" x="15" y="675.5" width="345" height="179.5"/>
+                                                <string key="text">Каждое место имеет тег Сервис (синии иконки в описании места) – какие удобства вы можете найти на этом месте. Места с Доступом в Интернет 3G/4G WIFI, с доступом к душу, удобные для прогулки с домашними Животными, наличие Мусорных баков, Общественного туалета, крана Питьевой воды, Прачечная-автомат, Слив туалета, Слив Сточных вод, наличие магазина, доступ к подключению Электричества и тд.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.Services"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6jf-dh-WKl">
+                                                <rect key="frame" x="15" y="865" width="290" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swimming-pool" translatesAutoresizingMaskIntoConstraints="NO" id="5gG-Ph-tAR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gas-station" translatesAutoresizingMaskIntoConstraints="NO" id="UOj-aE-RTN">
+                                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone" translatesAutoresizingMaskIntoConstraints="NO" id="pj2-ie-ilR">
+                                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wi-fi" translatesAutoresizingMaskIntoConstraints="NO" id="bQZ-2N-PIh">
+                                                        <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shower" translatesAutoresizingMaskIntoConstraints="NO" id="bv6-SU-Rwl">
+                                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pets" translatesAutoresizingMaskIntoConstraints="NO" id="OCg-CC-esL">
+                                                        <rect key="frame" x="250" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Goe-g2-mw1">
+                                                <rect key="frame" x="15" y="915" width="290" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="automatic-car-wash" translatesAutoresizingMaskIntoConstraints="NO" id="D6J-Ef-QIZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waste" translatesAutoresizingMaskIntoConstraints="NO" id="wRy-KD-Hro">
+                                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toilet" translatesAutoresizingMaskIntoConstraints="NO" id="bOm-Cu-Yic">
+                                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plumbing" translatesAutoresizingMaskIntoConstraints="NO" id="w8q-4o-eIL">
+                                                        <rect key="frame" x="150" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="washing-machine" translatesAutoresizingMaskIntoConstraints="NO" id="zNz-n3-RQ2">
+                                                        <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sewer" translatesAutoresizingMaskIntoConstraints="NO" id="NaN-8E-FYp">
+                                                        <rect key="frame" x="250" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pRd-Hb-B6Y">
+                                                <rect key="frame" x="15" y="965" width="140" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="water-pipe" translatesAutoresizingMaskIntoConstraints="NO" id="UbH-hg-4yW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bread" translatesAutoresizingMaskIntoConstraints="NO" id="Wj5-3P-Fgw">
+                                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="electrical" translatesAutoresizingMaskIntoConstraints="NO" id="OkK-dL-aDz">
+                                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="blue"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rne-JY-Sli">
+                                                <rect key="frame" x="15" y="1025" width="345" height="90"/>
+                                                <string key="text">Для кого это подходит? На карте есть фильтр вид места (круглые оранжевые иконки). Для автотуристов на легковом авто, для автодомов и караванов, и места куда нельзя подъехать на транспорте обозначены для пешеходов.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.CategoriesFor"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHB-bg-PxU">
+                                                <rect key="frame" x="15" y="1185" width="345" height="161.5"/>
+                                                <string key="text">Куда ехать не ехать? Каждое место имеет свой рейтинг и комментарии.
+Вы можете добавить свой отзыв и выставить свою оценку, дополнить описание или добавить новую фотографию места в комментариях.
+
+Вступайте в сообщество place4rest – Добавляйте свои места, добавляйте отзывы!</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Text.AddYourReview"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEK-nM-a5f">
+                                                <rect key="frame" x="15" y="1125" width="140" height="40"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trailer" translatesAutoresizingMaskIntoConstraints="NO" id="W45-l5-xwA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="orange"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sedan" translatesAutoresizingMaskIntoConstraints="NO" id="c6Q-09-kBj">
+                                                        <rect key="frame" x="50" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="orange"/>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trekking" translatesAutoresizingMaskIntoConstraints="NO" id="8bF-UJ-oua">
+                                                        <rect key="frame" x="100" y="0.0" width="40" height="40"/>
+                                                        <color key="tintColor" name="orange"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" name="dark_gray"/>
+                                        <constraints>
+                                            <constraint firstItem="2NK-Rg-nYL" firstAttribute="top" secondItem="sGZ-3X-LWR" secondAttribute="bottom" constant="20" id="0Rh-G4-d3I"/>
+                                            <constraint firstItem="quZ-kA-95b" firstAttribute="top" secondItem="2tR-D4-OWi" secondAttribute="top" constant="20" id="0pV-Nn-Zmv"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pRd-Hb-B6Y" secondAttribute="trailing" constant="15" id="5p6-gQ-DlW"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cZP-c0-lWr" secondAttribute="trailing" constant="15" id="8CU-k7-dUr"/>
+                                            <constraint firstItem="quZ-kA-95b" firstAttribute="centerX" secondItem="2tR-D4-OWi" secondAttribute="centerX" id="A5b-mi-dNY"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6jf-dh-WKl" secondAttribute="trailing" constant="15" id="Ch9-hY-YCb"/>
+                                            <constraint firstItem="6jf-dh-WKl" firstAttribute="top" secondItem="2NK-Rg-nYL" secondAttribute="bottom" constant="10" id="F9d-CU-h2e"/>
+                                            <constraint firstAttribute="trailing" secondItem="NQE-l6-qJi" secondAttribute="trailing" constant="15" id="FYT-h7-QgA"/>
+                                            <constraint firstItem="6jf-dh-WKl" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="G6w-Gw-m1N"/>
+                                            <constraint firstItem="rne-JY-Sli" firstAttribute="top" secondItem="pRd-Hb-B6Y" secondAttribute="bottom" constant="20" id="H0m-e8-Jed"/>
+                                            <constraint firstAttribute="bottom" secondItem="mHB-bg-PxU" secondAttribute="bottom" constant="30" id="Hzn-TH-Ivn"/>
+                                            <constraint firstAttribute="trailing" secondItem="mHB-bg-PxU" secondAttribute="trailing" constant="15" id="L2t-4t-HgG"/>
+                                            <constraint firstItem="NQE-l6-qJi" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="Nbu-GD-v77"/>
+                                            <constraint firstItem="pRd-Hb-B6Y" firstAttribute="top" secondItem="Goe-g2-mw1" secondAttribute="bottom" constant="10" id="NeL-XK-OEa"/>
+                                            <constraint firstAttribute="trailing" secondItem="rne-JY-Sli" secondAttribute="trailing" constant="15" id="O9K-AI-XJ6"/>
+                                            <constraint firstItem="dEK-nM-a5f" firstAttribute="top" secondItem="rne-JY-Sli" secondAttribute="bottom" constant="10" id="PBF-Ks-Ems"/>
+                                            <constraint firstAttribute="trailing" secondItem="2NK-Rg-nYL" secondAttribute="trailing" constant="15" id="RWz-sQ-Bqq"/>
+                                            <constraint firstItem="Goe-g2-mw1" firstAttribute="top" secondItem="6jf-dh-WKl" secondAttribute="bottom" constant="10" id="Vhq-qp-Wsa"/>
+                                            <constraint firstItem="rne-JY-Sli" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="Vxd-cU-LC6"/>
+                                            <constraint firstItem="mHB-bg-PxU" firstAttribute="top" secondItem="dEK-nM-a5f" secondAttribute="bottom" constant="20" id="ZHA-Xr-1eE"/>
+                                            <constraint firstItem="mHB-bg-PxU" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="ZuE-mu-nTj"/>
+                                            <constraint firstItem="asY-7S-E01" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="adb-Jx-hmd"/>
+                                            <constraint firstItem="sGZ-3X-LWR" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="dgM-v7-eft"/>
+                                            <constraint firstItem="Goe-g2-mw1" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="e1m-C9-3tY"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sGZ-3X-LWR" secondAttribute="trailing" constant="15" id="gCj-1d-0HG"/>
+                                            <constraint firstAttribute="trailing" secondItem="asY-7S-E01" secondAttribute="trailing" constant="15" id="gj1-mH-MFN"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P58-v9-ZMM" secondAttribute="trailing" constant="15" id="hr3-EQ-s1Q"/>
+                                            <constraint firstItem="cZP-c0-lWr" firstAttribute="top" secondItem="asY-7S-E01" secondAttribute="bottom" constant="10" id="iTc-6X-Pal"/>
+                                            <constraint firstItem="cZP-c0-lWr" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="lHW-MU-Z1a"/>
+                                            <constraint firstItem="dEK-nM-a5f" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="nGP-VI-JLK"/>
+                                            <constraint firstItem="asY-7S-E01" firstAttribute="top" secondItem="quZ-kA-95b" secondAttribute="bottom" constant="20" id="o6b-MN-RX4"/>
+                                            <constraint firstItem="pRd-Hb-B6Y" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="ooc-9s-BiH"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dEK-nM-a5f" secondAttribute="trailing" constant="15" id="p3c-cd-eru"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Goe-g2-mw1" secondAttribute="trailing" constant="15" id="pVi-r6-J3B"/>
+                                            <constraint firstItem="2NK-Rg-nYL" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="qNS-f0-9pd"/>
+                                            <constraint firstItem="P58-v9-ZMM" firstAttribute="leading" secondItem="2tR-D4-OWi" secondAttribute="leading" constant="15" id="qUt-4p-Q2o"/>
+                                            <constraint firstItem="sGZ-3X-LWR" firstAttribute="top" secondItem="P58-v9-ZMM" secondAttribute="bottom" constant="10" id="rui-K2-d92"/>
+                                            <constraint firstItem="NQE-l6-qJi" firstAttribute="top" secondItem="cZP-c0-lWr" secondAttribute="bottom" constant="20" id="uar-eI-3pv"/>
+                                            <constraint firstItem="P58-v9-ZMM" firstAttribute="top" secondItem="NQE-l6-qJi" secondAttribute="bottom" constant="10" id="vxw-zl-Pgb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="dark_gray"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2tR-D4-OWi" secondAttribute="trailing" id="2aS-9F-BSu"/>
+                                    <constraint firstAttribute="bottom" secondItem="2tR-D4-OWi" secondAttribute="bottom" id="5sy-JS-JGW"/>
+                                    <constraint firstItem="2tR-D4-OWi" firstAttribute="top" secondItem="d0v-xm-fNA" secondAttribute="top" id="G6O-sc-J8L"/>
+                                    <constraint firstItem="2tR-D4-OWi" firstAttribute="leading" secondItem="d0v-xm-fNA" secondAttribute="leading" id="LBo-AL-FII"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" name="dark_gray"/>
+                        <constraints>
+                            <constraint firstItem="DGJ-yr-Iwd" firstAttribute="bottom" secondItem="d0v-xm-fNA" secondAttribute="bottom" id="Zza-HR-dKI"/>
+                            <constraint firstItem="DGJ-yr-Iwd" firstAttribute="trailing" secondItem="d0v-xm-fNA" secondAttribute="trailing" id="bb2-bP-TbC"/>
+                            <constraint firstItem="2tR-D4-OWi" firstAttribute="height" secondItem="YrR-b4-roP" secondAttribute="height" priority="250" id="gn8-qI-gUu"/>
+                            <constraint firstItem="2tR-D4-OWi" firstAttribute="width" secondItem="YrR-b4-roP" secondAttribute="width" id="l2Q-c1-w3h"/>
+                            <constraint firstItem="d0v-xm-fNA" firstAttribute="top" secondItem="YrR-b4-roP" secondAttribute="top" constant="20" id="ldD-DW-evK"/>
+                            <constraint firstItem="d0v-xm-fNA" firstAttribute="leading" secondItem="DGJ-yr-Iwd" secondAttribute="leading" id="uhU-ZB-Lhz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DGJ-yr-Iwd"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="ic-about" selectedImage="ic-about" id="me9-M1-iNi">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <color key="badgeColor" name="dark_green"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" name="dark_green"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="1500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Y0-LE-DzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792.79999999999995" y="47.676161919040482"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="automatic-car-wash" width="40" height="40"/>
+        <image name="beach-umbrella" width="40" height="40"/>
+        <image name="bread" width="40" height="40"/>
+        <image name="camping-tent" width="40" height="40"/>
+        <image name="canoe" width="40" height="40"/>
+        <image name="climbing" width="40" height="40"/>
+        <image name="cycling" width="40" height="40"/>
+        <image name="electrical" width="40" height="40"/>
+        <image name="fishing-pole" width="40" height="40"/>
+        <image name="forest" width="40" height="40"/>
+        <image name="fountain" width="40" height="40"/>
+        <image name="gas-station" width="40" height="40"/>
+        <image name="ic-about" width="25" height="25"/>
+        <image name="iphone" width="40" height="40"/>
+        <image name="logo_big" width="199" height="87"/>
+        <image name="monument" width="40" height="40"/>
+        <image name="motorcycle" width="40" height="40"/>
+        <image name="palace" width="40" height="40"/>
+        <image name="paragliding" width="40" height="40"/>
+        <image name="parking" width="40" height="40"/>
+        <image name="pets" width="40" height="40"/>
+        <image name="playground" width="40" height="40"/>
+        <image name="plumbing" width="40" height="40"/>
+        <image name="sedan" width="40" height="40"/>
+        <image name="sewer" width="40" height="40"/>
+        <image name="shower" width="40" height="40"/>
+        <image name="swimming-pool" width="40" height="40"/>
+        <image name="telescope" width="40" height="40"/>
+        <image name="toilet" width="40" height="40"/>
+        <image name="trailer" width="40" height="40"/>
+        <image name="trekking" width="40" height="40"/>
+        <image name="washing-machine" width="40" height="40"/>
+        <image name="waste" width="40" height="40"/>
+        <image name="water-pipe" width="40" height="40"/>
+        <image name="wi-fi" width="40" height="40"/>
+        <image name="windsurfing" width="40" height="40"/>
+        <namedColor name="blue">
+            <color red="0.15294117647058825" green="0.32156862745098042" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dark_gray">
+            <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dark_green">
+            <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_blue">
+            <color red="0.22745098039215686" green="0.5490196078431373" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="orange">
+            <color red="0.94509803921568625" green="0.36862745098039218" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

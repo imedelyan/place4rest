@@ -1,0 +1,18 @@
+ignores_function_declarations: true
+ignores_comments: true
+
+disabled_rules:
+  - variable_name
+  - force_cast
+  - nesting
+
+excluded:
+  - Pods
+  - fastlane
+  - vendor
+  - place4rest/Resources/R.generated.swift
+
+line_length: 210
+
+file_length: 400
+type_body_length: 300

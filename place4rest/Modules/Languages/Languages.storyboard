@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Languages View Controller-->
+        <scene sceneID="HAg-EY-Afg">
+            <objects>
+                <viewController storyboardIdentifier="LanguagesViewController" id="Bqd-YV-gEL" customClass="LanguagesViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6CH-DU-Fhm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWt-Iq-DAw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUk-pF-MiW" customClass="RoundedView" customModule="place4rest" customModuleProvider="target">
+                                <rect key="frame" x="47.5" y="212.5" width="280" height="262"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elx-Ij-D51">
+                                        <rect key="frame" x="0.0" y="210" width="280" height="52"/>
+                                        <color key="backgroundColor" name="light_gray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="ujm-qe-Pag"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <state key="normal" title="ЗАКРИТИ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="CLOSE"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapCloseButton:" destination="Bqd-YV-gEL" eventType="touchUpInside" id="WeX-Ti-ySV"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJu-1Q-lwa">
+                                        <rect key="frame" x="20" y="20" width="85.5" height="19"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" name="dark_gray"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Language"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbL-yf-NmL">
+                                        <rect key="frame" x="0.0" y="209" width="280" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ImP-RY-l4V"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVK-JT-pkS">
+                                        <rect key="frame" x="0.0" y="49" width="280" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="QJp-JR-zxp"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Українська" image="ua_flag_icon">
+                                            <color key="titleColor" name="dark_gray"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapUAButton:" destination="Bqd-YV-gEL" eventType="touchUpInside" id="Jad-l8-xH8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5l-VG-z4o">
+                                        <rect key="frame" x="0.0" y="149" width="280" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="pz4-hi-bkT"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Русский" image="ru_flag_icon">
+                                            <color key="titleColor" name="dark_gray"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapRUButton:" destination="Bqd-YV-gEL" eventType="touchUpInside" id="dHQ-dL-4bA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2O-W9-asX">
+                                        <rect key="frame" x="0.0" y="99" width="280" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Hd5-jD-iyt"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="60" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="English" image="uk_flag_icon">
+                                            <color key="titleColor" name="dark_gray"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapUKButton:" destination="Bqd-YV-gEL" eventType="touchUpInside" id="LOw-ZK-BRh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="AbL-yf-NmL" firstAttribute="leading" secondItem="PUk-pF-MiW" secondAttribute="leading" id="05s-0P-F3w"/>
+                                    <constraint firstAttribute="trailing" secondItem="mVK-JT-pkS" secondAttribute="trailing" id="29k-jp-P3Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Elx-Ij-D51" secondAttribute="bottom" id="2Mb-dU-54H"/>
+                                    <constraint firstItem="mVK-JT-pkS" firstAttribute="top" secondItem="HJu-1Q-lwa" secondAttribute="bottom" constant="10" id="4Ic-E5-uKd"/>
+                                    <constraint firstItem="HJu-1Q-lwa" firstAttribute="leading" secondItem="PUk-pF-MiW" secondAttribute="leading" constant="20" id="4cQ-cx-VP0"/>
+                                    <constraint firstAttribute="trailing" secondItem="AbL-yf-NmL" secondAttribute="trailing" id="A3Q-qM-t3E"/>
+                                    <constraint firstItem="Elx-Ij-D51" firstAttribute="top" secondItem="AbL-yf-NmL" secondAttribute="bottom" id="DtN-mi-LeZ"/>
+                                    <constraint firstItem="F2O-W9-asX" firstAttribute="top" secondItem="mVK-JT-pkS" secondAttribute="bottom" id="FrX-kq-fCL"/>
+                                    <constraint firstAttribute="trailing" secondItem="F2O-W9-asX" secondAttribute="trailing" id="JEy-FF-IRO"/>
+                                    <constraint firstItem="HJu-1Q-lwa" firstAttribute="top" secondItem="PUk-pF-MiW" secondAttribute="top" constant="20" id="MDB-mG-9th"/>
+                                    <constraint firstItem="B5l-VG-z4o" firstAttribute="top" secondItem="F2O-W9-asX" secondAttribute="bottom" id="NtO-xh-eTk"/>
+                                    <constraint firstItem="F2O-W9-asX" firstAttribute="leading" secondItem="PUk-pF-MiW" secondAttribute="leading" id="UVU-vI-2IX"/>
+                                    <constraint firstItem="AbL-yf-NmL" firstAttribute="top" secondItem="B5l-VG-z4o" secondAttribute="bottom" constant="10" id="WXF-bN-uiN"/>
+                                    <constraint firstItem="B5l-VG-z4o" firstAttribute="leading" secondItem="PUk-pF-MiW" secondAttribute="leading" id="ZW8-4G-T2G"/>
+                                    <constraint firstItem="mVK-JT-pkS" firstAttribute="leading" secondItem="PUk-pF-MiW" secondAttribute="leading" id="fvm-FS-scg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Elx-Ij-D51" secondAttribute="trailing" id="it9-10-eWr"/>
+                                    <constraint firstAttribute="height" constant="262" id="jCe-6q-Fi6"/>
+                                    <constraint firstItem="Elx-Ij-D51" firstAttribute="leading" secondItem="PUk-pF-MiW" secondAttribute="leading" id="rmN-Gu-Dca"/>
+                                    <constraint firstAttribute="trailing" secondItem="B5l-VG-z4o" secondAttribute="trailing" id="vTn-pO-2Be"/>
+                                    <constraint firstAttribute="width" constant="280" id="xm7-cx-YFw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PUk-pF-MiW" firstAttribute="centerX" secondItem="t0t-oT-Hzr" secondAttribute="centerX" id="68s-Fx-RkV"/>
+                            <constraint firstItem="kWt-Iq-DAw" firstAttribute="top" secondItem="6CH-DU-Fhm" secondAttribute="top" id="9EW-Ih-gKx"/>
+                            <constraint firstItem="t0t-oT-Hzr" firstAttribute="trailing" secondItem="kWt-Iq-DAw" secondAttribute="trailing" id="Aq6-3d-L9K"/>
+                            <constraint firstAttribute="bottom" secondItem="kWt-Iq-DAw" secondAttribute="bottom" id="dfc-bP-rQw"/>
+                            <constraint firstItem="kWt-Iq-DAw" firstAttribute="leading" secondItem="t0t-oT-Hzr" secondAttribute="leading" id="sLL-wf-1Et"/>
+                            <constraint firstItem="PUk-pF-MiW" firstAttribute="centerY" secondItem="t0t-oT-Hzr" secondAttribute="centerY" id="yXi-GI-1UT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t0t-oT-Hzr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8O9-1g-eRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146" y="162"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ru_flag_icon" width="23.5" height="23.5"/>
+        <image name="ua_flag_icon" width="23.5" height="23.5"/>
+        <image name="uk_flag_icon" width="23.5" height="23.5"/>
+        <namedColor name="dark_gray">
+            <color red="0.19215686274509805" green="0.21176470588235294" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_gray">
+            <color red="0.5725490196078431" green="0.5725490196078431" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
