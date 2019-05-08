@@ -44,7 +44,7 @@ You make the app better.";
 // MARK: - About
 "Text.Categories" = "place4rest – service for searching places for your rest.
 
-You can filter by categories such as wild camping, springs, and castles.";
+You can filter by categories such as wild camping, springs and castles.";
 "Text.Activities" = "Each place has a tag Activity: beach, climbing, cycling, fishing, hiking, monuments to visit, motorcycle riding, playground, viewpoint, Water walks on kayak, windsurf.";
 "Text.Services" = "Each place has a tag Services: car wash, draining used water, drinking water, Electricity (access possible), gas filling, Internet 3G/4G, laundromat, shop, shower (access is possible), swimming pool, toilet drain, toilets, trash can, walking with pets, WIFI.";
 "Text.CategoriesFor" = "You can filter by transport type such as motorhome, passenger car, for hiking.";

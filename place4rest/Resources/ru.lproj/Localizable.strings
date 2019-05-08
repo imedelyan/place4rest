@@ -44,7 +44,7 @@
 // MARK: - About
 "Text.Categories" = "place4rest – сервис по поиску мест отдыха.
 
-На карте вы найдете места для кемпинга и места отдыха с палатками. Вы можете их отфильтровать по категориям таким как Дикие стоянки – места для отдыха с палатками, оборудованные кемпинги или парковку удобную для ночевки.
+На карте вы найдете места для кемпинга и места отдыха с палатками. Вы можете их отфильтровать по категориям таким как Дикие стоянки – места для отдыха с палатками, Оборудованные кемпинги или Парковку удобную для ночевки.
 Иконки елочки обозначают – дикую стоянку, фонтан – место возле источника или родника, иконка замок – стоянка рядом с замком, крепостью или усадьбой.";
 "Text.Activities" = "Каждое место имеет тег Досуг (зеленые иконки в описании места): Вело прогулки, Видовая площадка, Водные прогулки каяк/байдарка, Детская площадка, места для Кайт серфинга, Место для рыбалки, Мото прогулки, Памятники для посещения, Пешеходные прогулки, Пляжные места, места для Скалолазания.";
 "Text.Services" = "Каждое место имеет тег Сервис (синии иконки в описании места) – какие удобства вы можете найти на этом месте. Места с Доступом в Интернет 3G/4G WIFI, с доступом к душу, удобные для прогулки с домашними Животными, наличие Мусорных баков, Общественного туалета, крана Питьевой воды, Прачечная-автомат, Слив туалета, Слив Сточных вод, наличие магазина, доступ к подключению Электричества и тд.";
@@ -55,52 +55,52 @@
 Вступайте в сообщество place4rest – Добавляйте свои места, добавляйте отзывы!";
 
 // MARK: - Settings
-"Title.Settings" = "Налаштування";
-"Settings.Logout.Message" = "Ви впевнені, що хочете вийти?";
-"Settings.EditUser" = "Редагувати профіль";
-"Settings.Language" = "Мова";
+"Title.Settings" = "Настройки";
+"Settings.Logout.Message" = "Ви уверены, что хотите выйти?";
+"Settings.EditUser" = "Редактировать профиль";
+"Settings.Language" = "Язык";
 "Settings.Web" = "place4rest web";
-"Settings.Logout" = "Вийти";
+"Settings.Logout" = "Выйти";
 
 // MARK: - Categories
-"Wild places" = "Wild places";
-"Springs" = "Springs";
-"Castles" = "Castles";
-"Camping" = "Camping";
-"Parking for night" = "Parking for night";
+"Wild places" = "Дикие стоянки";
+"Springs" = "Источники и родники";
+"Castles" = "Замки и крепости";
+"Camping" = "Платные кемпинги";
+"Parking for night" = "Парковка на ночь";
 
 // MARK: - CategoriesFor
-"Camper" = "Camper";
-"Car" = "Car";
-"Hiker" = "Hiker";
+"Camper" = "Для автодомов";
+"Car" = "Для легвокых";
+"Hiker" = "Для пешеходов";
 
 // MARK: - Services
-"Pool" = "Pool";
-"Liquefied petroleum gas" = "Liquefied petroleum gas";
-"Internet 3G" = "Internet 3G";
-"WiFi" = "WiFi";
-"Showers" = "Showers";
-"Pet walking" = "Pet walking";
-"Camper, car washing" = "Camper, car washing";
-"Trashcan" = "Trashcan";
-"Toilets" = "Toilets";
-"Water" = "Water";
-"Laundry" = "Laundry";
-"Blackwater disposal" = "Blackwater disposal";
-"Wastewater disposal" = "Wastewater disposal";
-"Bakery" = "Bakery";
-"Power supply" = "Power supply";
+"Pool" = "Бассейн";
+"Liquefied petroleum gas" = "Газовая заправка";
+"Internet 3G" = "Доступ к Интернет 3G/4G";
+"WiFi" = "Доступ к Интернет WiFi";
+"Showers" = "Душ";
+"Pet walking" = "Прогулки с домашними животными";
+"Camper, car washing" = "Автомойка";
+"Trashcan" = "Мусорный бак";
+"Toilets" = "Общественный туалет";
+"Water" = "Питьевая вода";
+"Laundry" = "Прачечная-автомат";
+"Blackwater disposal" = "Слив туалета";
+"Wastewater disposal" = "Слив сточных вод";
+"Bakery" = "Магазин";
+"Power supply" = "Электричество (возможен доступ)";
 
 // MARK: - Activities
-"Windsurfing" = "Windsurfing";
-"Cycling" = "Cycling";
-"Viewpoint" = "Viewpoint";
-"Kayak" = "Kayak";
-"Playground" = "Playground";
-"Fishing" = "Fishing";
-"Motorcycling" = "Motorcycling";
-"Monuments" = "Monuments";
-"Trekking" = "Trekking";
-"Paragliding" = "Paragliding";
-"Beach" = "Beach";
-"Climbing" = "Climbing";
+"Windsurfing" = "Виндсерфинг";
+"Cycling" = "Вело прогулки";
+"Viewpoint" = "Видовая площадка";
+"Kayak" = "Водные прогулки каяк/байдарка";
+"Playground" = "Детская площадка";
+"Fishing" = "Рыбалка";
+"Motorcycling" = "Мото прогулки";
+"Monuments" = "Достопримечательности";
+"Trekking" = "Пешеходные прогулки";
+"Paragliding" = "Параглайдинг";
+"Beach" = "Пляжный отдых";
+"Climbing" = "Скалолазание";
