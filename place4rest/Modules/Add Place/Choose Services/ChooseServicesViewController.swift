@@ -23,9 +23,9 @@ class ChooseServicesViewController: UIViewController {
 
     // MARK: - Variables
     private let sectionTitles = [
-        "Select one or more secondary categories",
-        "Select one or more facilities",
-        "Select one or more activities"
+        R.string.localizable.headerSecondatyCategories(),
+        R.string.localizable.headerFacilities(),
+        R.string.localizable.headerActivities()
     ]
     private var categories: [Category] {
         var categories: [Category] = Category.allCases

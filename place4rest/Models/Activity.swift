@@ -61,29 +61,29 @@ enum Activity: Int, ImagePresentable, CaseIterable {
     var name: String {
         switch self {
         case .windsurf:
-            return "Windsurfing"
+            return R.string.localizable.windsurfing()
         case .bike:
-            return "Cycling"
+            return R.string.localizable.cycling()
         case .viewpoint:
-            return "Viewpoint"
+            return R.string.localizable.viewpoint()
         case .kayak:
-            return "Kayak"
+            return R.string.localizable.kayak()
         case .playground:
-            return "Playground"
+            return R.string.localizable.playground()
         case .fishing:
-            return "Fishing"
+            return R.string.localizable.fishing()
         case .moto:
-            return "Motorcycling"
+            return R.string.localizable.motorcycling()
         case .monuments:
-            return "Monuments"
+            return R.string.localizable.monuments()
         case .trekking:
-            return "Trekking"
+            return R.string.localizable.trekking()
         case .paragliding:
-            return "Paragliding"
+            return R.string.localizable.paragliding()
         case .beach:
-            return "Beach"
+            return R.string.localizable.beach()
         case .climbing:
-            return "Climbing"
+            return R.string.localizable.climbing()
         case .unknown:
             return ""
         }

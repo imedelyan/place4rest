@@ -23,8 +23,8 @@ class ChooseCategoryViewController: UIViewController {
 
     // MARK: - Variables
     private let sectionTitles = [
-        "Select one primary category",
-        "Select what this category is for"
+        R.string.localizable.headerPrimaryCategory(),
+        R.string.localizable.headerCategoryFor()
     ]
     private var categories: [Category] {
         var categories = Category.allCases

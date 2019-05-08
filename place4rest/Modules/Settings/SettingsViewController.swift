@@ -32,21 +32,21 @@ class SettingsViewController: UIViewController {
 //                    self?.hideSpinner()
 //            }
         })
-        let logoutConfirmation = Confirmation(title: "Settings.Logout",
-                                              message: "Settings.Logout.Message",
-                                              buttonTitle: "Settings.Logout")
+        let logoutConfirmation = Confirmation(title: R.string.localizable.settingsLogout(),
+                                              message: R.string.localizable.settingsLogoutMessage(),
+                                              buttonTitle: R.string.localizable.settingsLogout())
 
         return [
-            Item(title: "Settings.EditUser", action: Command(action: { [weak self] in
+            Item(title: R.string.localizable.settingsEditUser(), action: Command(action: { [weak self] in
                 self?.navigator.navigate(to: .editUser)
             })),
-            Item(title: "Settings.Language", action: Command(action: { [weak self] in
+            Item(title: R.string.localizable.settingsLanguage(), action: Command(action: { [weak self] in
                 self?.navigator.navigate(to: .language)
             })),
-            Item(title: "Settings.Web", action: Command(action: { [weak self] in
+            Item(title: R.string.localizable.settingsWeb(), action: Command(action: { [weak self] in
                 self?.navigator.navigate(to: .web)
             })),
-            Item(title: "Settings.Logout", confirmation: logoutConfirmation, action: logoutAction)
+            Item(title: R.string.localizable.settingsLogout(), confirmation: logoutConfirmation, action: logoutAction)
         ]
     }()
 }
@@ -76,9 +76,9 @@ extension SettingsViewController: UITableViewDelegate {
             return
         }
         UIAlertController
-            .makeConfirmation(title: confirmation.title.localized(),
-                              message: "\n" + confirmation.message.localized(),
-                              confirmTitle: confirmation.buttonTitle.localized(),
+            .makeConfirmation(title: confirmation.title,
+                              message: "\n" + confirmation.message,
+                              confirmTitle: confirmation.buttonTitle,
                               confirmed: item.action)
             .present(from: self)
     }
@@ -99,7 +99,7 @@ extension SettingsViewController {
         init(title: String,
              confirmation: Confirmation? = nil,
              action: Command) {
-            self.title = title.localized()
+            self.title = title
             self.confirmation = confirmation
             self.action = action
         }

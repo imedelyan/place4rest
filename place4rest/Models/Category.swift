@@ -40,15 +40,15 @@ enum Category: Int, ImagePresentable, CaseIterable {
     var name: String {
         switch self {
         case .wildnights:
-            return "Wild places"
+            return R.string.localizable.wildPlaces()
         case .springs:
-            return "Springs"
+            return R.string.localizable.springs()
         case .castles:
-            return "Castles"
+            return R.string.localizable.castles()
         case .camping:
-            return "Camping"
+            return R.string.localizable.camping()
         case .nightparking:
-            return "Parking for night"
+            return R.string.localizable.parkingForNight()
         case .unknown:
             return ""
         }

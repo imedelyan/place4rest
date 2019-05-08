@@ -40,6 +40,11 @@
 "Placeholder.Name" = "Добавьте название";
 "FieldTitle.Details" = "Описание";
 "Placeholder.Details" = "Добавьте описание";
+"Header.PrimaryCategory" = "Выберите одну главную категорию";
+"Header.CategoryFor" = "Выберите для кого эта категория";
+"Header.SecondatyCategories" = "Выберите дополнительные категории";
+"Header.Facilities" = "Выберите доступные сервисы";
+"Header.Activities" = "Выберите доступные виды досуга";
 
 // MARK: - About
 "Text.Categories" = "place4rest – сервис по поиску мест отдыха.

@@ -70,35 +70,35 @@ enum Service: Int, ImagePresentable, CaseIterable {
     var name: String {
         switch self {
         case .pool:
-            return "Pool"
+            return R.string.localizable.pool()
         case .lpg:
-            return "Liquefied petroleum gas"
+            return R.string.localizable.liquefiedPetroleumGas()
         case .internet3G:
-            return "Internet 3G"
+            return R.string.localizable.internet3G()
         case .wifi:
-            return "WiFi"
+            return R.string.localizable.wiFi()
         case .showers:
-            return "Showers"
+            return R.string.localizable.showers()
         case .dog:
-            return "Pet walking"
+            return R.string.localizable.petWalking()
         case .washingMotorhomes:
-            return "Camper, car washing"
+            return R.string.localizable.camperCarWashing()
         case .trashCan:
-            return "Trashcan"
+            return R.string.localizable.trashcan()
         case .toilets:
-            return "Toilets"
+            return R.string.localizable.toilets()
         case .water:
-            return "Water"
+            return R.string.localizable.water()
         case .laundromat:
-            return "Laundry"
+            return R.string.localizable.laundry()
         case .blackWater:
-            return "Blackwater disposal"
+            return R.string.localizable.blackwaterDisposal()
         case .usedWater:
-            return "Wastewater disposal"
+            return R.string.localizable.wastewaterDisposal()
         case .bakery:
-            return "Bakery"
+            return R.string.localizable.bakery()
         case .electricity:
-            return "Power supply"
+            return R.string.localizable.powerSupply()
         case .unknown:
             return ""
         }

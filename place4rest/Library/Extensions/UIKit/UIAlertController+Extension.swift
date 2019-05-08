@@ -12,7 +12,7 @@ extension UIAlertController {
     static func makeConfirmation(title: String,
                                  message: String,
                                  confirmTitle: String,
-                                 cancelTitle: String = "Cancel".localized(),
+                                 cancelTitle: String = R.string.localizable.cancel(),
                                  confirmed: Command,
                                  rejected: (() -> Void)? = nil) -> UIAlertController {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)

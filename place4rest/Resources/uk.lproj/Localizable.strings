@@ -28,7 +28,7 @@
 "Title.Location" = "Локація";
 "Title.NameAndDetails" = "Назва та Опис";
 "Buttion.AddPlace" = "ДОДАТИ МІСЦЕ";
-"Text.SpecialPlace" = "Тут ти можешь";
+"Text.SpecialPlace" = "Тут ти можеш";
 "Text.AddStuff" = "Додавати нові місця та ділитися враженнями від власних мандрівок!";
 "Text.Community" = "place4rest це спільнота";
 "Text.YouMakeTheAppBetter" = "Цей додаток був би неможливим без усіх вас, без місць, які ви додаєте, та відгуків, що ви залишаєте.
@@ -40,6 +40,11 @@
 "Placeholder.Name" = "Додайти назву";
 "FieldTitle.Details" = "Опис";
 "Placeholder.Details" = "Додайте опис";
+"Header.PrimaryCategory" = "Оберіть одну головну категорію";
+"Header.CategoryFor" = "Оберіть для кого ця категорія";
+"Header.SecondatyCategories" = "Оберіть додаткові категорії";
+"Header.Facilities" = "Оберіть доступні сервіси";
+"Header.Activities" = "Оберіть доступні види дозвілля";
 
 // MARK: - About
 "Text.Categories" = "place4rest – сервіс пошуку місць для відпочинку.

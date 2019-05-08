@@ -34,11 +34,11 @@ enum CategoryFor: Int, ImagePresentable, CaseIterable {
     var name: String {
         switch self {
         case .motorhome:
-            return "Camper"
+            return R.string.localizable.camper()
         case .cars:
-            return "Car"
+            return R.string.localizable.car()
         case .hiking:
-            return "Hiker"
+            return R.string.localizable.hiker()
         case .unknown:
             return ""
         }

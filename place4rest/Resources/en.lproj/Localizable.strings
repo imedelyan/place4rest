@@ -40,6 +40,11 @@ You make the app better.";
 "Placeholder.Name" = "Add place name";
 "FieldTitle.Details" = "Details";
 "Placeholder.Details" = "Add place details";
+"Header.PrimaryCategory" = "Select one primary category";
+"Header.CategoryFor" = "Select what this category is for";
+"Header.SecondatyCategories" = "Select one or more secondary category";
+"Header.Facilities" = "Select one or more facilities";
+"Header.Activities" = "Select one or more activities";
 
 // MARK: - About
 "Text.Categories" = "place4rest – service for searching places for your rest.
