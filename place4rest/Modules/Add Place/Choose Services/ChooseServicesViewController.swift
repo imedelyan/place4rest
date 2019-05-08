@@ -30,6 +30,7 @@ class ChooseServicesViewController: UIViewController {
     private var categories: [Category] {
         var categories: [Category] = Category.allCases
         categories.removeLast()
+        categories = Array(categories.prefix((categories.count / 2)))
         guard
             let mainCategoryValue = place.categories.first,
             let mainCategory = Category(rawValue: mainCategoryValue),
@@ -43,12 +44,14 @@ class ChooseServicesViewController: UIViewController {
     private var services: [Service] {
         var services = Service.allCases
         services.removeLast()
+        services = Array(services.prefix((services.count / 2)))
         return services
     }
     private var selectedServices: [Service] = []
     private var activities: [Activity] {
         var activities = Activity.allCases
         activities.removeLast()
+        activities = Array(activities.prefix((activities.count / 2)))
         return activities
     }
     private var selectedActivities: [Activity] = []

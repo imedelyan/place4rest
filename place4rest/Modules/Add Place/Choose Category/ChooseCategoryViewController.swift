@@ -29,6 +29,7 @@ class ChooseCategoryViewController: UIViewController {
     private var categories: [Category] {
         var categories = Category.allCases
         categories.removeLast()
+        categories = Array(categories.prefix((categories.count / 2)))
         return categories
     }
     private var selectedCategory: Category = .unknown {
@@ -43,6 +44,7 @@ class ChooseCategoryViewController: UIViewController {
     private var categoriesFor: [CategoryFor] {
         var categoriesFor = CategoryFor.allCases
         categoriesFor.removeLast()
+        categoriesFor = Array(categoriesFor.prefix((categoriesFor.count / 2)))
         return categoriesFor
     }
     private var selectedCategoriesFor: [CategoryFor] = []
