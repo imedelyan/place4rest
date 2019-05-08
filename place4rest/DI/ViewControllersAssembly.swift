@@ -20,6 +20,7 @@ class ViewControllersAssembly: Assembly {
             controller.mapNavigator = resolver.resolve(MapNavigator.self)!
             controller.searchNavigator = resolver.resolve(SearchNavigator.self)!
             controller.addPlaceNavigator = resolver.resolve(AddPlaceNavigator.self)!
+            controller.settingsNavigator = resolver.resolve(SettingsNavigator.self)!
         }
         container.storyboardInitCompleted(MapViewController.self) { (resolver, controller) in
             controller.presenter = resolver.resolve(MapPresenter.self)

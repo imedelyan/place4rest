@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var campingFilterButton: UIButton!
     @IBOutlet private weak var sedanFilterButton: UIButton!
     @IBOutlet private weak var trailerFilterButton: UIButton!
+    @IBOutlet private weak var spinnerView: SpinnerView!
 
     // MARK: - Dependencies
     var navigator: MapNavigator!
@@ -29,6 +30,7 @@ class MapViewController: UIViewController {
 
     // MARK: - Variables
     private var props = Props(
+        isLoading: true,
         places: [],
         didTapExpandLayersButton: .nop,
         didTapLayersButton: .nop,
@@ -56,6 +58,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = ""
+        spinnerView.animate()
 
         mapView.compassView.isHidden = true
         mapView.logoView.isHidden = true
@@ -102,23 +105,33 @@ class MapViewController: UIViewController {
 
     // MARK: - Filter Menu IBActions
     @IBAction private func wildPlaceFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryFilter.perform(with: .wildnights)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryFilter.perform(with: .wildnightsEn)
+            : props.didChooseCategoryFilter.perform(with: .wildnights)
     }
 
     @IBAction private func parkingFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryFilter.perform(with: .nightparking)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryFilter.perform(with: .nightparkingEn)
+            : props.didChooseCategoryFilter.perform(with: .nightparking)
     }
 
     @IBAction private func campingFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryFilter.perform(with: .camping)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryFilter.perform(with: .campingEn)
+            : props.didChooseCategoryFilter.perform(with: .camping)
     }
 
     @IBAction private func sedanFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryForFilter.perform(with: .cars)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryForFilter.perform(with: .carsEn)
+            : props.didChooseCategoryForFilter.perform(with: .cars)
     }
 
     @IBAction private func trailerFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryForFilter.perform(with: .motorhome)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryForFilter.perform(with: .motorhomeEn)
+            : props.didChooseCategoryForFilter.perform(with: .motorhome)
     }
 
     // MARK: - Anotations
@@ -143,13 +156,6 @@ class MapViewController: UIViewController {
         mapView.addAnnotation(annotation)
         placeAnnotations.append(annotation)
     }
-
-    private func addAnnotation(coordinates: CLLocationCoordinate2D) {
-        let annotation = MGLPointAnnotation()
-        annotation.coordinate = coordinates
-        annotation.title = "New Place"
-        mapView.addAnnotation(annotation)
-    }
 }
 
 // MARK: - MapView
@@ -160,6 +166,13 @@ protocol MapView: class {
 
 extension MapViewController: MapView {
     func render(props: Props) {
+        if self.props.isLoading != props.isLoading {
+            props.isLoading
+                ? spinnerView.animate()
+                : spinnerView.stopAnimating()
+            spinnerView.isHidden = !props.isLoading
+        }
+
         // show places
         if self.props.places != props.places {
             mapView.removeAnnotations(placeAnnotations)
@@ -187,15 +200,22 @@ extension MapViewController: MapView {
         self.filterMenuTrailing.constant = props.isFilterMenuExpanded ? 0 : -80
 
         // tinting filter menu buttons
-        // TODO: move it to UIButton subclass
-        wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnights) ? R.color.light_blue() : R.color.light_gray()
-        parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparking) ? R.color.light_blue() : R.color.light_gray()
-        campingFilterButton.tintColor = props.categoryFilters.contains(.camping) ? R.color.light_blue() : R.color.light_gray()
-        sedanFilterButton.tintColor = props.categoryForFilters.contains(.cars) ? R.color.orange() : R.color.light_gray()
-        trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhome) ? R.color.orange() : R.color.light_gray()
+        if AppLanguage.language == .english {
+            wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnightsEn) ? R.color.light_blue() : R.color.light_gray()
+            parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparkingEn) ? R.color.light_blue() : R.color.light_gray()
+            campingFilterButton.tintColor = props.categoryFilters.contains(.campingEn) ? R.color.light_blue() : R.color.light_gray()
+            sedanFilterButton.tintColor = props.categoryForFilters.contains(.carsEn) ? R.color.orange() : R.color.light_gray()
+            trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhomeEn) ? R.color.orange() : R.color.light_gray()
+        } else {
+            wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnights) ? R.color.light_blue() : R.color.light_gray()
+            parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparking) ? R.color.light_blue() : R.color.light_gray()
+            campingFilterButton.tintColor = props.categoryFilters.contains(.camping) ? R.color.light_blue() : R.color.light_gray()
+            sedanFilterButton.tintColor = props.categoryForFilters.contains(.cars) ? R.color.orange() : R.color.light_gray()
+            trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhome) ? R.color.orange() : R.color.light_gray()
+        }
 
         // animation
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
@@ -208,6 +228,7 @@ extension MapViewController: MapView {
 // MARK: - Props
 extension MapViewController {
     struct Props {
+        let isLoading: Bool
         let places: [Place]
         let didTapExpandLayersButton: Command
         let didTapLayersButton: CommandWith<LayerType>

@@ -1,0 +1,109 @@
+/* 
+  Localizable.strings
+  place4rest
+
+  Created by Igor Medelian on 2/11/19.
+  Copyright © 2019 imedelian. All rights reserved.
+*/
+
+// MARK: - Miscellanious
+"Cancel" = "Cancel";
+"Language" = "Language";
+"CLOSE" = "CLOSE";
+"RestartApplication" = "You need to restart the application for the changes to take effect";
+"Ok" = "Ok";
+
+// MARK: - Map
+"Terrain style" = "Terrain style";
+"Satellite" = "Satellite";
+"Street style" = "Street style";
+
+// MARK: - Search
+"Search" = "Search";
+
+// MARK: - Add Place
+"Title.AddaNewPlace" = "Add a New Place";
+"Title.PrimaryCategory" = "Primary category";
+"Title.Facilities" = "Facilities";
+"Title.Location" = "Location";
+"Title.NameAndDetails" = "Name and Details";
+"Buttion.AddPlace" = "ADD PLACE";
+"Text.SpecialPlace" = "The special place where you";
+"Text.AddStuff" = "Add stuff and help us grow!";
+"Text.Community" = "place4rest is a community";
+"Text.YouMakeTheAppBetter" = "This app wouldn't be here without all of you, without new places you explore, photos and reviews you add.
+
+You make the app better.";
+"Buttion.Continue" = "CONTINUE";
+"Buttion.Submit" = "SUBMIT";
+"FieldTitle.Name" = "Place name";
+"Placeholder.Name" = "Add place name";
+"FieldTitle.Details" = "Details";
+"Placeholder.Details" = "Add place details";
+"Header.PrimaryCategory" = "Select one primary category";
+"Header.CategoryFor" = "Select what this category is for";
+"Header.SecondatyCategories" = "Select one or more secondary category";
+"Header.Facilities" = "Select one or more facilities";
+"Header.Activities" = "Select one or more activities";
+
+// MARK: - About
+"Text.Categories" = "place4rest – service for searching places for your rest.
+
+You can filter by categories such as wild camping, springs and castles.";
+"Text.Activities" = "Each place has a tag Activity: beach, climbing, cycling, fishing, hiking, monuments to visit, motorcycle riding, playground, viewpoint, Water walks on kayak, windsurf.";
+"Text.Services" = "Each place has a tag Services: car wash, draining used water, drinking water, Electricity (access possible), gas filling, Internet 3G/4G, laundromat, shop, shower (access is possible), swimming pool, toilet drain, toilets, trash can, walking with pets, WIFI.";
+"Text.CategoriesFor" = "You can filter by transport type such as motorhome, passenger car, for hiking.";
+"Text.AddYourReview" = "Each place has its own rating and comments, you can add your review and expose your rating, add a description or add a new photo of the place in the comments.
+
+Become a member of place4rest community – Add your places, add your comments!";
+
+// MARK: - Settings
+"Title.Settings" = "Settings";
+"Settings.Logout.Message" = "Are you sure you want to log out?";
+"Settings.EditUser" = "Edit account";
+"Settings.Language" = "Language";
+"Settings.Web" = "place4rest web";
+"Settings.Logout" = "Log out";
+
+// MARK: - Categories
+"Wild places" = "Wild places";
+"Springs" = "Springs";
+"Castles" = "Castles";
+"Camping" = "Camping";
+"Parking for night" = "Parking for night";
+
+// MARK: - CategoriesFor
+"Camper" = "Camper";
+"Car" = "Car";
+"Hiker" = "Hiker";
+
+// MARK: - Services
+"Pool" = "Pool";
+"Liquefied petroleum gas" = "Liquefied petroleum gas";
+"Internet 3G" = "Internet 3G";
+"WiFi" = "WiFi";
+"Showers" = "Showers";
+"Pet walking" = "Pet walking";
+"Camper, car washing" = "Camper, car washing";
+"Trashcan" = "Trashcan";
+"Toilets" = "Toilets";
+"Water" = "Water";
+"Laundry" = "Laundry";
+"Blackwater disposal" = "Blackwater disposal";
+"Wastewater disposal" = "Wastewater disposal";
+"Bakery" = "Bakery";
+"Power supply" = "Power supply";
+
+// MARK: - Activities
+"Windsurfing" = "Windsurfing";
+"Cycling" = "Cycling";
+"Viewpoint" = "Viewpoint";
+"Kayak" = "Kayak";
+"Playground" = "Playground";
+"Fishing" = "Fishing";
+"Motorcycling" = "Motorcycling";
+"Monuments" = "Monuments";
+"Trekking" = "Trekking";
+"Paragliding" = "Paragliding";
+"Beach" = "Beach";
+"Climbing" = "Climbing";

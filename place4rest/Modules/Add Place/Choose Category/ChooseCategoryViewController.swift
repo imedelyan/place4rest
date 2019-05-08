@@ -23,12 +23,13 @@ class ChooseCategoryViewController: UIViewController {
 
     // MARK: - Variables
     private let sectionTitles = [
-        "Select one primary category",
-        "Select what this category is for"
+        R.string.localizable.headerPrimaryCategory(),
+        R.string.localizable.headerCategoryFor()
     ]
     private var categories: [Category] {
         var categories = Category.allCases
         categories.removeLast()
+        categories = Array(categories.prefix((categories.count / 2)))
         return categories
     }
     private var selectedCategory: Category = .unknown {
@@ -43,6 +44,7 @@ class ChooseCategoryViewController: UIViewController {
     private var categoriesFor: [CategoryFor] {
         var categoriesFor = CategoryFor.allCases
         categoriesFor.removeLast()
+        categoriesFor = Array(categoriesFor.prefix((categoriesFor.count / 2)))
         return categoriesFor
     }
     private var selectedCategoriesFor: [CategoryFor] = []

@@ -24,5 +24,4 @@ public extension TargetType {
     var validationType: ValidationType {
         return .successCodes
     }
-
 }

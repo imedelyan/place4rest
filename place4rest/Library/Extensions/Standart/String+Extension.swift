@@ -9,6 +9,18 @@
 import Foundation
 
 extension String {
+    func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
+        return NSLocalizedString(self, tableName: tableName, comment: "")
+    }
+
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+
     func trim() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }

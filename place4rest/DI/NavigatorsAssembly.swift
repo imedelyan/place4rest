@@ -24,5 +24,8 @@ class NavigatorsAssembly: Assembly {
         container.register(AddPlaceNavigator.self, factory: { _ in
             return AddPlaceNavigator()
         })
+        container.register(SettingsNavigator.self, factory: { _ in
+            return SettingsNavigator()
+        })
     }
 }

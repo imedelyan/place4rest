@@ -38,9 +38,10 @@ extension PlacesAPI: TargetType {
     var task: Task {
         switch self {
         case .getAllPlaces, .getPlace:
-            return .requestPlain
+            return .requestParameters(parameters: ["lang": AppLanguage.language.rawValue],
+                                      encoding: URLEncoding.default)
         case let .getPlaces(categories, categoriesFor):
-            var parameters: [String: String] = [:]
+            var parameters: [String: String] = ["lang": AppLanguage.language.rawValue]
             if !categories.isEmpty {
                 parameters["cat_place"] = categories.map({ String($0.rawValue) }).joined(separator: ",")
             }

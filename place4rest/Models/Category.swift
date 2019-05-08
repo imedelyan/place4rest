@@ -9,11 +9,19 @@
 import UIKit
 
 enum Category: Int, ImagePresentable, CaseIterable {
+
     case wildnights = 4
     case springs = 5
     case castles = 6
     case camping = 72
     case nightparking = 76
+
+    case wildnightsEn = 71 // TODO: remove these duplicating values for en from backend side
+    case springsEn = 40
+    case castlesEn = 39
+    case campingEn = 73
+    case nightparkingEn = 77
+
     case unknown = 0
 
     var image: UIImage {
@@ -28,6 +36,18 @@ enum Category: Int, ImagePresentable, CaseIterable {
             return #imageLiteral(resourceName: "camping-tent")
         case .nightparking:
             return #imageLiteral(resourceName: "parking")
+
+        case .wildnightsEn:
+            return #imageLiteral(resourceName: "forest")
+        case .springsEn:
+            return #imageLiteral(resourceName: "fountain")
+        case .castlesEn:
+            return #imageLiteral(resourceName: "palace")
+        case .campingEn:
+            return #imageLiteral(resourceName: "camping-tent")
+        case .nightparkingEn:
+            return #imageLiteral(resourceName: "parking")
+
         case .unknown:
             return #imageLiteral(resourceName: "parking")
         }
@@ -40,15 +60,27 @@ enum Category: Int, ImagePresentable, CaseIterable {
     var name: String {
         switch self {
         case .wildnights:
-            return "Wild places"
+            return R.string.localizable.wildPlaces()
         case .springs:
-            return "Springs"
+            return R.string.localizable.springs()
         case .castles:
-            return "Castles"
+            return R.string.localizable.castles()
         case .camping:
-            return "Camping"
+            return R.string.localizable.camping()
         case .nightparking:
-            return "Parking for night"
+            return R.string.localizable.parkingForNight()
+
+        case .wildnightsEn:
+            return R.string.localizable.wildPlaces()
+        case .springsEn:
+            return R.string.localizable.springs()
+        case .castlesEn:
+            return R.string.localizable.castles()
+        case .campingEn:
+            return R.string.localizable.camping()
+        case .nightparkingEn:
+            return R.string.localizable.parkingForNight()
+
         case .unknown:
             return ""
         }
