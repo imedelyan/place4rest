@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var campingFilterButton: UIButton!
     @IBOutlet private weak var sedanFilterButton: UIButton!
     @IBOutlet private weak var trailerFilterButton: UIButton!
+    @IBOutlet private weak var spinnerView: SpinnerView!
 
     // MARK: - Dependencies
     var navigator: MapNavigator!
@@ -29,6 +30,7 @@ class MapViewController: UIViewController {
 
     // MARK: - Variables
     private var props = Props(
+        isLoading: true,
         places: [],
         didTapExpandLayersButton: .nop,
         didTapLayersButton: .nop,
@@ -56,6 +58,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = ""
+        spinnerView.animate()
 
         mapView.compassView.isHidden = true
         mapView.logoView.isHidden = true
@@ -163,6 +166,13 @@ protocol MapView: class {
 
 extension MapViewController: MapView {
     func render(props: Props) {
+        if self.props.isLoading != props.isLoading {
+            props.isLoading
+                ? spinnerView.animate()
+                : spinnerView.stopAnimating()
+            spinnerView.isHidden = !props.isLoading
+        }
+
         // show places
         if self.props.places != props.places {
             mapView.removeAnnotations(placeAnnotations)
@@ -190,7 +200,6 @@ extension MapViewController: MapView {
         self.filterMenuTrailing.constant = props.isFilterMenuExpanded ? 0 : -80
 
         // tinting filter menu buttons
-        // TODO: move it to UIButton subclass
         if AppLanguage.language == .english {
             wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnightsEn) ? R.color.light_blue() : R.color.light_gray()
             parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparkingEn) ? R.color.light_blue() : R.color.light_gray()
@@ -219,6 +228,7 @@ extension MapViewController: MapView {
 // MARK: - Props
 extension MapViewController {
     struct Props {
+        let isLoading: Bool
         let places: [Place]
         let didTapExpandLayersButton: Command
         let didTapLayersButton: CommandWith<LayerType>

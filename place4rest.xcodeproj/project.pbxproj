@@ -12,6 +12,7 @@
 		41508D6B221170EB00F981C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41508D6A221170EB00F981C3 /* AppDelegate.swift */; };
 		41508D72221170EC00F981C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41508D71221170EC00F981C3 /* Assets.xcassets */; };
 		41508D75221170EC00F981C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41508D73221170EC00F981C3 /* LaunchScreen.storyboard */; };
+		4159438B228325DF00F39164 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4159438A228325DF00F39164 /* SpinnerView.swift */; };
 		41A92FD9221172CD008897AE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FD8221172CD008897AE /* Colors.xcassets */; };
 		41A92FE9221173F2008897AE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FE5221173F2008897AE /* .swiftlint.yml */; };
 		41A92FEA221173F2008897AE /* Makefile in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FE6221173F2008897AE /* Makefile */; };
@@ -117,6 +118,7 @@
 		41508D76221170EC00F981C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41508D7B221170EC00F981C3 /* place4restTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = place4restTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41508D81221170ED00F981C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4159438A228325DF00F39164 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		41A92FD8221172CD008897AE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		41A92FE5221173F2008897AE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		41A92FE6221173F2008897AE /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
@@ -363,6 +365,7 @@
 				412A03842260DE0600830E59 /* PlaceAnnotation.swift */,
 				45F08BF322611FB900D72464 /* PlaceCalloutView.swift */,
 				45F08BEF226118C500D72464 /* PlaceCalloutView.xib */,
+				4159438A228325DF00F39164 /* SpinnerView.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 				41A93287221C3AE9008897AE /* MapPresenter.swift in Sources */,
 				41A9327F221C1769008897AE /* NetworkServicesAssembly.swift in Sources */,
 				458C3E27227638E500C0BE2E /* PlacesRepository.swift in Sources */,
+				4159438B228325DF00F39164 /* SpinnerView.swift in Sources */,
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
 				412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */,
 				45F08C0F226371A400D72464 /* CategoryFor.swift in Sources */,

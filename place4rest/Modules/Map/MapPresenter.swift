@@ -19,6 +19,7 @@ final class MapPresenter: NSObject {
     weak var view: MapView!
 
     // MARK: - Variables
+    private var isLoading: Bool = true
     private var places: [Place] = []
     private var categoryFilters: Set<Category> = []
     private var categoryForFilters: Set<CategoryFor> = []
@@ -37,7 +38,6 @@ final class MapPresenter: NSObject {
 
     // MARK: - MapView
     func viewWasLoaded() {
-        // TODO: show activity indicator
         placesService
             .getAllPlaces()
             .done { [weak self] in
@@ -47,7 +47,9 @@ final class MapPresenter: NSObject {
             }.finally { [weak self] in
                 guard let self = self else { return }
                 self.places = self.placesRepository.fetchAllPlaces()
+                self.isLoading = false
                 self.view.render(props: self.makeProps())
+
         }
     }
 
@@ -81,33 +83,6 @@ extension MapPresenter: MGLMapViewDelegate {
 
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
         currentLocation = Props.CameraLocation(coordinate: mapView.centerCoordinate, zoomLevel: mapView.zoomLevel)
-    }
-
-    // This delegate method is where you tell the map to load a view for a specific
-    // annotation based on the willUseImage property of the custom subclass.
-    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-
-        guard let castAnnotation = annotation as? PlaceAnnotation, !castAnnotation.willUseImage else { return nil }
-
-        // TODO: verify if MGLAnnotationView is needed at all
-
-        // Assign a reuse identifier to be used by both of the annotation views, taking advantage of their similarities.
-        let reuseIdentifier = "placeView"
-
-        // For better performance, always try to reuse existing annotations.
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-
-        // If there’s no reusable annotation view available, initialize a new one.
-        if annotationView == nil {
-            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
-            annotationView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-            annotationView?.layer.cornerRadius = (annotationView?.frame.size.width)! / 2
-            annotationView?.layer.borderWidth = 4.0
-            annotationView?.layer.borderColor = UIColor.white.cgColor
-            annotationView!.backgroundColor = UIColor(red: 0.03, green: 0.80, blue: 0.69, alpha: 1.0)
-        }
-
-        return annotationView
     }
 
     // This delegate method is where you tell the map to load an image for a specific
@@ -165,7 +140,8 @@ extension MapPresenter: MGLMapViewDelegate {
 // MARK: - Props Factory
 extension MapPresenter {
     private func makeProps() -> Props {
-        return Props(places: places,
+        return Props(isLoading: isLoading,
+                     places: places,
                      didTapExpandLayersButton: Command(action: { [weak self] in
                         guard let self = self else { return }
                         self.isLayerViewExpanded.toggle()

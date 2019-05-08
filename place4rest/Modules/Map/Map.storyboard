@@ -247,6 +247,22 @@
                                     <constraint firstItem="tW9-D6-dJr" firstAttribute="top" secondItem="xAn-2p-PxJ" secondAttribute="top" constant="10" id="lVU-Qi-dgV"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P34-oC-rs7" customClass="SpinnerView" customModule="place4rest" customModuleProvider="target">
+                                <rect key="frame" x="152.5" y="284" width="70" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ffh-Gj-Z4k"/>
+                                    <constraint firstAttribute="width" constant="70" id="xKK-Cf-XAL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                        <color key="value" name="green"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -256,8 +272,10 @@
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="7Aj-JF-fqb"/>
                             <constraint firstItem="ewD-35-1fJ" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Cu1-RK-OLd"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="top" secondItem="0cd-9p-GNv" secondAttribute="top" id="Hql-LR-xNB"/>
+                            <constraint firstItem="P34-oC-rs7" firstAttribute="centerX" secondItem="abP-w4-1qL" secondAttribute="centerX" id="USf-R3-b72"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="bottom" secondItem="AmA-XR-Dsj" secondAttribute="bottom" constant="10" id="VPL-Yl-8L1"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="xAn-2p-PxJ" secondAttribute="trailing" constant="-80" id="VQi-qz-ZcY"/>
+                            <constraint firstItem="P34-oC-rs7" firstAttribute="centerY" secondItem="abP-w4-1qL" secondAttribute="centerY" id="XRJ-WT-zUk"/>
                             <constraint firstItem="xAn-2p-PxJ" firstAttribute="top" secondItem="ewD-35-1fJ" secondAttribute="bottom" id="ZYU-jD-mBV"/>
                             <constraint firstItem="abP-w4-1qL" firstAttribute="trailing" secondItem="AmA-XR-Dsj" secondAttribute="trailing" constant="10" id="bUW-hl-jci"/>
                             <constraint firstItem="vlM-rW-J0i" firstAttribute="leading" secondItem="abP-w4-1qL" secondAttribute="leading" id="cYi-kk-paa"/>
@@ -286,13 +304,14 @@
                         <outlet property="mapView" destination="vlM-rW-J0i" id="NDi-vK-rmd"/>
                         <outlet property="parkingFilterButton" destination="KUb-Gs-YDc" id="WXA-tM-Asc"/>
                         <outlet property="sedanFilterButton" destination="Opx-Ba-sUB" id="HLY-sb-mxE"/>
+                        <outlet property="spinnerView" destination="P34-oC-rs7" id="0ej-Tv-LPa"/>
                         <outlet property="trailerFilterButton" destination="dMm-TF-Zey" id="tUG-Kq-1lL"/>
                         <outlet property="wildPlaceFilterButton" destination="UIw-BI-bVs" id="v1v-Hh-3hx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDn-io-gfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-194.40000000000001" y="139.880059970015"/>
+            <point key="canvasLocation" x="-710" y="125"/>
         </scene>
     </scenes>
     <resources>
@@ -311,6 +330,9 @@
         </namedColor>
         <namedColor name="dark_green">
             <color red="0.16078431372549021" green="0.42745098039215684" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green">
+            <color red="0.58823529411764708" green="0.80000000000000004" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light_gray">
             <color red="0.5725490196078431" green="0.5725490196078431" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
