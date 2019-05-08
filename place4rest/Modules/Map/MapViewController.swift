@@ -102,23 +102,33 @@ class MapViewController: UIViewController {
 
     // MARK: - Filter Menu IBActions
     @IBAction private func wildPlaceFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryFilter.perform(with: .wildnights)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryFilter.perform(with: .wildnightsEn)
+            : props.didChooseCategoryFilter.perform(with: .wildnights)
     }
 
     @IBAction private func parkingFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryFilter.perform(with: .nightparking)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryFilter.perform(with: .nightparkingEn)
+            : props.didChooseCategoryFilter.perform(with: .nightparking)
     }
 
     @IBAction private func campingFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryFilter.perform(with: .camping)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryFilter.perform(with: .campingEn)
+            : props.didChooseCategoryFilter.perform(with: .camping)
     }
 
     @IBAction private func sedanFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryForFilter.perform(with: .cars)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryForFilter.perform(with: .carsEn)
+            : props.didChooseCategoryForFilter.perform(with: .cars)
     }
 
     @IBAction private func trailerFilterButtonAction(_ sender: Any) {
-        props.didChooseCategoryForFilter.perform(with: .motorhome)
+        AppLanguage.language == .english
+            ? props.didChooseCategoryForFilter.perform(with: .motorhomeEn)
+            : props.didChooseCategoryForFilter.perform(with: .motorhome)
     }
 
     // MARK: - Anotations
@@ -181,14 +191,22 @@ extension MapViewController: MapView {
 
         // tinting filter menu buttons
         // TODO: move it to UIButton subclass
-        wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnights) ? R.color.light_blue() : R.color.light_gray()
-        parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparking) ? R.color.light_blue() : R.color.light_gray()
-        campingFilterButton.tintColor = props.categoryFilters.contains(.camping) ? R.color.light_blue() : R.color.light_gray()
-        sedanFilterButton.tintColor = props.categoryForFilters.contains(.cars) ? R.color.orange() : R.color.light_gray()
-        trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhome) ? R.color.orange() : R.color.light_gray()
+        if AppLanguage.language == .english {
+            wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnightsEn) ? R.color.light_blue() : R.color.light_gray()
+            parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparkingEn) ? R.color.light_blue() : R.color.light_gray()
+            campingFilterButton.tintColor = props.categoryFilters.contains(.campingEn) ? R.color.light_blue() : R.color.light_gray()
+            sedanFilterButton.tintColor = props.categoryForFilters.contains(.carsEn) ? R.color.orange() : R.color.light_gray()
+            trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhomeEn) ? R.color.orange() : R.color.light_gray()
+        } else {
+            wildPlaceFilterButton.tintColor = props.categoryFilters.contains(.wildnights) ? R.color.light_blue() : R.color.light_gray()
+            parkingFilterButton.tintColor = props.categoryFilters.contains(.nightparking) ? R.color.light_blue() : R.color.light_gray()
+            campingFilterButton.tintColor = props.categoryFilters.contains(.camping) ? R.color.light_blue() : R.color.light_gray()
+            sedanFilterButton.tintColor = props.categoryForFilters.contains(.cars) ? R.color.orange() : R.color.light_gray()
+            trailerFilterButton.tintColor = props.categoryForFilters.contains(.motorhome) ? R.color.orange() : R.color.light_gray()
+        }
 
         // animation
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
