@@ -6,44 +6,69 @@
 //  Copyright © 2019 imedelian. All rights reserved.
 //
 
-
-// http://place4rest.com/wp-json/jwt-auth/v1/token?username=imedelyan&password=de1q9NsG(MlvqKL(iwA2$hjh
-
 import Moya
 
 enum UserAPI {
-    case login(email: String, password: String)
+    case getToken(username: String, password: String)
+    case login(username: String, password: String)
+    case getUser(token: String)
+    case update(username: String, name: String, email: String, token: String)
+    case updatePassword(newPassword: String, oldPassword: String, token: String)
+    case logout(token: String)
 }
 
 extension UserAPI: TargetType {
-    
+
     var path: String {
         switch self {
+        case .getToken:
+            return "jwt-auth/v1/token"
         case .login:
-            return "login"
+            return ""
+        case .getUser:
+            return ""
+        case .update:
+        return ""
+        case .updatePassword:
+            return ""
+        case .logout:
+            return ""
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
-        case .login:
+        case .getToken, .login, .update, .updatePassword, .logout:
             return .post
+        case .getUser:
+            return .get
         }
     }
-    
+
     var task: Task {
-        let dateStr = ISO8601DateFormatter.string(from: Date(), timeZone: .current, formatOptions: [.withInternetDateTime,
-                                                                                                    .withFractionalSeconds])
-        return .requestParameters(parameters: ["platform": "ios",
-                                               "fire_base_token": "",
-                                               "timezone": dateStr], encoding: URLEncoding.queryString)
+        switch self {
+        case let .getToken(username, password):
+            return .requestParameters(parameters: ["username": username,
+                                                   "password": password], encoding: URLEncoding.queryString)
+        case .login:
+            return .requestPlain
+        case .getUser:
+            return .requestPlain
+        case .update:
+            return .requestPlain
+        case .updatePassword:
+            return .requestPlain
+        case .logout:
+            return .requestPlain
+        }
     }
-    
+
     var headers: [String: String]? {
         switch self {
-        case .login(let email, let password):
-            let namePass = Data("\(email):\(password)".utf8).base64EncodedString()
-            return ["Authorization": "Basic \(namePass)"]
+        case .getToken, .login:
+            return nil
+        case .getUser(let token), .update(_, _, _, let token), .updatePassword(_, _, let token), .logout(let token):
+            return ["Authorization": "Bearer \(token)"]
         }
     }
 }

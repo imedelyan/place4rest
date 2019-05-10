@@ -14,7 +14,7 @@ class ViewControllersAssembly: Assembly {
     func assemble(container: Container) {
         container.storyboardInitCompleted(WelcomeViewController.self) { (resolver, controller) in
             controller.navigator = resolver.resolve(AppNavigator.self)
-            controller.storageService = resolver.resolve(StorageService.self)
+            controller.storageService = resolver.resolve(DefaultsStorageService.self)
         }
         container.storyboardInitCompleted(HomeTabBarController.self) { (resolver, controller) in
             controller.mapNavigator = resolver.resolve(MapNavigator.self)!

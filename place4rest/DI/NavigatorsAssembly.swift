@@ -12,7 +12,7 @@ class NavigatorsAssembly: Assembly {
 
     func assemble(container: Container) {
         container.register(AppNavigator.self, factory: { resolver in
-            let storageService = resolver.resolve(StorageService.self)
+            let storageService = resolver.resolve(DefaultsStorageService.self)
             return AppNavigator(storageService: storageService!)
         }).inObjectScope(.container)
         container.register(MapNavigator.self, factory: { _ in
