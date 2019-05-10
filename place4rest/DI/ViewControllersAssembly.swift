@@ -41,5 +41,8 @@ class ViewControllersAssembly: Assembly {
             controller.presenter = resolver.resolve(LoginPresenter.self)
             controller.presenter.view = controller
         }
+        container.storyboardInitCompleted(SettingsViewController.self) { (resolver, controller) in
+            controller.storageService = resolver.resolve(KeychainStorageService.self)
+        }
     }
 }

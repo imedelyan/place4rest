@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Ubuntu-B.ttf">
-            <string>Ubuntu-Bold</string>
-        </array>
-        <array key="Ubuntu-M.ttf">
-            <string>Ubuntu-Medium</string>
-        </array>
-        <array key="Ubuntu-R.ttf">
-            <string>Ubuntu</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="Jfz-4n-KTe">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="tGa-9y-kUz" customClass="LoginViewController" customModule="OneAccount" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="tGa-9y-kUz" customClass="LoginViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GD9-gF-gOm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,8 +25,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="1IO-AO-knU"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Placeholder.Username"/>
@@ -49,15 +38,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="TkG-G4-fgV"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Placeholder.Password"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiS-uS-OhN" customClass="RoundedButton" customModule="place4rest" customModuleProvider="target">
-                                <rect key="frame" x="47" y="444.5" width="281" height="40"/>
+                                <rect key="frame" x="47" y="474.5" width="281" height="40"/>
                                 <color key="backgroundColor" name="green"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PmT-Lb-BO2"/>
@@ -70,20 +59,20 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.AddPlace"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.Login"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonAction:" destination="tGa-9y-kUz" eventType="touchUpInside" id="ZXh-R8-B8K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="luU-y2-b4H">
-                                <rect key="frame" x="63" y="501.5" width="101" height="26.5"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="63" y="531.5" width="101" height="26.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot password?">
                                             <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" metaFont="cellTitle"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
@@ -92,31 +81,32 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="underlinedLocalizationIdentifier" value="Login.ForgotPasswordButton"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="attributedLocalizationIdentifier" value="Buttion.ForgotPass"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="forgotPasswordButtonAction:" destination="tGa-9y-kUz" eventType="touchUpInside" id="6yK-qf-QWm"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-GG-riq">
-                                <rect key="frame" x="85.5" y="608" width="204.5" height="29"/>
+                                <rect key="frame" x="81.5" y="608" width="212.5" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0k-ig-pXg">
-                                        <rect key="frame" x="0.0" y="0.0" width="149.5" height="29"/>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="151.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Login.RegisterLabel"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Login.RegisterProposal"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS8-Qr-23l">
-                                        <rect key="frame" x="152.5" y="0.0" width="52" height="29"/>
-                                        <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="14"/>
+                                        <rect key="frame" x="154.5" y="0.0" width="58" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <state key="normal" title="Register">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Login.RegisterButton"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Buttion.Register"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="registerButtonAction:" destination="tGa-9y-kUz" eventType="touchUpInside" id="4I8-br-Cvq"/>
@@ -124,16 +114,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please login to be able to add new places" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnT-vb-VlD">
+                                <rect key="frame" x="47" y="156.5" width="281" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Login.Text"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="dark_gray"/>
                         <constraints>
+                            <constraint firstItem="xnT-vb-VlD" firstAttribute="leading" secondItem="pgw-Sz-8Xm" secondAttribute="leading" constant="47" id="280-Z0-ViQ"/>
+                            <constraint firstItem="o8g-S1-Z2k" firstAttribute="top" secondItem="xnT-vb-VlD" secondAttribute="bottom" constant="50" id="4Fz-Le-fcn"/>
                             <constraint firstItem="pgw-Sz-8Xm" firstAttribute="trailing" secondItem="o8g-S1-Z2k" secondAttribute="trailing" constant="47" id="B0n-AP-1Fz"/>
+                            <constraint firstItem="pgw-Sz-8Xm" firstAttribute="trailing" secondItem="xnT-vb-VlD" secondAttribute="trailing" constant="47" id="DKr-gO-Uh0"/>
                             <constraint firstItem="luU-y2-b4H" firstAttribute="leading" secondItem="pgw-Sz-8Xm" secondAttribute="leading" constant="63" id="HY0-ih-vKr"/>
                             <constraint firstItem="pgw-Sz-8Xm" firstAttribute="trailing" secondItem="jiS-uS-OhN" secondAttribute="trailing" constant="47" id="K1q-CL-hbB"/>
                             <constraint firstItem="pgw-Sz-8Xm" firstAttribute="bottom" secondItem="Ny9-GG-riq" secondAttribute="bottom" constant="30" id="Utv-pa-4U0"/>
                             <constraint firstItem="MOu-o9-kgh" firstAttribute="centerY" secondItem="pgw-Sz-8Xm" secondAttribute="centerY" multiplier="0.9" id="Vqr-aH-sil"/>
                             <constraint firstItem="Ny9-GG-riq" firstAttribute="centerX" secondItem="pgw-Sz-8Xm" secondAttribute="centerX" id="Xdh-WQ-Swm"/>
-                            <constraint firstItem="Ny9-GG-riq" firstAttribute="top" secondItem="luU-y2-b4H" secondAttribute="bottom" constant="80" id="ZRg-CP-Qib"/>
+                            <constraint firstItem="Ny9-GG-riq" firstAttribute="top" secondItem="luU-y2-b4H" secondAttribute="bottom" constant="50" id="ZRg-CP-Qib"/>
                             <constraint firstItem="jiS-uS-OhN" firstAttribute="leading" secondItem="pgw-Sz-8Xm" secondAttribute="leading" constant="47" id="doy-gT-r8M"/>
                             <constraint firstItem="o8g-S1-Z2k" firstAttribute="leading" secondItem="pgw-Sz-8Xm" secondAttribute="leading" constant="47" id="eWG-zx-7xa"/>
                             <constraint firstItem="luU-y2-b4H" firstAttribute="top" secondItem="jiS-uS-OhN" secondAttribute="bottom" constant="17" id="fiV-fj-tEu"/>
@@ -143,6 +145,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pgw-Sz-8Xm"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Login" id="ckQ-cG-1cP">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Login.Title"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
                     <connections>
                         <outlet property="passwordTextField" destination="MOu-o9-kgh" id="lqs-9R-Qqg"/>
                         <outlet property="usernameTextField" destination="o8g-S1-Z2k" id="yGQ-6r-vup"/>
