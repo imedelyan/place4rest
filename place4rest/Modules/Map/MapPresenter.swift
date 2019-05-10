@@ -49,7 +49,6 @@ final class MapPresenter: NSObject {
                 self.places = self.placesRepository.fetchAllPlaces()
                 self.isLoading = false
                 self.view.render(props: self.makeProps())
-
         }
     }
 
