@@ -11,10 +11,12 @@ import UIKit
 final class AddPlaceNavigator {
 
     let navigationController: UINavigationController
+    private let storageService: KeychainStorageService
 
     // MARK: - Init
-    init(navigationController: UINavigationController = .init()) {
+    init(navigationController: UINavigationController = .init(), storageService: KeychainStorageService) {
         self.navigationController = navigationController
+        self.storageService = storageService
         navigate(to: .addPlace)
     }
 
@@ -44,7 +46,15 @@ final class AddPlaceNavigator {
             vc.navigator = self
             vc.place = place
             navigationController.pushViewController(vc, animated: true)
+        case .login:
+            let vc = LoginViewController.load(from: .login)
+            vc.navigator = self
+            navigationController.pushViewController(vc, animated: true)
         }
+    }
+
+    func start() {
+        storageService.token.isEmpty ? navigate(to: .login) : navigate(to: .chooseCategory)
     }
 
     func backToRoot() {
@@ -59,5 +69,6 @@ extension AddPlaceNavigator {
         case chooseServices(place: Place)
         case chooseLocation(place: Place)
         case addInfo(place: Place)
+        case login
     }
 }

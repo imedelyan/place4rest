@@ -37,5 +37,9 @@ class ViewControllersAssembly: Assembly {
         container.storyboardInitCompleted(AddInfoViewController.self) { (resolver, controller) in
             controller.placesService = resolver.resolve(PlacesService.self)
         }
+        container.storyboardInitCompleted(LoginViewController.self) { (resolver, controller) in
+            controller.presenter = resolver.resolve(LoginPresenter.self)
+            controller.presenter.view = controller
+        }
     }
 }

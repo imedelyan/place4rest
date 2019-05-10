@@ -21,8 +21,9 @@ class NavigatorsAssembly: Assembly {
         container.register(SearchNavigator.self, factory: { _ in
             return SearchNavigator()
         })
-        container.register(AddPlaceNavigator.self, factory: { _ in
-            return AddPlaceNavigator()
+        container.register(AddPlaceNavigator.self, factory: { resolver in
+            let keychainStorageService = resolver.resolve(KeychainStorageService.self)
+            return AddPlaceNavigator(storageService: keychainStorageService!)
         })
         container.register(SettingsNavigator.self, factory: { _ in
             return SettingsNavigator()

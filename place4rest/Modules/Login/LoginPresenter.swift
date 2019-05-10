@@ -8,49 +8,64 @@
 
 import Foundation
 
-protocol LoginDelegate: class {
-    func showSpinner()
-    func hideSpinner()
-    func navigateToHomeScreen()
-    func showLoginError(message: String)
-}
-
 class LoginPresenter {
 
-    weak var delegate: LoginDelegate?
+    typealias Props = LoginViewController.Props
 
     // MARK: - Dependencies
-    private let loginService: LoginService
+    private let userService: UserService
+    weak var view: LoginView!
 
-    init(loginService: LoginService) {
-        self.loginService = loginService
+    // MARK: - Variables
+    private var state: Props.State = .initial {
+        didSet {
+            view.render(props: self.makeProps())
+        }
+    }
+
+    // MARK: - Init
+    init(userService: UserService) {
+        self.userService = userService
+    }
+
+    // MARK: - SearchView
+    func viewWasLoaded() {
+        view.render(props: self.makeProps())
     }
 
     // MARK: - Login
-    func login(user: String, pass: String) {
-        guard fieldsPassedValidation(user: user, pass: pass) else { return }
+    func login(username: String, password: String) {
+        guard fieldsPassedValidation(username: username, password: password) else { return }
 
-        delegate?.showSpinner()
-        loginService.login(user: user, pass: pass)
+        state = .loading
+        userService.getToken(username: username, password: password)
             .done { [weak self] in
-                self?.delegate?.navigateToHomeScreen()
+                self?.state = .loggedIn
             }.catch { [weak self] error in
-                self?.delegate?.showLoginError(message: error.responseDescription)
-            }.finally { [weak self] in
-                self?.delegate?.hideSpinner()
-        }
+                self?.state = .failed(error: error.localizedDescription)
+            }
     }
 
     // MARK: - Validation
-    private func fieldsPassedValidation(user: String, pass: String) -> Bool {
-        guard !user.isEmpty else {
-            delegate?.showLoginError(message: "Error.UsernameEmpty".localized())
+    private func fieldsPassedValidation(username: String, password: String) -> Bool {
+        guard !username.isEmpty else {
+            state = .failed(error: "Error.UsernameEmpty".localized())
             return false
         }
-        guard !pass.isEmpty else {
-            delegate?.showLoginError(message: "Error.PasswordEmpty".localized())
+        guard !password.isEmpty else {
+            state = .failed(error: "Error.PasswordEmpty".localized())
             return false
         }
         return true
+    }
+}
+
+// MARK: - Props Factory
+extension LoginPresenter {
+    private func makeProps() -> Props {
+        return Props(state: state,
+                     didTapLoginButton: CommandWith(action: { [weak self] (username, password) in
+                        self?.login(username: username, password: password)
+                     }))
     }
 }
