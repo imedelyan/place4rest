@@ -21,16 +21,17 @@ class SettingsViewController: UIViewController {
         }
     }
 
-    private lazy var items: [Item] = {
+    private var items: [Item] {
         let logoutAction = Command(action: { [weak self] in
-//            self?.showSpinner()
+            Loader.show()
             self?.userService.logout()
                 .done { [weak self] in
-//                    self?.notificationCenter.post(name: .logout, object: nil)
+                    self?.storageService.clearToken()
+                    self?.tableView.reloadData()
                 }.catch { [weak self] error in
                     self?.showError(title: nil, message: error.localizedDescription)
-                }.finally { [weak self] in
-//                    self?.hideSpinner()
+                }.finally {
+                    Loader.hide()
             }
         })
         let logoutConfirmation = Confirmation(title: R.string.localizable.settingsLogout(),
@@ -55,7 +56,7 @@ class SettingsViewController: UIViewController {
         }
 
         return items
-    }()
+    }
 }
 
 // MARK: - UITableViewDataSource

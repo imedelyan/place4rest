@@ -31,16 +31,6 @@ class LoginViewController: UIViewController {
         hideKeyboardWhenTappedAround()
     }
 
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(true, animated: true)
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
-//    }
-
     // MARK: - IBAction
     @IBAction private func loginButtonAction(_ sender: Any) {
         props.didTapLoginButton.perform(with: (usernameTextField.text!, passwordTextField.text!))
@@ -68,13 +58,12 @@ extension LoginViewController: LoginView {
         case .initial:
             break
         case .loading:
-            break
-//            showSpinner()
+            Loader.show()
         case .loggedIn:
-//            hideSpinner()
+            Loader.hide()
             navigator.navigate(to: .chooseCategory)
         case let .failed(error):
-//            hideSpinner()
+            Loader.hide()
             showError(title: nil, message: error)
         }
     }
