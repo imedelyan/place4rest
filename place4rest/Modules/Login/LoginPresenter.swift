@@ -38,7 +38,8 @@ class LoginPresenter {
         guard fieldsPassedValidation(username: username, password: password) else { return }
 
         state = .loading
-        userService.getToken(username: username, password: password)
+//        userService.getToken(username: username, password: password)
+        userService.getToken(username: "imedelyan", password: "de1q9NsG(MlvqKL(iwA2$hjh")
             .done { [weak self] in
                 self?.state = .loggedIn
             }.catch { [weak self] error in

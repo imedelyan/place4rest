@@ -12,11 +12,15 @@ final class AddPlaceNavigator {
 
     let navigationController: UINavigationController
     private let storageService: KeychainStorageService
+    private let loginNavigator: LoginNavigator
 
     // MARK: - Init
-    init(navigationController: UINavigationController = .init(), storageService: KeychainStorageService) {
+    init(navigationController: UINavigationController = .init(),
+         storageService: KeychainStorageService,
+         loginNavigator: LoginNavigator) {
         self.navigationController = navigationController
         self.storageService = storageService
+        self.loginNavigator = loginNavigator
         navigate(to: .addPlace)
     }
 
@@ -46,15 +50,23 @@ final class AddPlaceNavigator {
             vc.navigator = self
             vc.place = place
             navigationController.pushViewController(vc, animated: true)
-        case .login:
-            let vc = LoginViewController.load(from: .login)
-            vc.navigator = self
-            navigationController.pushViewController(vc, animated: true)
         }
     }
 
     func start() {
-        storageService.token.isEmpty ? navigate(to: .login) : navigate(to: .chooseCategory)
+        storageService.token.isEmpty ? login() : navigate(to: .chooseCategory)
+    }
+
+    func login() {
+        let nc = loginNavigator.navigationController
+        loginNavigator.onDissmiss = Command(action: { [weak self] in
+            self?.navigationController.topViewController?.dismiss(animated: true, completion: {
+                self?.navigate(to: .chooseCategory)
+            })
+        })
+        nc.modalPresentationStyle = .overCurrentContext
+        nc.modalTransitionStyle = .crossDissolve
+        navigationController.topViewController?.present(nc, animated: true, completion: nil)
     }
 
     func backToRoot() {
@@ -69,6 +81,5 @@ extension AddPlaceNavigator {
         case chooseServices(place: Place)
         case chooseLocation(place: Place)
         case addInfo(place: Place)
-        case login
     }
 }

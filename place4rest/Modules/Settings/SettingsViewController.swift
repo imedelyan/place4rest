@@ -29,7 +29,9 @@ class SettingsViewController: UIViewController {
                     self?.storageService.clearToken()
                     self?.tableView.reloadData()
                 }.catch { [weak self] error in
-                    self?.showError(title: nil, message: error.localizedDescription)
+                    self?.storageService.clearToken() // TODO: remove these lines when API will be ready
+                    self?.tableView.reloadData()
+//                    self?.showError(title: nil, message: error.localizedDescription)
                 }.finally {
                     Loader.hide()
             }

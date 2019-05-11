@@ -43,6 +43,7 @@ class ViewControllersAssembly: Assembly {
         }
         container.storyboardInitCompleted(SettingsViewController.self) { (resolver, controller) in
             controller.storageService = resolver.resolve(KeychainStorageService.self)
+            controller.userService = resolver.resolve(UserService.self)
         }
     }
 }

@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
 
     // MARK: - Dependencies
-    var navigator: AddPlaceNavigator!
+    var navigator: LoginNavigator!
     var presenter: LoginPresenter!
 
     // MARK: - Variables
@@ -61,7 +61,7 @@ extension LoginViewController: LoginView {
             Loader.show()
         case .loggedIn:
             Loader.hide()
-            navigator.navigate(to: .chooseCategory)
+            navigator.dismiss()
         case let .failed(error):
             Loader.hide()
             showError(title: nil, message: error)
