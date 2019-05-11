@@ -13,7 +13,13 @@ class NetworkServicesAssembly: Assembly {
     func assemble(container: Container) {
         container.register(PlacesService.self) { resolver in
             let provider = resolver.resolve(MoyaProvidersFactory.self)?.make(PlacesAPI.self)
-            return PlacesServiceProvider(api: provider!)
+            let keychainStorageService = resolver.resolve(KeychainStorageService.self)
+            return PlacesServiceProvider(api: provider!, storageService: keychainStorageService!)
+        }
+        container.register(UserService.self) { resolver in
+            let provider = resolver.resolve(MoyaProvidersFactory.self)?.make(UserAPI.self)
+            let keychainStorageService = resolver.resolve(KeychainStorageService.self)
+            return UserServiceProvider(api: provider!, storageService: keychainStorageService!)
         }
     }
 }

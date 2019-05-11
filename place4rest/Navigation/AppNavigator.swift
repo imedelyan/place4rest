@@ -30,10 +30,10 @@ class AppNavigator: Navigator {
         return window
     }()
     private lazy var navigationController: UINavigationController = UINavigationController()
-    private let storageService: StorageService
+    private let storageService: DefaultsStorageService
 
     // MARK: - Init
-    init(storageService: StorageService) {
+    init(storageService: DefaultsStorageService) {
         self.storageService = storageService
         self.window?.rootViewController = navigationController
         UINavigationBar.appearance().setupDefaultTheme()

@@ -14,14 +14,17 @@ protocol PlacesService: class {
     func getPlaces(categories: [Category], for: [CategoryFor]) -> Promise<[Place]>
     func getPlace(id: Int) -> Promise<Place>
     func add(place: Place) -> Promise<Void>
+    // http://place4rest.com/wp-json/wp/v2/comments?post=131
 }
 
 final class PlacesServiceProvider: PlacesService {
 
     private let api: MoyaProvider<PlacesAPI>
+    private let storageService: KeychainStorageService
 
-    init(api: MoyaProvider<PlacesAPI>) {
+    init(api: MoyaProvider<PlacesAPI>, storageService: KeychainStorageService) {
         self.api = api
+        self.storageService = storageService
     }
 
     func getAllPlaces() -> Promise<[Place]> {
@@ -44,7 +47,7 @@ final class PlacesServiceProvider: PlacesService {
 
     func add(place: Place) -> Promise<Void> {
         return api
-            .request(.add(place: place, token: "token"))
+            .request(.add(place: place, token: storageService.token))
             .asVoid()
     }
 }

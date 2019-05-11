@@ -11,7 +11,7 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     var navigator: Navigator!
-    var storageService: StorageService!
+    var storageService: DefaultsStorageService!
 
     override func viewDidLoad() {
         super.viewDidLoad()

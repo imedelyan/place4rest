@@ -13,13 +13,15 @@
 		41508D72221170EC00F981C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41508D71221170EC00F981C3 /* Assets.xcassets */; };
 		41508D75221170EC00F981C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41508D73221170EC00F981C3 /* LaunchScreen.storyboard */; };
 		4159438B228325DF00F39164 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4159438A228325DF00F39164 /* SpinnerView.swift */; };
+		4159438E2285B2C300F39164 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4159438D2285B2C300F39164 /* User.swift */; };
+		415943902285B5CD00F39164 /* KeychainStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4159438F2285B5CD00F39164 /* KeychainStorageService.swift */; };
 		41A92FD9221172CD008897AE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FD8221172CD008897AE /* Colors.xcassets */; };
 		41A92FE9221173F2008897AE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FE5221173F2008897AE /* .swiftlint.yml */; };
 		41A92FEA221173F2008897AE /* Makefile in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FE6221173F2008897AE /* Makefile */; };
 		41A92FEB221173F2008897AE /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FE7221173F2008897AE /* Gemfile */; };
 		41A92FEC221173F2008897AE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 41A92FE8221173F2008897AE /* .gitignore */; };
 		41A92FFD221185AC008897AE /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A92FFC221185AC008897AE /* AppNavigator.swift */; };
-		41A930002211895C008897AE /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A92FFF2211895C008897AE /* StorageService.swift */; };
+		41A930002211895C008897AE /* DefaultsStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A92FFF2211895C008897AE /* DefaultsStorageService.swift */; };
 		41A9300322118CD7008897AE /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9300222118CD7008897AE /* AppStoryboard.swift */; };
 		41A9300522118D29008897AE /* UIViewController+load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9300422118D29008897AE /* UIViewController+load.swift */; };
 		41A930092211A2B9008897AE /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A930082211A2B9008897AE /* Welcome.storyboard */; };
@@ -57,6 +59,8 @@
 		41D4EFEF2281BF0B000A10C6 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D4EFEE2281BF0B000A10C6 /* LanguagesViewController.swift */; };
 		41D4EFF12281BF1E000A10C6 /* Languages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41D4EFF02281BF1E000A10C6 /* Languages.storyboard */; };
 		41E7B5C72241289E00C03387 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7B5C62241289E00C03387 /* String+Extension.swift */; };
+		45087C482286AF5900B8DD11 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45087C472286AF5900B8DD11 /* Loader.swift */; };
+		45087C4A2286BFFA00B8DD11 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45087C492286BFFA00B8DD11 /* LoginNavigator.swift */; };
 		45189BEC2279A95E00DDDCCB /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45189BEB2279A95E00DDDCCB /* UIViewController+Extension.swift */; };
 		45189BEF2279C5F500DDDCCB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45189BEE2279C5F500DDDCCB /* SearchViewController.swift */; };
 		45189BF12279C86800DDDCCB /* SearchPresener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45189BF02279C86800DDDCCB /* SearchPresener.swift */; };
@@ -73,6 +77,11 @@
 		453E0832227EFAD10088C55C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0831227EFAD00088C55C /* Array+Extension.swift */; };
 		453E0834227F493D0088C55C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0833227F493D0088C55C /* TextField.swift */; };
 		453E0836227F4A4B0088C55C /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0835227F4A4B0088C55C /* TextView.swift */; };
+		453E0839227F78B40088C55C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E0838227F78B40088C55C /* UserService.swift */; };
+		453E083B227F78DE0088C55C /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E083A227F78DE0088C55C /* UserAPI.swift */; };
+		453E083D227F7F090088C55C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453E083C227F7F090088C55C /* Login.storyboard */; };
+		453E083F227F7F430088C55C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E083E227F7F430088C55C /* LoginViewController.swift */; };
+		453E084122801ADE0088C55C /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E084022801ADE0088C55C /* LoginPresenter.swift */; };
 		458B251D2280C43500710260 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B251B2280C43500710260 /* SettingsTableViewCell.swift */; };
 		458B251E2280C43500710260 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458B251C2280C43500710260 /* SettingsTableViewCell.xib */; };
 		458B25202280C5C300710260 /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B251F2280C5C300710260 /* SettingsNavigator.swift */; };
@@ -119,13 +128,15 @@
 		41508D7B221170EC00F981C3 /* place4restTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = place4restTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41508D81221170ED00F981C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4159438A228325DF00F39164 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		4159438D2285B2C300F39164 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4159438F2285B5CD00F39164 /* KeychainStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorageService.swift; sourceTree = "<group>"; };
 		41A92FD8221172CD008897AE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		41A92FE5221173F2008897AE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		41A92FE6221173F2008897AE /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
 		41A92FE7221173F2008897AE /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = SOURCE_ROOT; };
 		41A92FE8221173F2008897AE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		41A92FFC221185AC008897AE /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
-		41A92FFF2211895C008897AE /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		41A92FFF2211895C008897AE /* DefaultsStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsStorageService.swift; sourceTree = "<group>"; };
 		41A9300222118CD7008897AE /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		41A9300422118D29008897AE /* UIViewController+load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+load.swift"; sourceTree = "<group>"; };
 		41A930082211A2B9008897AE /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
@@ -165,6 +176,8 @@
 		41D4EFEE2281BF0B000A10C6 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
 		41D4EFF02281BF1E000A10C6 /* Languages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Languages.storyboard; sourceTree = "<group>"; };
 		41E7B5C62241289E00C03387 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		45087C472286AF5900B8DD11 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		45087C492286BFFA00B8DD11 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		45189BEB2279A95E00DDDCCB /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		45189BEE2279C5F500DDDCCB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		45189BF02279C86800DDDCCB /* SearchPresener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresener.swift; sourceTree = "<group>"; };
@@ -181,6 +194,11 @@
 		453E0831227EFAD00088C55C /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		453E0833227F493D0088C55C /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		453E0835227F4A4B0088C55C /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		453E0838227F78B40088C55C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		453E083A227F78DE0088C55C /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		453E083C227F7F090088C55C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		453E083E227F7F430088C55C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		453E084022801ADE0088C55C /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		458B251B2280C43500710260 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		458B251C2280C43500710260 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		458B251F2280C5C300710260 /* SettingsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigator.swift; sourceTree = "<group>"; };
@@ -366,6 +384,7 @@
 				45F08BF322611FB900D72464 /* PlaceCalloutView.swift */,
 				45F08BEF226118C500D72464 /* PlaceCalloutView.xib */,
 				4159438A228325DF00F39164 /* SpinnerView.swift */,
+				45087C472286AF5900B8DD11 /* Loader.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -389,6 +408,7 @@
 				45F08C0E226371A400D72464 /* CategoryFor.swift */,
 				45F08C10226371D200D72464 /* Service.swift */,
 				45F08C122263720F00D72464 /* Activity.swift */,
+				4159438D2285B2C300F39164 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,6 +421,7 @@
 				453E0818227CC53C0088C55C /* SearchNavigator.swift */,
 				453E081A227D7E860088C55C /* AddPlaceNavigator.swift */,
 				458B251F2280C5C300710260 /* SettingsNavigator.swift */,
+				45087C492286BFFA00B8DD11 /* LoginNavigator.swift */,
 				41A9300222118CD7008897AE /* AppStoryboard.swift */,
 			);
 			path = Navigation;
@@ -432,7 +453,8 @@
 		41A92FFE2211892E008897AE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				41A92FFF2211895C008897AE /* StorageService.swift */,
+				41A92FFF2211895C008897AE /* DefaultsStorageService.swift */,
+				4159438F2285B5CD00F39164 /* KeychainStorageService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -467,6 +489,7 @@
 		41A930122211A37D008897AE /* API */ = {
 			isa = PBXGroup;
 			children = (
+				453E0837227F77620088C55C /* User */,
 				41A9327D221C16D8008897AE /* Places */,
 			);
 			path = API;
@@ -588,6 +611,9 @@
 		453E0820227DDEE90088C55C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				453E083E227F7F430088C55C /* LoginViewController.swift */,
+				453E084022801ADE0088C55C /* LoginPresenter.swift */,
+				453E083C227F7F090088C55C /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -607,6 +633,15 @@
 				453E082C227E00690088C55C /* CategoryTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		453E0837227F77620088C55C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				453E0838227F78B40088C55C /* UserService.swift */,
+				453E083A227F78DE0088C55C /* UserAPI.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		458B251A2280C3CE00710260 /* Cells */ = {
@@ -764,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A92FEC221173F2008897AE /* .gitignore in Resources */,
+				453E083D227F7F090088C55C /* Login.storyboard in Resources */,
 				41A930292211B70A008897AE /* About.storyboard in Resources */,
 				45F08BFD22626D5500D72464 /* Place.storyboard in Resources */,
 				453E082E227E00690088C55C /* CategoryTableViewCell.xib in Resources */,
@@ -982,7 +1018,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A93285221C1831008897AE /* PlacesAPI.swift in Sources */,
+				415943902285B5CD00F39164 /* KeychainStorageService.swift in Sources */,
 				458C3E292277735A00C0BE2E /* StorageServicesAssembly.swift in Sources */,
+				45087C4A2286BFFA00B8DD11 /* LoginNavigator.swift in Sources */,
 				41A9302B2211B725008897AE /* AddPlaceViewController.swift in Sources */,
 				41A9300322118CD7008897AE /* AppStoryboard.swift in Sources */,
 				41A9327A221C151C008897AE /* MoyaProvider+Promise.swift in Sources */,
@@ -993,7 +1031,7 @@
 				41A930112211A312008897AE /* HomeTabBarController.swift in Sources */,
 				41E7B5C72241289E00C03387 /* String+Extension.swift in Sources */,
 				41A93283221C1818008897AE /* PlacesService.swift in Sources */,
-				41A930002211895C008897AE /* StorageService.swift in Sources */,
+				41A930002211895C008897AE /* DefaultsStorageService.swift in Sources */,
 				41D4EFEC2281BA7B000A10C6 /* AppLanguage.swift in Sources */,
 				41A9301C2211A639008897AE /* UtilitiesServicesAssembly.swift in Sources */,
 				41A93287221C3AE9008897AE /* MapPresenter.swift in Sources */,
@@ -1002,6 +1040,8 @@
 				4159438B228325DF00F39164 /* SpinnerView.swift in Sources */,
 				41A930182211A502008897AE /* ViewControllersAssembly.swift in Sources */,
 				412A03852260DE0600830E59 /* PlaceAnnotation.swift in Sources */,
+				4159438E2285B2C300F39164 /* User.swift in Sources */,
+				453E083B227F78DE0088C55C /* UserAPI.swift in Sources */,
 				45F08C0F226371A400D72464 /* CategoryFor.swift in Sources */,
 				453E0824227DDF460088C55C /* ChooseLocationViewController.swift in Sources */,
 				45F08BFF22626D7200D72464 /* PlaceViewController.swift in Sources */,
@@ -1013,6 +1053,7 @@
 				41A930C022145607008897AE /* R.generated.swift in Sources */,
 				41A92FFD221185AC008897AE /* AppNavigator.swift in Sources */,
 				45F08C032262718500D72464 /* MapNavigator.swift in Sources */,
+				453E084122801ADE0088C55C /* LoginPresenter.swift in Sources */,
 				41A9300B2211A2C5008897AE /* WelcomeViewController.swift in Sources */,
 				453E0822227DDF310088C55C /* ChooseCategoryViewController.swift in Sources */,
 				453E0832227EFAD10088C55C /* Array+Extension.swift in Sources */,
@@ -1029,6 +1070,7 @@
 				45F08C11226371D200D72464 /* Service.swift in Sources */,
 				41A93289221D4A45008897AE /* Command.swift in Sources */,
 				453E081B227D7E860088C55C /* AddPlaceNavigator.swift in Sources */,
+				453E083F227F7F430088C55C /* LoginViewController.swift in Sources */,
 				41A930162211A4AB008897AE /* NavigatorsAssembly.swift in Sources */,
 				41A9327C221C1563008897AE /* Bundle+Extension.swift in Sources */,
 				45F08BF222611CB300D72464 /* RoundedButton.swift in Sources */,
@@ -1037,8 +1079,10 @@
 				41A93278221C14EA008897AE /* Moya+TargetType.swift in Sources */,
 				41A930C222156E81008897AE /* VisualEffectView.swift in Sources */,
 				45189BEF2279C5F500DDDCCB /* SearchViewController.swift in Sources */,
+				453E0839227F78B40088C55C /* UserService.swift in Sources */,
 				41A930332211B75E008897AE /* MapViewController.swift in Sources */,
 				453E0834227F493D0088C55C /* TextField.swift in Sources */,
+				45087C482286AF5900B8DD11 /* Loader.swift in Sources */,
 				41A93271221B0165008897AE /* Place.swift in Sources */,
 				453E082D227E00690088C55C /* CategoryTableViewCell.swift in Sources */,
 				45F08C0B2263685400D72464 /* CategoryCollectionViewCell.swift in Sources */,
@@ -1212,7 +1256,7 @@
 			baseConfigurationReference = 2D052633B35BA2B5E918FC20 /* Pods-place4rest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "http://place4rest.com/wp-json/wp/v2/";
+				BASE_URL = "http://place4rest.com/wp-json/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GXYG7Z27MT;
 				INFOPLIST_FILE = "$(SRCROOT)/place4rest/Resources/Info.plist";
@@ -1234,7 +1278,7 @@
 			baseConfigurationReference = DB024D1D20D05B05BF54E7E4 /* Pods-place4rest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "http://place4rest.com/wp-json/wp/v2/";
+				BASE_URL = "http://place4rest.com/wp-json/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GXYG7Z27MT;
 				INFOPLIST_FILE = "$(SRCROOT)/place4rest/Resources/Info.plist";

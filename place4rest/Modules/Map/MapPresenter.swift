@@ -19,7 +19,6 @@ final class MapPresenter: NSObject {
     weak var view: MapView!
 
     // MARK: - Variables
-    private var isLoading: Bool = true
     private var places: [Place] = []
     private var categoryFilters: Set<Category> = []
     private var categoryForFilters: Set<CategoryFor> = []
@@ -38,6 +37,7 @@ final class MapPresenter: NSObject {
 
     // MARK: - MapView
     func viewWasLoaded() {
+        Loader.show()
         placesService
             .getAllPlaces()
             .done { [weak self] in
@@ -47,7 +47,7 @@ final class MapPresenter: NSObject {
             }.finally { [weak self] in
                 guard let self = self else { return }
                 self.places = self.placesRepository.fetchAllPlaces()
-                self.isLoading = false
+                Loader.hide()
                 self.view.render(props: self.makeProps())
         }
     }
@@ -139,8 +139,7 @@ extension MapPresenter: MGLMapViewDelegate {
 // MARK: - Props Factory
 extension MapPresenter {
     private func makeProps() -> Props {
-        return Props(isLoading: isLoading,
-                     places: places,
+        return Props(places: places,
                      didTapExpandLayersButton: Command(action: { [weak self] in
                         guard let self = self else { return }
                         self.isLayerViewExpanded.toggle()
