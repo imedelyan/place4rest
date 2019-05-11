@@ -19,4 +19,11 @@ extension UIViewController {
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
+
+    func showError(title: String?, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: R.string.localizable.ok(), style: .cancel, handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
+    }
 }

@@ -12,6 +12,7 @@
 "CLOSE" = "ЗАКРЫТЬ";
 "RestartApplication" = "Необходимо перезапустить приложение, чтобы изменения вступили в силу";
 "Ok" = "Ok";
+"Information" = "Информация";
 
 // MARK: - Map
 "Terrain style" = "Местность";
@@ -109,3 +110,15 @@
 "Paragliding" = "Параглайдинг";
 "Beach" = "Пляжный отдых";
 "Climbing" = "Скалолазание";
+
+// MARK: - Login
+"Login.Title" = "Вход";
+"Login.Text" = "Пожалуйста войдите в свой аккаунт, чтобы добавить новое место";
+"Placeholder.Username" = "Имя пользователя";
+"Placeholder.Password" = "Пароль";
+"Buttion.Login" = "ВОЙТИ";
+"Buttion.ForgotPass" = "Забыли пароль?";
+"Login.RegisterProposal" = "Нет аккаунта?";
+"Buttion.Register" = "Зарегестрироваться";
+"Error.UsernameEmpty" = "Имя пользователя не заполнено";
+"Error.PasswordEmpty" = "Поле пароля не заполнено";

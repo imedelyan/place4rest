@@ -23,5 +23,9 @@ class PresentersAssembly: Assembly {
             let placesRepository = resolver.resolve(PlacesRepository.self)
             return SearchPresenter(placesRepository: placesRepository!)
         }
+        container.register(LoginPresenter.self) { resolver in
+            let userService = resolver.resolve(UserService.self)
+            return LoginPresenter(userService: userService!)
+        }
     }
 }

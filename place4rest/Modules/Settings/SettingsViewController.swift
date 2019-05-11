@@ -12,7 +12,8 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     var navigator: SettingsNavigator!
-//    var userService: UserService!
+    var storageService: KeychainStorageService!
+    var userService: UserService!
 
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
@@ -20,35 +21,44 @@ class SettingsViewController: UIViewController {
         }
     }
 
-    private lazy var items: [Item] = {
+    private var items: [Item] {
         let logoutAction = Command(action: { [weak self] in
-//            self?.showSpinner()
-//            self?.userService.logout()
-//                .done { [weak self] in
-//                    self?.notificationCenter.post(name: .logout, object: nil)
-//                }.catch { [weak self] error in
-//                    self?.showError(title: nil, message: error.responseDescription)
-//                }.finally { [weak self] in
-//                    self?.hideSpinner()
-//            }
+            Loader.show()
+            self?.userService.logout()
+                .done { [weak self] in
+                    self?.storageService.clearToken()
+                    self?.tableView.reloadData()
+                }.catch { [weak self] error in
+                    self?.storageService.clearToken() // TODO: remove these lines when API will be ready
+                    self?.tableView.reloadData()
+//                    self?.showError(title: nil, message: error.localizedDescription)
+                }.finally {
+                    Loader.hide()
+            }
         })
         let logoutConfirmation = Confirmation(title: R.string.localizable.settingsLogout(),
                                               message: R.string.localizable.settingsLogoutMessage(),
                                               buttonTitle: R.string.localizable.settingsLogout())
 
-        return [
-            Item(title: R.string.localizable.settingsEditUser(), action: Command(action: { [weak self] in
-                self?.navigator.navigate(to: .editUser)
-            })),
+        var items = [
             Item(title: R.string.localizable.settingsLanguage(), action: Command(action: { [weak self] in
                 self?.navigator.navigate(to: .language)
             })),
             Item(title: R.string.localizable.settingsWeb(), action: Command(action: { [weak self] in
                 self?.navigator.navigate(to: .web)
-            })),
-            Item(title: R.string.localizable.settingsLogout(), confirmation: logoutConfirmation, action: logoutAction)
+            }))
         ]
-    }()
+        if !storageService.token.isEmpty {
+            items += [
+                Item(title: R.string.localizable.settingsEditUser(), action: Command(action: { [weak self] in
+                    self?.navigator.navigate(to: .editUser)
+                })),
+                Item(title: R.string.localizable.settingsLogout(), confirmation: logoutConfirmation, action: logoutAction)
+            ]
+        }
+
+        return items
+    }
 }
 
 // MARK: - UITableViewDataSource

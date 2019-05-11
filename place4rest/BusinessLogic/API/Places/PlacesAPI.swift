@@ -20,9 +20,9 @@ extension PlacesAPI: TargetType {
     var path: String {
         switch self {
         case .getAllPlaces, .getPlaces, .add:
-            return "place"
+            return "wp/v2/place"
         case .getPlace(let id):
-            return "place/\(id)"
+            return "wp/v2/place/\(id)"
         }
     }
 

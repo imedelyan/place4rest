@@ -8,22 +8,18 @@
 
 import Foundation
 
-public protocol StorageService: class {
+public protocol DefaultsStorageService: class {
     var isAppAlreadyLoaded: Bool { get set }
 }
 
-public final class StorageServiceProvider: StorageService {
+public final class DefaultsStorageServiceProvider: DefaultsStorageService {
 
     let defaults: UserDefaults
     private let alreadyLoadedKey = "com.place4rest.alreadyLoaded"
 
     public var isAppAlreadyLoaded: Bool {
-        set {
-            defaults.set(newValue, forKey: alreadyLoadedKey)
-        }
-        get {
-            return defaults.bool(forKey: alreadyLoadedKey)
-        }
+        set { defaults.set(newValue, forKey: alreadyLoadedKey) }
+        get { return defaults.bool(forKey: alreadyLoadedKey) }
     }
 
     init(defaults: UserDefaults = .standard) {

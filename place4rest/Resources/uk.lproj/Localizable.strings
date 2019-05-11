@@ -12,6 +12,7 @@
 "CLOSE" = "ЗАКРИТИ";
 "RestartApplication" = "Необхідно перезапустити додаток, щоб зміни вступили в силу";
 "Ok" = "Добре";
+"Information" = "Інформація";
 
 // MARK: - Map
 "Terrain style" = "Місцевість";
@@ -110,3 +111,15 @@
 "Paragliding" = "Параглайдінг";
 "Beach" = "Пляжний відпочинок";
 "Climbing" = "Скелелазіння";
+
+// MARK: - Login
+"Login.Title" = "Вхід";
+"Login.Text" = "Будь ласка, увійдіть в свій аккаунт, щоб додати нове місце";
+"Placeholder.Username" = "Им'я користувача";
+"Placeholder.Password" = "Пароль";
+"Buttion.Login" = "УВІЙТИ";
+"Buttion.ForgotPass" = "Охрана отмєна?";
+"Login.RegisterProposal" = "Не має аккаунту?";
+"Buttion.Register" = "Зареєструватися";
+"Error.UsernameEmpty" = "А де ж ім'я користувача?";
+"Error.PasswordEmpty" = "Пароль занадто пустий";
