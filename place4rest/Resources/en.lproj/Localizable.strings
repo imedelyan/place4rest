@@ -12,6 +12,7 @@
 "CLOSE" = "CLOSE";
 "RestartApplication" = "You need to restart the application for the changes to take effect";
 "Ok" = "Ok";
+"Information" = "Information";
 
 // MARK: - Map
 "Terrain style" = "Terrain style";

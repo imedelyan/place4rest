@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Place-->
+        <!--Information-->
         <scene sceneID="LvO-6t-Efl">
             <objects>
-                <viewController storyboardIdentifier="PlaceViewController" title="Place" hidesBottomBarWhenPushed="YES" id="hp4-cS-e0n" customClass="PlaceViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaceViewController" hidesBottomBarWhenPushed="YES" id="hp4-cS-e0n" customClass="PlaceViewController" customModule="place4rest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0z-19-1R1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,6 +172,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KOn-uc-jS2"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Information" id="EdB-1g-gDT">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizationIdentifier" value="Information"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="CR4-jf-ByG" id="Vzg-sc-5sp"/>
