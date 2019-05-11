@@ -117,3 +117,5 @@ Become a member of place4rest community – Add your places, add your comments!"
 "Buttion.ForgotPass" = "Forgot password?";
 "Login.RegisterProposal" = "Don't have an account?";
 "Buttion.Register" = "Register";
+"Error.UsernameEmpty" = "Username is empty";
+"Error.PasswordEmpty" = "Password is empty";

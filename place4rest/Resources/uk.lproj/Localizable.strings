@@ -120,3 +120,5 @@
 "Buttion.ForgotPass" = "Охрана отмєна?";
 "Login.RegisterProposal" = "Не має аккаунту?";
 "Buttion.Register" = "Зареєструватися";
+"Error.UsernameEmpty" = "А де ж ім'я користувача?";
+"Error.PasswordEmpty" = "Пароль занадто пустий";

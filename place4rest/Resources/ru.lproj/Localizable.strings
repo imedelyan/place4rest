@@ -119,3 +119,5 @@
 "Buttion.ForgotPass" = "Забыли пароль?";
 "Login.RegisterProposal" = "Нет аккаунта?";
 "Buttion.Register" = "Зарегестрироваться";
+"Error.UsernameEmpty" = "Имя пользователя не заполнено";
+"Error.PasswordEmpty" = "Поле пароля не заполнено";
