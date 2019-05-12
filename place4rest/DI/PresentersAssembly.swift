@@ -27,5 +27,10 @@ class PresentersAssembly: Assembly {
             let userService = resolver.resolve(UserService.self)
             return LoginPresenter(userService: userService!)
         }
+        container.register(SettingsPresenter.self) { resolver in
+            let userService = resolver.resolve(UserService.self)
+            let keychainStorageService = resolver.resolve(KeychainStorageService.self)
+            return SettingsPresenter(userService: userService!, storageService: keychainStorageService!)
+        }
     }
 }

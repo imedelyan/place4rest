@@ -6,71 +6,41 @@
 //  Copyright © 2019 imedelian. All rights reserved.
 //
 
-import PromiseKit
 import UIKit
 
 class SettingsViewController: UIViewController {
 
-    var navigator: SettingsNavigator!
-    var storageService: KeychainStorageService!
-    var userService: UserService!
-
+    // MARK: - IBOutlet
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.register(SettingsTableViewCell.nib, forCellReuseIdentifier: SettingsTableViewCell.identifier)
         }
     }
 
-    private var items: [Item] {
-        let logoutAction = Command(action: { [weak self] in
-            Loader.show()
-            self?.userService.logout()
-                .done { [weak self] in
-                    self?.storageService.clearToken()
-                    self?.tableView.reloadData()
-                }.catch { [weak self] error in
-                    self?.storageService.clearToken() // TODO: remove these lines when API will be ready
-                    self?.tableView.reloadData()
-//                    self?.showError(title: nil, message: error.localizedDescription)
-                }.finally {
-                    Loader.hide()
-            }
-        })
-        let logoutConfirmation = Confirmation(title: R.string.localizable.settingsLogout(),
-                                              message: R.string.localizable.settingsLogoutMessage(),
-                                              buttonTitle: R.string.localizable.settingsLogout())
+    // MARK: - Dependencies
+    var presenter: SettingsPresenter!
+    var navigator: SettingsNavigator!
 
-        var items = [
-            Item(title: R.string.localizable.settingsLanguage(), action: Command(action: { [weak self] in
-                self?.navigator.navigate(to: .language)
-            })),
-            Item(title: R.string.localizable.settingsWeb(), action: Command(action: { [weak self] in
-                self?.navigator.navigate(to: .web)
-            }))
-        ]
-        if !storageService.token.isEmpty {
-            items += [
-                Item(title: R.string.localizable.settingsEditUser(), action: Command(action: { [weak self] in
-                    self?.navigator.navigate(to: .editUser)
-                })),
-                Item(title: R.string.localizable.settingsLogout(), confirmation: logoutConfirmation, action: logoutAction)
-            ]
-        }
+    // MARK: - Variables
+    private var props = Props(items: [])
 
-        return items
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewWasLoaded()
     }
 }
 
 // MARK: - UITableViewDataSource
 extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return props.items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier,
                                                  for: indexPath) as! SettingsTableViewCell
-        cell.title = items[indexPath.row].title
+        cell.title = props.items[indexPath.row].title
         return cell
     }
 }
@@ -80,7 +50,7 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
 
-        let item = items[indexPath.row]
+        let item = props.items[indexPath.row]
         guard let confirmation = item.confirmation else {
             item.action.perform()
             return
@@ -94,7 +64,39 @@ extension SettingsViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - PlaceView
+protocol SettingsView: class {
+    func render(props: SettingsViewController.Props)
+    func showLanguage()
+    func showWeb()
+    func showEditUser()
+}
+
+extension SettingsViewController: SettingsView {
+    func render(props: Props) {
+        self.props = props
+        tableView.reloadData()
+    }
+
+    func showLanguage() {
+        navigator.navigate(to: .language)
+    }
+
+    func showWeb() {
+        navigator.navigate(to: .web)
+    }
+
+    func showEditUser() {
+        navigator.navigate(to: .editUser)
+    }
+}
+
+// MARK: - Props
 extension SettingsViewController {
+    struct Props {
+        let items: [Item]
+    }
+
     struct Confirmation {
         let title: String
         let message: String
