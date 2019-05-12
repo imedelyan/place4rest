@@ -25,10 +25,11 @@ class SettingsViewController: UIViewController {
     private var props = Props(items: [])
 
     // MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        presenter.viewWasLoaded()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewWillAppear()
     }
+
 }
 
 // MARK: - UITableViewDataSource

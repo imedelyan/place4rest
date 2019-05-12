@@ -25,7 +25,7 @@ final class SettingsPresenter {
     }
 
     // MARK: - SearchView
-    func viewWasLoaded() {
+    func viewWillAppear() {
         view.render(props: makeProps())
     }
 
